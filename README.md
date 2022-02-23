@@ -1,14 +1,10 @@
 # Hello and Welcome to Paws4Me 🐾
 
 ## About
-
-* Paws4Me has been specifically designed for pet adoption centres that are struggling to find people to adopt their animals. This innovative IOS Application aims in ensuring that these animals find forever homes by bring convenience, real time updates and efficency to the paper based adoption process they follow.
+* Paws4Me has been specifically designed for pet adoption centres that are struggling to find people to adopt their animals. This innovative IOS Application aims in ensuring that these animals find forever homes by bringing convenience, real time updates and efficiency to the paper based adoption process they currently follow.
 * Project status: working prototype
 
 ### Screenshots
-
-
-
 <table>
   <tr>
     <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/155329707-bb3c040a-429f-4eb3-8a2a-1cf4bb5f16dc.png" alt="1" width = 280px height = 400px ></td>
