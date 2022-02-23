@@ -7,7 +7,7 @@
 
 ### Screenshots
 
-<img src="Desktop\listAllAnimals.png" alt="Alt text" title="Optional title">
+<img width="437" alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/155329707-bb3c040a-429f-4eb3-8a2a-1cf4bb5f16dc.png">
 
 ### Features
 * Paws4Me can currently display all the pets availble for adoption as well as the ability to view a single adoptable peta details.
