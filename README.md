@@ -7,16 +7,20 @@
 
 ### Screenshots
 
+<img src="/path/to/listAllAnimals.jpg" alt="Alt text" title="Optional title">
+
 ### Features
 * Paws4Me can currently display all the pets availble for adoption as well as the ability to view a single adoptable peta details.
 
-### Requirements
+### Technologies Used
 * XCode version 15,14,13 should run fine 
 * Swift
 * Swift Storyboards
 
 ### Limitations
 * No implementation of SwiftUI
+
+### Badges
 
 ## About Paws4Me
 
