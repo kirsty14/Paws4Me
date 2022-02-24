@@ -9,7 +9,7 @@
   <tr>
 <td><img alt="LaunchScreen" src="https://user-images.githubusercontent.com/98941706/155467881-97257790-bc21-42a1-91f0-ae279c393ce6.png" alt="1" width = 280px height = 500px ></td>
     <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/155329707-bb3c040a-429f-4eb3-8a2a-1cf4bb5f16dc.png" alt="1" width = 280px height = 500px ></td>
-    <td> <img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/155498605-a3557333-e051-4ff6-ad60-ae74c1394acd.png" height = 500px ></td>
+    <td> <img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/155498605-a3557333-e051-4ff6-ad60-ae74c1394acd.png" height = 500px width = 280px  ></td>
   </tr>
 </table>
 
