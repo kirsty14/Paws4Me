@@ -1,0 +1,75 @@
+disabled_rules:
+  - colon
+  - comma
+  - control_statement
+  - trailing_whitespace
+  - shorthand_operator
+  - unused_optional_binding
+
+opt_in_rules:
+  - empty_count
+  - vertical_whitespace
+  - unused_import
+  - weak_delegate
+  - private_action
+
+excluded:
+  - Pods
+
+line_length: 150
+
+type_body_length:
+  warning: 400
+  error: 700
+
+file_length:
+  warning: 500
+  error: 1200
+
+type_name:
+  min_length:
+    warning: 4
+    error: 3
+  max_length:
+    warning: 50
+    error: 60
+  excluded: iPhone
+  allowed_symbols: ["_"]
+
+identifier_name:
+  min_length:
+    warning: 2
+    error: 1
+  max_length:
+    warning: 45
+    error: 65
+  excluded:
+    - id
+    
+function_body_length:
+  warning: 90
+  error: 100
+
+reporter: "xcode"
+
+function_parameter_count:
+  warning: 10
+  error: 12
+
+custom_rules:
+  already_true:
+    regex: "== true"
+    message: "Don't compare to true."
+
+  already_bool:
+    regex: "== false"
+    message: "Don't compare to false."
+
+  commented_code:
+      regex: '(?<!:|\/)\/\/\h*[a-z.](?!wiftlint)'
+      message: "Comment starting with lowercase letter - did you forget to delete old code?"
+
+  multiline_commented_code:
+    regex: '^\s*[a-z]'
+    match_kinds: comment
+    message: "Comment starting with lowercase letter - did you forget to delete old code?"
