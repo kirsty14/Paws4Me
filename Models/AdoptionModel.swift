@@ -7,14 +7,12 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct AdoptPet : Codable {
+struct AdoptPet: Codable {
     let count: Int?
     var page: [Page]?
 }
 
-// MARK: - Page
-struct Page : Codable {
+struct Page: Codable {
     let age: String?
     let center: Center?
     let color, desc: String?
@@ -23,7 +21,6 @@ struct Page : Codable {
     let animalImage: String?
     let sex: String?
     let animalSpeciesBreed: SpeciesBreed?
-    
     private enum CodingKeys: String, CodingKey {
         case age
         case center
@@ -35,45 +32,40 @@ struct Page : Codable {
         case sex
         case animalSpeciesBreed = "species_breed"
        }
-    
 }
 
-// MARK: - Center
-struct Center : Codable {
+struct Center: Codable {
     let city: String?
     let id: Int?
     let lat, lon: Double?
     let name, services, state, zipcode: String?
 }
 
-enum AnimalSex : String, Codable {
+enum AnimalSex: String, Codable {
     case empty=""
     case female = "Female"
     case male  =  "Male"
 }
 
-// MARK: - SpeciesBreed
-struct SpeciesBreed : Codable {
+struct SpeciesBreed: Codable {
     let petBreedName: String?
     let speciesID: Int?
     let petSpecies: SpeciesName?
     let petYouthName: YouthName?
-    
     enum CodingKeys: String, CodingKey {
            case petBreedName = "breed_name"
            case speciesID = "id"
            case petSpecies = "species_name"
            case petYouthName = "youth_name"
        }
-    
 }
 
-enum SpeciesName : String, Codable {
+enum SpeciesName: String, Codable {
     case cat = "Cat"
     case dog = "Dog"
 }
 
-enum YouthName : String, Codable {
+enum YouthName: String, Codable {
     case kitten = "Kitten"
     case puppy = "Puppy"
 }

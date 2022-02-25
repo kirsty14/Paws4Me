@@ -14,15 +14,12 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak var petAge: UILabel!
     @IBOutlet weak var petGender: UILabel!
     @IBOutlet weak var petBreedName: UILabel!
-    
-    var singlePet:AdoptPet?
-    
+    var singlePet: AdoptPet?
     var nameOfPet = ""
     var breedOfPet = ""
     var genderOfPet = ""
     var ageOfPet = ""
     var imagOfPet = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,23 +28,19 @@ class PetSingleDetailsViewController: UIViewController {
         petBreedName.text=breedOfPet
 
         /*let textWithNoHtml = descriptionOfPet.replacingOccurrences(of: "<br><br>", with: "[ ").replacingOccurrences(of: " />", with: "] ")*/
-        
         petGender.text=genderOfPet
-        
         guard let url = URL(string: imagOfPet) else { return }
 
         UIImage.loadFrom(url: url) { [self] image in
             self.petImageView.layer.cornerRadius = 10
             self.petImageView.image = image
-            self.petImageView.backgroundColor = UIColor(red: 55/255.0,green: 21/255.0,blue: 67/255.0,alpha: 1)
+            self.petImageView.backgroundColor = UIColor(red: 55/255.0, green: 21/255.0, blue: 67/255.0, alpha: 1)
             view.addSubview(petImageView)
         }
-        
     }
 }
 
 extension UIImage {
-
     public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url) {
@@ -61,5 +54,4 @@ extension UIImage {
             }
         }
     }
-
 }

@@ -10,31 +10,20 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var petTable: UITableView!
-    // Creates an pet object for users to reference the data
-    var adoptPetObject:AdoptPet?
-    
+    var adoptPetObject: AdoptPet?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="Adoption Animals"
-        // Calls the function that will execute get users api call
         getAdoption()
-        
         petTable.delegate=self
         petTable.dataSource=self
-
     }
-    
-    // Function that will handle the logic for requesting the api call
+
     func getAdoption() {
-        
         var request = URLRequest(url: URL(string: Constants.adoptURL)!)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-  
-        // Asks the url session to make a call to our custom function
-        URLSession.shared.makeRequest(url: request as URLRequest , model: AdoptPet.self) { [weak self] result in
-            
-            // Swift the state of the result
+        URLSession.shared.makeRequest(url: request as URLRequest, model: AdoptPet.self) { [weak self] result in
             switch result {
             case .success(let petData):
                 self?.adoptPetObject = petData
@@ -45,10 +34,9 @@ class ViewController: UIViewController {
             }
         }
     }
-
 }
 
-extension ViewController: UITableViewDelegate,UITableViewDataSource {
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -57,56 +45,58 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
            } else {
              return 0
            }
-
    }
-   
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
       guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdopt") else {
            return UITableViewCell()
         }
-       
            if let pageItem = adoptPetObject?.page?[indexPath.item].name {
                cell.textLabel?.text = pageItem
+               cell.textLabel?.widthAnchor.constraint(equalToConstant: 250).isActive = true
+               cell.textLabel?.heightAnchor.constraint(equalToConstant: 100).isActive = true
+               cell.textLabel?.textAlignment = .center
            }
-        
         if let pagePetImage = adoptPetObject?.page?[indexPath.item].animalImage {
-            let imageView = UIImageView()
-            imageView.image = UIImage(named: pagePetImage)
-            cell.imageView?.image = imageView.image
+            guard let url = URL(string: pagePetImage) else {return UITableViewCell()}
+            UIImage.loadFrom(url: url) { image in
+                cell.imageView?.layer.cornerRadius = 10
+                cell.imageView?.image = image
+                cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
+                cell.imageView?.clipsToBounds = true
+                cell.imageView?.translatesAutoresizingMaskIntoConstraints = false
+                cell.imageView?.heightAnchor.constraint(equalToConstant: 100).isActive = true
+                cell.imageView?.widthAnchor.constraint(equalToConstant: 100).isActive = true
+                cell.setNeedsLayout()
+            }
         }
-        
        return cell
    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showPetSingleDetails", sender: self)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination=segue.destination as? PetSingleDetailsViewController {
             guard let pageItem = adoptPetObject?.page?[(petTable.indexPathForSelectedRow?.row)!] else {
                 return
             }
-            
-            destination.nameOfPet = pageItem.name!
-            destination.ageOfPet =  pageItem.age!
-            
+            if let pagePetName = pageItem.name {
+            destination.nameOfPet = pagePetName
+            }
+            if let pagePetAge = pageItem.age {
+            destination.imagOfPet = pagePetAge
+            }
             if let pageGender = pageItem.sex {
             destination.genderOfPet = pageGender
             }
-            
             if let pagePetImage = pageItem.animalImage {
             destination.imagOfPet = pagePetImage
             }
-            
             if let pagePetBreed = pageItem.animalSpeciesBreed?.petBreedName {
             destination.breedOfPet = pagePetBreed
             }
         }
             }
 }
-    
 extension UIViewController {
     func displayAlert(title: String, message: String, buttonTitle: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
