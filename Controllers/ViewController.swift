@@ -20,9 +20,12 @@ class ViewController: UIViewController {
     }
 
     func getAdoption() {
-        var request = URLRequest(url: URL(string: Constants.adoptURL)!)
+        
+        guard let url = URL(string: Constants.adoptURL) else { fatalError("Missing URL") }
+        var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
         URLSession.shared.makeRequest(url: request as URLRequest, model: AdoptPet.self) { [weak self] result in
             switch result {
             case .success(let petData):

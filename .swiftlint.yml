@@ -1,3 +1,11 @@
+disabled_rules:
+  - colon
+  - comma
+  - control_statement
+  - trailing_whitespace
+  - shorthand_operator
+  - unused_optional_binding
+
 opt_in_rules:
   - empty_count
   - vertical_whitespace
