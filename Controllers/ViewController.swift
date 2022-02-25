@@ -13,10 +13,10 @@ class ViewController: UIViewController {
     var adoptPetObject: AdoptPet?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title="Adoption Animals"
+        self.title = "Adoption Animals"
         getAdoption()
-        petTable.delegate=self
-        petTable.dataSource=self
+        petTable.delegate = self
+        petTable.dataSource = self
     }
 
     func getAdoption() {
