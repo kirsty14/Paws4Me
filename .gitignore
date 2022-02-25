@@ -34,6 +34,11 @@ DerivedData/
 timeline.xctimeline
 playground.xcworkspace
 
+# OS-specific files
+.DS_Store
+.Trashes
+Thumbs.db
+
 # Swift Package Manager
 #
 # Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
