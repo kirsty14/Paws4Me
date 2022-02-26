@@ -7,16 +7,20 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var petTable: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var filteredPetObject: AdoptPet?
     var adoptPetObject: AdoptPet?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Adoption Animals"
         getAdoption()
         petTable.delegate = self
         petTable.dataSource = self
+        searchBar.delegate = self
     }
 
     func getAdoption() {
@@ -30,7 +34,7 @@ class ViewController: UIViewController {
             switch result {
             case .success(let petData):
                 self?.adoptPetObject = petData
-                print(petData)
+                self?.filteredPetObject = petData
                 self?.petTable.reloadData()
             case .failure(let error):
                 print(error)
@@ -43,35 +47,20 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-           if let pageCount = adoptPetObject?.page?.count {
+           if let pageCount = filteredPetObject?.page?.count {
                return pageCount
            } else {
              return 0
            }
    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdopt") else {
+      guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdopt") as? AnimalTableViewCell else {
            return UITableViewCell()
         }
-           if let pageItem = adoptPetObject?.page?[indexPath.item].name {
-               cell.textLabel?.text = pageItem
-               cell.textLabel?.widthAnchor.constraint(equalToConstant: 250).isActive = true
-               cell.textLabel?.heightAnchor.constraint(equalToConstant: 100).isActive = true
-               cell.textLabel?.textAlignment = .center
-           }
-        if let pagePetImage = adoptPetObject?.page?[indexPath.item].animalImage {
-            guard let url = URL(string: pagePetImage) else {return UITableViewCell()}
-            UIImage.loadFrom(url: url) { image in
-                cell.imageView?.layer.cornerRadius = 10
-                cell.imageView?.image = image
-                cell.imageView?.contentMode = UIView.ContentMode.scaleAspectFill
-                cell.imageView?.clipsToBounds = true
-                cell.imageView?.translatesAutoresizingMaskIntoConstraints = false
-                cell.imageView?.heightAnchor.constraint(equalToConstant: 100).isActive = true
-                cell.imageView?.widthAnchor.constraint(equalToConstant: 100).isActive = true
-                cell.setNeedsLayout()
-            }
-        }
+        let adoptablepet = filteredPetObject
+        cell.index = indexPath.row
+        cell.pet = adoptablepet
+        cell.setNeedsLayout()
        return cell
    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -99,6 +88,25 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
             }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        self.filteredPetObject = nil
+       
+        if searchText == "" {
+            filteredPetObject = adoptPetObject
+        } else {
+
+            guard let petObject = adoptPetObject else {
+                return
+            }
+
+                if  searchText.lowercased().contains("Female") {
+                filteredPetObject = petObject
+        }
+        }
+        
+        self.petTable.reloadData()
+    }
 }
 extension UIViewController {
     func displayAlert(title: String, message: String, buttonTitle: String) {
