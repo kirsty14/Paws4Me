@@ -63,14 +63,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setNeedsLayout()
        return cell
    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showPetSingleDetails", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination=segue.destination as? PetSingleDetailsViewController {
-            guard let pageItem = adoptPetObject?.page?[(petTable.indexPathForSelectedRow?.row)!] else {
-                return
-            }
+        
+        if let destination = segue.destination as? PetSingleDetailsViewController {
+            guard let rowIndex = petTable.indexPathForSelectedRow?.row else {return}
+            guard let pageItem = adoptPetObject?.page?[rowIndex] else {return}
+            
             if let pagePetName = pageItem.name {
             destination.nameOfPet = pagePetName
             }

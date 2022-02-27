@@ -21,7 +21,12 @@ class AnimalTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        guard let url = URL(string: (pet.page?[index].animalImage)!) else { return }
+        
+        guard let pageImage = pet?.page?[index].animalImage else {
+            return
+        }
+        
+        guard let url = URL(string: pageImage) else { return }
 
         UIImage.loadFrom(url: url) { [self] image in
             self.imagePetView.layer.cornerRadius = 10

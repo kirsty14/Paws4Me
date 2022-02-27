@@ -20,6 +20,7 @@ class PetSingleDetailsViewController: UIViewController {
     var genderOfPet = ""
     var ageOfPet = ""
     var imagOfPet = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,7 +28,6 @@ class PetSingleDetailsViewController: UIViewController {
         petAge.text=ageOfPet
         petBreedName.text=breedOfPet
 
-        /*let textWithNoHtml = descriptionOfPet.replacingOccurrences(of: "<br><br>", with: "[ ").replacingOccurrences(of: " />", with: "] ")*/
         petGender.text=genderOfPet
         guard let url = URL(string: imagOfPet) else { return }
 

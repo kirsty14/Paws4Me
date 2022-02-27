@@ -44,17 +44,12 @@ class SignInViewController: UIViewController {
     @IBAction private func btnSignInClick(_ sender: Any) {
         let username = txtUsername.text
         let password = txtPassword.text
+        
         if username == "Admin" && password == "TestPass123" {
             bLoggedIn = true
-        
-                  /* let alert = UIAlertController(title: "Success",
-                   message: "You have logged in successfully.", preferredStyle: UIAlertController.Style.alert)
-                   alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-                   self.present(alert, animated: true, completion: nil)*/
-            
             if bLoggedIn {
                 let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
-                let vc = (storyboard.instantiateViewController(withIdentifier: "launchID") as? UIViewController)!
+                let vc = (storyboard.instantiateViewController(withIdentifier: "launchID") as UIViewController)
                 self.present(vc, animated: true, completion: nil)
             }
             }
