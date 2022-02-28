@@ -102,7 +102,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             guard let petObject = adoptPetObject else {
                 return
             }
-
                 if  searchText.lowercased().contains("Female") {
                 filteredPetObject = petObject
         }
