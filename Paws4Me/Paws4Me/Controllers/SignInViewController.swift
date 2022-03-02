@@ -37,10 +37,11 @@ class SignInViewController: UIViewController {
         if username == "Admin" && password == "TestPass123" {
             bLoggedIn = true
             if bLoggedIn {
-                let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
-                let vcLuanch = (storyboard.instantiateViewController(withIdentifier: "launchID") as UIViewController)
-                self.present(vcLuanch, animated: true, completion: nil)
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let goToAllPets = (storyboard.instantiateViewController(withIdentifier: "petAlllID")
+                                   as UIViewController)
+                self.present(goToAllPets, animated: true, completion: nil)
+                }
             }
             }
         }
-    }

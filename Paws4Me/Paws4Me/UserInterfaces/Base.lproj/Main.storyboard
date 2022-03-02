@@ -12,7 +12,7 @@
         <!--AllPetsViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="petAlllID" title="AllPetsViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="petAlllID" title="AllPetsViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1849.2753623188407" y="43.526785714285715"/>
+            <point key="canvasLocation" x="1012" y="867"/>
         </scene>
         <!--Pet Single Details View Controller-->
         <scene sceneID="sRd-sl-lBK">
@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcr-Ag-kHP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3655" y="44"/>
+            <point key="canvasLocation" x="4563.768115942029" y="43.526785714285715"/>
         </scene>
         <!--PetSingle-->
         <scene sceneID="d0w-PP-s1G">
@@ -227,7 +227,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="0LC-XB-Owi" userLabel="SinglePetImageStack">
-                                <rect key="frame" x="20" y="108" width="374" height="223"/>
+                                <rect key="frame" x="20" y="64" width="374" height="223"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min" translatesAutoresizingMaskIntoConstraints="NO" id="fYM-JX-fQs">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="223"/>
@@ -238,7 +238,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OZN-FF-5gE" userLabel="SinglePetNameStack">
-                                <rect key="frame" x="30" y="361" width="354" height="26.5"/>
+                                <rect key="frame" x="30" y="317" width="354" height="70.5"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="zOW-Q6-yTY" userLabel="AdoptButtonStack">
                                 <rect key="frame" x="20" y="417.5" width="374" height="37"/>
@@ -498,12 +498,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BPe-Nq-FuM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2786.9565217391305" y="43.526785714285715"/>
+            <point key="canvasLocation" x="2320" y="867"/>
         </scene>
-        <!--Sign In View Controller-->
+        <!--SignIn-->
         <scene sceneID="Hld-QG-ZM8">
             <objects>
-                <viewController id="mci-IO-YSj" customClass="SignInViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInID" title="SignIn" id="mci-IO-YSj" customClass="SignInViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fqz-z9-Ys7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -613,6 +613,7 @@
                             <constraint firstItem="Dfe-ww-Yqf" firstAttribute="centerX" secondItem="Fqz-z9-Ys7" secondAttribute="centerX" id="yTx-gY-WH0"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="S0a-Fv-8ZW"/>
                     <connections>
                         <outlet property="btnRegister" destination="ZG8-tb-gZv" id="Lbt-IS-stU"/>
                         <outlet property="btnSignIn" destination="FbQ-WR-mH1" id="0vA-0E-OYB"/>
@@ -622,25 +623,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Htq-PD-9Jo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="104" y="44"/>
+            <point key="canvasLocation" x="1013.0434782608696" y="43.526785714285715"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="2AI-dp-Mhr">
+        <scene sceneID="HQj-ax-DLU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hj3-KX-YvU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0mn-Pr-wte" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3vk-Jr-HFc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mem-Cg-vxz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="f9A-V4-6yt"/>
+                        <segue destination="mci-IO-YSj" kind="relationship" relationship="rootViewController" id="tJ1-lR-LM6"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pEA-5Z-axa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVP-nY-dc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.13043478260875" y="43.526785714285715"/>
+            <point key="canvasLocation" x="1013" y="-880"/>
         </scene>
     </scenes>
     <resources>

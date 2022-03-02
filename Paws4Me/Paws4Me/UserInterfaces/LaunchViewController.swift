@@ -14,8 +14,8 @@ class LaunchViewController: UIViewController {
         super.viewDidLoad()
     }
     override func viewDidAppear(_ animated: Bool) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let goToAllPets = (storyboard.instantiateViewController(withIdentifier: "petAlllID") as UIViewController)
-        self.present(goToAllPets, animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "LaunchID", bundle: nil)
+        let goToSignIn = (storyboard.instantiateViewController(withIdentifier: "SignInID") as UIViewController)
+        self.present(goToSignIn, animated: true, completion: nil)
         }
     }
