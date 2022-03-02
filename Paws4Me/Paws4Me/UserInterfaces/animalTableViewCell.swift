@@ -9,23 +9,18 @@ import Foundation
 import UIKit
 
 class AnimalTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var imagePetView: UIImageView!
     @IBOutlet weak var petNameLabel: UILabel!
-    
     var index = 0
     var pet: AdoptPet! {
         didSet {
             updateUI()
         }
     }
-    
     func updateUI() {
-        
         guard let pageImage = pet?.page?[index].animalImage else {
             return
         }
-        
         guard let url = URL(string: pageImage) else { return }
 
         UIImage.loadFrom(url: url) { [self] image in

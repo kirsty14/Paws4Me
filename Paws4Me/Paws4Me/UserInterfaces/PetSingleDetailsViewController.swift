@@ -20,7 +20,6 @@ class PetSingleDetailsViewController: UIViewController {
     var genderOfPet = ""
     var ageOfPet = ""
     var imagOfPet = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         petName.text=nameOfPet

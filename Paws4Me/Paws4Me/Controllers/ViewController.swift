@@ -11,10 +11,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var petTable: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
     var filteredPetObject: AdoptPet?
     var adoptPetObject: AdoptPet?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         getAdoption()
@@ -24,12 +22,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
 
     func getAdoption() {
-        
         guard let url = URL(string: Constants.adoptURL) else { fatalError("Missing URL") }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
         URLSession.shared.makeRequest(url: request as URLRequest, model: AdoptPet.self) { [weak self] result in
             switch result {
             case .success(let petData):
@@ -63,18 +59,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.setNeedsLayout()
        return cell
    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         performSegue(withIdentifier: "showPetSingleDetails", sender: self)
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let destination = segue.destination as? PetSingleDetailsViewController {
             guard let rowIndex = petTable.indexPathForSelectedRow?.row else {return}
             guard let pageItem = adoptPetObject?.page?[rowIndex] else {return}
-            
             if let pagePetName = pageItem.name {
             destination.nameOfPet = pagePetName
             }
@@ -92,10 +83,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
             }
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filteredPetObject = nil
-       
         if searchText == "" {
             filteredPetObject = adoptPetObject
         } else {
@@ -107,7 +96,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 filteredPetObject = petObject
         }
         }
-        
         self.petTable.reloadData()
     }
 }
