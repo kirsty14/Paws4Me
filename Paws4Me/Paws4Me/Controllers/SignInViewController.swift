@@ -21,8 +21,8 @@ class SignInViewController: UIViewController {
         btnRegister.layer.borderColor = UIColor.init(red: 55/255, green: 21/255, blue: 67/255, alpha: 1).cgColor
         let bottomLine = CALayer()
         let bottomLine2 = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: txtUsername.frame.height - 2, width: txtUsername.frame.width, height: 2)
-        bottomLine2.frame = CGRect(x: 0, y: txtPassword.frame.height - 2, width: txtPassword.frame.width, height: 2)
+        bottomLine.frame = CGRect(x: 0, y: txtUsername.frame.height*0.8, width: txtUsername.frame.width, height: 2)
+        bottomLine2.frame = CGRect(x: 0, y: txtPassword.frame.height*0.8, width: txtPassword.frame.width, height: 2)
         bottomLine.backgroundColor = UIColor.init(red: 55/255, green: 21/255, blue: 67/255, alpha: 1).cgColor
         bottomLine2.backgroundColor = UIColor.init(red: 55/255, green: 21/255, blue: 67/255, alpha: 1).cgColor
         txtUsername.borderStyle = .none
@@ -31,7 +31,7 @@ class SignInViewController: UIViewController {
         txtPassword.layer.addSublayer(bottomLine2)
     }
 
-    @IBAction private func btnSignInClick(_ sender: Any) {
+    @IBAction private func btnSignInClick(_ sender: UIButton!) {
         let username = txtUsername.text
         let password = txtPassword.text
         if username == "Admin" && password == "TestPass123" {
