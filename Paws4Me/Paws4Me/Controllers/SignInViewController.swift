@@ -6,11 +6,30 @@
 //
 import UIKit
 
+protocol Validation {
+    func isValidCredentialsUsername(username: String) -> Bool
+    func isValidCredentialsPassword(password: String) -> Bool
+}
+
 let bottomLine = CALayer()
 let bottomLine2 = CALayer()
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, Validation {
+    func isValidCredentialsUsername(username: String) -> Bool {
+        if username == "Admin"{
+            return true
+        } else {
+            return false
+        }
+    }
 
+    func isValidCredentialsPassword(password: String) -> Bool {
+        if password == "TestPass123" {
+            return true
+        } else {
+            return false
+        }
+    }
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnSignIn: UIButton!
@@ -30,19 +49,21 @@ class SignInViewController: UIViewController {
         let bValidUsername = isValidCredentialsUsername(username: username)
         let bValidPassword = isValidCredentialsPassword(password: password)
         var errorMessage = ""
-    breakLabel:
+    breakIf:
         if bValidUsername && bValidPassword {
             performSegue(withIdentifier: "signIn", sender: self)
         } else if !bValidUsername && !bValidPassword {
             errorMessage = "Incorrect Username and Password"
             addErrorBorderBoth(txtUsername, txtPassword)
-            break breakLabel
+            break breakIf
         } else if !bValidUsername {
             errorMessage = "Incorrect Username"
-            addErrorBorderSingle(txtUsername, nameTextField: "Username")
+            addErrorBorderSingle(txtUsername, txtPassword, nameTextField: "Username")
+            break breakIf
         } else if !bValidPassword {
             errorMessage = "Incorrect Password"
-            addErrorBorderSingle(txtPassword, nameTextField: "Password")
+            addErrorBorderSingle(txtPassword, txtPassword, nameTextField: "Password")
+            break breakIf
         }
         displayErrorAlert(alertTitle: "Invalid credentials.",
                                             alertMessage: errorMessage,
@@ -51,47 +72,26 @@ class SignInViewController: UIViewController {
             }
             }
 
-func isValidCredentialsUsername(username: String) -> Bool {
-    if username == "Admin"{
-        return true
-    } else {
-        return false
-    }
-}
-
-func isValidCredentialsPassword(password: String) -> Bool {
-    if password == "TestPass123" {
-        return true
-    } else {
-        return false
-    }
-}
-
 func resetBorderSingle(_ textField1: UITextField, bottomLine: CALayer) {
-    bottomLine.frame = CGRect(x: 0, y: textField1.frame.height * 1.2, width: textField1.frame.width, height: 2)
     bottomLine.backgroundColor = UIColor.init(red: 55/255, green: 21/255, blue: 67/255, alpha: 1).cgColor
-    bottomLine2.backgroundColor = UIColor.init(red: 55/255, green: 21/255, blue: 67/255, alpha: 1).cgColor
-    textField1.borderStyle = .none
-    textField1.layer.addSublayer(bottomLine)
+    bottomLine.frame = CGRect(x: 0, y: textField1.frame.height * 1.2, width: textField1.frame.width, height: 2)
 }
 
-func addErrorBorderSingle (_ textField1: UITextField, nameTextField: String) {
+func addErrorBorderSingle (_ textField1: UITextField, _ textField2: UITextField, nameTextField: String) {
     if nameTextField == "Username" {
-        bottomLine.frame = CGRect(x: 0, y: textField1.frame.height * 1.2, width: textField1.frame.width, height: 2)
         bottomLine.backgroundColor = (UIColor.red).cgColor
-        textField1.borderStyle = .none
-        textField1.layer.addSublayer(bottomLine)
     } else {
         resetBorderSingle(textField1, bottomLine: bottomLine)
     }
+    textField1.borderStyle = .none
+    textField1.layer.addSublayer(bottomLine2)
     if nameTextField == "Password" {
-        bottomLine2.frame = CGRect(x: 0, y: textField1.frame.height * 1.2, width: textField1.frame.width, height: 2)
         bottomLine2.backgroundColor = (UIColor.red).cgColor
-        textField1.borderStyle = .none
-        textField1.layer.addSublayer(bottomLine)
     } else {
         resetBorderSingle(textField1, bottomLine: bottomLine2)
     }
+    textField2.borderStyle = .none
+    textField2.layer.addSublayer(bottomLine2)
 }
 
 func addErrorBorderBoth (_ textField1: UITextField, _ textField2: UITextField) {
