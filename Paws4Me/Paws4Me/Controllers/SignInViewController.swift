@@ -37,7 +37,7 @@ class SignInViewController: UIViewController {
         if username == "Admin" && password == "TestPass123" {
             bLoggedIn = true
             if bLoggedIn {
-                performSegue(withIdentifier: "signIn", sender: self)
+                performSegue(withIdentifier: "signInViewController", sender: self)
                 } else {
                         self.displayAlert(title: "Sign in failed",
                                           message: "Please enter the correct username or password",

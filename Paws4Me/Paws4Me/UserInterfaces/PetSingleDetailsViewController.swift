@@ -32,7 +32,6 @@ class PetSingleDetailsViewController: UIViewController {
         UIImage.loadFrom(url: url) { [self] image in
             self.petImageView.layer.cornerRadius = 10
             self.petImageView.image = image
-            self.petImageView.backgroundColor = UIColor(red: 55/255.0, green: 21/255.0, blue: 67/255.0, alpha: 1)
             view.addSubview(petImageView)
         }
     }

@@ -58,10 +58,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.index = indexPath.row
         cell.pet = adoptablepet
         cell.setNeedsLayout()
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor(red: 255/255.0, green: 222/255.0, blue: 193/255.0, alpha: 1)
+        cell.selectedBackgroundView = bgColorView
        return cell
    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showPetSingleDetails", sender: self)
+        performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PetSingleDetailsViewController {
@@ -71,7 +74,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             destination.nameOfPet = pagePetName
             }
             if let pagePetAge = pageItem.age {
-            destination.imagOfPet = pagePetAge
+            destination.ageOfPet = pagePetAge
             }
             if let pageGender = pageItem.sex {
             destination.genderOfPet = pageGender
