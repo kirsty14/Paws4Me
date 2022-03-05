@@ -539,6 +539,41 @@
             </objects>
             <point key="canvasLocation" x="1138" y="-526"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="BSI-Ww-saX">
+            <objects>
+                <viewController id="hBD-hS-o8O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GAB-vr-ceY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Xo2-Jc-Yqz">
+                                <rect key="frame" x="42" y="68" width="330" height="794"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt Us Please" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="475-98-jgs">
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="794"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eWa-tu-ZnA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eWa-tu-ZnA" firstAttribute="top" secondItem="Xo2-Jc-Yqz" secondAttribute="top" constant="20" id="P3L-os-hMP"/>
+                            <constraint firstItem="eWa-tu-ZnA" firstAttribute="trailing" secondItem="Xo2-Jc-Yqz" secondAttribute="trailing" constant="42" id="c8V-4v-Kdy"/>
+                            <constraint firstItem="eWa-tu-ZnA" firstAttribute="bottom" secondItem="Xo2-Jc-Yqz" secondAttribute="bottom" id="jZd-I0-iIc"/>
+                            <constraint firstItem="Xo2-Jc-Yqz" firstAttribute="leading" secondItem="eWa-tu-ZnA" secondAttribute="leading" constant="42" id="oeN-uO-uqE"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vkb-zc-sEv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMb-Y6-bam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3171.0144927536235" y="-1264.2857142857142"/>
+        </scene>
         <!--PetAllViewController-->
         <scene sceneID="2sl-Jh-sm1">
             <objects>
@@ -661,8 +696,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="vwD-N3-7Kz" userLabel="Parent">
                                 <rect key="frame" x="20" y="88" width="376" height="774"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="QAL-87-Leh" userLabel="Header">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="322.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QAL-87-Leh" userLabel="Header">
+                                        <rect key="frame" x="0.0" y="0.0" width="376" height="343.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min" translatesAutoresizingMaskIntoConstraints="NO" id="Uvz-vQ-ZXD">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="220"/>
@@ -671,13 +706,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Sammy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4c-Rd-p5A">
-                                                <rect key="frame" x="0.0" y="239.5" width="376" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="250" width="376" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lN-sY-g0j">
-                                                <rect key="frame" x="0.0" y="285.5" width="376" height="37"/>
+                                                <rect key="frame" x="0.0" y="306.5" width="376" height="37"/>
                                                 <color key="backgroundColor" name="PrimaryPurple"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="Adopt" imagePadding="19">
@@ -689,14 +724,14 @@
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4pQ-de-GMf" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="347.5" width="376" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="368.5" width="376" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="1jk-GX-zAm"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="PWQ-D0-oyY" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="374" width="376" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="395" width="376" height="100.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JqC-6c-M5x" userLabel="SinglePetBreedStack">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="21.5"/>
@@ -755,14 +790,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-IC-XEc" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="499.5" width="376" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="520.5" width="376" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="fqL-ZA-88c"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRG-2d-00y">
-                                        <rect key="frame" x="0.0" y="526" width="376" height="23"/>
+                                        <rect key="frame" x="0.0" y="547" width="376" height="2"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
@@ -834,6 +869,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Ki-0I-bgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3954" y="-526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FYj-Op-IUv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="foD-kR-G4X" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sjw-En-0IF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hBD-hS-o8O" kind="relationship" relationship="rootViewController" id="wcF-XB-afE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VsY-gb-H3Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2367" y="-1264"/>
         </scene>
     </scenes>
     <color key="tintColor" name="PrimaryPurple"/>
