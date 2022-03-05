@@ -37,11 +37,12 @@ class SignInViewController: UIViewController {
         if username == "Admin" && password == "TestPass123" {
             bLoggedIn = true
             if bLoggedIn {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let goToAllPets = (storyboard.instantiateViewController(withIdentifier: "petAlllID")
-                                   as UIViewController)
-                self.present(goToAllPets, animated: true, completion: nil)
-                }
+                performSegue(withIdentifier: "signIn", sender: self)
+                } else {
+                        self.displayAlert(title: "Sign in failed",
+                                          message: "Please enter the correct username or password",
+                                          buttonTitle: "Ok")
+                    }
             }
             }
         }

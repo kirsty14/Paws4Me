@@ -36,6 +36,9 @@ class PetSingleDetailsViewController: UIViewController {
             view.addSubview(petImageView)
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+            self.navigationController?.navigationBar.isHidden = false
+        }
 }
 
 extension UIImage {

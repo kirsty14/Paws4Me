@@ -19,6 +19,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         petTable.delegate = self
         petTable.dataSource = self
         searchBar.delegate = self
+        self.title = "Adoptable Animals"
     }
 
     func getAdoption() {

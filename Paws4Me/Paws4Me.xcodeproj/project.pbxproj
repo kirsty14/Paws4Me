@@ -19,7 +19,6 @@
 		A13B57C827C8C0590089839D /* Paws4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C727C8C0590089839D /* Paws4MeUITests.swift */; };
 		A13B57CA27C8C0590089839D /* Paws4MeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */; };
 		A146FA4227C6786300DE4A0F /* Paws4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */; };
-		A175D7C927CA7AAB00934C96 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A175D7C827CA7AAB00934C96 /* LaunchViewController.swift */; };
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
@@ -59,7 +58,6 @@
 		A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A146FA3F27C6786300DE4A0F /* Paws4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Paws4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeTests.swift; sourceTree = "<group>"; };
-		A175D7C827CA7AAB00934C96 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -148,7 +146,6 @@
 				35E7260927B3A442002B86DB /* Main.storyboard */,
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
-				A175D7C827CA7AAB00934C96 /* LaunchViewController.swift */,
 				35E7260E27B3A444002B86DB /* LaunchScreen.storyboard */,
 			);
 			path = UserInterfaces;
@@ -349,7 +346,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				35E7262527B3E0D5002B86DB /* Constants.swift in Sources */,
-				A175D7C927CA7AAB00934C96 /* LaunchViewController.swift in Sources */,
 				A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */,
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
