@@ -71,7 +71,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             destination.nameOfPet = pagePetName
             }
             if let pagePetAge = pageItem.age {
-            destination.imagOfPet = pagePetAge
+            destination.ageOfPet = pagePetAge
             }
             if let pageGender = pageItem.sex {
             destination.genderOfPet = pageGender
