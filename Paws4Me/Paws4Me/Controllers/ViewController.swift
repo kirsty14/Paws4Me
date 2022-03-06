@@ -43,7 +43,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func setUpSearchbar() {
         let searchbar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTable.bounds.width, height: 65))
         searchbar.showsScopeBar = true
-        searchbar.scopeButtonTitles = ["Male", "Female", "Dog", "Cat", "Kitten", "Puppy"]
+        searchbar.scopeButtonTitles = ["Male", "Female"]
         searchbar.selectedScopeButtonIndex = 0
         searchbar.delegate = self
         self.petTable.tableHeaderView = searchbar
