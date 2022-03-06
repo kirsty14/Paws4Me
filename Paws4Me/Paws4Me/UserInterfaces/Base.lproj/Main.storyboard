@@ -321,7 +321,7 @@
                                             <constraint firstAttribute="height" constant="1.5" id="1jk-GX-zAm"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="PWQ-D0-oyY" userLabel="Body">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="PWQ-D0-oyY" userLabel="Body">
                                         <rect key="frame" x="0.0" y="374" width="376" height="100.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JqC-6c-M5x" userLabel="SinglePetBreedStack">
@@ -393,7 +393,7 @@
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="xqJ-Ci-Ygk" userLabel="Footer">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="xqJ-Ci-Ygk" userLabel="Footer">
                                         <rect key="frame" x="0.0" y="574" width="376" height="200"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Zy7-EM-cLQ">
