@@ -10,7 +10,6 @@ import UIKit
 class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var petTable: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     var filteredPetObject: AdoptPet?
     var adoptPetObject: AdoptPet?
     override func viewDidLoad() {
@@ -18,8 +17,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         getAdoption()
         petTable.delegate = self
         petTable.dataSource = self
-        searchBar.delegate = self
         self.title = "Adoptable Animals"
+        setUpSearchbar()
     }
 
     func getAdoption() {
@@ -41,6 +40,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    func setUpSearchbar() {
+        let searchbar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTable.bounds.width, height: 65))
+        searchbar.showsScopeBar = true
+        searchbar.scopeButtonTitles = ["Male", "Female", "Dog", "Cat", "Kitten", "Puppy"]
+        searchbar.selectedScopeButtonIndex = 0
+        searchbar.delegate = self
+        self.petTable.tableHeaderView = searchbar
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 

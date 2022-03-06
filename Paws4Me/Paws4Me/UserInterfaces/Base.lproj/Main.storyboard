@@ -650,8 +650,7 @@
                     <navigationItem key="navigationItem" id="Fzn-Yv-Wdb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="petTable" destination="7zP-O0-CIF" id="yrd-eX-Zjy"/>
-                        <outlet property="searchBar" destination="cMg-Ze-QTI" id="tfD-Gk-Pzp"/>
+                        <outlet property="petTable" destination="7zP-O0-CIF" id="oy4-dy-nLR"/>
                         <segue destination="0xD-Ag-OqL" kind="show" identifier="PetSingleDetailsViewController" id="yiS-fU-63f"/>
                     </connections>
                 </viewController>
