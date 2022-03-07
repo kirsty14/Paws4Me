@@ -16,10 +16,10 @@ master ( buid )
 ### :camera_flash: Screenshots
 <table>
   <tr>
-<td><img alt="SignIn"  src="https://user-images.githubusercontent.com/98941706/155850827-3ae3de5b-563f-4d9c-b446-6382b317df4b.png" alt="1" width = 280px height = 500px ></td>
+<td><img alt="SignIn"  src="https://user-images.githubusercontent.com/98941706/156889794-58f622dd-7a44-4133-b4c4-a055f88c401c.png" alt="1" width = 280px height = 500px ></td>
 <td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/155467881-97257790-bc21-42a1-91f0-ae279c393ce6.png" alt="1" width = 280px height = 500px ></td> 
-<td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/155850974-12f233cb-bafa-4741-b685-ea52d17cbb05.png" alt="SinglePet" width = 280px height = 500px ></td> 
-    <td> <img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/155498605-a3557333-e051-4ff6-ad60-ae74c1394acd.png" height = 500px width = 280px  ></td>
+<td><img alt="listAllAnimals"  src="https://user-images.githubusercontent.com/98941706/156932956-948ce5b6-f217-434d-a0a8-50e331f43d78.png" alt="SinglePet" width = 280px height = 500px ></td> 
+    <td> <img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/156874863-427eec15-ca4b-4a08-a0ea-33ebc2204d51.png" height = 500px width = 280px  ></td>
   </tr>
 </table>
 
