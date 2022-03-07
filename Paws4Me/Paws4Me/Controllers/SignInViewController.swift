@@ -14,12 +14,7 @@ protocol borderCustomize {
     func addUnderline(_ textField1: UITextField, _ textField2: UITextField, bottomLine: CALayer, bottomLine2: CALayer)
 }
 
-protocol buttonCustomize {
-func addCornerRadius(_ button: UIButton)
-func changeBorderLook(_ button: UIButton)
-}
-
-class SignInViewController: UIViewController, buttonCustomize, borderCustomize, Validation {
+class SignInViewController: UIViewController, borderCustomize, Validation {
     @IBOutlet weak var txtUsername: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btnSignIn: UIButton!
@@ -29,9 +24,9 @@ class SignInViewController: UIViewController, buttonCustomize, borderCustomize, 
     let bottomLine2 = CALayer()
     override func viewDidLoad() {
         super.viewDidLoad()
-        addCornerRadius(btnSignIn)
-        addCornerRadius(btnRegister)
-        changeBorderLook(btnRegister)
+        btnSignIn.addCornerRadius(btnSignIn)
+        btnSignIn.addCornerRadius(btnRegister)
+        btnSignIn.changeBorderLook(btnRegister)
         addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
     }
     @IBAction private func btnSignInClick(_ sender: UIButton!) {
@@ -95,7 +90,7 @@ extension SignInViewController {
     }
 }
 
-extension SignInViewController {
+extension UIButton {
     func addCornerRadius(_ button: UIButton) {
         button.layer.cornerRadius = 10
     }
