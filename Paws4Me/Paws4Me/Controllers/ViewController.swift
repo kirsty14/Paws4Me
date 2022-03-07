@@ -29,6 +29,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
             case .success(let petData):
                 self?.adoptPetObject = petData
                 self?.filteredPetObject = petData
+                print(petData)
                 self?.petTable.reloadData()
             case .failure(let error):
                 print(error)
