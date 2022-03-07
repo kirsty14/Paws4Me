@@ -31,7 +31,7 @@ struct Page: Codable {
         case animalImage = "pic_url"
         case sex
         case animalSpeciesBreed = "species_breed"
-       }
+    }
 }
 
 struct Center: Codable {
@@ -53,11 +53,11 @@ struct SpeciesBreed: Codable {
     let petSpecies: SpeciesName?
     let petYouthName: YouthName?
     enum CodingKeys: String, CodingKey {
-           case petBreedName = "breed_name"
-           case speciesID = "id"
-           case petSpecies = "species_name"
-           case petYouthName = "youth_name"
-       }
+        case petBreedName = "breed_name"
+        case speciesID = "id"
+        case petSpecies = "species_name"
+        case petYouthName = "youth_name"
+    }
 }
 
 enum SpeciesName: String, Codable {

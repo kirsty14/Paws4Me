@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 class AnimalTableViewCell: UITableViewCell {
-    @IBOutlet weak var imagePetView: UIImageView!
-    @IBOutlet weak var petNameLabel: UILabel!
+    @IBOutlet weak private var imagePetView: UIImageView!
+    @IBOutlet weak private var petNameLabel: UILabel!
     var index = 0
     var pet: AdoptPet! {
         didSet {
@@ -22,7 +22,6 @@ class AnimalTableViewCell: UITableViewCell {
             return
         }
         guard let url = URL(string: pageImage) else { return }
-
         UIImage.loadFrom(url: url) { [self] image in
             self.imagePetView.layer.cornerRadius = 10
             self.imagePetView.image = image

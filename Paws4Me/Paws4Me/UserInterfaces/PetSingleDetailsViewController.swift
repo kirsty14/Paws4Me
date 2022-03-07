@@ -8,36 +8,30 @@
 import UIKit
 
 class PetSingleDetailsViewController: UIViewController {
-
     @IBOutlet weak var petImageView: UIImageView!
     @IBOutlet weak var petName: UILabel!
     @IBOutlet weak var petAge: UILabel!
     @IBOutlet weak var petGender: UILabel!
     @IBOutlet weak var petBreedName: UILabel!
     var singlePet: AdoptPet?
-    var nameOfPet = ""
-    var breedOfPet = ""
-    var genderOfPet = ""
-    var ageOfPet = ""
-    var imagOfPet = ""
+    var namePet = ""
+    var breedPet = ""
+    var genderPet = ""
+    var agePet = ""
+    var imgPet = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        petName.text=nameOfPet
-        petAge.text=ageOfPet
-        petBreedName.text=breedOfPet
-
-        petGender.text=genderOfPet
-        guard let url = URL(string: imagOfPet) else { return }
-
-        UIImage.loadFrom(url: url) { [self] image in
-            self.petImageView.layer.cornerRadius = 10
-            self.petImageView.image = image
+        petName.text = namePet
+        petAge.text = agePet
+        petBreedName.text = breedPet
+        petGender.text = genderPet
+        self.petImageView = UIImage.displayImgFromUrl(url: imgPet, petImageView: self.petImageView)
             view.addSubview(petImageView)
         }
-    }
+
     override func viewWillAppear(_ animated: Bool) {
-            self.navigationController?.navigationBar.isHidden = false
-        }
+        self.navigationController?.navigationBar.isHidden = false
+    }
 }
 
 extension UIImage {
@@ -54,4 +48,13 @@ extension UIImage {
             }
         }
     }
+    public static func displayImgFromUrl(url: String, petImageView: UIImageView)
+    -> UIImageView {
+        guard let url = URL(string: url) else { return UIImageView() }
+        UIImage.loadFrom(url: url) {image in
+            petImageView.layer.cornerRadius = 10
+            petImageView.image = image
+    }
+        return petImageView
+}
 }

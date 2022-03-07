@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
-
     @IBOutlet weak var petTable: UITableView!
     var filteredPetObject: AdoptPet?
     var adoptPetObject: AdoptPet?
@@ -20,7 +19,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
         self.title = "Adoptable Animals"
         setUpSearchbar()
     }
-
     func getAdoption() {
         guard let url = URL(string: Constants.adoptURL) else { fatalError("Missing URL") }
         var request = URLRequest(url: url)
@@ -48,18 +46,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         searchbar.delegate = self
         self.petTable.tableHeaderView = searchbar
     }
-
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-           if let pageCount = filteredPetObject?.page?.count {
-               return pageCount
-           } else {
-             return 0
-           }
-   }
+        if let pageCount = filteredPetObject?.page?.count {
+            return pageCount
+        } else {
+            return 0
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdoptCell") as? AnimalTableViewCell else {
-           return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdoptCell") as? AnimalTableViewCell else {
+            return UITableViewCell()
         }
         let adoptablepet = filteredPetObject
         cell.index = indexPath.row
@@ -68,44 +64,43 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let bgColorView = UIView()
         bgColorView.backgroundColor = UIColor(red: 255/255.0, green: 222/255.0, blue: 193/255.0, alpha: 1)
         cell.selectedBackgroundView = bgColorView
-       return cell
-   }
+        return cell
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PetSingleDetailsViewController {
-            guard let rowIndex = petTable.indexPathForSelectedRow?.row else {return}
-            guard let pageItem = adoptPetObject?.page?[rowIndex] else {return}
+            guard let rowIndex = petTable.indexPathForSelectedRow?.row else { return }
+            guard let pageItem = adoptPetObject?.page?[rowIndex] else { return }
             if let pagePetName = pageItem.name {
-            destination.nameOfPet = pagePetName
+                destination.namePet = pagePetName
             }
             if let pagePetAge = pageItem.age {
-            destination.ageOfPet = pagePetAge
+                destination.agePet = pagePetAge
             }
             if let pageGender = pageItem.sex {
-            destination.genderOfPet = pageGender
+                destination.genderPet = pageGender
             }
             if let pagePetImage = pageItem.animalImage {
-            destination.imagOfPet = pagePetImage
+                destination.imgPet = pagePetImage
             }
             if let pagePetBreed = pageItem.animalSpeciesBreed?.petBreedName {
-            destination.breedOfPet = pagePetBreed
+                destination.breedPet = pagePetBreed
             }
         }
-            }
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filteredPetObject = nil
         if searchText == "" {
             filteredPetObject = adoptPetObject
         } else {
-
             guard let petObject = adoptPetObject else {
                 return
             }
-                if  searchText.lowercased().contains("Female") {
+            if  searchText.lowercased().contains("Female") {
                 filteredPetObject = petObject
-        }
+            }
         }
         self.petTable.reloadData()
     }
