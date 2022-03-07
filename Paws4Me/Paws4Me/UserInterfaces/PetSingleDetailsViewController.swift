@@ -8,11 +8,11 @@
 import UIKit
 
 class PetSingleDetailsViewController: UIViewController {
-    @IBOutlet weak var petImageView: UIImageView!
-    @IBOutlet weak var petName: UILabel!
-    @IBOutlet weak var petAge: UILabel!
-    @IBOutlet weak var petGender: UILabel!
-    @IBOutlet weak var petBreedName: UILabel!
+    @IBOutlet weak private var petImageView: UIImageView!
+    @IBOutlet weak private var petName: UILabel!
+    @IBOutlet weak private var petAge: UILabel!
+    @IBOutlet weak private var petGender: UILabel!
+    @IBOutlet weak private var petBreedName: UILabel!
     var singlePet: AdoptPet?
     var namePet = ""
     var breedPet = ""
@@ -26,9 +26,8 @@ class PetSingleDetailsViewController: UIViewController {
         petBreedName.text = breedPet
         petGender.text = genderPet
         self.petImageView = UIImage.displayImgFromUrl(url: imgPet, petImageView: self.petImageView)
-            view.addSubview(petImageView)
-        }
-
+        view.addSubview(petImageView)
+    }
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
     }
@@ -54,7 +53,7 @@ extension UIImage {
         UIImage.loadFrom(url: url) {image in
             petImageView.layer.cornerRadius = 10
             petImageView.image = image
-    }
+        }
         return petImageView
-}
+    }
 }
