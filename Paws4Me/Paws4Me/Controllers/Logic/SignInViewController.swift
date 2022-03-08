@@ -25,7 +25,7 @@ class SignInViewController: UIViewController, Validation {
         btnSignIn.changeBorderLook(btnRegister)
         addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
     }
-    @IBAction private func signInClick(_ sender: UIButton!) {
+    @IBAction private func signInButtonTapped (_ sender: UIButton!) {
         guard let username = txtUsername.text else { return }
         guard let password = txtPassword.text else { return }
         isLoggedIn = isValidCredentials(username: username, password: password)

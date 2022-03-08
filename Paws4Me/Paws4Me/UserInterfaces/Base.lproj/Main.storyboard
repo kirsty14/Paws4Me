@@ -114,7 +114,7 @@
                                                                     </attributedString>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <action selector="signInClick:" destination="AJP-Uc-Cxw" eventType="touchUpInside" id="4Pn-vj-VTQ"/>
+                                                                    <action selector="signInButtonTapped:" destination="AJP-Uc-Cxw" eventType="touchUpInside" id="R5B-zr-YN3"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gUu-aN-Vo4" userLabel="btnRegister">
