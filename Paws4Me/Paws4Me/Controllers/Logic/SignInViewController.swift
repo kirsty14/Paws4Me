@@ -47,7 +47,7 @@ class SignInViewController: UIViewController, Validation {
             return false
         }
     }
-}
+} 
 
 func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
                         bottomLine: CALayer, bottomLine2: CALayer) {
