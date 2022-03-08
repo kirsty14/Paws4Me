@@ -14,14 +14,14 @@ extension URLSession {
         case invalidUrl
         case invalidData
     }
-    func makeRequest<Generic: Codable>(url: URLRequest?,
+    func makeRequest<Generic: Codable>(url: URL?,
                                        model: Generic.Type,
                                        completion: @escaping (Result<Generic, Error>) -> Void) {
         guard let endpointUrl = url else {
             completion(.failure(CustomError.invalidUrl))
             return
         }
-        let apiTask = self.dataTask(with: endpointUrl as URLRequest) { data, _, error in
+        let apiTask = self.dataTask(with: endpointUrl as URL) { data, _, error in
             guard let safeData = data else {
                 if let error = error {
                     completion(.failure(error))
@@ -41,17 +41,4 @@ extension URLSession {
         }
         apiTask.resume()
     }
-}
-
-private func readLocalFile(forName name: String) -> Data? {
-    do {
-        if let bundlePath = Bundle.main.path(forResource: name,
-                                             ofType: "json"),
-            let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-            return jsonData
-        }
-    } catch {
-        print(error)
-    }
-    return nil
 }

@@ -21,11 +21,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
         setUpSearchbar()
     }
     func getAdoption() {
-        guard let url = URL(string: Constants.adoptURL) else { fatalError("Missing URL") }
+        /*guard let url = URL(string: Constants.adoptURL) else { fatalError("Missing URL") }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
-        URLSession.shared.makeRequest(url: request as URLRequest, model: AdoptPet.self) { [weak self] result in
+        request.addValue("application/json", forHTTPHeaderField: "Accept")*/
+        var urlString = "https://raw.githubusercontent.com/kirsty14/Paws4Me/Api_BackupPlan/Paws4Me/Paws4Me/Utilities/JsonObjct.json"
+        if let request = URL(string: urlString) {
+        URLSession.shared.makeRequest(url: request as URL, model: AdoptPet.self) { [weak self] result in
             switch result {
             case .success(let petData):
                 self?.adoptPetObject = petData
@@ -35,6 +37,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
             case .failure(let error):
                 print(error)
             }
+        }
         }
     }
 }
