@@ -213,21 +213,33 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="93.5" height="106"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="cat" imagePlacement="top" title="Cat"/>
+                                                                <connections>
+                                                                    <action selector="btnCatClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="oSp-GL-Gpn"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-Fo-DxO">
                                                                 <rect key="frame" x="93.5" y="0.0" width="93.5" height="106"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="kitten" imagePlacement="top" title="Kitten"/>
+                                                                <connections>
+                                                                    <action selector="btnKittenClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="3Hd-0B-mDQ"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-1c-xAA">
                                                                 <rect key="frame" x="187" y="0.0" width="93.5" height="106"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="dog" imagePlacement="top" title="Dog"/>
+                                                                <connections>
+                                                                    <action selector="btnDogClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="jZD-zW-Zcg"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Dp-Xxs">
                                                                 <rect key="frame" x="280.5" y="0.0" width="93.5" height="106"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="puppy" imagePlacement="top" title="Puppy"/>
+                                                                <connections>
+                                                                    <action selector="btnPuppyClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="FU5-hd-XzH"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

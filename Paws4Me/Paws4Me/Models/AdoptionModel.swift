@@ -50,8 +50,8 @@ enum AnimalSex: String, Codable {
 struct SpeciesBreed: Codable {
     let petBreedName: String?
     let speciesID: Int?
-    let petSpecies: SpeciesName?
-    let petYouthName: YouthName?
+    let petSpecies: String?
+    let petYouthName: String?
     enum CodingKeys: String, CodingKey {
         case petBreedName = "breed_name"
         case speciesID = "id"
