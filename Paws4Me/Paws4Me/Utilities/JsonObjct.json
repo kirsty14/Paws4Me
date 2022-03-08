@@ -1,0 +1,565 @@
+{
+  "count": 430,
+  "page": [
+    {
+      "age": "",
+      "api_id": 15566011,
+      "center": {
+        "api_id": 91,
+        "city": "Mt. Vernon",
+        "id": 30,
+        "lat": 37.927799224853516,
+        "lon": -87.89839935302734,
+        "name": "Posey Humane Society",
+        "services": "Adoptions,",
+        "state": "IN",
+        "zipcode": "47620"
+      },
+      "color": "",
+      "desc": "<p>IF THE AIMAL YOU ARE APPLYING FOR IS NOT LISTED ON THE WEBSITE PLEASE PICK THIS ONE&nbsp; IN THE COMMENT SECTION YOU CAN TELL US WHAT TYPE OR WHICH ANIMAL YOU ARE LOOKING FOR AND AFTER YOUR APP IS PROCESSED WE WILL CONTACT YOU AS SOON AS POSSIBLE&nbsp; PLEASE ALLOW 24 TO 48 HOURS FOR A RESPONSE&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?15566011\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 140,
+      "name": "The animal i am interested in is not on here",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/91/pictures/animals/15549/15549860/72700788_800x723.jpg",
+      "sex": "",
+      "species_breed": {
+        "api_id": 208,
+        "breed_name": "Terrier",
+        "id": 188,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "",
+      "api_id": 10015514,
+      "center": {
+        "api_id": 70,
+        "city": "Mooresville",
+        "id": 21,
+        "lat": 35.57149887084961,
+        "lon": -80.89600372314453,
+        "name": "Atlantic Rottweiler Rescue Foundation",
+        "services": "Adoptions",
+        "state": "NC",
+        "zipcode": "28117"
+      },
+      "color": "Black and tan",
+      "desc": "<p>I am new to the rescue so my foster mom will update you more after she gets to know me a little better.&nbsp; I am housebroken, up to date on all my vaccines, and microchipped.&nbsp;</p>\n<p>**To complete an application please go to http://www.arrfnc.com/info/adoption</p><img src=\"https://tracker.rescuegroups.org/pet?10015514\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 101,
+      "name": "Eugene",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/70/pictures/animals/10015/10015514/34776014_4032x3024.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 224,
+        "breed_name": "Yorkshire Terrier Yorkie",
+        "id": 204,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Baby",
+      "api_id": 10015525,
+      "center": {
+        "api_id": 70,
+        "city": "Mooresville",
+        "id": 21,
+        "lat": 35.57149887084961,
+        "lon": -80.89600372314453,
+        "name": "Atlantic Rottweiler Rescue Foundation",
+        "services": "Adoptions",
+        "state": "NC",
+        "zipcode": "28117"
+      },
+      "color": "Black/Tan/White",
+      "desc": "<p>I am new to the rescue so my foster mom will update you more after she gets to know me a little better.&nbsp; I am housebroken, up to date on all my vaccines, and microchipped.&nbsp;</p>\n<p>**To complete an application please go to http://www.arrfnc.com/info/adoption</p><img src=\"https://tracker.rescuegroups.org/pet?10015525\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 102,
+      "name": "Harriette",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/70/pictures/animals/10015/10015525/34765764_4032x3024.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 118,
+        "breed_name": "Chihuahua",
+        "id": 98,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Adult",
+      "api_id": 10015539,
+      "center": {
+        "api_id": 70,
+        "city": "Mooresville",
+        "id": 21,
+        "lat": 35.57149887084961,
+        "lon": -80.89600372314453,
+        "name": "Atlantic Rottweiler Rescue Foundation",
+        "services": "Adoptions",
+        "state": "NC",
+        "zipcode": "28117"
+      },
+      "color": "Black/Tan",
+      "desc": "<table class=\"itemtable viewBox\" cellspacing=\"0\" cellpadding=\"0\">\n<tbody>\n<tr>\n<td class=\"title\">&nbsp;</td>\n<td class=\"value\">\n<p>I am new to the rescue so my foster mom will update you more after she gets to know me a little better.&nbsp; I am housebroken, up to date on all my vaccines, and microchipped.&nbsp;</p>\n<p>**To complete an application please go to http://www.arrfnc.com/info/adoption**</p>\n</td>\n</tr>\n</tbody>\n</table><img src=\"https://tracker.rescuegroups.org/pet?10015539\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 103,
+      "name": "Gordy",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/70/pictures/animals/10015/10015539/34743203_3024x4032.jpg",
+      "sex": "",
+      "species_breed": {
+        "api_id": 189,
+        "breed_name": "Rottweiler",
+        "id": 169,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "",
+      "api_id": 1005216,
+      "center": {
+        "api_id": 70,
+        "city": "Mooresville",
+        "id": 21,
+        "lat": 35.57149887084961,
+        "lon": -80.89600372314453,
+        "name": "Atlantic Rottweiler Rescue Foundation",
+        "services": "Adoptions",
+        "state": "NC",
+        "zipcode": "28117"
+      },
+      "color": "black & tan",
+      "desc": "My name is Delilah, and I am furry and sweet and the cutest little Rottweiler mix you have ever laid your eyes on.  I was pulled out of Gaston County animal shelter at the last minute, I was to be euthanized. My owner ended up in jail, so basically, I did too, but then the rescue came and snatched me up at the last minute and now I am safe. <br><br>I have my shots, I am crate trained, I ride really well in the car, and I love to play with all of the other dogs here at the facility.  I would love to have a wonderful home and family to call my own though.  Please come and adopt me.<img src=\"https://tracker.rescuegroups.org/pet?1005216\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 105,
+      "name": "Delilah",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/70/pictures/animals/1005/1005216/2167796_500x332.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 189,
+        "breed_name": "Rottweiler",
+        "id": 169,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Young",
+      "api_id": 10021618,
+      "center": {
+        "api_id": 73,
+        "city": "Grapevine",
+        "id": 23,
+        "lat": 32.934200286865234,
+        "lon": -97.07749938964844,
+        "name": "North Texas Basset Hound Rescue, Inc.",
+        "services": "Vaccinations, spay/neuter, heartworm treatment, microchiping, adoptions",
+        "state": "TX",
+        "zipcode": "76099"
+      },
+      "color": "",
+      "desc": "<p>Mabel Peabody is a sweet girl that loves toys and belly rubs. &nbsp;She is smart and knows several commands. &nbsp;Mabel enjoys playing and walks well on a leach. &nbsp;Mabel is a southern charmer ready for her forever home!</p><img src=\"https://tracker.rescuegroups.org/pet?10021618\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 106,
+      "name": "Mable Peabody",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/73/pictures/animals/10021/10021618/35023760_573x790.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 89,
+        "breed_name": "Basset Hound",
+        "id": 69,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Adult",
+      "api_id": 10037048,
+      "center": {
+        "api_id": 73,
+        "city": "Grapevine",
+        "id": 23,
+        "lat": 32.934200286865234,
+        "lon": -97.07749938964844,
+        "name": "North Texas Basset Hound Rescue, Inc.",
+        "services": "Vaccinations, spay/neuter, heartworm treatment, microchiping, adoptions",
+        "state": "TX",
+        "zipcode": "76099"
+      },
+      "color": "",
+      "desc": "<p>Copper has had a bit of a rough go.&nbsp; He came to us when his owner could no longer keep him and was adopted and came back.&nbsp;&nbsp;&nbsp; He is great with dogs (currently residing with three) &nbsp; He can be very playful, but he also loves his sleep!&nbsp; He is settling into his foster home well and would love to find that last real furever home he deserves.&nbsp;&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?10037048\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 107,
+      "name": "Cooper",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/73/pictures/animals/10037/10037048/50141888_3024x3667.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 89,
+        "breed_name": "Basset Hound",
+        "id": 69,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Adult",
+      "api_id": 10046,
+      "center": {
+        "api_id": 73,
+        "city": "Grapevine",
+        "id": 23,
+        "lat": 32.934200286865234,
+        "lon": -97.07749938964844,
+        "name": "North Texas Basset Hound Rescue, Inc.",
+        "services": "Vaccinations, spay/neuter, heartworm treatment, microchiping, adoptions",
+        "state": "TX",
+        "zipcode": "76099"
+      },
+      "color": "tri-color",
+      "desc": "Rosie is a whole lotta lovin', maxi-sized, a great girl that needs a diet. Gets along with every body likes to speak her mind with  expressive little whines,moans and groans.  She has a lot of personality, tries to lie down \"flat basset\", but is just a bit too roly-poly to really become \"flat\".  She needs some work on housetraining, but understands what the back yard is for. Rosie is on a strict, low-fat, no-treat diet, and will be ready for adoption once she is spayed and completely healed.  She could be the one you have been waiting for!<img src=\"https://tracker.rescuegroups.org/pet?10046\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 108,
+      "name": "Rosie",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/73/pictures/animals/10/10046/15921_350x262.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 89,
+        "breed_name": "Basset Hound",
+        "id": 69,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Adult",
+      "api_id": 10053502,
+      "center": {
+        "api_id": 73,
+        "city": "Grapevine",
+        "id": 23,
+        "lat": 32.934200286865234,
+        "lon": -97.07749938964844,
+        "name": "North Texas Basset Hound Rescue, Inc.",
+        "services": "Vaccinations, spay/neuter, heartworm treatment, microchiping, adoptions",
+        "state": "TX",
+        "zipcode": "76099"
+      },
+      "color": "",
+      "desc": "<p>Jolene, JoJoBean, is a sweetheart!&nbsp; She LOVES cuddling and following her human friends around.&nbsp; She gets along well with her foster siblings but doesn&#39;t enjoy sharing a bed with them (although she will tolerate it with prompting from her humans).&nbsp; Jolene would be a perfect only or second dog for a family that has lots of time to love on her!&nbsp; She is mostly housebroken, with just a few accidents from time to time.&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?10053502\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 109,
+      "name": "Jolene",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/73/pictures/animals/10053/10053502/35023755_564x371.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 89,
+        "breed_name": "Basset Hound",
+        "id": 69,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Baby",
+      "api_id": 10005949,
+      "center": {
+        "api_id": 93,
+        "city": "Hendersonville",
+        "id": 32,
+        "lat": 35.38949966430664,
+        "lon": -82.38089752197266,
+        "name": "It's All About The Cats, Inc",
+        "services": "adoptions",
+        "state": "NC",
+        "zipcode": "28792"
+      },
+      "color": "Brown tabby",
+      "desc": "Found mom and babies abandond in neighborhood.<img src=\"https://tracker.rescuegroups.org/pet?10005949\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 146,
+      "name": "Pixie",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/93/pictures/animals/10005/10005949/34671104_1073x927.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 63,
+        "breed_name": "Tabby",
+        "id": 47,
+        "species_name": "Cat",
+        "youth_name": "Kitten"
+      }
+    },
+    {
+      "age": "Senior",
+      "api_id": 10067967,
+      "center": {
+        "api_id": 73,
+        "city": "Grapevine",
+        "id": 23,
+        "lat": 32.934200286865234,
+        "lon": -97.07749938964844,
+        "name": "North Texas Basset Hound Rescue, Inc.",
+        "services": "Vaccinations, spay/neuter, heartworm treatment, microchiping, adoptions",
+        "state": "TX",
+        "zipcode": "76099"
+      },
+      "color": "",
+      "desc": "<p>\n<span style=\"font-size: 14px;\">\n<span style=\"font-family: tahoma,geneva,sans-serif;\">Shelby is a sophisticated lady with lots of pep in her step. In fact, Shelby is a very energetic senior who loves to walk and explore just like any dog half her age. And like any refined&nbsp;basset hound she knows all the &ldquo;dos&rdquo; and &ldquo;don&rsquo;t&rsquo;s&rdquo; of how to fit in with a loving family. &nbsp;She is gentle and kind, she walks properly on a leash, and she has wonderful manners when socializing with dog and human friends. Shelby would bring laughter and joy in to any home that is willing to give this world class basset the love and affection she so truly deserves!</span>\n</span>\n</p><img src=\"https://tracker.rescuegroups.org/pet?10067967\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 110,
+      "name": "Shelbypeppermint",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/73/pictures/animals/10067/10067967/36882159_529x732.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 89,
+        "breed_name": "Basset Hound",
+        "id": 69,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Adult",
+      "api_id": 1160597,
+      "center": {
+        "api_id": 94,
+        "city": "Mendota",
+        "id": 33,
+        "lat": 41.555999755859375,
+        "lon": -89.07379913330078,
+        "name": "REGAP of Illinois, Inc.",
+        "services": "Adoptions, Rescue",
+        "state": "IL",
+        "zipcode": "61342"
+      },
+      "color": "",
+      "desc": "I NEED A HOME!!! I'm a handsome 2 year old red fawn, cat friendly male. I'm a sweetie! Don't you just LOVE my \"Fuzz Face?\" I would LOVE to be in your home to cuddle with. (Littermate: Fuzz Face Fatso; B-Day: 7/28/06)<img src=\"https://tracker.rescuegroups.org/pet?1160597\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 152,
+      "name": "Brutus",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/94/pictures/animals/1160/1160597/2468455_500x375.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 150,
+        "breed_name": "Greyhound",
+        "id": 130,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "",
+      "api_id": 1027664,
+      "center": {
+        "api_id": 77,
+        "city": "Houston",
+        "id": 24,
+        "lat": 29.763200759887695,
+        "lon": -95.36329650878906,
+        "name": "Happy Cat Adoptions",
+        "services": "Adoptions, TNR, assistance when funds available",
+        "state": "TX",
+        "zipcode": "77241"
+      },
+      "color": "Seal Point",
+      "desc": "She rolls around when she sees you; she cries out for your company, she loves to be cuddled, and she loves to play. Snowball is an ideal companion.<br><br>She was one of many cats who were left behind when their owner died during Hurricane Ike. The cats were left to fend for themselves, and they escaped through an open window to find food in the fields behind the house.<br><br>Snowball is a doll, a Seal Point Siamese with bright blue eyes and beautiful markings. She's a traditional \"applehead\" Siamese mix. <br><br>To meet this doll baby, click the adoption link on her webpage at www.HappyCatAdoptions.org and fill out an online application. We'll arrange a meeting, and you can cuddle that soft fur and scritch that pretty head.<img src=\"https://tracker.rescuegroups.org/pet?1027664\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 111,
+      "name": "Snowball",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/77/pictures/animals/1027/1027664/2213939_350x384.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 59,
+        "breed_name": "Siamese",
+        "id": 43,
+        "species_name": "Cat",
+        "youth_name": "Kitten"
+      }
+    },
+    {
+      "age": "Young",
+      "api_id": 1038035,
+      "center": {
+        "api_id": 77,
+        "city": "Houston",
+        "id": 24,
+        "lat": 29.763200759887695,
+        "lon": -95.36329650878906,
+        "name": "Happy Cat Adoptions",
+        "services": "Adoptions, TNR, assistance when funds available",
+        "state": "TX",
+        "zipcode": "77241"
+      },
+      "color": "Gray \"blue\" short hair",
+      "desc": "<P><SPAN style=\"FONT-SIZE: 10pt\" mce_style=\"font-size: 10pt;\">It's hard to be an energetic kitten and still be cool! But Tinsel manages with ease. He's a gorgeous boy, with soft, \"blue\" (dark gray) fur tinged in silver. He loves to flop on your lap, your bed, or on&nbsp;a kitty tower. <BR><BR>Tinsel is one of those pretty boys you knew in high school, and you think, \"Wow, I bet he's stuck up,\" but then you get to know him, and he's a genuinely nice guy--you just can't say a bad thing about Tinsel. He lives in a house full of adult foster cats, and every one of them accepts him. He's just that kind of guy. Okay, sometimes there is a smack on the head or a snarl when that kittenish energy just overflows onto the ancient adult fur!<BR><BR>Where'd he get his name? Well, he and his brother and sisters were abandoned in a carrier by a dumpster with another litter of kittens--Candy Cane and Gingerbread Manny. These poor babies were just weaned and skinny and full of ringworm. How could we turn away? If they were to go to a shelter, they would have been killed.<BR><BR>When we looked at the calendar to see when they'd be ready for adoption, it was going to be right around Christmas! How could we resist?<BR><BR>Would you like to meet this love bug? Would you like to get to know this ambassador of kitten good will? <BR><BR>Go to his webpage on <A href=\"http://www.happycatadoptions.org/\" mce_href=\"http://www.HappyCatAdoptions.org\">www.HappyCatAdoptions.org</A> and under his photo, click the adoptions link to get to the online application form. Yes, it's long. But it really helps us to make sure we're making a good match. <BR><BR>. <BR><BR>For more information, contact Tinsel's foster dad directly at haroldw1@sbcglobal.net.<BR></SPAN></P><img src=\"https://tracker.rescuegroups.org/pet?1038035\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 112,
+      "name": "Tinsel Toes",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/77/pictures/animals/1038/1038035/2235852_350x383.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 56,
+        "breed_name": "Russian Blue",
+        "id": 40,
+        "species_name": "Cat",
+        "youth_name": "Kitten"
+      }
+    },
+    {
+      "age": "",
+      "api_id": 1038036,
+      "center": {
+        "api_id": 77,
+        "city": "Houston",
+        "id": 24,
+        "lat": 29.763200759887695,
+        "lon": -95.36329650878906,
+        "name": "Happy Cat Adoptions",
+        "services": "Adoptions, TNR, assistance when funds available",
+        "state": "TX",
+        "zipcode": "77241"
+      },
+      "color": "Gray \"blue\" short hair",
+      "desc": "Ahhhh! That's what you'll say when little Silver comes purring up to you with her motor going and her paws waving. She loves to be held, but she loves to play too. And eat. She's a cutey, and just wants a home of her own.<br><br>She and her litter mates were abandoned at a local resale shop, and Happy Cat Adoptions stepped in. Silver is one of the most active of the litter, but also loves to be cuddled like a baby and longs for attention.<br><br>These cuties are up for pre-adoption and should be ready for delivery Dec. 8. Pre-adoption means you can visit, select your new kitten, pay the fee and fill out the contract, but the adoption is not complete until we deliver the baby after the medical is done. They are old enough to be fixed, so you don't have to wait long! <img src=\"https://tracker.rescuegroups.org/pet?1038036\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 113,
+      "name": "Natasha",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/77/pictures/animals/1038/1038036/2754158_500x553.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 56,
+        "breed_name": "Russian Blue",
+        "id": 40,
+        "species_name": "Cat",
+        "youth_name": "Kitten"
+      }
+    },
+    {
+      "age": "Baby",
+      "api_id": 1038037,
+      "center": {
+        "api_id": 77,
+        "city": "Houston",
+        "id": 24,
+        "lat": 29.763200759887695,
+        "lon": -95.36329650878906,
+        "name": "Happy Cat Adoptions",
+        "services": "Adoptions, TNR, assistance when funds available",
+        "state": "TX",
+        "zipcode": "77241"
+      },
+      "color": "Gray \"blue\" short hair",
+      "desc": "Active, active, active...Jack is ready to go, loves attention, and can jump higher than you can! He's a play kitty, a love kitty, and cute as a button to boot. <br><br>Jack and his litter mates were abandoned behind a local resale shop--and Happy Cat Adoptions came to the rescue. There are three solid \"blue\" or gray kittens in the litter, and one blue tabby. <br><br>These cuties are up for pre-adoption and should be ready for delivery Dec. 8. Pre-adoption means you can visit, select your new kitten, pay the fee and fill out the contract, but the adoption is not complete until we deliver the baby after the medical is done. They are old enough to be fixed, so you don't have to wait long! <img src=\"https://tracker.rescuegroups.org/pet?1038037\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 114,
+      "name": "Frosty Jack",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/77/pictures/animals/1038/1038037/2754168_500x392.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 56,
+        "breed_name": "Russian Blue",
+        "id": 40,
+        "species_name": "Cat",
+        "youth_name": "Kitten"
+      }
+    },
+    {
+      "age": "",
+      "api_id": 1038041,
+      "center": {
+        "api_id": 77,
+        "city": "Houston",
+        "id": 24,
+        "lat": 29.763200759887695,
+        "lon": -95.36329650878906,
+        "name": "Happy Cat Adoptions",
+        "services": "Adoptions, TNR, assistance when funds available",
+        "state": "TX",
+        "zipcode": "77241"
+      },
+      "color": "Gray \"blue\" tabby ",
+      "desc": "What a beauty. Little Magic is a gorgeous doll baby in a soft dove-gray coat. Her eyes tell you the story--pick me up, play with me, cuddle me...<br><br>She and her littermates were abandoned behind a local resale store, and Happy Cats stepped in. Magic just longs to have a home of her own, where she can have all the attention in the world.<br>These cuties are up for pre-adoption and should be ready for delivery Dec. 8. Pre-adoption means you can visit, select your new kitten, pay the fee and fill out the contract, but the adoption is not complete until we deliver the baby after the medical is done. They are old enough to be fixed, so you don't have to wait long! <img src=\"https://tracker.rescuegroups.org/pet?1038041\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 115,
+      "name": "Mistletoe Magic",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/77/pictures/animals/1038/1038041/2291040_500x516.jpg",
+      "sex": "Female",
+      "species_breed": {
+        "api_id": 63,
+        "breed_name": "Tabby",
+        "id": 47,
+        "species_name": "Cat",
+        "youth_name": "Kitten"
+      }
+    },
+    {
+      "age": "Young",
+      "api_id": 10014,
+      "center": {
+        "api_id": 81,
+        "city": "Ellicott City",
+        "id": 25,
+        "lat": 39.26729965209961,
+        "lon": -76.79859924316406,
+        "name": "Animal Advocates of Howard County",
+        "services": "",
+        "state": "MD",
+        "zipcode": "21041"
+      },
+      "color": "",
+      "desc": "Dewey is an adult Westie. He is great with kids and likes other dogs and cats.<img src=\"https://tracker.rescuegroups.org/pet?10014\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 116,
+      "name": "1940 - Dewey",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/81/pictures/animals/10/10014/15854_162x162.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 217,
+        "breed_name": "West Highland White Terrier Westie",
+        "id": 197,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Young",
+      "api_id": 10015,
+      "center": {
+        "api_id": 81,
+        "city": "Ellicott City",
+        "id": 25,
+        "lat": 39.26729965209961,
+        "lon": -76.79859924316406,
+        "name": "Animal Advocates of Howard County",
+        "services": "",
+        "state": "MD",
+        "zipcode": "21041"
+      },
+      "color": "",
+      "desc": "Walter is a young adult border collie mix. Come get him out of the cage and all you'll get is love and kisses...<img src=\"https://tracker.rescuegroups.org/pet?10015\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 117,
+      "name": "1947 - Walter",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/81/pictures/animals/10/10015/15855_162x162.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 99,
+        "breed_name": "Border Collie",
+        "id": 79,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    },
+    {
+      "age": "Baby",
+      "api_id": 10023310,
+      "center": {
+        "api_id": 81,
+        "city": "Ellicott City",
+        "id": 25,
+        "lat": 39.26729965209961,
+        "lon": -76.79859924316406,
+        "name": "Animal Advocates of Howard County",
+        "services": "",
+        "state": "MD",
+        "zipcode": "21041"
+      },
+      "color": "",
+      "desc": "<p>Rocky is a 1yr old, neutered male, Hound mix who reminds us of a Transylvania Hound.&nbsp; Rocky is shy and sweet and he is a large dog, weighing 70lbs. He is worried around quick movements and loud things, so he likes people who are calm and will talk sweetly to him.&nbsp; If you do, Rocky will come right over and lick you.&nbsp; Rocky is an affectionate boy and enjoys being rubbed all over. He is curious of squeaky toys, but some of the loud ones scare him too. Come on by and meet this sweet dog. We are still learning more about him.&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?10023310\" width=\"0\" height=\"0\" alt=\"\" />",
+      "id": 118,
+      "name": "21949 - Rocky",
+      "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/81/pictures/animals/10023/10023310/34954417_500x500.jpg",
+      "sex": "Male",
+      "species_breed": {
+        "api_id": 151,
+        "breed_name": "Hound",
+        "id": 131,
+        "species_name": "Dog",
+        "youth_name": "Puppy"
+      }
+    }
+  ]
+}
