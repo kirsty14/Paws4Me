@@ -15,9 +15,9 @@ class SignInViewController: UIViewController, Validation {
     @IBOutlet weak private var txtPassword: UITextField!
     @IBOutlet weak private var btnSignIn: UIButton!
     @IBOutlet weak private var btnRegister: UIButton!
-    var isLoggedIn = false
-    let bottomLine = CALayer()
-    let bottomLine2 = CALayer()
+    private var isLoggedIn = false
+    private let bottomLine = CALayer()
+    private let bottomLine2 = CALayer()
     override func viewDidLoad() {
         super.viewDidLoad()
         btnSignIn.addCornerRadius(btnSignIn)
@@ -25,7 +25,7 @@ class SignInViewController: UIViewController, Validation {
         btnSignIn.changeBorderLook(btnRegister)
         addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
     }
-    @IBAction private func btnSignInClick(_ sender: UIButton!) {
+    @IBAction private func signInClick(_ sender: UIButton!) {
         guard let username = txtUsername.text else { return }
         guard let password = txtPassword.text else { return }
         isLoggedIn = isValidCredentials(username: username, password: password)
@@ -47,7 +47,7 @@ class SignInViewController: UIViewController, Validation {
             return false
         }
     }
-} 
+}
 
 func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
                         bottomLine: CALayer, bottomLine2: CALayer) {

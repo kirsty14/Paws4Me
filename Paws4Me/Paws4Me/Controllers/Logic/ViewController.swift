@@ -10,8 +10,8 @@ import UIKit
 class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak private var petTable: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
-    var filteredPetObject: AdoptPet?
-    var adoptPetObject: AdoptPet?
+    private var filteredPetObject: AdoptPet?
+    private var adoptPetObject: AdoptPet?
     override func viewDidLoad() {
         super.viewDidLoad()
         getAdoption()
