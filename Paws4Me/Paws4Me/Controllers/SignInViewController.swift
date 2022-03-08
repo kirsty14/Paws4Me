@@ -10,16 +10,12 @@ protocol Validation {
     func isValidCredentials(username: String, password: String) -> Bool
 }
 
-protocol borderCustomize {
-    func addUnderline(_ textField1: UITextField, _ textField2: UITextField, bottomLine: CALayer, bottomLine2: CALayer)
-}
-
-class SignInViewController: UIViewController, borderCustomize, Validation {
-    @IBOutlet weak var txtUsername: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
-    @IBOutlet weak var btnSignIn: UIButton!
-    @IBOutlet weak var btnRegister: UIButton!
-    var bLoggedIn = false
+class SignInViewController: UIViewController, Validation {
+    @IBOutlet weak private var txtUsername: UITextField!
+    @IBOutlet weak private var txtPassword: UITextField!
+    @IBOutlet weak private var btnSignIn: UIButton!
+    @IBOutlet weak private var btnRegister: UIButton!
+    var isLoggedIn = false
     let bottomLine = CALayer()
     let bottomLine2 = CALayer()
     override func viewDidLoad() {
@@ -32,16 +28,13 @@ class SignInViewController: UIViewController, borderCustomize, Validation {
     @IBAction private func btnSignInClick(_ sender: UIButton!) {
         guard let username = txtUsername.text else { return }
         guard let password = txtPassword.text else { return }
-        let bValidCredentials = isValidCredentials(username: username, password: password)
+        isLoggedIn = isValidCredentials(username: username, password: password)
         var errorMessage = ""
-    breakIf:
-        if bValidCredentials {
-            // resetBorderBoth(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
+        if isLoggedIn {
             performSegue(withIdentifier: "signInViewController", sender: self)
-        } else if !bValidCredentials {
+        } else if !isLoggedIn {
             errorMessage = "Incorrect Username or Password"
-            addErrorBorderBoth(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
-            break breakIf }
+            addErrorBorderBoth(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2) }
         displayErrorAlert(alertTitle: "Invalid credentials.",
                           alertMessage: errorMessage,
                           alertActionTitle: "Try again" ,
@@ -58,8 +51,8 @@ class SignInViewController: UIViewController, borderCustomize, Validation {
 
 func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
                         bottomLine: CALayer, bottomLine2: CALayer) {
-    bottomLine.backgroundColor = UIColor(named: "primaryError")?.cgColor
-    bottomLine2.backgroundColor = UIColor(named: "primaryError")?.cgColor
+    bottomLine.backgroundColor = UIColor.myAppError.cgColor
+    bottomLine2.backgroundColor = UIColor.myAppError.cgColor
     textField1.layer.addSublayer(bottomLine)
     textField2.layer.addSublayer(bottomLine2)
 }
@@ -81,8 +74,8 @@ extension SignInViewController {
     func addUnderline(_ textField1: UITextField, _ textField2: UITextField, bottomLine: CALayer, bottomLine2: CALayer) {
         bottomLine.frame = CGRect(x: 0, y: textField1.frame.height * 0.8, width: textField1.frame.width, height: 2)
         bottomLine2.frame = CGRect(x: 0, y: textField2.frame.height * 0.8, width: textField2.frame.width, height: 2)
-        bottomLine.backgroundColor = UIColor(named: "primaryPurple")?.cgColor
-        bottomLine2.backgroundColor = UIColor(named: "primaryPurple")?.cgColor
+        bottomLine.backgroundColor = UIColor.myAppPurple.cgColor
+        bottomLine2.backgroundColor =  UIColor.myAppPurple.cgColor
         textField1.borderStyle = .none
         textField2.borderStyle = .none
         textField1.layer.addSublayer(bottomLine)

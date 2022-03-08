@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak private var petTable: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak private var searchBar: UISearchBar!
     var filteredPetObject: AdoptPet?
     var adoptPetObject: AdoptPet?
     override func viewDidLoad() {
@@ -64,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.pet = adoptablepet
         cell.setNeedsLayout()
         let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor(red: 255/255.0, green: 222/255.0, blue: 193/255.0, alpha: 1)
+        bgColorView.backgroundColor = UIColor.myAppTan
         cell.selectedBackgroundView = bgColorView
         return cell
     }

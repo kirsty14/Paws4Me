@@ -22,6 +22,7 @@
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
+		A1C20DE527D7170F007006DC /* styleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C20DE427D7170E007006DC /* styleKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A1C20DE427D7170E007006DC /* styleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			children = (
 				35E7260927B3A442002B86DB /* Main.storyboard */,
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
+				A1C20DE427D7170E007006DC /* styleKit.swift */,
 				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
 				35E7260E27B3A444002B86DB /* LaunchScreen.storyboard */,
 			);
@@ -353,6 +356,7 @@
 				A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */,
 				35E7260427B3A442002B86DB /* AppDelegate.swift in Sources */,
 				35E7262827B3E2BE002B86DB /* AdoptionModel.swift in Sources */,
+				A1C20DE527D7170F007006DC /* styleKit.swift in Sources */,
 				35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
