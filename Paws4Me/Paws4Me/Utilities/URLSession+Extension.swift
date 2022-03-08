@@ -17,28 +17,28 @@ extension URLSession {
     func makeRequest<Generic: Codable>(url: URLRequest?,
                                        model: Generic.Type,
                                        completion: @escaping (Result<Generic, Error>) -> Void) {
-            guard let endpointUrl = url else {
-                completion(.failure(CustomError.invalidUrl))
+        guard let endpointUrl = url else {
+            completion(.failure(CustomError.invalidUrl))
+            return
+        }
+        let apiTask = self.dataTask(with: endpointUrl as URLRequest) { data, _, error in
+            guard let safeData = data else {
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(CustomError.invalidData))
+                }
                 return
             }
-            let apiTask = self.dataTask(with: endpointUrl as URLRequest) { data, _, error in
-                guard let safeData = data else {
-                    if let error = error {
-                        completion(.failure(error))
-                    } else {
-                        completion(.failure(CustomError.invalidData))
-                    }
-                    return
+            do {
+                let result = try JSONDecoder().decode(model.self, from: safeData)
+                DispatchQueue.main.async {
+                    completion(.success(result))
                 }
-                do {
-                    let result = try JSONDecoder().decode(model.self, from: safeData)
-                    DispatchQueue.main.async {
-                        completion(.success(result))
-                    }
-                } catch {
-                    completion(.failure(error))
-                }
+            } catch {
+                completion(.failure(error))
             }
-            apiTask.resume()
+        }
+        apiTask.resume()
     }
 }

@@ -8,33 +8,29 @@
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
-
-    @IBOutlet weak var petTable: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
-    
-    var filteredPetObject: AdoptPet?
-    var adoptPetObject: AdoptPet?
-    
+    @IBOutlet weak private var petTable: UITableView!
+    @IBOutlet weak private var searchBar: UISearchBar!
+    private var filteredPetObject: AdoptPet?
+    private var adoptPetObject: AdoptPet?
     override func viewDidLoad() {
         super.viewDidLoad()
         getAdoption()
         petTable.delegate = self
         petTable.dataSource = self
-        searchBar.delegate = self
+        self.title = "Adoptable Animals"
+        setUpSearchbar()
     }
-
     func getAdoption() {
-        
         guard let url = URL(string: Constants.adoptURL) else { fatalError("Missing URL") }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        
         URLSession.shared.makeRequest(url: request as URLRequest, model: AdoptPet.self) { [weak self] result in
             switch result {
             case .success(let petData):
                 self?.adoptPetObject = petData
                 self?.filteredPetObject = petData
+                print(petData)
                 self?.petTable.reloadData()
             case .failure(let error):
                 print(error)
@@ -44,70 +40,70 @@ class ViewController: UIViewController, UISearchBarDelegate {
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-
+    func setUpSearchbar() {
+        let searchbar = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTable.bounds.width, height: 65))
+        searchbar.showsScopeBar = true
+        searchbar.scopeButtonTitles = ["Male", "Female"]
+        searchbar.selectedScopeButtonIndex = 0
+        searchbar.delegate = self
+        self.petTable.tableHeaderView = searchbar
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-           if let pageCount = filteredPetObject?.page?.count {
-               return pageCount
-           } else {
-             return 0
-           }
-   }
+        if let pageCount = filteredPetObject?.page?.count {
+            return pageCount
+        } else {
+            return 0
+        }
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdoptCell") as? AnimalTableViewCell else {
-           return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdoptCell") as? AnimalTableViewCell else {
+            return UITableViewCell()
         }
         let adoptablepet = filteredPetObject
         cell.index = indexPath.row
         cell.pet = adoptablepet
         cell.setNeedsLayout()
-       return cell
-   }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "showPetSingleDetails", sender: self)
+        let bgColorView = UIView()
+        bgColorView.backgroundColor = UIColor.init(named: "primaryTan")
+        cell.selectedBackgroundView = bgColorView
+        return cell
     }
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if let destination = segue.destination as? PetSingleDetailsViewController {
-            guard let rowIndex = petTable.indexPathForSelectedRow?.row else {return}
-            guard let pageItem = adoptPetObject?.page?[rowIndex] else {return}
-            
+            guard let rowIndex = petTable.indexPathForSelectedRow?.row else { return }
+            guard let pageItem = adoptPetObject?.page?[rowIndex] else { return }
             if let pagePetName = pageItem.name {
-            destination.nameOfPet = pagePetName
+                destination.namePet = pagePetName
             }
             if let pagePetAge = pageItem.age {
-            destination.imagOfPet = pagePetAge
+                destination.agePet = pagePetAge
             }
             if let pageGender = pageItem.sex {
-            destination.genderOfPet = pageGender
+                destination.genderPet = pageGender
             }
             if let pagePetImage = pageItem.animalImage {
-            destination.imagOfPet = pagePetImage
+                destination.imgPet = pagePetImage
             }
             if let pagePetBreed = pageItem.animalSpeciesBreed?.petBreedName {
-            destination.breedOfPet = pagePetBreed
+                destination.breedPet = pagePetBreed
             }
         }
-            }
-    
+    }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         self.filteredPetObject = nil
-       
         if searchText == "" {
             filteredPetObject = adoptPetObject
         } else {
-
             guard let petObject = adoptPetObject else {
                 return
             }
-                if  searchText.lowercased().contains("Female") {
+            if  searchText.lowercased().contains("Female") {
                 filteredPetObject = petObject
+            }
         }
-        }
-        
         self.petTable.reloadData()
     }
 }
