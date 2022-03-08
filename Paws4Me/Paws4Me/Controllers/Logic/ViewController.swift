@@ -21,7 +21,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         setUpSearchbar()
     }
     func getAdoption() {
-        let urlString = "https://raw.githubusercontent.com/kirsty14/Paws4Me/Api_BackupPlan/Paws4Me/Paws4Me/Utilities/JsonObjct.json"
+        let urlString = Constants.adoptURL
         if let request = URL(string: urlString) {
         URLSession.shared.makeRequest(url: request as URL, model: AdoptPet.self) { [weak self] result in
             switch result {
