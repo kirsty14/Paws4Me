@@ -51,8 +51,8 @@ class SignInViewController: UIViewController, Validation {
 
 func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
                         bottomLine: CALayer, bottomLine2: CALayer) {
-    bottomLine.backgroundColor = UIColor.myAppError.cgColor
-    bottomLine2.backgroundColor = UIColor.myAppError.cgColor
+    bottomLine.backgroundColor = UIColor.init(named: "primaryError")?.cgColor
+    bottomLine2.backgroundColor =  UIColor.init(named: "primaryError")?.cgColor
     textField1.layer.addSublayer(bottomLine)
     textField2.layer.addSublayer(bottomLine2)
 }
@@ -67,28 +67,5 @@ extension UIViewController {
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
         alertDelegate.present(alert, animated: true, completion: nil)
-    }
-}
-
-extension SignInViewController {
-    func addUnderline(_ textField1: UITextField, _ textField2: UITextField, bottomLine: CALayer, bottomLine2: CALayer) {
-        bottomLine.frame = CGRect(x: 0, y: textField1.frame.height * 0.8, width: textField1.frame.width, height: 2)
-        bottomLine2.frame = CGRect(x: 0, y: textField2.frame.height * 0.8, width: textField2.frame.width, height: 2)
-        bottomLine.backgroundColor = UIColor.myAppPurple.cgColor
-        bottomLine2.backgroundColor =  UIColor.myAppPurple.cgColor
-        textField1.borderStyle = .none
-        textField2.borderStyle = .none
-        textField1.layer.addSublayer(bottomLine)
-        textField2.layer.addSublayer(bottomLine2)
-    }
-}
-
-extension UIButton {
-    func addCornerRadius(_ button: UIButton) {
-        button.layer.cornerRadius = 10
-    }
-    func changeBorderLook(_ button: UIButton) {
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = UIColor(named: "primaryPurple")?.cgColor
     }
 }

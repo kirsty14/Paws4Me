@@ -64,7 +64,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell.pet = adoptablepet
         cell.setNeedsLayout()
         let bgColorView = UIView()
-        bgColorView.backgroundColor = UIColor.myAppTan
+        bgColorView.backgroundColor = UIColor.init(named: "primaryTan")
         cell.selectedBackgroundView = bgColorView
         return cell
     }

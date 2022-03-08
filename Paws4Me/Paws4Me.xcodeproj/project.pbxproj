@@ -136,8 +136,8 @@
 		35E7261827B3A492002B86DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				35E7260727B3A442002B86DB /* ViewController.swift */,
-				A1821E2B27CA5005009F93A5 /* SignInViewController.swift */,
+				A1C20DEA27D71E30007006DC /* Table Logic */,
+				A1C20DE927D71E0C007006DC /* Logic */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -146,9 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				35E7260927B3A442002B86DB /* Main.storyboard */,
-				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 				A1C20DE427D7170E007006DC /* styleKit.swift */,
-				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
 				35E7260E27B3A444002B86DB /* LaunchScreen.storyboard */,
 			);
 			path = UserInterfaces;
@@ -194,6 +192,24 @@
 				A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */,
 			);
 			path = Paws4MeTests;
+			sourceTree = "<group>";
+		};
+		A1C20DE927D71E0C007006DC /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				35E7260727B3A442002B86DB /* ViewController.swift */,
+				A1821E2B27CA5005009F93A5 /* SignInViewController.swift */,
+				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		A1C20DEA27D71E30007006DC /* Table Logic */ = {
+			isa = PBXGroup;
+			children = (
+				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
+			);
+			path = "Table Logic";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
