@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
+    // MARK: - IBOulets
     @IBOutlet weak private var petTable: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
     @IBAction func btnCatClick(_ sender: UIButton) {
@@ -26,9 +27,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
            let type = sender.titleLabel?.text?.lowercased() ?? ""
            searchPetType(type: type)
        }
+    // MARK: - Vars/Lets
        var searchBarController = UISearchBar()
        var filteredPetObject: AdoptPet?
        var adoptPetObject: AdoptPet?
+    // MARK: - Life cycle
        override func viewDidLoad() {
            super.viewDidLoad()
            getAdoption()
@@ -37,6 +40,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            self.title = "Adoptable Animals"
            setUpSearchbar()
        }
+    // MARK: - Functions
     func getAdoption() {
         let urlString = Constants.adoptURL
         if let request = URL(string: urlString) {

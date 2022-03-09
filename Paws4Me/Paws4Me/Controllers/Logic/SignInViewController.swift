@@ -11,20 +11,11 @@ protocol Validation {
 }
 
 class SignInViewController: UIViewController, Validation {
+    // MARK: - IBOulets
     @IBOutlet weak private var txtUsername: UITextField!
     @IBOutlet weak private var txtPassword: UITextField!
     @IBOutlet weak private var btnSignIn: UIButton!
     @IBOutlet weak private var btnRegister: UIButton!
-    private var isLoggedIn = false
-    private let bottomLine = CALayer()
-    private let bottomLine2 = CALayer()
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        btnSignIn.addCornerRadius(btnSignIn)
-        btnSignIn.addCornerRadius(btnRegister)
-        btnSignIn.changeBorderLook(btnRegister)
-        addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
-    }
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
         guard let username = txtUsername.text else { return }
         guard let password = txtPassword.text else { return }
@@ -40,6 +31,19 @@ class SignInViewController: UIViewController, Validation {
                           alertActionTitle: "Try again" ,
                           alertDelegate: self)
     }
+    // MARK: - Vars/Lets
+    private var isLoggedIn = false
+    private let bottomLine = CALayer()
+    private let bottomLine2 = CALayer()
+    // MARK: - Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        btnSignIn.addCornerRadius(btnSignIn)
+        btnSignIn.addCornerRadius(btnRegister)
+        btnSignIn.changeBorderLook(btnRegister)
+        addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
+    }
+    // MARK: - Functions
     func isValidCredentials(username: String, password: String) -> Bool {
         if username == "Admin" && password == "TestPass123" {
             return true
