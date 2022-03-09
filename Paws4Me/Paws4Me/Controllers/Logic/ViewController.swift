@@ -139,7 +139,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
                }
                if type == "kitten" || type == "puppy" {
                    filteredPetObject?.page = petObject.page?.filter {
-                       $0.age?.lowercased() == "young"}
+                       $0.age?.lowercased() == "young" &&
+                       $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased()}
                    if filteredPetObject == nil {
                        filteredPetObject = adoptPetObject
                    }
