@@ -126,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				35E7262627B3E24A002B86DB /* Models */,
-				A15F7EC327D8918A002B4BCE /* Json Object */,
+				A15F7EC327D8918A002B4BCE /* JsonObject */,
 				35E7261B27B3A4C5002B86DB /* Utilities */,
 				35E7261A27B3A4B2002B86DB /* Resources */,
 				A15F7EB827D88AD8002B4BCE /* Extensions */,
@@ -150,7 +150,7 @@
 		35E7261827B3A492002B86DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A1C20DEA27D71E30007006DC /* Table Cells */,
+				A1C20DEA27D71E30007006DC /* TableCells */,
 				A1C20DE927D71E0C007006DC /* Logic */,
 			);
 			path = Controllers;
@@ -220,12 +220,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A15F7EC327D8918A002B4BCE /* Json Object */ = {
+		A15F7EC327D8918A002B4BCE /* JsonObject */ = {
 			isa = PBXGroup;
 			children = (
 				A1C20DED27D763C1007006DC /* JsonObject.json */,
 			);
-			path = "Json Object";
+			path = JsonObject;
 			sourceTree = "<group>";
 		};
 		A1C20DE927D71E0C007006DC /* Logic */ = {
@@ -238,12 +238,12 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		A1C20DEA27D71E30007006DC /* Table Cells */ = {
+		A1C20DEA27D71E30007006DC /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 			);
-			path = "Table Cells";
+			path = TableCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
