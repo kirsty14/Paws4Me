@@ -2,7 +2,7 @@
   "count": 430,
   "page": [
     {
-      "age": "Adult",
+      "age": "",
       "api_id": 15566011,
       "center": {
         "api_id": 91,
@@ -18,19 +18,19 @@
       "color": "",
       "desc": "<p>IF THE AIMAL YOU ARE APPLYING FOR IS NOT LISTED ON THE WEBSITE PLEASE PICK THIS ONE&nbsp; IN THE COMMENT SECTION YOU CAN TELL US WHAT TYPE OR WHICH ANIMAL YOU ARE LOOKING FOR AND AFTER YOUR APP IS PROCESSED WE WILL CONTACT YOU AS SOON AS POSSIBLE&nbsp; PLEASE ALLOW 24 TO 48 HOURS FOR A RESPONSE&nbsp;</p><img src=\"https://tracker.rescuegroups.org/pet?15566011\" width=\"0\" height=\"0\" alt=\"\" />",
       "id": 140,
-      "name": "Tiger",
+      "name": "The animal i am interested in is not on here",
       "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/91/pictures/animals/15549/15549860/72700788_800x723.jpg",
-      "sex": "Female",
+      "sex": "",
       "species_breed": {
         "api_id": 208,
-        "breed_name": "Tortise shell",
+        "breed_name": "Terrier",
         "id": 188,
-        "species_name": "Cat",
-        "youth_name": "Kitten"
+        "species_name": "Dog",
+        "youth_name": "Puppy"
       }
     },
     {
-      "age": "Adult",
+      "age": "",
       "api_id": 10015514,
       "center": {
         "api_id": 70,
@@ -58,7 +58,7 @@
       }
     },
     {
-      "age": "Young",
+      "age": "Baby",
       "api_id": 10015525,
       "center": {
         "api_id": 70,
@@ -81,7 +81,7 @@
         "api_id": 118,
         "breed_name": "Chihuahua",
         "id": 98,
-        "species_name": "Puppy",
+        "species_name": "Dog",
         "youth_name": "Puppy"
       }
     },
@@ -104,7 +104,7 @@
       "id": 103,
       "name": "Gordy",
       "pic_url": "https://s3.amazonaws.com/filestore.rescuegroups.org/70/pictures/animals/10015/10015539/34743203_3024x4032.jpg",
-      "sex": "Male",
+      "sex": "",
       "species_breed": {
         "api_id": 189,
         "breed_name": "Rottweiler",
@@ -114,7 +114,7 @@
       }
     },
     {
-      "age": "Young",
+      "age": "",
       "api_id": 1005216,
       "center": {
         "api_id": 70,
@@ -135,14 +135,14 @@
       "sex": "Female",
       "species_breed": {
         "api_id": 189,
-        "breed_name": "Mixed breed",
+        "breed_name": "Rottweiler",
         "id": 169,
-        "species_name": "Puppy",
+        "species_name": "Dog",
         "youth_name": "Puppy"
       }
     },
     {
-      "age": "Adult",
+      "age": "Young",
       "api_id": 10021618,
       "center": {
         "api_id": 73,
@@ -254,7 +254,7 @@
       }
     },
     {
-      "age": "Young",
+      "age": "Baby",
       "api_id": 10005949,
       "center": {
         "api_id": 93,
@@ -277,12 +277,12 @@
         "api_id": 63,
         "breed_name": "Tabby",
         "id": 47,
-        "species_name": "Kitten",
+        "species_name": "Cat",
         "youth_name": "Kitten"
       }
     },
     {
-      "age": "Adult",
+      "age": "Senior",
       "api_id": 10067967,
       "center": {
         "api_id": 73,
@@ -310,7 +310,7 @@
       }
     },
     {
-      "age": "Young",
+      "age": "Adult",
       "api_id": 1160597,
       "center": {
         "api_id": 94,
@@ -333,12 +333,12 @@
         "api_id": 150,
         "breed_name": "Greyhound",
         "id": 130,
-        "species_name": "Puppy",
+        "species_name": "Dog",
         "youth_name": "Puppy"
       }
     },
     {
-      "age": "Adult",
+      "age": "",
       "api_id": 1027664,
       "center": {
         "api_id": 77,
@@ -389,12 +389,12 @@
         "api_id": 56,
         "breed_name": "Russian Blue",
         "id": 40,
-        "species_name": "Kitten",
+        "species_name": "Cat",
         "youth_name": "Kitten"
       }
     },
     {
-      "age": "Adult",
+      "age": "",
       "api_id": 1038036,
       "center": {
         "api_id": 77,
@@ -422,7 +422,7 @@
       }
     },
     {
-      "age": "Adult",
+      "age": "Baby",
       "api_id": 1038037,
       "center": {
         "api_id": 77,
@@ -450,7 +450,7 @@
       }
     },
     {
-      "age": "Young",
+      "age": "",
       "api_id": 1038041,
       "center": {
         "api_id": 77,
@@ -473,7 +473,7 @@
         "api_id": 63,
         "breed_name": "Tabby",
         "id": 47,
-        "species_name": "Kitten",
+        "species_name": "Cat",
         "youth_name": "Kitten"
       }
     },
@@ -501,7 +501,7 @@
         "api_id": 217,
         "breed_name": "West Highland White Terrier Westie",
         "id": 197,
-        "species_name": "Puppy",
+        "species_name": "Dog",
         "youth_name": "Puppy"
       }
     },
@@ -529,12 +529,12 @@
         "api_id": 99,
         "breed_name": "Border Collie",
         "id": 79,
-        "species_name": "Puppy",
+        "species_name": "Dog",
         "youth_name": "Puppy"
       }
     },
     {
-      "age": "Adult",
+      "age": "Baby",
       "api_id": 10023310,
       "center": {
         "api_id": 81,
