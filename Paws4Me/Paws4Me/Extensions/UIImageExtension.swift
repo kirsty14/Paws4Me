@@ -26,9 +26,11 @@ extension UIImage {
     -> UIImageView {
         guard let url = URL(string: url) else { return UIImageView() }
         UIImage.loadFrom(url: url) {image in
-            petImageView.layer.cornerRadius = 10
             petImageView.image = image
         }
         return petImageView
+    }
+    public static func addCornerRadiusToImage(petImageView: UIImageView) {
+        petImageView.layer.cornerRadius = 10
     }
 }

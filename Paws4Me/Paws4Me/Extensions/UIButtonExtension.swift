@@ -16,4 +16,8 @@ extension UIButton {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.myAppPurple.cgColor
     }
+    func changePetIconsColor( _ sender: UIButton) {
+        sender.layer.borderColor = UIColor.myAppPurple.cgColor
+        sender.layer.borderWidth = 2
+    }
 }

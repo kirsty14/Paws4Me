@@ -11,38 +11,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var petTable: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
-    @IBAction func btnCatTapped(_ sender: UIButton) {
-           petType = sender.titleLabel?.text?.lowercased() ?? ""
-           sender.layer.borderColor = UIColor.myAppPurple.cgColor
-           sender.layer.borderWidth = 2
-           searchPetType(type: petType)
-       }
-       @IBAction func btnKittenTapped(_ sender: UIButton) {
-           petType = sender.titleLabel?.text?.lowercased() ?? ""
-           sender.layer.borderColor = UIColor.myAppPurple.cgColor
-           sender.layer.borderWidth = 2
-           searchPetType(type: petType)
-       }
-       @IBAction func btnDogTapped(_ sender: UIButton) {
-           petType = sender.titleLabel?.text?.lowercased() ?? ""
-           sender.layer.borderColor = UIColor.myAppPurple.cgColor
-           sender.layer.borderWidth = 2
-           searchPetType(type: petType)
-       }
-       @IBAction func btnPuppyTapped(_ sender: UIButton) {
-           petType = sender.titleLabel?.text?.lowercased() ?? ""
-           sender.layer.borderColor = UIColor.myAppPurple.cgColor
-           sender.layer.borderWidth = 2
-           searchPetType(type: petType)
-       }
     // MARK: - Vars/Lets
-       var searchBarController = UISearchBar()
-       var filteredPetObject: AdoptPet?
-       var adoptPetObject: AdoptPet?
-       var isSingleSearch = false
-       var indexSinglePet: Int?
-       var selectedGender: String = ""
-       var petType = ""
+       private var searchBarController = UISearchBar()
+       private var filteredPetObject: AdoptPet?
+       private var adoptPetObject: AdoptPet?
+       private var isSingleSearch = false
+       private var indexSinglePet: Int?
+       private var selectedGender: String = ""
+       private var petType = ""
     // MARK: - Life cycle
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -52,11 +28,35 @@ class ViewController: UIViewController, UISearchBarDelegate {
            self.title = "Adoptable Animals"
            setUpSearchbar()
        }
+    // MARK: - IBActions
+    @IBAction private func btnCatTapped(_ sender: UIButton) {
+           getPetTypeFromButton(sender)
+           sender.changePetIconsColor(sender)
+           searchPetType(type: petType)
+       }
+       @IBAction private func btnKittenTapped(_ sender: UIButton) {
+           getPetTypeFromButton(sender)
+           sender.changePetIconsColor(sender)
+           searchPetType(type: petType)
+       }
+       @IBAction private func btnDogTapped(_ sender: UIButton) {
+           getPetTypeFromButton(sender)
+           sender.changePetIconsColor(sender)
+           searchPetType(type: petType)
+       }
+       @IBAction private func btnPuppyTapped(_ sender: UIButton) {
+           getPetTypeFromButton(sender)
+           sender.changePetIconsColor(sender)
+           searchPetType(type: petType)
+       }
+    func getPetTypeFromButton(_ sender: UIButton) {
+        petType = sender.titleLabel?.text?.lowercased() ?? ""
+    }
     // MARK: - Functions
     func getAdoption() {
         let urlString = Constants.adoptURL
         if let request = URL(string: urlString) {
-        URLSession.shared.makeRequest(url: request as URL, model: AdoptPet.self) { [weak self] result in
+        URLSession.shared.makeRequest(url: request, model: AdoptPet.self) { [weak self] result in
             switch result {
             case .success(let petData):
                 self?.adoptPetObject = petData
@@ -160,7 +160,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
                    ??  false}
                indexSinglePet =  petObject.page?.firstIndex(
                 where: { $0.name?.lowercased().starts(with: searchText) ??  false })
-               print(filteredPetObject as Any)
                if filteredPetObject == nil {
                    filteredPetObject = adoptPetObject
                }
@@ -194,8 +193,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
            guard adoptPetObject != nil else {
                return
            }
-           let isGenderValid = selectedGender != "" ? true : false
-           let isPetTypeValid = petType != "" ? true : false
+           let isGenderValid = selectedGender != ""
+           let isPetTypeValid = petType != ""
            if isPetTypeValid && isGenderValid {
                filterWithAgeTypeGender(type: petType, gender: selectedGender, petAge: petAge)
            } else if isGenderValid {

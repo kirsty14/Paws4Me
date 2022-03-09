@@ -34,6 +34,19 @@ struct Page: Codable {
     }
 }
 
+enum Sex: String, Codable {
+    case empty = ""
+    case female = "female"
+    case male = "male"
+}
+
+enum SpeciesName: String, Codable {
+    case cat = "Cat"
+    case dog = "Dog"
+    case kitten = "Kitten"
+    case puppy = "Puppy"
+}
+
 struct SpeciesBreed: Codable {
     let petBreedName: String?
     let speciesID: Int?
