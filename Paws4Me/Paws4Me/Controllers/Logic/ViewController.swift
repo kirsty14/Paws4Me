@@ -139,13 +139,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
                }
                if type == "kitten" || type == "puppy" {
                    filteredPetObject?.page = petObject.page?.filter {
-                       $0.age?.lowercased() == "young" &&
-                       $0.animalSpeciesBreed?.petSpecies?.lowercased() == type.lowercased()  }
+                       $0.age?.lowercased() == "young"}
                    if filteredPetObject == nil {
                        filteredPetObject = adoptPetObject
                    }
-               } else {
-                   if type == "cat" || type == "dog" {
+               } else if type == "cat" || type == "dog" {
                        filteredPetObject?.page = petObject.page?.filter {
                            $0.age?.lowercased() == "adult" &&
                            $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased() }
@@ -157,4 +155,3 @@ class ViewController: UIViewController, UISearchBarDelegate {
                }
            }
        }
-   }
