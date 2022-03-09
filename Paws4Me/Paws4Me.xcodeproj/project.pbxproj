@@ -19,10 +19,13 @@
 		A13B57C827C8C0590089839D /* Paws4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C727C8C0590089839D /* Paws4MeUITests.swift */; };
 		A13B57CA27C8C0590089839D /* Paws4MeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */; };
 		A146FA4227C6786300DE4A0F /* Paws4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */; };
+		A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */; };
+		A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */; };
+		A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */; };
+		A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */; };
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
-		A1C20DE527D7170F007006DC /* styleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C20DE427D7170E007006DC /* styleKit.swift */; };
 		A1C20DEE27D763C1007006DC /* JsonObjct.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObjct.json */; };
 /* End PBXBuildFile section */
 
@@ -60,10 +63,13 @@
 		A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A146FA3F27C6786300DE4A0F /* Paws4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Paws4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeTests.swift; sourceTree = "<group>"; };
+		A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheleterCenterModel.swift; sourceTree = "<group>"; };
+		A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtension.swift; sourceTree = "<group>"; };
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		A1C20DE427D7170E007006DC /* styleKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = styleKit.swift; sourceTree = "<group>"; };
 		A1C20DED27D763C1007006DC /* JsonObjct.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObjct.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +124,7 @@
 				35E7262627B3E24A002B86DB /* Models */,
 				35E7261B27B3A4C5002B86DB /* Utilities */,
 				35E7261A27B3A4B2002B86DB /* Resources */,
+				A15F7EB827D88AD8002B4BCE /* Extensions */,
 				35E7261927B3A49E002B86DB /* UserInterfaces */,
 				35E7261827B3A492002B86DB /* Controllers */,
 				35E7261727B3A47E002B86DB /* Config */,
@@ -138,7 +145,7 @@
 		35E7261827B3A492002B86DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A1C20DEA27D71E30007006DC /* Table Logic */,
+				A1C20DEA27D71E30007006DC /* Table Cells */,
 				A1C20DE927D71E0C007006DC /* Logic */,
 			);
 			path = Controllers;
@@ -148,7 +155,6 @@
 			isa = PBXGroup;
 			children = (
 				35E7260927B3A442002B86DB /* Main.storyboard */,
-				A1C20DE427D7170E007006DC /* styleKit.swift */,
 				35E7260E27B3A444002B86DB /* LaunchScreen.storyboard */,
 			);
 			path = UserInterfaces;
@@ -176,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				35E7262727B3E2BE002B86DB /* AdoptionModel.swift */,
+				A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +204,16 @@
 			path = Paws4MeTests;
 			sourceTree = "<group>";
 		};
+		A15F7EB827D88AD8002B4BCE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */,
+				A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */,
+				A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A1C20DE927D71E0C007006DC /* Logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,12 +224,12 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
-		A1C20DEA27D71E30007006DC /* Table Logic */ = {
+		A1C20DEA27D71E30007006DC /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 			);
-			path = "Table Logic";
+			path = "Table Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -376,8 +393,11 @@
 				A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */,
 				35E7260427B3A442002B86DB /* AppDelegate.swift in Sources */,
 				35E7262827B3E2BE002B86DB /* AdoptionModel.swift in Sources */,
-				A1C20DE527D7170F007006DC /* styleKit.swift in Sources */,
+				A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */,
+				A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */,
+				A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */,
 				35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */,
+				A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

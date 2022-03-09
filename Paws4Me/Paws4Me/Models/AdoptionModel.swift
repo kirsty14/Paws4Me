@@ -34,19 +34,6 @@ struct Page: Codable {
     }
 }
 
-struct Center: Codable {
-    let city: String?
-    let id: Int?
-    let lat, lon: Double?
-    let name, services, state, zipcode: String?
-}
-
-enum AnimalSex: String, Codable {
-    case empty=""
-    case female = "Female"
-    case male  =  "Male"
-}
-
 struct SpeciesBreed: Codable {
     let petBreedName: String?
     let speciesID: Int?
@@ -58,14 +45,4 @@ struct SpeciesBreed: Codable {
         case petSpecies = "species_name"
         case petYouthName = "youth_name"
     }
-}
-
-enum SpeciesName: String, Codable {
-    case cat = "Cat"
-    case dog = "Dog"
-}
-
-enum YouthName: String, Codable {
-    case kitten = "Kitten"
-    case puppy = "Puppy"
 }
