@@ -37,6 +37,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            self.title = "Adoptable Animals"
            setUpSearchbar()
        }
+    
     func getAdoption() {
         let urlString = Constants.adoptURL
         if let request = URL(string: urlString) {
