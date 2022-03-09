@@ -385,15 +385,29 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZf-E6-dZy">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV9-S0-e7l">
                                                 <rect key="frame" x="0.0" y="295.5" width="376" height="37"/>
-                                                <color key="backgroundColor" name="PrimaryPurple"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="Adopt" imagePadding="19">
-                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
-                                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZf-E6-dZy">
+                                                        <rect key="frame" x="0.0" y="0.0" width="188" height="37"/>
+                                                        <color key="backgroundColor" name="PrimaryPurple"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="Adopt" imagePadding="19">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byM-Tg-bbP">
+                                                        <rect key="frame" x="188" y="0.0" width="188" height="37"/>
+                                                        <color key="backgroundColor" name="primaryTan"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="folder.circle" catalog="system" title="Adopt" imagePadding="19">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
+                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
                                         </subviews>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
@@ -561,6 +575,7 @@
         <image name="Screenshot 2022-02-25 at 10.59.54" width="826" height="774"/>
         <image name="cat" width="62" height="75"/>
         <image name="dog" width="64" height="64"/>
+        <image name="folder.circle" catalog="system" width="128" height="121"/>
         <image name="kitten" width="66" height="65"/>
         <image name="pawprint.fill" catalog="system" width="128" height="113"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
