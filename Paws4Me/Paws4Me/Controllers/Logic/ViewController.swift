@@ -11,20 +11,28 @@ class ViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var petTable: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
-    @IBAction func btnCatClick(_ sender: UIButton) {
+    @IBAction func btnCatTapped(_ sender: UIButton) {
            petType = sender.titleLabel?.text?.lowercased() ?? ""
+           sender.layer.borderColor = UIColor.myAppPurple.cgColor
+           sender.layer.borderWidth = 2
            searchPetType(type: petType)
        }
-       @IBAction func btnKittenClick(_ sender: UIButton) {
+       @IBAction func btnKittenTapped(_ sender: UIButton) {
            petType = sender.titleLabel?.text?.lowercased() ?? ""
+           sender.layer.borderColor = UIColor.myAppPurple.cgColor
+           sender.layer.borderWidth = 2
            searchPetType(type: petType)
        }
-       @IBAction func btnDogClick(_ sender: UIButton) {
+       @IBAction func btnDogTapped(_ sender: UIButton) {
            petType = sender.titleLabel?.text?.lowercased() ?? ""
+           sender.layer.borderColor = UIColor.myAppPurple.cgColor
+           sender.layer.borderWidth = 2
            searchPetType(type: petType)
        }
-       @IBAction func btnPuppyClick(_ sender: UIButton) {
+       @IBAction func btnPuppyTapped(_ sender: UIButton) {
            petType = sender.titleLabel?.text?.lowercased() ?? ""
+           sender.layer.borderColor = UIColor.myAppPurple.cgColor
+           sender.layer.borderWidth = 2
            searchPetType(type: petType)
        }
     // MARK: - Vars/Lets

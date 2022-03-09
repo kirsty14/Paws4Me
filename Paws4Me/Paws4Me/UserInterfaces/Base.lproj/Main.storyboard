@@ -214,7 +214,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="cat" imagePlacement="top" title="Cat"/>
                                                                 <connections>
-                                                                    <action selector="btnCatClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="oSp-GL-Gpn"/>
+                                                                    <action selector="btnCatTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="OHc-er-BSQ"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-Fo-DxO">
@@ -222,7 +222,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="kitten" imagePlacement="top" title="Kitten"/>
                                                                 <connections>
-                                                                    <action selector="btnKittenClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="3Hd-0B-mDQ"/>
+                                                                    <action selector="btnKittenTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="fQR-Sv-aU6"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-1c-xAA">
@@ -230,7 +230,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="dog" imagePlacement="top" title="Dog"/>
                                                                 <connections>
-                                                                    <action selector="btnDogClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="jZD-zW-Zcg"/>
+                                                                    <action selector="btnDogTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="Iqz-75-p36"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Dp-Xxs">
@@ -238,7 +238,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="puppy" imagePlacement="top" title="Puppy"/>
                                                                 <connections>
-                                                                    <action selector="btnPuppyClick:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="FU5-hd-XzH"/>
+                                                                    <action selector="btnPuppyTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="1fU-np-i1Y"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -366,13 +366,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="VXs-3c-SoY" userLabel="Parent">
-                                <rect key="frame" x="20" y="108" width="376" height="754"/>
+                                <rect key="frame" x="20" y="108" width="374" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WM3-be-WFV" userLabel="Header">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="332.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="332.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Persian+Cat+Facts+History+Personality+and+Care+_+ASPCA+Pet+Health+Insurance+_+white+Persian+cat+resting+on+a+brown+sofa-min" translatesAutoresizingMaskIntoConstraints="NO" id="MPd-cG-cWB">
-                                                <rect key="frame" x="0.0" y="0.0" width="376" height="220"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="220"/>
                                                 <color key="backgroundColor" name="primaryOrange"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="220" id="Bk7-jD-GNs"/>
@@ -380,13 +380,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Sammy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrJ-KP-TGw">
-                                                <rect key="frame" x="0.0" y="244.5" width="376" height="26.5"/>
+                                                <rect key="frame" x="0.0" y="244.5" width="374" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZf-E6-dZy">
-                                                <rect key="frame" x="0.0" y="295.5" width="376" height="37"/>
+                                                <rect key="frame" x="0.0" y="295.5" width="374" height="37"/>
                                                 <color key="backgroundColor" name="PrimaryPurple"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="Adopt" imagePadding="19">
@@ -401,17 +401,17 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oup-7C-iY0" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="351.5" width="376" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="351.5" width="374" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="Ded-1s-ree"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="372" width="376" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="372" width="374" height="100.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pCC-Py-WA2" userLabel="pet1">
-                                                <rect key="frame" x="0.0" y="0.0" width="376" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2uX-br-fDi">
                                                         <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
@@ -421,7 +421,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Breed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Exw-t8-rgh">
-                                                        <rect key="frame" x="31.5" y="0.0" width="344.5" height="21.5"/>
+                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -429,7 +429,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Nk-EU-VXk" userLabel="pet2">
-                                                <rect key="frame" x="0.0" y="39.5" width="376" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="39.5" width="374" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="one-Jo-auE">
                                                         <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
@@ -439,7 +439,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Gender" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZo-S8-XTS">
-                                                        <rect key="frame" x="31.5" y="0.0" width="344.5" height="21.5"/>
+                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -447,7 +447,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fdf-6N-75c" userLabel="pet3">
-                                                <rect key="frame" x="0.0" y="79" width="376" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="79" width="374" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="M0k-kD-bFf">
                                                         <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
@@ -457,7 +457,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Qs-r5-PVv">
-                                                        <rect key="frame" x="31.5" y="0.0" width="344.5" height="21.5"/>
+                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -467,33 +467,33 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehq-ut-Dii" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="491.5" width="376" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="491.5" width="374" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="hl9-Cw-Xm6"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndP-EQ-jZg">
-                                        <rect key="frame" x="0.0" y="512" width="376" height="23"/>
+                                        <rect key="frame" x="0.0" y="512" width="374" height="23"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="SZk-Qo-zri" userLabel="Footer">
-                                        <rect key="frame" x="0.0" y="554" width="376" height="200"/>
+                                        <rect key="frame" x="0.0" y="554" width="374" height="200"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tBX-TX-oDp" userLabel="pet1">
-                                                <rect key="frame" x="0.0" y="0.0" width="177" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="176" height="200"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="YES-fX-0EX">
-                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="VWe-ek-6UH"/>
                                                             <constraint firstAttribute="width" constant="177" id="gOP-G3-9xP"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sparkle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gi-2z-TPF">
-                                                        <rect key="frame" x="0.0" y="100" width="177" height="100"/>
+                                                        <rect key="frame" x="0.0" y="100" width="176" height="100"/>
                                                         <color key="backgroundColor" name="PrimaryTan"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                         <nil key="textColor"/>
@@ -502,17 +502,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eor-FX-8WJ" userLabel="pet2">
-                                                <rect key="frame" x="199" y="0.0" width="177" height="200"/>
+                                                <rect key="frame" x="198" y="0.0" width="176" height="200"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="CmQ-Z9-gTG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="177" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="IdG-uL-e4B"/>
                                                             <constraint firstAttribute="width" constant="177" id="czH-JX-6Yb"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sparkle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xG-hE-2iS">
-                                                        <rect key="frame" x="0.0" y="100" width="177" height="100"/>
+                                                        <rect key="frame" x="0.0" y="100" width="176" height="100"/>
                                                         <color key="backgroundColor" name="PrimaryTan"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                         <nil key="textColor"/>
