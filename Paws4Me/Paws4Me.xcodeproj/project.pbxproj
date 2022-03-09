@@ -28,7 +28,7 @@
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
-		A1C20DEE27D763C1007006DC /* JsonObjct.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObjct.json */; };
+		A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObject.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +74,7 @@
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
-		A1C20DED27D763C1007006DC /* JsonObjct.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObjct.json; sourceTree = "<group>"; };
+		A1C20DED27D763C1007006DC /* JsonObject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObject.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +223,7 @@
 		A15F7EC327D8918A002B4BCE /* Json Object */ = {
 			isa = PBXGroup;
 			children = (
-				A1C20DED27D763C1007006DC /* JsonObjct.json */,
+				A1C20DED27D763C1007006DC /* JsonObject.json */,
 			);
 			path = "Json Object";
 			sourceTree = "<group>";
@@ -353,7 +353,7 @@
 			files = (
 				35E7261027B3A444002B86DB /* LaunchScreen.storyboard in Resources */,
 				35E7260D27B3A444002B86DB /* Assets.xcassets in Resources */,
-				A1C20DEE27D763C1007006DC /* JsonObjct.json in Resources */,
+				A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */,
 				35E7260B27B3A442002B86DB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
