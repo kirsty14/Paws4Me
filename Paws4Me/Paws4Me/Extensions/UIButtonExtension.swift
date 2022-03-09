@@ -16,5 +16,4 @@ extension UIButton {
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.myAppPurple.cgColor
     }
-    
 }
