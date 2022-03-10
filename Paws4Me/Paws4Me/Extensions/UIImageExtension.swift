@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    public func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
+    public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url) {
                 DispatchQueue.main.async {
@@ -22,10 +22,10 @@ extension UIImage {
             }
         }
     }
-    public func displayImgFromUrl(url: String, petImageView: UIImageView)
+    public static func displayImgFromUrl(url: String, petImageView: UIImageView)
     -> UIImageView {
         guard let url = URL(string: url) else { return UIImageView() }
-        loadFrom(url: url) {image in
+        UIImage.loadFrom(url: url) {image in
             petImageView.image = image
         }
         return petImageView
