@@ -17,6 +17,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
        private var filteredPetObject: AdoptPet?
        private var adoptPetObject: AdoptPet?
        private var isSingleSearch = false
+       private var isFilterSearch = true
        private var indexSinglePet: Int?
        private var selectedGender: String = ""
        private var petType = ""
@@ -55,7 +56,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
     // MARK: - Functions
     func getPetTypeFromButton(_ sender: UIButton) {
-        petType = sender.titleLabel?.text?.lowercased() ?? ""
+        petType = sender.titleLabel?.text ?? ""
     }
 
     // MARK: - Receive data from API
@@ -120,7 +121,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
        func getIndexPetSelected() -> Int {
            var indexRow = 0
-           if !isSingleSearch {
+           if !isSingleSearch || !isFilterSearch {
                guard let rowIndex = petTable.indexPathForSelectedRow?.row else { return 0 }
                indexRow = rowIndex
            } else {
@@ -152,6 +153,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            }
        }
 
+       // MARK: - Search
        func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
            if selectedScope == 0 {
                selectedGender = "male"
@@ -172,13 +174,19 @@ class ViewController: UIViewController, UISearchBarDelegate {
                let searchText = searchText.lowercased()
                filteredPetObject?.page = petObject.page?.filter { $0.name?.lowercased().starts(with: searchText)
                    ??  false}
-               indexSinglePet =  petObject.page?.firstIndex(
-                where: { $0.name?.lowercased().starts(with: searchText) ??  false })
+
+               setIndexForSpecificPetName(searchText: searchText, petObject: petObject )
+
                if filteredPetObject == nil {
                    filteredPetObject = adoptPetObject
                }
            }
            self.petTable.reloadData()
+       }
+
+       func setIndexForSpecificPetName (searchText: String, petObject: AdoptPet) {
+           indexSinglePet =  petObject.page?.firstIndex(
+            where: { $0.name?.lowercased().starts(with: searchText) ??  false })
        }
 
        func searchPetType(type: String) {
@@ -197,9 +205,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
        func getAgeFromType(type: String) -> String {
            var petAge = ""
-           if type == "kitten" || type == "puppy" {
+           let petTypeSelected = SpeciesName(rawValue: type)
+
+           switch petTypeSelected {
+           case .kitten, .puppy:
                petAge = "young"
-           } else if type == "cat" || type == "dog" {
+           case .cat, .dog:
+               petAge = "adult"
+           case .none:
                petAge = "adult"
            }
            return petAge
@@ -209,26 +222,34 @@ class ViewController: UIViewController, UISearchBarDelegate {
            guard adoptPetObject != nil else {
                return
            }
+           let petTypeLowercase = petType.lowercased()
            let isGenderValid = selectedGender != ""
            let isPetTypeValid = petType != ""
            if isPetTypeValid && isGenderValid {
-               filterWithAgeTypeGender(type: petType, gender: selectedGender, petAge: petAge)
+               filterWithAgeTypeGender(type: petTypeLowercase, gender: selectedGender, petAge: petAge)
            } else if isGenderValid {
                filterOnlyWithGender()
            } else if isPetTypeValid {
-               filterOnlyWithAgeAndType(type: petType, petAge: petAge)
+               filterOnlyWithAgeAndType(type: petTypeLowercase, petAge: petAge)
            } else {
                filteredPetObject = adoptPetObject
            }
 
        }
 
+       // MARK: - Filter
        func filterOnlyWithGender() {
            guard let petObject = adoptPetObject else {
                return
            }
            filteredPetObject?.page = petObject.page?.filter {
                $0.sex?.lowercased() == selectedGender}
+
+           if filteredPetObject == nil {
+               filteredPetObject = adoptPetObject
+           } else {
+               isFilterSearch = true
+           }
        }
 
        func filterOnlyWithAgeAndType(type: String, petAge: String) {
@@ -238,6 +259,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
            filteredPetObject?.page = petObject.page?.filter {
                $0.age?.lowercased() == petAge &&
                $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased()}
+
+           if filteredPetObject == nil {
+               filteredPetObject = adoptPetObject
+           } else {
+               isFilterSearch = true
+           }
        }
 
        func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
@@ -248,5 +275,11 @@ class ViewController: UIViewController, UISearchBarDelegate {
                $0.age?.lowercased() == petAge &&
                $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased()
                && $0.sex?.lowercased() == gender}
+
+           if filteredPetObject == nil {
+               filteredPetObject = adoptPetObject
+           } else {
+               isFilterSearch = true
+           }
        }
    }
