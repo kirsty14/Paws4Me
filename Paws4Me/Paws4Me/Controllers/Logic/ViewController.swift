@@ -104,20 +104,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
            cell.index = indexPath.row
            cell.pet = adoptablepet
            cell.setNeedsLayout()
-           let bgColorView = UIViewSetBackgroundColor()
-           cell.selectedBackgroundView = bgColorView
+           cell.backgroundColor = UIColor(named: "primaryTan")
            return cell
        }
 
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
        }
-
-       func UIViewSetBackgroundColor() -> UIView {
-              let bgColorView = UIView()
-              bgColorView.backgroundColor = UIColor(named: "primaryTan")
-              return bgColorView
-          }
 
        func getIndexPetSelected() -> Int {
            var indexRow = 0
