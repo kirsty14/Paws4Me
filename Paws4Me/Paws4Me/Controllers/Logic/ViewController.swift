@@ -113,10 +113,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
        }
 
        func UIViewSetBackgroundColor() -> UIView {
-           let bgColorView = UIView()
-           bgColorView.backgroundColor = UIColor(named: "primaryTan")
-           return bgColorView
-       }
+              let bgColorView = UIView()
+              bgColorView.backgroundColor = UIColor(named: "primaryTan")
+              return bgColorView
+          }
 
        func getIndexPetSelected() -> Int {
            var indexRow = 0
