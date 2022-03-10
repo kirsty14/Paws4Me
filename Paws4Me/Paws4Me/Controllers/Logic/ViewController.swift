@@ -11,6 +11,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var petTable: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
+
     // MARK: - Vars/Lets
        private var searchBarController = UISearchBar()
        private var filteredPetObject: AdoptPet?
@@ -19,6 +20,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
        private var indexSinglePet: Int?
        private var selectedGender: String = ""
        private var petType = ""
+
     // MARK: - Life cycle
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -28,6 +30,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            self.title = "Adoptable Animals"
            setUpSearchbar()
        }
+
     // MARK: - IBActions
     @IBAction private func btnCatTapped(_ sender: UIButton) {
            getPetTypeFromButton(sender)
@@ -49,10 +52,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
            sender.changePetIconsColor(sender)
            searchPetType(type: petType)
        }
+
+    // MARK: - Functions
     func getPetTypeFromButton(_ sender: UIButton) {
         petType = sender.titleLabel?.text?.lowercased() ?? ""
     }
-    // MARK: - Functions
+
+    // MARK: - Receive data from API
     func getAdoption() {
         let urlString = Constants.adoptURL
         if let request = URL(string: urlString) {
@@ -79,6 +85,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
            searchBarController.delegate = self
            self.petTable.tableHeaderView = searchBarController
        }
+
+       // MARK: - Tableview
        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            if let pageCount = filteredPetObject?.page?.count {
                return pageCount
@@ -86,6 +94,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                return 0
            }
        }
+
        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdoptCell") as? AnimalTableViewCell else {
                return UITableViewCell()
@@ -98,14 +107,17 @@ class ViewController: UIViewController, UISearchBarDelegate {
            cell.selectedBackgroundView = bgColorView
            return cell
        }
+
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
+       }
+
        func UIViewSetBackgroundColor() -> UIView {
            let bgColorView = UIView()
            bgColorView.backgroundColor = UIColor(named: "primaryTan")
            return bgColorView
        }
-       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
-       }
+
        func getIndexPetSelected() -> Int {
            var indexRow = 0
            if !isSingleSearch {
@@ -139,6 +151,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                }
            }
        }
+
        func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
            if selectedScope == 0 {
                selectedGender = "male"
@@ -147,6 +160,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            }
            searchPetType(type: petType)
        }
+
        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
            if searchText == "" {
                filteredPetObject = adoptPetObject
@@ -166,6 +180,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            }
            self.petTable.reloadData()
        }
+
        func searchPetType(type: String) {
            if type == "" && selectedGender == ""{
                filteredPetObject = adoptPetObject
@@ -179,6 +194,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                    self.petTable.reloadData()
                }
            }
+
        func getAgeFromType(type: String) -> String {
            var petAge = ""
            if type == "kitten" || type == "puppy" {
@@ -206,6 +222,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            }
 
        }
+
        func filterOnlyWithGender() {
            guard let petObject = adoptPetObject else {
                return
@@ -213,6 +230,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            filteredPetObject?.page = petObject.page?.filter {
                $0.sex?.lowercased() == selectedGender}
        }
+
        func filterOnlyWithAgeAndType(type: String, petAge: String) {
            guard let petObject = adoptPetObject else {
                return
@@ -221,6 +239,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                $0.age?.lowercased() == petAge &&
                $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased()}
        }
+
        func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
            guard let petObject = adoptPetObject else {
                return
