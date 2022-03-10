@@ -342,7 +342,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="PrimaryTan"/>
                         <color key="tintColor" name="PrimaryTan"/>
-                        <color key="barTintColor" name="PrimaryTan"/>
+                        <color key="barTintColor" name="primaryPurple"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="25"/>
                             <color key="textColor" name="AccentColor"/>
@@ -401,10 +401,13 @@
                                                         <rect key="frame" x="188" y="0.0" width="188" height="37"/>
                                                         <color key="backgroundColor" name="primaryTan"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="folder.circle" catalog="system" title="Adopt" imagePadding="19">
+                                                        <buttonConfiguration key="configuration" style="plain" image="folder.circle" catalog="system" title="Save" imagePadding="19">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="btnSaveTapped:" destination="HTh-zh-yyk" eventType="touchUpInside" id="lSN-rP-cok"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -560,11 +563,52 @@
                         <outlet property="petGender" destination="LZo-S8-XTS" id="MCD-Rw-Dhm"/>
                         <outlet property="petImageView" destination="MPd-cG-cWB" id="7Rt-NR-3BL"/>
                         <outlet property="petName" destination="LrJ-KP-TGw" id="j3c-cc-PwG"/>
+                        <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="jH8-N2-nS9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbm-Zu-Xi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4058" y="-526"/>
+            <point key="canvasLocation" x="4057" y="-526"/>
+        </scene>
+        <!--Local Pet View Controller-->
+        <scene sceneID="RN7-eJ-lCF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtb-le-2TN" sceneMemberID="firstResponder"/>
+                <viewController modalPresentationStyle="fullScreen" id="4Pu-sg-960" customClass="LocalPetViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="guG-1D-M8c">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-uh-JeI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4Pu-sg-960" id="Ppp-eP-3aI"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="yi7-Bo-PhZ"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hFk-uh-JeI" firstAttribute="trailing" secondItem="yi7-Bo-PhZ" secondAttribute="trailing" id="5Dd-XL-ksI"/>
+                            <constraint firstItem="hFk-uh-JeI" firstAttribute="top" secondItem="yi7-Bo-PhZ" secondAttribute="top" id="EPN-q6-uQC"/>
+                            <constraint firstItem="hFk-uh-JeI" firstAttribute="bottom" secondItem="yi7-Bo-PhZ" secondAttribute="bottom" id="HR4-V7-SOl"/>
+                            <constraint firstItem="hFk-uh-JeI" firstAttribute="leading" secondItem="yi7-Bo-PhZ" secondAttribute="leading" id="fm2-Sr-hvU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DkN-AF-lKt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f73-x9-tIk">
+                            <connections>
+                                <action selector="addName:" destination="4Pu-sg-960" id="elA-p7-XXW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="petNameTableView" destination="hFk-uh-JeI" id="Xnc-4I-5mx"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="4890" y="-526"/>
         </scene>
     </scenes>
     <color key="tintColor" name="primaryPurple"/>

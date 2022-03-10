@@ -16,6 +16,8 @@
 		35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7261C27B3A769002B86DB /* URLSession+Extension.swift */; };
 		35E7262527B3E0D5002B86DB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7262427B3E0D5002B86DB /* Constants.swift */; };
 		35E7262827B3E2BE002B86DB /* AdoptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7262727B3E2BE002B86DB /* AdoptionModel.swift */; };
+		A11745BD27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */; };
+		A11745C427D9DCC2004C0BD9 /* LocalPetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */; };
 		A13B57C827C8C0590089839D /* Paws4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C727C8C0590089839D /* Paws4MeUITests.swift */; };
 		A13B57CA27C8C0590089839D /* Paws4MeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */; };
 		A146FA4227C6786300DE4A0F /* Paws4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */; };
@@ -60,6 +62,8 @@
 		35E7261C27B3A769002B86DB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		35E7262427B3E0D5002B86DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35E7262727B3E2BE002B86DB /* AdoptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionModel.swift; sourceTree = "<group>"; };
+		A11745BC27D9DB2E004C0BD9 /* Paws4Me.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Paws4Me.xcdatamodel; sourceTree = "<group>"; };
+		A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPetNameViewController.swift; sourceTree = "<group>"; };
 		A13B57C527C8C0590089839D /* Paws4MeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Paws4MeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13B57C727C8C0590089839D /* Paws4MeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITests.swift; sourceTree = "<group>"; };
 		A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 		35E725F727B3A442002B86DB = {
 			isa = PBXGroup;
 			children = (
+				A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */,
 				35E7260227B3A442002B86DB /* Paws4Me */,
 				A146FA4027C6786300DE4A0F /* Paws4MeTests */,
 				A13B57C627C8C0590089839D /* Paws4MeUITests */,
@@ -125,6 +130,7 @@
 		35E7260227B3A442002B86DB /* Paws4Me */ = {
 			isa = PBXGroup;
 			children = (
+				A11745BE27D9DC11004C0BD9 /* Data */,
 				35E7262627B3E24A002B86DB /* Models */,
 				A15F7EC327D8918A002B4BCE /* JsonObject */,
 				35E7261B27B3A4C5002B86DB /* Utilities */,
@@ -189,6 +195,14 @@
 				A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A11745BE27D9DC11004C0BD9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		A13B57C627C8C0590089839D /* Paws4MeUITests */ = {
@@ -404,6 +418,7 @@
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
 				35E7260827B3A442002B86DB /* ViewController.swift in Sources */,
+				A11745C427D9DCC2004C0BD9 /* LocalPetNameViewController.swift in Sources */,
 				A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */,
 				A15F7EBE27D88C45002B4BCE /* UIErrorAlertExtension.swift in Sources */,
 				35E7260427B3A442002B86DB /* AppDelegate.swift in Sources */,
@@ -412,6 +427,7 @@
 				A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */,
 				A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */,
 				A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */,
+				A11745BD27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld in Sources */,
 				35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */,
 				A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */,
 			);
@@ -751,6 +767,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A11745BC27D9DB2E004C0BD9 /* Paws4Me.xcdatamodel */,
+			);
+			currentVersion = A11745BC27D9DB2E004C0BD9 /* Paws4Me.xcdatamodel */;
+			path = Paws4Me.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 35E725F827B3A442002B86DB /* Project object */;
 }

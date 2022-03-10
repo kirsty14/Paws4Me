@@ -14,6 +14,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petAge: UILabel!
     @IBOutlet weak private var petGender: UILabel!
     @IBOutlet weak private var petBreedName: UILabel!
+
     // MARK: - Vars/Lets
     var singlePet: AdoptPet?
     var namePet = ""
@@ -21,6 +22,7 @@ class PetSingleDetailsViewController: UIViewController {
     var genderPet = ""
     var agePet = ""
     var imgPet = ""
+
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +33,20 @@ class PetSingleDetailsViewController: UIViewController {
         self.petImageView = UIImage.displayImgFromUrl(url: imgPet, petImageView: self.petImageView)
         view.addSubview(petImageView)
     }
+
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
+    }
+
+    // MARK: - IBAction
+    @IBAction func btnSaveTapped(_ sender: Any) {
+        performSegue(withIdentifier: "LocalPetViewController", sender: self)
+    }
+
+    // MARK: - Functions
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? LocalPetViewController {
+            destination.namePet = namePet
+        }
     }
 }
