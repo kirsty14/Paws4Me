@@ -30,7 +30,7 @@ class PetSingleDetailsViewController: UIViewController {
         petAge.text = agePet
         petBreedName.text = breedPet
         petGender.text = genderPet
-        self.petImageView = UIImage.displayImgFromUrl(url: imgPet, petImageView: self.petImageView)
+        petImageView.load(imageURL: imgPet)
         view.addSubview(petImageView)
     }
 

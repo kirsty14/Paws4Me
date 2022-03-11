@@ -26,8 +26,8 @@ class AnimalTableViewCell: UITableViewCell {
         guard let pageImage = pet?.page?[index].animalImage else {
             return
         }
-        let imageReturnedViewPet = UIImage.displayImgFromUrl(url: pageImage, petImageView: self.imagePetView)
-        UIImage.addCornerRadiusToImage(petImageView: imageReturnedViewPet)
+        imagePetView.load(imageURL: pageImage)
+            self.imagePetView.layer.cornerRadius = 10
         guard let name = pet.page?[index].name else { return }
         petNameLabel.text = name
     }
