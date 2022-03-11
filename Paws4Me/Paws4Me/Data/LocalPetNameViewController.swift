@@ -14,6 +14,7 @@ class LocalPetViewController: UIViewController {
 
     // MARK: - Vars/Lets
     var namePet = ""
+    var imagePet = ""
     var pets: [NSManagedObject] = []
 
     // MARK: - Life cycle
@@ -22,6 +23,7 @@ class LocalPetViewController: UIViewController {
       title = "Saved Pets"
         petNameTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
+
     override func viewWillAppear(_ animated: Bool) {
       super.viewWillAppear(animated)
 
@@ -31,7 +33,6 @@ class LocalPetViewController: UIViewController {
 
       let managedContext = appDelegate.persistentContainer.viewContext
       let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Pet")
-      let nameToSave = namePet
 
       do {
         pets = try managedContext.fetch(fetchRequest)
@@ -39,11 +40,11 @@ class LocalPetViewController: UIViewController {
         print("Could not fetch. \(error), \(error.userInfo)")
       }
 
-       save(name: nameToSave)
+        save(name: namePet, image: imagePet)
        petNameTableView.reloadData()
     }
 
-    func save(name: String) {
+    func save(name: String, image: String) {
       guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
         return
       }
@@ -52,6 +53,7 @@ class LocalPetViewController: UIViewController {
       let entity = NSEntityDescription.entity(forEntityName: "Pet", in: managedContext)!
       let pet = NSManagedObject(entity: entity, insertInto: managedContext)
         pet.setValue(name, forKeyPath: "petName")
+        pet.setValue(imagePet, forKeyPath: "petImage")
 
       do {
         try managedContext.save()
@@ -73,6 +75,8 @@ class LocalPetViewController: UIViewController {
       let pet = pets[indexPath.row]
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
       cell.textLabel?.text = pet.value(forKeyPath: "petName") as? String
+      let imagePetLocal = (pet.value(forKeyPath: "petImage") as? String)!
+        cell.imageView?.load(imageURL: imagePetLocal)
       return cell
     }
       func tableView(_ tableView: UITableView,
@@ -86,6 +90,7 @@ class LocalPetViewController: UIViewController {
 
         if editingStyle == .delete {
             managedContext.delete(pets[indexPath.row])
+            // tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
           do {
             try managedContext.save()
             tableView.reloadData()

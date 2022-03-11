@@ -30,8 +30,7 @@ class PetSingleDetailsViewController: UIViewController {
         petAge.text = agePet
         petBreedName.text = breedPet
         petGender.text = genderPet
-        self.petImageView = UIImage.displayImgFromUrl(url: imgPet, petImageView: self.petImageView)
-        view.addSubview(petImageView)
+        petImageView.load(imageURL: imgPet)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +46,7 @@ class PetSingleDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
             destination.namePet = namePet
+            destination.imagePet = imgPet
         }
     }
 }

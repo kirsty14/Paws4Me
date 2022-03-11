@@ -365,7 +365,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="VXs-3c-SoY" userLabel="Parent">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VXs-3c-SoY" userLabel="Parent">
                                 <rect key="frame" x="20" y="108" width="376" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WM3-be-WFV" userLabel="Header">
@@ -376,7 +376,6 @@
                                                 <color key="backgroundColor" name="primaryOrange"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="220" id="Bk7-jD-GNs"/>
-                                                    <constraint firstAttribute="width" constant="376" id="MFb-Ap-n7C"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Sammy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrJ-KP-TGw">
@@ -418,14 +417,14 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oup-7C-iY0" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="351.5" width="376" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="352.5" width="376" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="Ded-1s-ree"/>
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="372" width="376" height="100.5"/>
+                                        <rect key="frame" x="0.0" y="374" width="376" height="100.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pCC-Py-WA2" userLabel="pet1">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="21.5"/>
@@ -484,14 +483,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehq-ut-Dii" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="491.5" width="376" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="494.5" width="376" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="hl9-Cw-Xm6"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndP-EQ-jZg">
-                                        <rect key="frame" x="0.0" y="512" width="376" height="23"/>
+                                        <rect key="frame" x="0.0" y="516" width="376" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
@@ -573,7 +572,6 @@
         <!--Local Pet View Controller-->
         <scene sceneID="RN7-eJ-lCF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xtb-le-2TN" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="fullScreen" id="4Pu-sg-960" customClass="LocalPetViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="guG-1D-M8c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -607,6 +605,7 @@
                         <outlet property="petNameTableView" destination="hFk-uh-JeI" id="Xnc-4I-5mx"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtb-le-2TN" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4890" y="-526"/>
         </scene>
