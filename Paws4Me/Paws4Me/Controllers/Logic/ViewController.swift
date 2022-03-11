@@ -11,7 +11,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var petTable: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
-
+    @IBOutlet weak var viewControllerTitle: UINavigationItem!
     // MARK: - Vars/Lets
        var searchBarController = UISearchBar()
        var filteredPetObject: AdoptPet?
@@ -27,7 +27,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            getAdoption()
            petTable.delegate = self
            petTable.dataSource = self
-           self.title = "Adoptable Animals"
+           viewControllerTitle.title =  "Adoptable Pets"
            setUpSearchbar()
        }
 
@@ -111,7 +111,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            return bgColorView
        }
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
+            performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
        }
        func getIndexPetSelected() -> Int {
            var indexRow = 0
