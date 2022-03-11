@@ -35,22 +35,22 @@ class ViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBActions
     @IBAction private func btnCatTapped(_ sender: UIButton) {
            getPetTypeFromButton(sender)
-           sender.changePetIconsColor(sender)
+           sender.changePetIconsColor()
            searchPetType(type: petType)
        }
        @IBAction private func btnKittenTapped(_ sender: UIButton) {
            getPetTypeFromButton(sender)
-           sender.changePetIconsColor(sender)
+           sender.changePetIconsColor()
            searchPetType(type: petType)
        }
        @IBAction private func btnDogTapped(_ sender: UIButton) {
            getPetTypeFromButton(sender)
-           sender.changePetIconsColor(sender)
+           sender.changePetIconsColor()
            searchPetType(type: petType)
        }
        @IBAction private func btnPuppyTapped(_ sender: UIButton) {
            getPetTypeFromButton(sender)
-           sender.changePetIconsColor(sender)
+           sender.changePetIconsColor()
            searchPetType(type: petType)
        }
 

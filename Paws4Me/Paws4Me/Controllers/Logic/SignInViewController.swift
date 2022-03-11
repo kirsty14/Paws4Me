@@ -25,9 +25,9 @@ class SignInViewController: UIViewController, Validation {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnSignIn.addCornerRadius(btnSignIn)
-        btnSignIn.addCornerRadius(btnRegister)
-        btnSignIn.changeBorderLook(btnRegister)
+        btnSignIn.addCornerRadius()
+        btnRegister.addCornerRadius()
+        btnRegister.changeBorderLook()
         addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
     }
 
