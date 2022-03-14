@@ -368,10 +368,14 @@
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VXs-3c-SoY" userLabel="Parent">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <rect key="frame" x="20" y="108" width="376" height="705"/>
 =======
                                 <rect key="frame" x="20" y="108" width="376" height="754"/>
 >>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
+=======
+                                <rect key="frame" x="20" y="108" width="376" height="705"/>
+>>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WM3-be-WFV" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="376" height="283.5"/>
@@ -420,15 +424,20 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oup-7C-iY0" userLabel="Sep">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="303.5" width="376" height="1.5"/>
 =======
                                         <rect key="frame" x="0.0" y="352.5" width="376" height="1.5"/>
 >>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
+=======
+                                        <rect key="frame" x="0.0" y="303.5" width="376" height="1.5"/>
+>>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="Ded-1s-ree"/>
                                         </constraints>
                                     </view>
+<<<<<<< HEAD
 <<<<<<< HEAD
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
                                         <rect key="frame" x="0.0" y="325" width="376" height="100.5"/>
@@ -436,6 +445,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
                                         <rect key="frame" x="0.0" y="374" width="376" height="100.5"/>
 >>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
+=======
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
+                                        <rect key="frame" x="0.0" y="325" width="376" height="100.5"/>
+>>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pCC-Py-WA2" userLabel="pet1">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="21.5"/>
@@ -495,10 +508,14 @@
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehq-ut-Dii" userLabel="Sep">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="445.5" width="376" height="1.5"/>
 =======
                                         <rect key="frame" x="0.0" y="494.5" width="376" height="1.5"/>
 >>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
+=======
+                                        <rect key="frame" x="0.0" y="445.5" width="376" height="1.5"/>
+>>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="hl9-Cw-Xm6"/>
@@ -506,10 +523,14 @@
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndP-EQ-jZg">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="467" width="376" height="18"/>
 =======
                                         <rect key="frame" x="0.0" y="516" width="376" height="18"/>
 >>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
+=======
+                                        <rect key="frame" x="0.0" y="467" width="376" height="18"/>
+>>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
@@ -635,7 +656,10 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wRS-r6-N5p"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="NEq-Kf-eT4">
+<<<<<<< HEAD
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+=======
+>>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="AccentColor"/>
                         <color key="selectedImageTintColor" name="primaryOrange"/>
