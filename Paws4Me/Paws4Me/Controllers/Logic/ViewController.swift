@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
-    @IBOutlet weak private var petTable: UITableView!
+    @IBOutlet weak private var petTableView: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
 
     // MARK: - Vars/Lets
@@ -26,8 +26,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
        override func viewDidLoad() {
            super.viewDidLoad()
            getAdoption()
-           petTable.delegate = self
-           petTable.dataSource = self
+           petTableView.delegate = self
+           petTableView.dataSource = self
            self.title = "Adoptable Animals"
            setUpSearchbar()
        }
@@ -68,7 +68,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
             case .success(let petData):
                 self?.adoptPetObject = petData
                 self?.filteredPetObject = petData
-                self?.petTable.reloadData()
+                self?.petTableView.reloadData()
             case .failure(let error):
                 print(error)
             }
@@ -79,12 +79,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
    extension ViewController: UITableViewDelegate, UITableViewDataSource {
        func setUpSearchbar() {
-           searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTable.bounds.width, height: 65))
+           searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTableView.bounds.width, height: 65))
            searchBarController.showsScopeBar = true
            searchBarController.scopeButtonTitles = ["Male", "Female"]
            searchBarController.selectedScopeButtonIndex = 0
            searchBarController.delegate = self
-           self.petTable.tableHeaderView = searchBarController
+           self.petTableView.tableHeaderView = searchBarController
        }
 
        // MARK: - Tableview
@@ -115,7 +115,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
        func getIndexPetSelected() -> Int {
            var indexRow = 0
            if !isSingleSearch || !isFilterSearch {
-               guard let rowIndex = petTable.indexPathForSelectedRow?.row else { return 0 }
+               guard let rowIndex = petTableView.indexPathForSelectedRow?.row else { return 0 }
                indexRow = rowIndex
            } else {
                guard let indexPet = indexSinglePet else { return 0 }
@@ -174,7 +174,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                    filteredPetObject = adoptPetObject
                }
            }
-           self.petTable.reloadData()
+           self.petTableView.reloadData()
        }
 
        func setIndexForSpecificPetName (searchText: String, petObject: AdoptPet) {
@@ -192,7 +192,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                if filteredPetObject == nil {
                    filteredPetObject = adoptPetObject
                }
-                   self.petTable.reloadData()
+                   self.petTableView.reloadData()
                }
            }
 

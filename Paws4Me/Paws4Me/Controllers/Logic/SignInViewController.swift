@@ -12,10 +12,10 @@ protocol Validation {
 
 class SignInViewController: UIViewController, Validation {
     // MARK: - IBOulets
-    @IBOutlet weak private var txtUsername: UITextField!
-    @IBOutlet weak private var txtPassword: UITextField!
-    @IBOutlet weak private var btnSignIn: UIButton!
-    @IBOutlet weak private var btnRegister: UIButton!
+    @IBOutlet weak private var usernameTextField: UITextField!
+    @IBOutlet weak private var passwordTextField: UITextField!
+    @IBOutlet weak private var signInButton: UIButton!
+    @IBOutlet weak private var registerButton: UIButton!
 
     // MARK: - Vars/Lets
     private var isLoggedIn = false
@@ -25,23 +25,23 @@ class SignInViewController: UIViewController, Validation {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        btnSignIn.addCornerRadius()
-        btnRegister.addCornerRadius()
-        btnRegister.changeBorderLook()
-        addUnderline(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2)
+        signInButton.addCornerRadius()
+        registerButton.addCornerRadius()
+        registerButton.changeBorderLook()
+        addUnderline(usernameTextField, passwordTextField, bottomLine: bottomLine, bottomLine2: bottomLine2)
     }
 
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
-        guard let username = txtUsername.text else { return }
-        guard let password = txtPassword.text else { return }
+        guard let username = usernameTextField.text else { return }
+        guard let password = passwordTextField.text else { return }
         isLoggedIn = isValidCredentials(username: username, password: password)
         var errorMessage = ""
         if isLoggedIn {
             performSegue(withIdentifier: "signInViewController", sender: self)
         } else if !isLoggedIn {
             errorMessage = "Incorrect Username or Password"
-            addErrorBorderBoth(txtUsername, txtPassword, bottomLine: bottomLine, bottomLine2: bottomLine2) }
+            addErrorBorderBoth(usernameTextField, passwordTextField, bottomLine: bottomLine, bottomLine2: bottomLine2) }
         displayErrorAlert(alertTitle: "Invalid credentials.",
                           alertMessage: errorMessage,
                           alertActionTitle: "Try again" ,
