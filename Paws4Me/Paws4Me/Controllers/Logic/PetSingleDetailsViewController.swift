@@ -8,52 +8,33 @@
 import UIKit
 
 class PetSingleDetailsViewController: UIViewController {
+    // MARK: - IBOutlets
     @IBOutlet weak private var petImageView: UIImageView!
-    @IBOutlet weak private var petName: UILabel!
-    @IBOutlet weak private var petAge: UILabel!
-    @IBOutlet weak private var petGender: UILabel!
-    @IBOutlet weak private var petBreedName: UILabel!
+    @IBOutlet weak private var petNameLabel: UILabel!
+    @IBOutlet weak private var petAgeLabel: UILabel!
+    @IBOutlet weak private var petGenderLabel: UILabel!
+    @IBOutlet weak private var petBreedNameLabel: UILabel!
+
+    // MARK: - Vars/Lets
     var singlePet: AdoptPet?
     var namePet = ""
     var breedPet = ""
     var genderPet = ""
     var agePet = ""
     var imgPet = ""
+
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        petName.text = namePet
-        petAge.text = agePet
-        petBreedName.text = breedPet
-        petGender.text = genderPet
-        self.petImageView = UIImage.displayImgFromUrl(url: imgPet, petImageView: self.petImageView)
+        petNameLabel.text = namePet
+        petAgeLabel.text = agePet
+        petBreedNameLabel.text = breedPet
+        petGenderLabel.text = genderPet
+        petImageView.load(imageURL: imgPet)
         view.addSubview(petImageView)
     }
+
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.isHidden = false
-    }
-}
-
-extension UIImage {
-    public static func loadFrom(url: URL, completion: @escaping (_ image: UIImage?) -> Void) {
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    completion(UIImage(data: data))
-                }
-            } else {
-                DispatchQueue.main.async {
-                    completion(nil)
-                }
-            }
-        }
-    }
-    public static func displayImgFromUrl(url: String, petImageView: UIImageView)
-    -> UIImageView {
-        guard let url = URL(string: url) else { return UIImageView() }
-        UIImage.loadFrom(url: url) {image in
-            petImageView.layer.cornerRadius = 10
-            petImageView.image = image
-        }
-        return petImageView
     }
 }

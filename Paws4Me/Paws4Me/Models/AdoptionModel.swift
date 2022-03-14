@@ -34,38 +34,28 @@ struct Page: Codable {
     }
 }
 
-struct Center: Codable {
-    let city: String?
-    let id: Int?
-    let lat, lon: Double?
-    let name, services, state, zipcode: String?
+enum Sex: String, Codable {
+    case empty = ""
+    case female = "female"
+    case male = "male"
 }
 
-enum AnimalSex: String, Codable {
-    case empty=""
-    case female = "Female"
-    case male  =  "Male"
+enum SpeciesName: String, Codable {
+    case cat = "Cat"
+    case dog = "Dog"
+    case kitten = "Kitten"
+    case puppy = "Puppy"
 }
 
 struct SpeciesBreed: Codable {
     let petBreedName: String?
     let speciesID: Int?
-    let petSpecies: SpeciesName?
-    let petYouthName: YouthName?
+    let petSpecies: String?
+    let petYouthName: String?
     enum CodingKeys: String, CodingKey {
         case petBreedName = "breed_name"
         case speciesID = "id"
         case petSpecies = "species_name"
         case petYouthName = "youth_name"
     }
-}
-
-enum SpeciesName: String, Codable {
-    case cat = "Cat"
-    case dog = "Dog"
-}
-
-enum YouthName: String, Codable {
-    case kitten = "Kitten"
-    case puppy = "Puppy"
 }
