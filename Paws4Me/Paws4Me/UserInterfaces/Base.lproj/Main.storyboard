@@ -614,6 +614,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wRS-r6-N5p"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="NEq-Kf-eT4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="AccentColor"/>
                         <color key="selectedImageTintColor" name="primaryOrange"/>
