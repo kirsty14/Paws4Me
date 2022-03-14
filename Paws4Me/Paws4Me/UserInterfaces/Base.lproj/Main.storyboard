@@ -657,9 +657,13 @@
                     <navigationItem key="navigationItem" id="wRS-r6-N5p"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="NEq-Kf-eT4">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
 =======
 >>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
+=======
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+>>>>>>> 2148072 (Changed a layout constraint in main.storyboard)
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="AccentColor"/>
                         <color key="selectedImageTintColor" name="primaryOrange"/>
