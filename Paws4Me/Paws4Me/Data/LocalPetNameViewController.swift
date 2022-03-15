@@ -36,8 +36,11 @@ class LocalPetViewController: UIViewController {
 
       do {
         pets = try managedContext.fetch(fetchRequest)
-      } catch let error as NSError {
-          fatalError("Unresolved error \(error), \(error.userInfo)")
+      } catch _ as NSError {
+          displayAlert(alertTitle: "Unable to retreive all your saved pets",
+                             alertMessage: "There was a problem retrieving",
+                             alertActionTitle: "Try again" ,
+                       alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
       }
 
         save(name: namePet, image: imagePet)
@@ -58,8 +61,11 @@ class LocalPetViewController: UIViewController {
       do {
         try managedContext.save()
         pets.append(pet)
-      } catch let error as NSError {
-          fatalError("Unresolved error \(error), \(error.userInfo)")
+      } catch _ as NSError {
+          displayAlert(alertTitle: "Unable to save \(namePet)",
+                             alertMessage: "There was a problem saving",
+                             alertActionTitle: "Try again" ,
+                       alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
       }
     }
   }
@@ -93,8 +99,11 @@ class LocalPetViewController: UIViewController {
           do {
             try managedContext.save()
             tableView.reloadData()
-          } catch let error as NSError {
-              fatalError("Unresolved error \(error), \(error.userInfo)")
+          } catch _ as NSError {
+              displayAlert(alertTitle: "Unable to delete)",
+                                 alertMessage: "There was a problem deleting this pet",
+                                 alertActionTitle: "Try again" ,
+                           alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
           }
         }
       }

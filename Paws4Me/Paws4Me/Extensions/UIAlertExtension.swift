@@ -11,6 +11,7 @@ enum TypeError {
     case informationAlert
     case errorAlert
     case confirmationAlert
+    case fatalLocalDatabaseAlert
 }
 
 extension UIViewController {
@@ -39,7 +40,13 @@ extension UIViewController {
             alertConfirm.addAction(okActionButton)
             alertConfirm.addAction(cancelActionButton)
             present(alertConfirm, animated: true, completion: nil)
+        case .fatalLocalDatabaseAlert:
+            let alertLocalDatabaseError = setUpBasicAlertStructure(alertTitle: alertTitle, alertMessage: alertMessage)
+            alertLocalDatabaseError.addAction(UIAlertAction(title: alertActionTitle,
+                                               style: UIAlertAction.Style.default, handler: nil))
+            alertDelegate.present(alertLocalDatabaseError, animated: true, completion: nil)
         }
+
     }
 
     func setUpBasicAlertStructure(alertTitle: String, alertMessage: String ) -> UIAlertController {
