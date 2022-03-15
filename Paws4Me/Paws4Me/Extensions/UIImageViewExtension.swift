@@ -1,10 +1,9 @@
 //
-//  UIImageViewExtension.swift
+//  UIImageExtension.swift
 //  Paws4Me
 //
-//  Created by Kirsty-Lee Walker on 2022/03/11.
+//  Created by Kirsty-Lee Walker on 2022/03/09.
 //
-
 import Foundation
 import UIKit
 

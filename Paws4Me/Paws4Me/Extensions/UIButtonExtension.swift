@@ -9,11 +9,15 @@ import Foundation
 import UIKit
 
 extension UIButton {
-    func addCornerRadius(_ button: UIButton) {
-        button.layer.cornerRadius = 10
+    func addCornerRadius() {
+        self.layer.cornerRadius = 10
     }
-    func changeBorderLook(_ button: UIButton) {
-        button.layer.borderWidth = 1.0
-        button.layer.borderColor = UIColor.myAppPurple.cgColor
+    func changeBorderLook() {
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.myAppPurple.cgColor
+    }
+    func changePetIconsColor() {
+        self.layer.borderColor = UIColor.myAppPurple.cgColor
+        self.layer.borderWidth = 2
     }
 }

@@ -161,10 +161,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="WGc-dn-NVn"/>
                     <connections>
-                        <outlet property="btnRegister" destination="gUu-aN-Vo4" id="rSY-7z-iR9"/>
-                        <outlet property="btnSignIn" destination="KuT-9E-35H" id="HIm-XY-DEa"/>
-                        <outlet property="txtPassword" destination="FOm-UU-3Hi" id="AdN-qV-Nuh"/>
-                        <outlet property="txtUsername" destination="B8L-o6-c62" id="nMo-li-LEx"/>
+                        <outlet property="passwordTextField" destination="FOm-UU-3Hi" id="AdN-qV-Nuh"/>
+                        <outlet property="registerButton" destination="gUu-aN-Vo4" id="rSY-7z-iR9"/>
+                        <outlet property="signInButton" destination="KuT-9E-35H" id="HIm-XY-DEa"/>
+                        <outlet property="usernameTextField" destination="B8L-o6-c62" id="nMo-li-LEx"/>
                         <segue destination="WBy-qu-tm7" kind="show" identifier="signInViewController" id="h5y-G7-qBb"/>
                     </connections>
                 </viewController>
@@ -323,9 +323,8 @@
                     <navigationItem key="navigationItem" id="Fzn-Yv-Wdb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="petTable" destination="7zP-O0-CIF" id="yrd-eX-Zjy"/>
+                        <outlet property="petTableView" destination="7zP-O0-CIF" id="yrd-eX-Zjy"/>
                         <outlet property="searchBar" destination="cMg-Ze-QTI" id="Vo2-Ii-Kmz"/>
-                        <outlet property="viewControllerTitle" destination="Fzn-Yv-Wdb" id="CZK-DR-HP8"/>
                         <segue destination="HTh-zh-yyk" kind="show" identifier="PetSingleDetailsViewController" id="Ygf-7e-JgO"/>
                     </connections>
                 </viewController>
@@ -367,15 +366,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VXs-3c-SoY" userLabel="Parent">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <rect key="frame" x="20" y="108" width="376" height="705"/>
-=======
-                                <rect key="frame" x="20" y="108" width="376" height="754"/>
->>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
-=======
-                                <rect key="frame" x="20" y="108" width="376" height="705"/>
->>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="WM3-be-WFV" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="376" height="283.5"/>
@@ -423,32 +414,14 @@
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oup-7C-iY0" userLabel="Sep">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="303.5" width="376" height="1.5"/>
-=======
-                                        <rect key="frame" x="0.0" y="352.5" width="376" height="1.5"/>
->>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
-=======
-                                        <rect key="frame" x="0.0" y="303.5" width="376" height="1.5"/>
->>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="Ded-1s-ree"/>
                                         </constraints>
                                     </view>
-<<<<<<< HEAD
-<<<<<<< HEAD
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
                                         <rect key="frame" x="0.0" y="325" width="376" height="100.5"/>
-=======
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="374" width="376" height="100.5"/>
->>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
-=======
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="YOd-lq-h9f" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="325" width="376" height="100.5"/>
->>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pCC-Py-WA2" userLabel="pet1">
                                                 <rect key="frame" x="0.0" y="0.0" width="376" height="21.5"/>
@@ -507,30 +480,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ehq-ut-Dii" userLabel="Sep">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="445.5" width="376" height="1.5"/>
-=======
-                                        <rect key="frame" x="0.0" y="494.5" width="376" height="1.5"/>
->>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
-=======
-                                        <rect key="frame" x="0.0" y="445.5" width="376" height="1.5"/>
->>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="hl9-Cw-Xm6"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndP-EQ-jZg">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="467" width="376" height="18"/>
-=======
-                                        <rect key="frame" x="0.0" y="516" width="376" height="18"/>
->>>>>>> 5ba0a54 (I have refined the way I download images by only calling it in one extension)
-=======
-                                        <rect key="frame" x="0.0" y="467" width="376" height="18"/>
->>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" systemColor="linkColor"/>
                                         <nil key="highlightedColor"/>
@@ -597,11 +554,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="petAge" destination="9Qs-r5-PVv" id="5Je-R3-f7s"/>
-                        <outlet property="petBreedName" destination="Exw-t8-rgh" id="1MY-bK-tEl"/>
-                        <outlet property="petGender" destination="LZo-S8-XTS" id="MCD-Rw-Dhm"/>
+                        <outlet property="petAgeLabel" destination="9Qs-r5-PVv" id="5Je-R3-f7s"/>
+                        <outlet property="petBreedNameLabel" destination="Exw-t8-rgh" id="1MY-bK-tEl"/>
+                        <outlet property="petGenderLabel" destination="LZo-S8-XTS" id="MCD-Rw-Dhm"/>
                         <outlet property="petImageView" destination="MPd-cG-cWB" id="7Rt-NR-3BL"/>
-                        <outlet property="petName" destination="LrJ-KP-TGw" id="j3c-cc-PwG"/>
+                        <outlet property="petNameLabel" destination="LrJ-KP-TGw" id="j3c-cc-PwG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbm-Zu-Xi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -656,14 +613,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="wRS-r6-N5p"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="NEq-Kf-eT4">
-<<<<<<< HEAD
-<<<<<<< HEAD
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-=======
->>>>>>> c72831e (I have added in a tab controller for the all pets page as well as the favourites page)
-=======
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
->>>>>>> 2148072 (Changed a layout constraint in main.storyboard)
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="AccentColor"/>
                         <color key="selectedImageTintColor" name="primaryOrange"/>
