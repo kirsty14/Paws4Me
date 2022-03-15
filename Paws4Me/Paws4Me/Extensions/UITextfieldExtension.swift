@@ -18,3 +18,11 @@ func addUnderline(_ textField1: UITextField, _ textField2: UITextField, bottomLi
     textField1.layer.addSublayer(bottomLine)
     textField2.layer.addSublayer(bottomLine2)
 }
+
+func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
+                        bottomLine: CALayer, bottomLine2: CALayer) {
+    bottomLine.backgroundColor = UIColor.myAppError.cgColor
+    bottomLine2.backgroundColor = UIColor.myAppError.cgColor
+    textField1.layer.addSublayer(bottomLine)
+    textField2.layer.addSublayer(bottomLine2)
+}

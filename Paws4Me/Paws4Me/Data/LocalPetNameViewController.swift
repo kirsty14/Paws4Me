@@ -37,7 +37,7 @@ class LocalPetViewController: UIViewController {
       do {
         pets = try managedContext.fetch(fetchRequest)
       } catch let error as NSError {
-        print("Could not fetch. \(error), \(error.userInfo)")
+          fatalError("Unresolved error \(error), \(error.userInfo)")
       }
 
         save(name: namePet, image: imagePet)
@@ -59,7 +59,7 @@ class LocalPetViewController: UIViewController {
         try managedContext.save()
         pets.append(pet)
       } catch let error as NSError {
-        print("Could not save. \(error), \(error.userInfo)")
+          fatalError("Unresolved error \(error), \(error.userInfo)")
       }
     }
   }
@@ -75,8 +75,8 @@ class LocalPetViewController: UIViewController {
       let pet = pets[indexPath.row]
       let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
       cell.textLabel?.text = pet.value(forKeyPath: "petName") as? String
-      let imagePetLocal = (pet.value(forKeyPath: "petImage") as? String)!
-        cell.imageView?.load(imageURL: imagePetLocal)
+        guard let imagePetLocal = (pet.value(forKeyPath: "petImage") as? String) else { return UITableViewCell() }
+        cell.imageView?.loadImageFromURL(imageURL: imagePetLocal)
       return cell
     }
       func tableView(_ tableView: UITableView,
@@ -90,12 +90,11 @@ class LocalPetViewController: UIViewController {
 
         if editingStyle == .delete {
             managedContext.delete(pets[indexPath.row])
-            // tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
           do {
             try managedContext.save()
             tableView.reloadData()
           } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
+              fatalError("Unresolved error \(error), \(error.userInfo)")
           }
         }
       }

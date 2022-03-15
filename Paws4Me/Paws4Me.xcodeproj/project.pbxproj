@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		35E7260427B3A442002B86DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7260327B3A442002B86DB /* AppDelegate.swift */; };
 		35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7260527B3A442002B86DB /* SceneDelegate.swift */; };
-		35E7260827B3A442002B86DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7260727B3A442002B86DB /* ViewController.swift */; };
+		35E7260827B3A442002B86DB /* AllPetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E7260727B3A442002B86DB /* AllPetDetailViewController.swift */; };
 		35E7260B27B3A442002B86DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E7260927B3A442002B86DB /* Main.storyboard */; };
 		35E7260D27B3A444002B86DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35E7260C27B3A444002B86DB /* Assets.xcassets */; };
 		35E7261027B3A444002B86DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35E7260E27B3A444002B86DB /* LaunchScreen.storyboard */; };
@@ -28,12 +28,11 @@
 		A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */; };
 		A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */; };
 		A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */; };
-		A15F7EC027D88CAA002B4BCE /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EBF27D88CAA002B4BCE /* UIImageViewExtension.swift */; };
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
 		A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObject.json */; };
-		A1EEC3D227E0A25300E94FC2 /* UIErrorAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D127E0A25300E94FC2 /* UIErrorAlertExtension.swift */; };
+		A1EEC3D427E0B29E00E94FC2 /* UIAlertErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D327E0B29E00E94FC2 /* UIAlertErrorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +56,7 @@
 		35E7260027B3A442002B86DB /* Paws4Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paws4Me.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E7260327B3A442002B86DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35E7260527B3A442002B86DB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		35E7260727B3A442002B86DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		35E7260727B3A442002B86DB /* AllPetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPetDetailViewController.swift; sourceTree = "<group>"; };
 		35E7260A27B3A442002B86DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35E7260C27B3A444002B86DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35E7260F27B3A444002B86DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,13 +78,11 @@
 		A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtension.swift; sourceTree = "<group>"; };
-		A15F7EBD27D88C45002B4BCE /* UIErrorAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIErrorAlertExtension.swift; sourceTree = "<group>"; };
-		A15F7EBF27D88CAA002B4BCE /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A1C20DED27D763C1007006DC /* JsonObject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObject.json; sourceTree = "<group>"; };
-		A1EEC3D127E0A25300E94FC2 /* UIErrorAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIErrorAlertExtension.swift; sourceTree = "<group>"; };
+		A1EEC3D327E0B29E00E94FC2 /* UIAlertErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertErrorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,9 +233,7 @@
 			children = (
 				A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */,
 				A11499EB27DB300800626FC5 /* UIImageViewExtension.swift */,
-				A15F7EBF27D88CAA002B4BCE /* UIImageViewExtension.swift */,
-				A15F7EBD27D88C45002B4BCE /* UIErrorAlertExtension.swift */,
-				A1EEC3D127E0A25300E94FC2 /* UIErrorAlertExtension.swift */,
+				A1EEC3D327E0B29E00E94FC2 /* UIAlertErrorExtension.swift */,
 				A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */,
 				A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */,
 			);
@@ -256,7 +251,7 @@
 		A1C20DE927D71E0C007006DC /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				35E7260727B3A442002B86DB /* ViewController.swift */,
+				35E7260727B3A442002B86DB /* AllPetDetailViewController.swift */,
 				A1821E2B27CA5005009F93A5 /* SignInViewController.swift */,
 				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
 			);
@@ -427,21 +422,20 @@
 				35E7262527B3E0D5002B86DB /* Constants.swift in Sources */,
 				A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */,
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
-				A1EEC3D227E0A25300E94FC2 /* UIErrorAlertExtension.swift in Sources */,
 				A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
-				35E7260827B3A442002B86DB /* ViewController.swift in Sources */,
+				35E7260827B3A442002B86DB /* AllPetDetailViewController.swift in Sources */,
 				A11745C427D9DCC2004C0BD9 /* LocalPetNameViewController.swift in Sources */,
 				A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */,
 				A11499E827DB1AC900626FC5 /* PetName+CoreDataClass.swift in Sources */,
 				35E7260427B3A442002B86DB /* AppDelegate.swift in Sources */,
-				A15F7EC027D88CAA002B4BCE /* UIImageViewExtension.swift in Sources */,
 				35E7262827B3E2BE002B86DB /* AdoptionModel.swift in Sources */,
 				A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */,
 				A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */,
 				A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */,
 				A11745BD27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld in Sources */,
 				35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */,
+				A1EEC3D427E0B29E00E94FC2 /* UIAlertErrorExtension.swift in Sources */,
 				A11499E927DB1AC900626FC5 /* PetName+CoreDataProperties.swift in Sources */,
 				A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */,
 			);

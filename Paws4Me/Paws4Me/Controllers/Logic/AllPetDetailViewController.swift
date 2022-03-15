@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var petTableView: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
@@ -76,10 +76,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
 }
 
-   extension ViewController: UITableViewDelegate, UITableViewDataSource {
+   extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource {
        func setUpSearchbar() {
-           searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTableView.bounds.width,
-                                                           height: 65))
+           searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0,
+                                                           width: self.petTableView.bounds.width, height: 65))
            searchBarController.showsScopeBar = true
            searchBarController.scopeButtonTitles = ["Male", "Female"]
            searchBarController.selectedScopeButtonIndex = 0
@@ -104,7 +104,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
            cell.index = indexPath.row
            cell.pet = adoptablepet
            cell.setNeedsLayout()
-           cell.backgroundColor = UIColor(named: "primaryTan")
+           cell.backgroundColor = UIColor.myAppTan
            return cell
        }
 
@@ -186,11 +186,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
            if type == "" && selectedGender == ""{
                filteredPetObject = adoptPetObject
            } else {
-               guard adoptPetObject != nil else { return }
+               guard let petObject = adoptPetObject else {
+                   return
+               }
                let petAge = getAgeFromType(type: type)
                searchPet(type: type, gender: selectedGender, petAge: petAge)
                if filteredPetObject == nil {
-                   filteredPetObject = adoptPetObject
+                   filteredPetObject = petObject
                }
                    self.petTableView.reloadData()
                }

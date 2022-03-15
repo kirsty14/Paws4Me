@@ -175,7 +175,7 @@
         <!--PetAllViewController-->
         <scene sceneID="2sl-Jh-sm1">
             <objects>
-                <viewController title="PetAllViewController" modalPresentationStyle="fullScreen" id="16Z-Yb-vqd" customClass="ViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="PetAllViewController" modalPresentationStyle="fullScreen" id="16Z-Yb-vqd" customClass="AllPetDetailViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h18-3r-gMs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,7 +323,7 @@
                     <navigationItem key="navigationItem" id="Fzn-Yv-Wdb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="petTableView" destination="7zP-O0-CIF" id="yrd-eX-Zjy"/>
+                        <outlet property="petTableView" destination="7zP-O0-CIF" id="6he-ez-CiC"/>
                         <outlet property="searchBar" destination="cMg-Ze-QTI" id="Vo2-Ii-Kmz"/>
                         <segue destination="HTh-zh-yyk" kind="show" identifier="PetSingleDetailsViewController" id="Ygf-7e-JgO"/>
                     </connections>
@@ -406,6 +406,7 @@
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="btnSaveTapped:" destination="HTh-zh-yyk" eventType="touchUpInside" id="lSN-rP-cok"/>
+                                                            <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="vVh-Eb-OeS"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -563,18 +564,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbm-Zu-Xi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4312" y="382"/>
+            <point key="canvasLocation" x="4312" y="415"/>
         </scene>
         <!--Local Pet View Controller-->
         <scene sceneID="RN7-eJ-lCF">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="4Pu-sg-960" customClass="LocalPetViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="guG-1D-M8c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-uh-JeI">
-                                <rect key="frame" x="0.0" y="56" width="414" height="737"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="4Pu-sg-960" id="Ppp-eP-3aI"/>
@@ -604,7 +605,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xtb-le-2TN" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="382"/>
+            <point key="canvasLocation" x="3104" y="415"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JuU-6i-8Dx">
@@ -628,6 +629,9 @@
             <point key="canvasLocation" x="3140.579710144928" y="-526.33928571428567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vVh-Eb-OeS"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryPurple"/>
     <resources>
         <image name="Image" width="107" height="71"/>

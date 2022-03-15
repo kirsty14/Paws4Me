@@ -16,7 +16,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petBreedNameLabel: UILabel!
 
     // MARK: - Vars/Lets
-    var singlePet: AdoptPet?
+    private var singlePet: AdoptPet?
     var namePet = ""
     var breedPet = ""
     var genderPet = ""
@@ -30,7 +30,7 @@ class PetSingleDetailsViewController: UIViewController {
         petAgeLabel.text = agePet
         petBreedNameLabel.text = breedPet
         petGenderLabel.text = genderPet
-        petImageView.load(imageURL: imgPet)
+        petImageView.loadImageFromURL(imageURL: imgPet)
         view.addSubview(petImageView)
     }
 

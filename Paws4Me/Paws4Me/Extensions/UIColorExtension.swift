@@ -10,12 +10,12 @@ import UIKit
 
 extension UIColor {
     static var myAppPurple: UIColor {
-        return UIColor(named: "primaryPurple") ?? UIColor.clear
+        return UIColor(named: "primaryPurple") ?? UIColor.black
     }
     static var myAppError: UIColor {
-        return UIColor(named: "primaryError") ?? UIColor.clear
+        return UIColor(named: "primaryError") ??  UIColor.black
     }
     static var myAppTan: UIColor {
-        return UIColor(named: "primaryTan") ?? UIColor.clear
+        return UIColor(named: "primaryTan") ?? UIColor.black
     }
 }

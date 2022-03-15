@@ -33,8 +33,7 @@ class SignInViewController: UIViewController, Validation {
 
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
-        guard let username = usernameTextField.text else { return }
-        guard let password = passwordTextField.text else { return }
+        guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
         isLoggedIn = isValidCredentials(username: username, password: password)
         var errorMessage = ""
         if isLoggedIn {
@@ -42,7 +41,7 @@ class SignInViewController: UIViewController, Validation {
         } else if !isLoggedIn {
             errorMessage = "Incorrect Username or Password"
             addErrorBorderBoth(usernameTextField, passwordTextField, bottomLine: bottomLine, bottomLine2: bottomLine2) }
-        displayErrorAlert(alertTitle: "Invalid credentials.",
+       displayErrorAlert(alertTitle: "Invalid credentials.",
                           alertMessage: errorMessage,
                           alertActionTitle: "Try again" ,
                           alertDelegate: self)
@@ -56,12 +55,4 @@ class SignInViewController: UIViewController, Validation {
             return false
         }
     }
-}
-
-func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
-                        bottomLine: CALayer, bottomLine2: CALayer) {
-    bottomLine.backgroundColor = UIColor.myAppError.cgColor
-    bottomLine2.backgroundColor = UIColor.myAppError.cgColor
-    textField1.layer.addSublayer(bottomLine)
-    textField2.layer.addSublayer(bottomLine2)
 }
