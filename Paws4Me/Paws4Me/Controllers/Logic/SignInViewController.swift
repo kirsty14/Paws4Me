@@ -41,10 +41,10 @@ class SignInViewController: UIViewController, Validation {
         } else if !isLoggedIn {
             errorMessage = "Incorrect Username or Password"
             addErrorBorderBoth(usernameTextField, passwordTextField, bottomLine: bottomLine, bottomLine2: bottomLine2) }
-       displayErrorAlert(alertTitle: "Invalid credentials.",
+       displayAlert(alertTitle: "Invalid credentials.",
                           alertMessage: errorMessage,
                           alertActionTitle: "Try again" ,
-                          alertDelegate: self)
+                    alertDelegate: self, alertTriggered: .errorAlert)
     }
 
     // MARK: - Functions

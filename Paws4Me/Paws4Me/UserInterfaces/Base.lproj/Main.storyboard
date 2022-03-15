@@ -376,6 +376,7 @@
                                                 <color key="backgroundColor" name="primaryOrange"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="220" id="Bk7-jD-GNs"/>
+                                                    <constraint firstAttribute="width" constant="376" id="PYk-AO-HuO"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Sammy" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrJ-KP-TGw">
@@ -406,7 +407,6 @@
                                                         </buttonConfiguration>
                                                         <connections>
                                                             <action selector="btnSaveTapped:" destination="HTh-zh-yyk" eventType="touchUpInside" id="lSN-rP-cok"/>
-                                                            <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="vVh-Eb-OeS"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -545,6 +545,7 @@
                             <constraint firstItem="mhP-an-Xrl" firstAttribute="trailing" secondItem="VXs-3c-SoY" secondAttribute="trailing" constant="18" id="Ihx-0Z-8ob"/>
                             <constraint firstItem="VXs-3c-SoY" firstAttribute="top" secondItem="mhP-an-Xrl" secondAttribute="top" constant="20" id="Y8M-RZ-Xh5"/>
                             <constraint firstItem="VXs-3c-SoY" firstAttribute="leading" secondItem="mhP-an-Xrl" secondAttribute="leading" constant="20" id="chV-Yc-y7P"/>
+                            <constraint firstItem="MPd-cG-cWB" firstAttribute="top" secondItem="mhP-an-Xrl" secondAttribute="top" constant="20" id="hVR-T6-85Z"/>
                             <constraint firstItem="mhP-an-Xrl" firstAttribute="bottom" secondItem="VXs-3c-SoY" secondAttribute="bottom" id="z9Z-kA-yck"/>
                         </constraints>
                     </view>
@@ -560,6 +561,7 @@
                         <outlet property="petGenderLabel" destination="LZo-S8-XTS" id="MCD-Rw-Dhm"/>
                         <outlet property="petImageView" destination="MPd-cG-cWB" id="7Rt-NR-3BL"/>
                         <outlet property="petNameLabel" destination="LrJ-KP-TGw" id="j3c-cc-PwG"/>
+                        <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="A2M-Yr-bHI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbm-Zu-Xi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -630,7 +632,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vVh-Eb-OeS"/>
+        <segue reference="A2M-Yr-bHI"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryPurple"/>
     <resources>

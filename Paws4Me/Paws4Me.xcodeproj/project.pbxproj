@@ -32,7 +32,7 @@
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
 		A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObject.json */; };
-		A1EEC3D427E0B29E00E94FC2 /* UIAlertErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D327E0B29E00E94FC2 /* UIAlertErrorExtension.swift */; };
+		A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +82,7 @@
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A1C20DED27D763C1007006DC /* JsonObject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObject.json; sourceTree = "<group>"; };
-		A1EEC3D327E0B29E00E94FC2 /* UIAlertErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertErrorExtension.swift; sourceTree = "<group>"; };
+		A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +233,7 @@
 			children = (
 				A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */,
 				A11499EB27DB300800626FC5 /* UIImageViewExtension.swift */,
-				A1EEC3D327E0B29E00E94FC2 /* UIAlertErrorExtension.swift */,
+				A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */,
 				A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */,
 				A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */,
 			);
@@ -435,7 +435,7 @@
 				A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */,
 				A11745BD27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld in Sources */,
 				35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */,
-				A1EEC3D427E0B29E00E94FC2 /* UIAlertErrorExtension.swift in Sources */,
+				A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */,
 				A11499E927DB1AC900626FC5 /* PetName+CoreDataProperties.swift in Sources */,
 				A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */,
 			);
