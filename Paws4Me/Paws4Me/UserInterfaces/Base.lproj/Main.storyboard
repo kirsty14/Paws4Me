@@ -546,6 +546,7 @@
                             <constraint firstItem="VXs-3c-SoY" firstAttribute="top" secondItem="mhP-an-Xrl" secondAttribute="top" constant="20" id="Y8M-RZ-Xh5"/>
                             <constraint firstItem="VXs-3c-SoY" firstAttribute="leading" secondItem="mhP-an-Xrl" secondAttribute="leading" constant="20" id="chV-Yc-y7P"/>
                             <constraint firstItem="MPd-cG-cWB" firstAttribute="top" secondItem="mhP-an-Xrl" secondAttribute="top" constant="20" id="hVR-T6-85Z"/>
+                            <constraint firstItem="mhP-an-Xrl" firstAttribute="trailing" secondItem="MPd-cG-cWB" secondAttribute="trailing" constant="18" id="occ-Dd-zQx"/>
                             <constraint firstItem="mhP-an-Xrl" firstAttribute="bottom" secondItem="VXs-3c-SoY" secondAttribute="bottom" id="z9Z-kA-yck"/>
                         </constraints>
                     </view>
@@ -559,7 +560,7 @@
                         <outlet property="petAgeLabel" destination="9Qs-r5-PVv" id="5Je-R3-f7s"/>
                         <outlet property="petBreedNameLabel" destination="Exw-t8-rgh" id="1MY-bK-tEl"/>
                         <outlet property="petGenderLabel" destination="LZo-S8-XTS" id="MCD-Rw-Dhm"/>
-                        <outlet property="petImageView" destination="MPd-cG-cWB" id="7Rt-NR-3BL"/>
+                        <outlet property="petImageView" destination="MPd-cG-cWB" id="Qcm-dJ-s4X"/>
                         <outlet property="petNameLabel" destination="LrJ-KP-TGw" id="j3c-cc-PwG"/>
                         <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="A2M-Yr-bHI"/>
                     </connections>
