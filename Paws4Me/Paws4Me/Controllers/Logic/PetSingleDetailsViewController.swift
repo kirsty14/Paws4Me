@@ -17,11 +17,11 @@ class PetSingleDetailsViewController: UIViewController {
 
     // MARK: - Vars/Lets
     private var singlePet: AdoptPet?
-    var namePet = ""
-    var breedPet = ""
-    var genderPet = ""
-    var agePet = ""
-    var imgPet = ""
+    private var namePet = ""
+    private var breedPet = ""
+    private var genderPet = ""
+    private var agePet = ""
+    private var imgPet = ""
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,11 +39,31 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     // MARK: - IBAction
-    @IBAction func btnSaveTapped(_ sender: Any) {
+    @IBAction func saveTappedButton(_ sender: Any) {
         performSegue(withIdentifier: "LocalPetViewController", sender: self)
     }
 
     // MARK: - Functions
+    func setNamePet(name: String) {
+        self.namePet = name
+    }
+
+    func setBreedPet(breed: String) {
+        self.breedPet = breed
+    }
+
+    func setGenderPet(gender: String) {
+        self.genderPet = gender
+    }
+
+    func setAgePet(age: String) {
+        self.agePet = age
+    }
+
+    func setImagePet(image: String) {
+        self.imgPet = image
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
             destination.namePet = namePet

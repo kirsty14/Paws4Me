@@ -32,22 +32,22 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
        }
 
     // MARK: - IBActions
-    @IBAction private func btnCatTapped(_ sender: UIButton) {
+    @IBAction private func catTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
        }
-       @IBAction private func btnKittenTapped(_ sender: UIButton) {
+       @IBAction private func kittenTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
        }
-       @IBAction private func btnDogTapped(_ sender: UIButton) {
+       @IBAction private func dogTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
        }
-       @IBAction private func btnPuppyTapped(_ sender: UIButton) {
+       @IBAction private func puppyTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
@@ -129,19 +129,19 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
                let indexRow = getIndexPetSelected()
                guard let pageItem = adoptPetObject?.page?[indexRow] else { return }
                if let pagePetName = pageItem.name {
-                   destination.namePet = pagePetName
+                   destination.setNamePet(name: pagePetName)
                }
                if let pagePetAge = pageItem.age {
-                   destination.agePet = pagePetAge
+                   destination.setAgePet(age: pagePetAge)
                }
                if let pageGender = pageItem.sex {
-                   destination.genderPet = pageGender
+                   destination.setGenderPet(gender: pageGender)
                }
                if let pagePetImage = pageItem.animalImage {
-                   destination.imgPet = pagePetImage
+                   destination.setImagePet(image: pagePetImage)
                }
                if let pagePetBreed = pageItem.animalSpeciesBreed?.petBreedName {
-                   destination.breedPet = pagePetBreed
+                   destination.setBreedPet(breed: pagePetBreed)
                }
            }
        }
