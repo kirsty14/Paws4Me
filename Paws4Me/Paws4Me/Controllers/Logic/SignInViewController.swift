@@ -28,7 +28,8 @@ class SignInViewController: UIViewController, Validation {
         signInButton.addCornerRadius()
         registerButton.addCornerRadius()
         registerButton.changeBorderLook()
-        addUnderline(usernameTextField, passwordTextField, bottomLine: bottomLine, bottomLine2: bottomLine2)
+        usernameTextField.addUnderline()
+        passwordTextField.addUnderline()
     }
 
     // MARK: - IBActions
@@ -40,7 +41,9 @@ class SignInViewController: UIViewController, Validation {
             performSegue(withIdentifier: "signInViewController", sender: self)
         } else if !isLoggedIn {
             errorMessage = "Incorrect Username or Password"
-            addErrorBorderBoth(usernameTextField, passwordTextField, bottomLine: bottomLine, bottomLine2: bottomLine2) }
+            usernameTextField.addErrorBorderBoth()
+            passwordTextField.addErrorBorderBoth()
+        }
        displayAlert(alertTitle: "Invalid credentials.",
                           alertMessage: errorMessage,
                           alertActionTitle: "Try again" ,

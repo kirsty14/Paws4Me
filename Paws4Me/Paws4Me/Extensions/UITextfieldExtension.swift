@@ -8,21 +8,24 @@
 import Foundation
 import UIKit
 
-func addUnderline(_ textField1: UITextField, _ textField2: UITextField, bottomLine: CALayer, bottomLine2: CALayer) {
-    bottomLine.frame = CGRect(x: 0, y: textField1.frame.height * 0.8, width: textField1.frame.width, height: 2)
-    bottomLine2.frame = CGRect(x: 0, y: textField2.frame.height * 0.8, width: textField2.frame.width, height: 2)
-    bottomLine.backgroundColor = UIColor.myAppPurple.cgColor
-    bottomLine2.backgroundColor =  UIColor.myAppPurple.cgColor
-    textField1.borderStyle = .none
-    textField2.borderStyle = .none
-    textField1.layer.addSublayer(bottomLine)
-    textField2.layer.addSublayer(bottomLine2)
+extension UITextField {
+func addUnderline() {
+    let border = CALayer()
+    border.frame = CGRect(x: 0, y: self.frame.height * 0.8, width: self.frame.width, height: 2)
+    border.backgroundColor = UIColor.myAppPurple.cgColor
+    self.borderStyle = .none
+    self.layer.addSublayer(border)
+
 }
 
-func addErrorBorderBoth(_ textField1: UITextField, _ textField2: UITextField,
-                        bottomLine: CALayer, bottomLine2: CALayer) {
-    bottomLine.backgroundColor = UIColor.myAppError.cgColor
-    bottomLine2.backgroundColor = UIColor.myAppError.cgColor
-    textField1.layer.addSublayer(bottomLine)
-    textField2.layer.addSublayer(bottomLine2)
+func addErrorBorderBoth() {
+    let border = CALayer()
+         let width = CGFloat(1.0)
+         border.borderColor =  UIColor.myAppError.cgColor
+    border.frame = CGRect(x: 0, y: self.frame.height * 0.8, width: self.frame.width, height: 2)
+         border.borderWidth = width
+    self.borderStyle = .none
+    self.layer.addSublayer(border)
+    self.layer.masksToBounds = true
+}
 }
