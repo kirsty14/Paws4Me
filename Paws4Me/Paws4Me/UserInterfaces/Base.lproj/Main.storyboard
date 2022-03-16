@@ -406,7 +406,7 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="saveTappedButton:" destination="HTh-zh-yyk" eventType="touchUpInside" id="wP6-KU-zXH"/>
+                                                            <action selector="btnSaveTapped:" destination="HTh-zh-yyk" eventType="touchUpInside" id="lSN-rP-cok"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -561,7 +561,7 @@
                         <outlet property="petBreedNameLabel" destination="Exw-t8-rgh" id="1MY-bK-tEl"/>
                         <outlet property="petGenderLabel" destination="LZo-S8-XTS" id="MCD-Rw-Dhm"/>
                         <outlet property="petImageView" destination="MPd-cG-cWB" id="Qcm-dJ-s4X"/>
-                        <outlet property="petNameLabel" destination="LrJ-KP-TGw" id="j3c-cc-PwG"/>
+                        <outlet property="petNameLabel" destination="LrJ-KP-TGw" id="Cgm-wh-R28"/>
                         <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="A2M-Yr-bHI"/>
                     </connections>
                 </viewController>
