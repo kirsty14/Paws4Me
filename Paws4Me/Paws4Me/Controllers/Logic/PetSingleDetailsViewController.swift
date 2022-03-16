@@ -17,6 +17,7 @@ class PetSingleDetailsViewController: UIViewController {
 
     // MARK: - Vars/Lets
     private var singlePet: AdoptPet?
+    private var indexSinglePet: Int = 0
     private var namePet = ""
     private var breedPet = ""
     private var genderPet = ""
@@ -26,10 +27,20 @@ class PetSingleDetailsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let namePet = singlePet?.page?[indexSinglePet].name else { return }
+        setNamePet(name: namePet)
         petNameLabel.text = namePet
+        guard let agePet = singlePet?.page?[indexSinglePet].age else { return }
+        setAgePet(age: agePet)
         petAgeLabel.text = agePet
+        guard let breedPet = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName else { return }
+        setBreedPet(breed: breedPet)
         petBreedNameLabel.text = breedPet
+        guard let genderPet = singlePet?.page?[indexSinglePet].sex else { return }
+        setGenderPet(gender: genderPet)
         petGenderLabel.text = genderPet
+        guard let imgPet = singlePet?.page?[indexSinglePet].animalImage else { return }
+        setImagePet(image: imgPet)
         petImageView.loadImageFromURL(imageURL: imgPet)
         view.addSubview(petImageView)
     }
@@ -44,6 +55,14 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     // MARK: - Functions
+    func setSelectedPetIndex(indexPet: Int) {
+        self.indexSinglePet = indexPet
+    }
+
+    func setSinglePetObject(petObject: AdoptPet) {
+        self.singlePet = petObject
+    }
+
     func setNamePet(name: String) {
         self.namePet = name
     }
@@ -66,8 +85,8 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            destination.namePet = namePet
-            destination.imagePet = imgPet
+            destination.setNamePet(name: namePet)
+            destination.setImagePet(image: imgPet)
         }
     }
 }

@@ -406,7 +406,7 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="btnSaveTapped:" destination="HTh-zh-yyk" eventType="touchUpInside" id="lSN-rP-cok"/>
+                                                            <action selector="saveTappedButton:" destination="HTh-zh-yyk" eventType="touchUpInside" id="wP6-KU-zXH"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>

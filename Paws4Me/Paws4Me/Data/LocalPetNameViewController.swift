@@ -47,6 +47,16 @@ class LocalPetViewController: UIViewController {
        petNameTableView.reloadData()
     }
 
+    // MARK: - Functions
+
+    func setNamePet(name: String) {
+        self.namePet = name
+    }
+
+    func setImagePet(image: String) {
+        self.imagePet = image
+    }
+
     func save(name: String, image: String) {
       guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
         return

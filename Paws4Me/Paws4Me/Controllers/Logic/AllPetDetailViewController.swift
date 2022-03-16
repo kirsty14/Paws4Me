@@ -127,22 +127,10 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if let destination = segue.destination as? PetSingleDetailsViewController {
                let indexRow = getIndexPetSelected()
-               guard let pageItem = adoptPetObject?.page?[indexRow] else { return }
-               if let pagePetName = pageItem.name {
-                   destination.setNamePet(name: pagePetName)
-               }
-               if let pagePetAge = pageItem.age {
-                   destination.setAgePet(age: pagePetAge)
-               }
-               if let pageGender = pageItem.sex {
-                   destination.setGenderPet(gender: pageGender)
-               }
-               if let pagePetImage = pageItem.animalImage {
-                   destination.setImagePet(image: pagePetImage)
-               }
-               if let pagePetBreed = pageItem.animalSpeciesBreed?.petBreedName {
-                   destination.setBreedPet(breed: pagePetBreed)
-               }
+               guard let pageItem = adoptPetObject else { return }
+               destination.setSinglePetObject(petObject: pageItem)
+               destination.setSelectedPetIndex(indexPet: indexRow)
+
            }
        }
 
