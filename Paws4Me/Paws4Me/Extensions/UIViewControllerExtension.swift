@@ -1,8 +1,8 @@
 //
-//  UIErrorAlertExtension.swift
+//  UIAlertExtension.swift
 //  Paws4Me
 //
-//  Created by Kirsty-Lee Walker on 2022/03/15.
+//  Created by Kirsty-Lee Walker on 2022/03/09.
 //
 
 import Foundation
@@ -19,5 +19,4 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: alertActionTitle, style: UIAlertAction.Style.default, handler: nil))
         alertDelegate.present(alert, animated: true, completion: nil)
     }
-
 }

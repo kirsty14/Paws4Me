@@ -21,7 +21,7 @@ extension URLSession {
             completion(.failure(CustomError.invalidUrl))
             return
         }
-        let apiTask = self.dataTask(with: endpointUrl as URL) { data, _, error in
+        let apiTask = self.dataTask(with: endpointUrl) { data, _, error in
             guard let safeData = data else {
                 if let error = error {
                     completion(.failure(error))

@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var petTableView: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
-
     // MARK: - Vars/Lets
        private var searchBarController = UISearchBar()
        private var filteredPetObject: AdoptPet?
@@ -33,22 +32,22 @@ class ViewController: UIViewController, UISearchBarDelegate {
        }
 
     // MARK: - IBActions
-    @IBAction private func btnCatTapped(_ sender: UIButton) {
+    @IBAction private func catTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
        }
-       @IBAction private func btnKittenTapped(_ sender: UIButton) {
+       @IBAction private func kittenTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
        }
-       @IBAction private func btnDogTapped(_ sender: UIButton) {
+       @IBAction private func dogTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
        }
-       @IBAction private func btnPuppyTapped(_ sender: UIButton) {
+       @IBAction private func puppyTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
            searchPetType(type: petType)
@@ -77,9 +76,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
     }
 }
 
-   extension ViewController: UITableViewDelegate, UITableViewDataSource {
+   extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource {
        func setUpSearchbar() {
-           searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0, width: self.petTableView.bounds.width, height: 65))
+           searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0,
+                                                           width: self.petTableView.bounds.width, height: 65))
            searchBarController.showsScopeBar = true
            searchBarController.scopeButtonTitles = ["Male", "Female"]
            searchBarController.selectedScopeButtonIndex = 0
@@ -104,12 +104,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
            cell.index = indexPath.row
            cell.pet = adoptablepet
            cell.setNeedsLayout()
-           cell.backgroundColor = UIColor(named: "primaryTan")
+           cell.backgroundColor = UIColor.myAppTan
            return cell
        }
 
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
+            performSegue(withIdentifier: "PetSingleDetailsViewController", sender: self)
        }
 
        func getIndexPetSelected() -> Int {
@@ -127,22 +127,10 @@ class ViewController: UIViewController, UISearchBarDelegate {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if let destination = segue.destination as? PetSingleDetailsViewController {
                let indexRow = getIndexPetSelected()
-               guard let pageItem = adoptPetObject?.page?[indexRow] else { return }
-               if let pagePetName = pageItem.name {
-                   destination.namePet = pagePetName
-               }
-               if let pagePetAge = pageItem.age {
-                   destination.agePet = pagePetAge
-               }
-               if let pageGender = pageItem.sex {
-                   destination.genderPet = pageGender
-               }
-               if let pagePetImage = pageItem.animalImage {
-                   destination.imgPet = pagePetImage
-               }
-               if let pagePetBreed = pageItem.animalSpeciesBreed?.petBreedName {
-                   destination.breedPet = pagePetBreed
-               }
+               guard let pageItem = adoptPetObject else { return }
+               destination.setSinglePetObject(petObject: pageItem)
+               destination.setSelectedPetIndex(indexPet: indexRow)
+
            }
        }
 
@@ -186,11 +174,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
            if type == "" && selectedGender == ""{
                filteredPetObject = adoptPetObject
            } else {
-               guard adoptPetObject != nil else { return }
+               guard let petObject = adoptPetObject else {
+                   return
+               }
                let petAge = getAgeFromType(type: type)
                searchPet(type: type, gender: selectedGender, petAge: petAge)
                if filteredPetObject == nil {
-                   filteredPetObject = adoptPetObject
+                   filteredPetObject = petObject
                }
                    self.petTableView.reloadData()
                }
