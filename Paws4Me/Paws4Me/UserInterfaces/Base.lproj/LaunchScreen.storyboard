@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-NR-8QB">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="LZM-V6-K4X">
+            <objects>
+                <viewController storyboardIdentifier="launchID" modalPresentationStyle="fullScreen" id="6jb-NR-8QB" customClass="LaunchViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yhi-h2-z3W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="wH3-YB-uS2" userLabel="Parent">
+                                <rect key="frame" x="40" y="29" width="334" height="838"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrV-7j-yrk" userLabel="Header">
+                                        <rect key="frame" x="19.5" y="0.0" width="295" height="188"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kJ0-Ck-Wer">
+                                                <rect key="frame" x="122.5" y="0.0" width="50" height="50"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3IA-7k-Ahr"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="MkK-dC-kMg"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make a New Friend !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3rQ-V8-02J">
+                                                <rect key="frame" x="0.0" y="78" width="295" height="41"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="41" id="bkK-3H-l9k"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="295" id="duS-IS-JiK"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adopt Don't Shop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sOT-mx-wHc">
+                                                <rect key="frame" x="17.5" y="147" width="260" height="41"/>
+                                                <color key="tintColor" red="0.84705877299999999" green="0.74901962280000001" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                <color key="textColor" red="0.9887509444" green="0.87407955599999998" blue="0.7732539437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-cq-idq" userLabel="Footer">
+                                        <rect key="frame" x="0.0" y="402" width="334" height="436"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2022-02-24 at 07.18.31" translatesAutoresizingMaskIntoConstraints="NO" id="XyR-WN-xtQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="436"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000001789999999" green="0.090196087960000004" blue="0.25490197539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eam-GL-sBf"/>
+                        <color key="backgroundColor" red="0.20000001789999999" green="0.090196087960000004" blue="0.25490197539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="wH3-YB-uS2" firstAttribute="centerY" secondItem="Yhi-h2-z3W" secondAttribute="centerY" id="4cz-qJ-TXP"/>
+                            <constraint firstItem="wH3-YB-uS2" firstAttribute="centerX" secondItem="Yhi-h2-z3W" secondAttribute="centerX" id="VDX-oF-x9q"/>
+                            <constraint firstItem="wH3-YB-uS2" firstAttribute="top" secondItem="Yhi-h2-z3W" secondAttribute="top" constant="29" id="nkr-fK-J2g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bv5-hA-GZt"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adH-Ot-D8Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Screenshot 2022-02-24 at 07.18.31" width="334" height="436"/>
+        <image name="pawprint" catalog="system" width="128" height="116"/>
+    </resources>
+</document>
