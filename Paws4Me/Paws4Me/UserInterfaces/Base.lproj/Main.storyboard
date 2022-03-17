@@ -214,7 +214,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="cat" imagePlacement="top" title="Cat"/>
                                                                 <connections>
-                                                                    <action selector="btnCatTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="OHc-er-BSQ"/>
+                                                                    <action selector="catTappedButton:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="CLN-Ma-sXb"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbI-Fo-DxO">
@@ -222,7 +222,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="kitten" imagePlacement="top" title="Kitten"/>
                                                                 <connections>
-                                                                    <action selector="btnKittenTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="fQR-Sv-aU6"/>
+                                                                    <action selector="kittenTappedButton:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="s8J-58-zDM"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfy-1c-xAA">
@@ -230,7 +230,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="dog" imagePlacement="top" title="Dog"/>
                                                                 <connections>
-                                                                    <action selector="btnDogTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="Iqz-75-p36"/>
+                                                                    <action selector="dogTappedButton:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="cmV-7X-8df"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-Dp-Xxs">
@@ -238,7 +238,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" image="puppy" imagePlacement="top" title="Puppy"/>
                                                                 <connections>
-                                                                    <action selector="btnPuppyTapped:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="1fU-np-i1Y"/>
+                                                                    <action selector="puppyTappedButton:" destination="16Z-Yb-vqd" eventType="touchUpInside" id="2XV-oB-O1U"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -360,7 +360,6 @@
         <!--Adopt Me!-->
         <scene sceneID="RF9-Fo-j4I">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dbm-Zu-Xi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController modalPresentationStyle="fullScreen" id="HTh-zh-yyk" customClass="PetSingleDetailsViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="efW-Aa-Do6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -555,6 +554,7 @@
                         </barButtonItem>
                     </navigationItem>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dbm-Zu-Xi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6226" y="440"/>
         </scene>
@@ -669,8 +669,7 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="btnSaveTapped:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="eKD-BO-X7f"/>
-                                                            <action selector="saveTappedButton:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="fFu-kM-Tqw"/>
+                                                            <action selector="saveTappedButton:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="EO3-1l-5vp"/>
                                                             <segue destination="4Pu-sg-960" kind="show" identifier="LocalPetViewController" id="ycm-sk-hgh"/>
                                                         </connections>
                                                     </button>
