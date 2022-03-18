@@ -29,7 +29,7 @@ master ( buid )
 <tr>
  <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/159017915-fe546a33-1113-40e9-ba8e-674e68a08b55.png" width=200px height=500px ></td> 
 <td><img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/159018021-6eaf9d80-8ccc-444d-885d-864069fb6c6f.png" height=500px width = 200px></td> 
-<td><img akt=:FavouritePet" src="https://user-images.githubusercontent.com/98941706/159018273-cbaf6a0a-ff49-4a74-b1dc-665851cc2193.png" height=500px width=200px></td>
+<td><img alt=:FavouritePet" src="https://user-images.githubusercontent.com/98941706/159018273-cbaf6a0a-ff49-4a74-b1dc-665851cc2193.png" height=500px width=200px></td>
 </tr>  
 </table>
 
