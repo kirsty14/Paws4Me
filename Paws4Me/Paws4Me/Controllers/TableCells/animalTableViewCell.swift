@@ -15,8 +15,10 @@ class AnimalTableViewCell: UITableViewCell {
 
     // MARK: - Var/Lets
     var index = 0
+    var imagesArray = [UIImage]()
     var pet: AdoptPet! {
         didSet {
+            imagePetView.image = UIImage(named: "placeholder2.jpg")
             updateUI()
         }
     }

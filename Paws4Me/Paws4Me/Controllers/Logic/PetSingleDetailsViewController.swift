@@ -27,6 +27,7 @@ class PetSingleDetailsViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        petImageView.image = UIImage(named: "placeholder.jpg")
         guard let namePet = singlePet?.page?[indexSinglePet].name else { return }
         setNamePet(name: namePet)
         petNameLabel.text = namePet
@@ -43,10 +44,6 @@ class PetSingleDetailsViewController: UIViewController {
         setImagePet(image: imgPet)
         petImageView.loadImageFromURL(imageURL: imgPet)
         view.addSubview(petImageView)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
     }
 
     // MARK: - IBAction
