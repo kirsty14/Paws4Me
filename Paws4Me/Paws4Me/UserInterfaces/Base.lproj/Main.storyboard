@@ -617,6 +617,7 @@
                         <outlet property="petGenderLabel" destination="Xjw-7u-lVk" id="lam-Xf-cef"/>
                         <outlet property="petImageView" destination="Pp9-cZ-ApB" id="8Dq-sa-KSZ"/>
                         <outlet property="petNameLabel" destination="kdE-x3-FCP" id="vgY-sj-q3J"/>
+                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="LLQ-yK-YPN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6su-Ci-0E5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -721,7 +722,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hXA-UT-f4d"/>
+        <segue reference="JU7-jH-ky5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryPurple"/>
     <resources>

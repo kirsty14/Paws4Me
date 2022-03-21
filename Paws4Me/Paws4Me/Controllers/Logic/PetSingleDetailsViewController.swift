@@ -14,6 +14,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petAgeLabel: UILabel!
     @IBOutlet weak private var petGenderLabel: UILabel!
     @IBOutlet weak private var petBreedNameLabel: UILabel!
+    @IBOutlet weak var saveSinglePetButton: UIButton!
 
     // MARK: - Vars/Lets
     private var singlePet: AdoptPet?
@@ -23,6 +24,7 @@ class PetSingleDetailsViewController: UIViewController {
     private var genderPet = ""
     private var agePet = ""
     private var imgPet = ""
+    let viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -30,6 +32,7 @@ class PetSingleDetailsViewController: UIViewController {
         guard let namePet = singlePet?.page?[indexSinglePet].name else { return }
         setNamePet(name: namePet)
         petNameLabel.text = namePet
+        isPetSaved(namePet)
         guard let agePet = singlePet?.page?[indexSinglePet].age else { return }
         setAgePet(age: agePet)
         petAgeLabel.text = agePet
@@ -45,9 +48,20 @@ class PetSingleDetailsViewController: UIViewController {
         view.addSubview(petImageView)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
-    }
+    func isPetSaved(_ petName: String) {
+         do {
+             guard let pets = try viewContext?.fetch(Pet.fetchRequest()) else { return }
+             for pet in pets where pet.petName == petName {
+                 saveSinglePetButton.isEnabled = false
+                 return
+             }
+         } catch {
+             displayAlert(alertTitle: "Unable to save \(petName)",
+                                alertMessage: "There was a problem saving",
+                                alertActionTitle: "Try again" ,
+                          alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+         }
+     }
 
     // MARK: - IBAction
     @IBAction func saveTappedButton(_ sender: Any) {
