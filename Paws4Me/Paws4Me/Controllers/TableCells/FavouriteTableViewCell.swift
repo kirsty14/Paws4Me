@@ -13,27 +13,10 @@ class FavouriteTableViewCell: UITableViewCell {
     @IBOutlet weak var favouitePetImageView: UIImageView!
     @IBOutlet weak var favouritePetNameLabel: UILabel!
 
-    // MARK: - Vars/Lets
-    var namePet: String! {
-        didSet {
-            updatePetnameUI()
-        }
-    }
-
-    var imagePet: String! {
-        didSet {
-            updatePetImageUI()
-        }
-    }
-
     // MARK: - Functions
-    func updatePetImageUI() {
+    func updateUI(namePet: String, imagePet: String) {
         favouitePetImageView.loadImageFromURL(imageURL: imagePet)
-            self.favouitePetImageView.layer.cornerRadius = 10
-        favouritePetNameLabel.text = namePet
-    }
-
-    func updatePetnameUI() {
+        self.favouitePetImageView.layer.cornerRadius = 10
         favouritePetNameLabel.text = namePet
     }
 }

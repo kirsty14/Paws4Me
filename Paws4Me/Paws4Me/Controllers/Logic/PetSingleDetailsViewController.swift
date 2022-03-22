@@ -14,7 +14,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petAgeLabel: UILabel!
     @IBOutlet weak private var petGenderLabel: UILabel!
     @IBOutlet weak private var petBreedNameLabel: UILabel!
-    @IBOutlet weak var saveSinglePetButton: UIButton!
+    @IBOutlet weak private var saveSinglePetButton: UIButton!
 
     // MARK: - Vars/Lets
     private var singlePet: AdoptPet?
@@ -24,7 +24,7 @@ class PetSingleDetailsViewController: UIViewController {
     private var genderPet = ""
     private var agePet = ""
     private var imgPet = ""
-    let viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    private let viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Lifecycle
     override func viewDidLoad() {

@@ -10,8 +10,8 @@ import UIKit
 
 class LocalPetViewController: UIViewController, UITableViewDelegate {
     // MARK: - IBOutlets
-    @IBOutlet weak var petNameTableView: UITableView!
-    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    @IBOutlet weak private var petNameTableView: UITableView!
+    private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Vars/Lets
     var namePet = ""
@@ -44,12 +44,14 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
     }
 
     func savePets(name: String, image: String) {
-        let petObject = Pet(context: self.context!)
+        guard let petContext = self.context else { return }
+        let petObject = Pet(context: petContext)
         petObject.petName = namePet
         petObject.petImage = imagePet
 
       do {
-          try self.context!.save()
+          guard let petContext = self.context else { return }
+          try petContext.save()
           DispatchQueue.main.async {
               self.petNameTableView.reloadData()
           }
@@ -77,7 +79,7 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
    extension LocalPetViewController: UITableViewDataSource {
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-         guard let countPet = pets?.count else {return 0}
+         guard let countPet = pets?.count else { return 0 }
          return countPet
      }
 
@@ -87,8 +89,9 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
                                                         for: indexPath) as? FavouriteTableViewCell else {
              return UITableViewCell()
          }
-         cell.namePet = pet?.value(forKeyPath: "petName") as? String ?? ""
-         cell.imagePet = pet?.value(forKeyPath: "petImage") as? String ?? ""
+         let namePet = pet?.value(forKeyPath: "petName") as? String ?? ""
+         let imagePet = pet?.value(forKeyPath: "petImage") as? String ?? ""
+         cell.updateUI(namePet: namePet, imagePet: imagePet)
          cell.setNeedsLayout()
        return cell
      }
@@ -109,29 +112,31 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
        }
 
        func showDeleteWarning(for indexPath: IndexPath) {
-           let alert = UIAlertController(title: "Delete Pet",
-                                         message: "Are you sure you want to delete this pet?", preferredStyle: .alert)
+           guard let petToRemove = self.pets?[indexPath.row] else { return }
+           presentAlertDeleteWarning(title: "Delete Pet",
+                                     message: "Are you sure you want to delete this pet?",
+                                 options: "Cancel", "Delete") { (optionPressed) in
+               switch optionPressed {
+               case "Cancel":
+                    break
+               case "Delete":
+                   DispatchQueue.main.async {
+                       self.context?.delete(petToRemove)
 
-           let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-
-           let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { _ in
-               DispatchQueue.main.async {
-                   let petToRemove = self.pets?[indexPath.row]
-                   guard let removePet = petToRemove else { return }
-                   self.context?.delete(removePet)
-
-                   do {
-                       try self.context?.save()
-                   } catch let error as NSError {
-                       print("Could not save. \(error), \(error.userInfo)")
+                       do {
+                           try self.context?.save()
+                       } catch {
+                           self.displayAlert(alertTitle: "Unable to save",
+                                              alertMessage: "There was a problem saving",
+                                              alertActionTitle: "Try again" ,
+                                        alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+                       }
+                       self.fetchSavedPets()
+                       self.petNameTableView.deleteRows(at: [indexPath], with: .fade)
                    }
-                   self.fetchSavedPets()
-                   self.petNameTableView.deleteRows(at: [indexPath], with: .fade)
+               default:
+                   break
                }
            }
-
-           alert.addAction(cancelAction)
-           alert.addAction(deleteAction)
-           present(alert, animated: true, completion: nil)
        }
    }
