@@ -14,9 +14,9 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
     private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Vars/Lets
-    var namePet = ""
-    var imagePet = ""
-    var pets: [Pet]? = []
+    private var namePet = ""
+    private var imagePet = ""
+    private var pets: [Pet]? = []
 
     // MARK: - Life cycle
     override func viewDidLoad() {
