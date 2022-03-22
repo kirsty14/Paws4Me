@@ -14,13 +14,23 @@ master ( buid )
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- feature
 
 ### :camera_flash: Screenshots
+
+#### Login
 <table>
   <tr>
-<td><img alt="SignIn"  src="https://user-images.githubusercontent.com/98941706/155850827-3ae3de5b-563f-4d9c-b446-6382b317df4b.png" alt="1" width = 280px height = 500px ></td>
-<td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/155467881-97257790-bc21-42a1-91f0-ae279c393ce6.png" alt="1" width = 280px height = 500px ></td> 
-<td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/155850974-12f233cb-bafa-4741-b685-ea52d17cbb05.png" alt="SinglePet" width = 280px height = 500px ></td> 
-    <td> <img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/155498605-a3557333-e051-4ff6-ad60-ae74c1394acd.png" height = 500px width = 280px  ></td>
-  </tr>
+<td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/155467881-97257790-bc21-42a1-91f0-ae279c393ce6.png" alt="1" width=200px height=500px ></td>  
+<td><img alt="SignIn" src="https://user-images.githubusercontent.com/98941706/159017716-2e5ddf43-ea45-464e-85c4-bb1870a015cf.png" width=200px height= 500px></td>  
+<td><img alt="SignIn validation"  src="https://user-images.githubusercontent.com/98941706/159017761-59479bb7-45b9-449c-a35b-1142c0522f31.png"  width= 200px height = 500px ></td>
+</tr>
+</table>
+
+#### View, Search and Save Pets
+<table>
+<tr>
+ <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/159017915-fe546a33-1113-40e9-ba8e-674e68a08b55.png" width=200px height=500px ></td> 
+<td><img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/159018021-6eaf9d80-8ccc-444d-885d-864069fb6c6f.png" height=500px width = 200px></td> 
+<td><img alt=:FavouritePet" src="https://user-images.githubusercontent.com/98941706/159018273-cbaf6a0a-ff49-4a74-b1dc-665851cc2193.png" height=500px width=200px></td>
+</tr>  
 </table>
 
 
