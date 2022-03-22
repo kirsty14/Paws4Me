@@ -207,16 +207,17 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
            let petTypeLowercase = animalType.lowercased()
            let isGenderValid = selectedGender != ""
            let isPetTypeValid = animalType != ""
-           if isPetTypeValid && isGenderValid {
+
+           switch (isPetTypeValid, isGenderValid) {
+           case (isPetTypeValid, isGenderValid):
                filterWithAgeTypeGender(type: petTypeLowercase, gender: selectedGender, petAge: petAge)
-           } else if isGenderValid {
+           case (!isPetTypeValid, isGenderValid):
                filterOnlyWithGender()
-           } else if isPetTypeValid {
+           case (isPetTypeValid, !isGenderValid):
                filterOnlyWithAgeAndType(type: petTypeLowercase, petAge: petAge)
-           } else {
+           case (_, _):
                filteredPetObject = adoptPetObject
            }
-
        }
 
        // MARK: - Filter
