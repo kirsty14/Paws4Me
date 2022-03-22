@@ -37,8 +37,8 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
 
         } catch _ as NSError {
             displayAlert(alertTitle: "Unable to retreive all your saved pets",
-                               alertMessage: "There was a problem retrieving",
-                               alertActionTitle: "Try again" ,
+                         alertMessage: "There was a problem retrieving",
+                         alertActionTitle: "Try again" ,
                          alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
         }
     }
@@ -59,7 +59,8 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
           displayAlert(alertTitle: "Unable to save \(namePet)",
                              alertMessage: "There was a problem saving",
                              alertActionTitle: "Try again" ,
-                       alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+                             alertDelegate: self,
+                             alertTriggered: .fatalLocalDatabaseAlert)
       }
 
         self.fetchSavedPets()
