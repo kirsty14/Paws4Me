@@ -19,7 +19,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
        private var isFilterSearch = true
        private var indexSinglePet: Int?
        private var selectedGender: String = ""
-       private var petType = ""
+       private var animalType = ""
 
     // MARK: - Life cycle
        override func viewDidLoad() {
@@ -35,27 +35,27 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
     @IBAction private func catTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetType(type: petType)
+        searchPetCategoryType(_: animalType)
        }
        @IBAction private func kittenTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetType(type: petType)
+           searchPetCategoryType(_: animalType)
        }
        @IBAction private func dogTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetType(type: petType)
+           searchPetCategoryType(_: animalType)
        }
        @IBAction private func puppyTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetType(type: petType)
+           searchPetCategoryType(_: animalType)
        }
 
     // MARK: - Functions
     func getPetTypeFromButton(_ sender: UIButton) {
-        petType = sender.titleLabel?.text ?? ""
+        animalType = sender.titleLabel?.text ?? ""
     }
 
     // MARK: - Receive data from API
@@ -100,9 +100,8 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
            guard let cell = tableView.dequeueReusableCell(withIdentifier: "petAdoptCell") as? AnimalTableViewCell else {
                return UITableViewCell()
            }
-           let adoptablepet = filteredPetObject
            cell.index = indexPath.row
-           cell.pet = adoptablepet
+           cell.pet = filteredPetObject
            cell.setNeedsLayout()
            cell.backgroundColor = UIColor.myAppTan
            return cell
@@ -141,7 +140,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
            } else if selectedScope == 1 {
                selectedGender = "female"
            }
-           searchPetType(type: petType)
+           searchPetCategoryType(_: animalType)
        }
 
        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -170,15 +169,15 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
             where: { $0.name?.lowercased().starts(with: searchText) ??  false })
        }
 
-       func searchPetType(type: String) {
-           if type == "" && selectedGender == ""{
+       func searchPetCategoryType(_ petCategoryType: String) {
+           if petCategoryType.isEmpty && selectedGender.isEmpty {
                filteredPetObject = adoptPetObject
            } else {
                guard let petObject = adoptPetObject else {
                    return
                }
-               let petAge = getAgeFromType(type: type)
-               searchPet(type: type, gender: selectedGender, petAge: petAge)
+               let petAge = getAgeFromPetCategoryType(_: petCategoryType)
+               searchPet(petCategoryType: petCategoryType, gender: selectedGender, petAge: petAge)
                if filteredPetObject == nil {
                    filteredPetObject = petObject
                }
@@ -186,9 +185,9 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
                }
            }
 
-       func getAgeFromType(type: String) -> String {
+       func getAgeFromPetCategoryType(_ petCategoryType: String) -> String {
            var petAge = ""
-           let petTypeSelected = SpeciesName(rawValue: type)
+           let petTypeSelected = SpeciesName(rawValue: petCategoryType)
 
            switch petTypeSelected {
            case .kitten, .puppy:
@@ -201,30 +200,29 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
            return petAge
        }
 
-       func searchPet(type: String, gender: String, petAge: String) {
+       func searchPet(petCategoryType: String, gender: String, petAge: String) {
            guard adoptPetObject != nil else {
                return
            }
-           let petTypeLowercase = petType.lowercased()
+           let petTypeLowercase = animalType.lowercased()
            let isGenderValid = selectedGender != ""
-           let isPetTypeValid = petType != ""
-           if isPetTypeValid && isGenderValid {
+           let isPetTypeValid = animalType != ""
+
+           switch (isPetTypeValid, isGenderValid) {
+           case (isPetTypeValid, isGenderValid):
                filterWithAgeTypeGender(type: petTypeLowercase, gender: selectedGender, petAge: petAge)
-           } else if isGenderValid {
+           case (!isPetTypeValid, isGenderValid):
                filterOnlyWithGender()
-           } else if isPetTypeValid {
+           case (isPetTypeValid, !isGenderValid):
                filterOnlyWithAgeAndType(type: petTypeLowercase, petAge: petAge)
-           } else {
+           case (_, _):
                filteredPetObject = adoptPetObject
            }
-
        }
 
        // MARK: - Filter
        func filterOnlyWithGender() {
-           guard let petObject = adoptPetObject else {
-               return
-           }
+           guard let petObject = adoptPetObject else { return }
            filteredPetObject?.page = petObject.page?.filter {
                $0.sex?.lowercased() == selectedGender}
 
