@@ -10,8 +10,8 @@ import UIKit
 
 class FavouriteTableViewCell: UITableViewCell {
     // MARK: - IBOulets
-    @IBOutlet weak var favouitePetImageView: UIImageView!
-    @IBOutlet weak var favouritePetNameLabel: UILabel!
+    @IBOutlet weak private var favouitePetImageView: UIImageView!
+    @IBOutlet weak private var favouritePetNameLabel: UILabel!
 
     // MARK: - Functions
     func updateUI(namePet: String, imagePet: String) {
