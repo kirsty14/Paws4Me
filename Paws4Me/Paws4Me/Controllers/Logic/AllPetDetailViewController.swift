@@ -35,22 +35,22 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
     @IBAction private func catTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetByCategoryType(petCategoryType: animalType)
+        searchPetCategoryType(_: animalType)
        }
        @IBAction private func kittenTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetByCategoryType(petCategoryType: animalType)
+           searchPetCategoryType(_: animalType)
        }
        @IBAction private func dogTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetByCategoryType(petCategoryType: animalType)
+           searchPetCategoryType(_: animalType)
        }
        @IBAction private func puppyTappedButton(_ sender: UIButton) {
            getPetTypeFromButton(sender)
            sender.changePetIconsColor()
-           searchPetByCategoryType(petCategoryType: animalType)
+           searchPetCategoryType(_: animalType)
        }
 
     // MARK: - Functions
@@ -140,7 +140,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
            } else if selectedScope == 1 {
                selectedGender = "female"
            }
-           searchPetByCategoryType(petCategoryType: animalType)
+           searchPetCategoryType(_: animalType)
        }
 
        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -169,14 +169,14 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
             where: { $0.name?.lowercased().starts(with: searchText) ??  false })
        }
 
-       func searchPetByCategoryType(petCategoryType: String) {
+       func searchPetCategoryType(_ petCategoryType: String) {
            if petCategoryType.isEmpty && selectedGender.isEmpty {
                filteredPetObject = adoptPetObject
            } else {
                guard let petObject = adoptPetObject else {
                    return
                }
-               let petAge = getAgeFromPetCategoryType(petCategoryType: petCategoryType)
+               let petAge = getAgeFromPetCategoryType(_: petCategoryType)
                searchPet(petCategoryType: petCategoryType, gender: selectedGender, petAge: petAge)
                if filteredPetObject == nil {
                    filteredPetObject = petObject
@@ -185,7 +185,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
                }
            }
 
-       func getAgeFromPetCategoryType(petCategoryType: String) -> String {
+       func getAgeFromPetCategoryType(_ petCategoryType: String) -> String {
            var petAge = ""
            let petTypeSelected = SpeciesName(rawValue: petCategoryType)
 
