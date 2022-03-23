@@ -130,7 +130,8 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
                            self.displayAlert(alertTitle: "Unable to save",
                                               alertMessage: "There was a problem saving",
                                               alertActionTitle: "Try again" ,
-                                        alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+                                              alertDelegate: self,
+                                              alertTriggered: .fatalLocalDatabaseAlert)
                        }
                        self.fetchSavedPets()
                        self.petNameTableView.deleteRows(at: [indexPath], with: .fade)
