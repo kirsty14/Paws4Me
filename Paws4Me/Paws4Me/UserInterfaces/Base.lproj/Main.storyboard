@@ -269,7 +269,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="374" height="264"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uqJ-sg-afU">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uqJ-sg-afU">
                                                                             <rect key="frame" x="16" y="16" width="342" height="240"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="253" id="Qkq-rf-5dy"/>
@@ -357,41 +357,6 @@
             </objects>
             <point key="canvasLocation" x="2186" y="-526"/>
         </scene>
-        <!--Local Pet View Controller-->
-        <scene sceneID="RN7-eJ-lCF">
-            <objects>
-                <viewController modalPresentationStyle="fullScreen" id="4Pu-sg-960" customClass="LocalPetViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="guG-1D-M8c">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hFk-uh-JeI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="yi7-Bo-PhZ"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="hFk-uh-JeI" firstAttribute="trailing" secondItem="yi7-Bo-PhZ" secondAttribute="trailing" id="5Dd-XL-ksI"/>
-                            <constraint firstItem="hFk-uh-JeI" firstAttribute="top" secondItem="yi7-Bo-PhZ" secondAttribute="top" id="EPN-q6-uQC"/>
-                            <constraint firstItem="hFk-uh-JeI" firstAttribute="bottom" secondItem="yi7-Bo-PhZ" secondAttribute="bottom" id="HR4-V7-SOl"/>
-                            <constraint firstItem="hFk-uh-JeI" firstAttribute="leading" secondItem="yi7-Bo-PhZ" secondAttribute="leading" id="fm2-Sr-hvU"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="bQY-wt-YlP"/>
-                    <navigationItem key="navigationItem" id="DkN-AF-lKt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="f73-x9-tIk">
-                            <connections>
-                                <action selector="addName:" destination="4Pu-sg-960" id="elA-p7-XXW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xtb-le-2TN" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1588" y="415"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JuU-6i-8Dx">
             <objects>
@@ -462,6 +427,7 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
+                                                            <action selector="saveTappedButton:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="CTo-vd-fff"/>
                                                             <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="JU7-jH-ky5"/>
                                                         </connections>
                                                     </button>
@@ -617,7 +583,7 @@
                         <outlet property="petGenderLabel" destination="Xjw-7u-lVk" id="lam-Xf-cef"/>
                         <outlet property="petImageView" destination="Pp9-cZ-ApB" id="8Dq-sa-KSZ"/>
                         <outlet property="petNameLabel" destination="kdE-x3-FCP" id="vgY-sj-q3J"/>
-                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="LLQ-yK-YPN"/>
+                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="Ee3-e1-cap"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6su-Ci-0E5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -50,7 +50,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-cq-idq" userLabel="Footer">
                                         <rect key="frame" x="0.0" y="402" width="334" height="436"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screenshot 2022-02-24 at 07.18.31" translatesAutoresizingMaskIntoConstraints="NO" id="XyR-WN-xtQ">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="XyR-WN-xtQ">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="436"/>
                                             </imageView>
                                         </subviews>
@@ -75,7 +75,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Screenshot 2022-02-24 at 07.18.31" width="334" height="436"/>
+        <image name="launch" width="334" height="436"/>
         <image name="pawprint" catalog="system" width="128" height="116"/>
     </resources>
 </document>
