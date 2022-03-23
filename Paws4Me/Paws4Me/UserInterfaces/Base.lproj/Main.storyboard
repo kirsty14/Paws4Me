@@ -427,8 +427,7 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <action selector="saveTappedButton:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="CTo-vd-fff"/>
-                                                            <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="JU7-jH-ky5"/>
+                                                            <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="IiR-C9-2rW"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -583,7 +582,7 @@
                         <outlet property="petGenderLabel" destination="Xjw-7u-lVk" id="lam-Xf-cef"/>
                         <outlet property="petImageView" destination="Pp9-cZ-ApB" id="8Dq-sa-KSZ"/>
                         <outlet property="petNameLabel" destination="kdE-x3-FCP" id="vgY-sj-q3J"/>
-                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="Ee3-e1-cap"/>
+                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="3g5-5x-k9f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6su-Ci-0E5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -688,7 +687,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JU7-jH-ky5"/>
+        <segue reference="IiR-C9-2rW"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryPurple"/>
     <resources>
