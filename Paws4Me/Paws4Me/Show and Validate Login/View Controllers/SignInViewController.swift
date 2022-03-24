@@ -6,11 +6,7 @@
 //
 import UIKit
 
-protocol Validation {
-    func isValidCredentials(username: String, password: String) -> Bool
-}
-
-class SignInViewController: UIViewController, Validation {
+class SignInViewController: UIViewController {
     // MARK: - IBOulets
     @IBOutlet weak private var usernameTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
@@ -21,6 +17,7 @@ class SignInViewController: UIViewController, Validation {
     private var isLoggedIn = false
     private let bottomLine = CALayer()
     private let bottomLine2 = CALayer()
+    private lazy var signInViewModel = SignInViewModel()
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -34,9 +31,10 @@ class SignInViewController: UIViewController, Validation {
 
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
-        guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
-        isLoggedIn = isValidCredentials(username: username, password: password)
         var errorMessage = ""
+        guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
+        isLoggedIn = signInViewModel.isValidCredentials(username: username, password: password)
+
         if isLoggedIn {
             performSegue(withIdentifier: "signInViewController", sender: self)
         } else if !isLoggedIn {
@@ -44,18 +42,10 @@ class SignInViewController: UIViewController, Validation {
             usernameTextField.addErrorBorderBoth()
             passwordTextField.addErrorBorderBoth()
         }
-       displayAlert(alertTitle: "Invalid credentials.",
-                          alertMessage: errorMessage,
-                          alertActionTitle: "Try again" ,
-                    alertDelegate: self, alertTriggered: .errorAlert)
+        displayAlert(alertTitle: "Invalid credentials.",
+                     alertMessage: errorMessage,
+                     alertActionTitle: "Try again" ,
+                     alertDelegate: self, alertTriggered: .errorAlert)
     }
 
-    // MARK: - Functions
-    func isValidCredentials(username: String, password: String) -> Bool {
-        if username == "Admin" && password == "TestPass123" {
-            return true
-        } else {
-            return false
-        }
-    }
 }
