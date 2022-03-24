@@ -147,13 +147,12 @@
 			isa = PBXGroup;
 			children = (
 				A11745BE27D9DC11004C0BD9 /* Data */,
-				35E7262627B3E24A002B86DB /* Models */,
 				A15F7EC327D8918A002B4BCE /* JsonObject */,
 				35E7261B27B3A4C5002B86DB /* Utilities */,
 				35E7261A27B3A4B2002B86DB /* Resources */,
 				A15F7EB827D88AD8002B4BCE /* Extensions */,
 				35E7261927B3A49E002B86DB /* UserInterfaces */,
-				A14ABA1927EC3D7000C65773 /* Repository */,
+				A14ABA2027EC633900C65773 /* Display All Adoptable Pets */,
 				A14ABA1827EC3D4D00C65773 /* Service Layer */,
 				35E7261827B3A492002B86DB /* Controllers */,
 				35E7261727B3A47E002B86DB /* Config */,
@@ -253,9 +252,35 @@
 			children = (
 				A14ABA1427EC3CA300C65773 /* Repositable.swift */,
 				A14ABA1A27EC3DB500C65773 /* PetRepository.swift */,
-				A14ABA1C27EC3E8600C65773 /* PetViewModel.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		A14ABA1E27EC62C400C65773 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				A14ABA1C27EC3E8600C65773 /* PetViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		A14ABA1F27EC631100C65773 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				35E7260727B3A442002B86DB /* AllPetDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A14ABA2027EC633900C65773 /* Display All Adoptable Pets */ = {
+			isa = PBXGroup;
+			children = (
+				35E7262627B3E24A002B86DB /* Models */,
+				A14ABA1E27EC62C400C65773 /* View Models */,
+				A14ABA1F27EC631100C65773 /* View Controllers */,
+				A14ABA1927EC3D7000C65773 /* Repository */,
+			);
+			path = "Display All Adoptable Pets";
 			sourceTree = "<group>";
 		};
 		A15F7EB827D88AD8002B4BCE /* Extensions */ = {
@@ -281,7 +306,6 @@
 		A1C20DE927D71E0C007006DC /* Logic */ = {
 			isa = PBXGroup;
 			children = (
-				35E7260727B3A442002B86DB /* AllPetDetailViewController.swift */,
 				A1821E2B27CA5005009F93A5 /* SignInViewController.swift */,
 				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
 			);
