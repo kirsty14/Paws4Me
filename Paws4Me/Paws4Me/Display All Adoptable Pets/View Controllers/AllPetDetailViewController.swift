@@ -16,6 +16,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = GetAllPetDataViewModel(repository: GetPetDataRepository(),
                                                                delegate: self)
+    private lazy var singlePetInViewModel = SinglePetViewModel()
     private var searchBarController = UISearchBar()
     private var animalType = ""
 
@@ -103,8 +104,8 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
             guard let pageItem = petDataViewModel.getFilteredPetObject() else { return }
             destination.setSinglePetObject(petObject: pageItem)
             destination.setSelectedPetIndex(indexPet: indexRow)
-
         }
+
     }
 
     // MARK: - Search

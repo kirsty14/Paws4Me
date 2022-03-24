@@ -8,6 +8,7 @@
 import UIKit
 
 class PetSingleDetailsViewController: UIViewController {
+
     // MARK: - IBOutlets
     @IBOutlet weak private var petImageView: UIImageView!
     @IBOutlet weak private var petNameLabel: UILabel!
@@ -17,15 +18,10 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var saveSinglePetButton: UIButton!
 
     // MARK: - Vars/Lets
-
+    private let viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
+    private lazy var singlePetViewModel = SinglePetViewModel()
     private var singlePet: AdoptPet?
     private var indexSinglePet: Int = 0
-    private var namePet = ""
-    private var breedPet = ""
-    private var genderPet = ""
-    private var agePet = ""
-    private var imgPet = ""
-    private let viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -39,7 +35,6 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     // MARK: - Functions
-
     func setSelectedPetIndex(indexPet: Int) {
         self.indexSinglePet = indexPet
     }
@@ -48,42 +43,15 @@ class PetSingleDetailsViewController: UIViewController {
         self.singlePet = petObject
     }
 
-    func setNamePet(name: String) {
-        self.namePet = name
-    }
-
-    func setBreedPet(breed: String) {
-        self.breedPet = breed
-    }
-
-    func setGenderPet(gender: String) {
-        self.genderPet = gender
-    }
-
-    func setAgePet(age: String) {
-        self.agePet = age
-    }
-
-    func setImagePet(image: String) {
-        self.imgPet = image
-    }
-
     func updateUI() {
         setPlaceholderImage()
-        guard let namePet = singlePet?.page?[indexSinglePet].name else { return }
-        setNamePet(name: namePet)
-        petNameLabel.text = namePet
-        guard let agePet = singlePet?.page?[indexSinglePet].age else { return }
-        setAgePet(age: agePet)
-        petAgeLabel.text = agePet
-        guard let breedPet = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName else { return }
-        setBreedPet(breed: breedPet)
-        petBreedNameLabel.text = breedPet
-        guard let genderPet = singlePet?.page?[indexSinglePet].sex else { return }
-        setGenderPet(gender: genderPet)
-        petGenderLabel.text = genderPet
-        guard let imgPet = singlePet?.page?[indexSinglePet].animalImage else { return }
-        setImagePet(image: imgPet)
+        singlePetViewModel.setSelectedPetIndex(indexPet: indexSinglePet)
+        guard let singelPetObject = singlePet else { return }
+        singlePetViewModel.setSinglePetObject(petObject: singelPetObject)
+        petNameLabel.text = singlePetViewModel.getSinglePetName()
+        petBreedNameLabel.text = singlePetViewModel.getSinglePetBreed()
+        petGenderLabel.text = singlePetViewModel.getSinglePetGender()
+        guard let imgPet = singlePetViewModel.getSinglePetImage() else { return }
         petImageView.loadImageFromURL(imageURL: imgPet)
         view.addSubview(petImageView)
     }
@@ -104,8 +72,26 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            destination.setNamePet(name: namePet)
-            destination.setImagePet(image: imgPet)
+            guard let petName = singlePetViewModel.getSinglePetName() else { return }
+            guard let petImage = singlePetViewModel.getSinglePetImage() else { return }
+            destination.setNamePet(name: petName)
+            destination.setImagePet(image: petImage)
+        }
+    }
+
+    func isPetSaved(petName: String) {
+        do {
+            guard let pets = try viewContext?.fetch(Pet.fetchRequest()) else { return }
+
+            for savedPet in pets where savedPet.petName == petName {
+                saveSinglePetButton.isEnabled  = false
+                return
+            }
+        } catch {
+            displayAlert(alertTitle: "Unable to retreive all your saved pets",
+                         alertMessage: "There was a problem retrieving",
+                         alertActionTitle: "Try again" ,
+                         alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
         }
     }
 }

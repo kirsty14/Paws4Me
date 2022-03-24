@@ -27,8 +27,9 @@
 		A14ABA1527EC3CA300C65773 /* Repositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1427EC3CA300C65773 /* Repositable.swift */; };
 		A14ABA1727EC3D3300C65773 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1627EC3D3300C65773 /* ServiceErrors.swift */; };
 		A14ABA1B27EC3DB500C65773 /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1A27EC3DB500C65773 /* PetRepository.swift */; };
-		A14ABA1D27EC3E8600C65773 /* PetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1C27EC3E8600C65773 /* PetViewModel.swift */; };
+		A14ABA1D27EC3E8600C65773 /* PetAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */; };
 		A14ABA2227EC6A0100C65773 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */; };
+		A14ABA2727EC8A7600C65773 /* petSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */; };
 		A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */; };
 		A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */; };
 		A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */; };
@@ -83,8 +84,9 @@
 		A14ABA1427EC3CA300C65773 /* Repositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositable.swift; sourceTree = "<group>"; };
 		A14ABA1627EC3D3300C65773 /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		A14ABA1A27EC3DB500C65773 /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
-		A14ABA1C27EC3E8600C65773 /* PetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetViewModel.swift; sourceTree = "<group>"; };
+		A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAllViewModel.swift; sourceTree = "<group>"; };
 		A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petSingleViewModel.swift; sourceTree = "<group>"; };
 		A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheleterCenterModel.swift; sourceTree = "<group>"; };
 		A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				35E7261A27B3A4B2002B86DB /* Resources */,
 				A15F7EB827D88AD8002B4BCE /* Extensions */,
 				35E7261927B3A49E002B86DB /* UserInterfaces */,
+				A14ABA2A27EC90BC00C65773 /* Display Single Pet Details */,
 				A14ABA2027EC633900C65773 /* Display All Adoptable Pets */,
 				A14ABA2327EC6D3A00C65773 /* Show and Validate Login */,
 				A14ABA1827EC3D4D00C65773 /* Service Layer */,
@@ -177,7 +180,6 @@
 			isa = PBXGroup;
 			children = (
 				A1C20DEA27D71E30007006DC /* TableCells */,
-				A1C20DE927D71E0C007006DC /* Logic */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,7 +264,7 @@
 		A14ABA1E27EC62C400C65773 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
-				A14ABA1C27EC3E8600C65773 /* PetViewModel.swift */,
+				A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -311,6 +313,31 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
+		A14ABA2827EC909900C65773 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		A14ABA2927EC90A800C65773 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A14ABA2A27EC90BC00C65773 /* Display Single Pet Details */ = {
+			isa = PBXGroup;
+			children = (
+				A14ABA2827EC909900C65773 /* View Models */,
+				A14ABA2927EC90A800C65773 /* View Controllers */,
+			);
+			path = "Display Single Pet Details";
+			sourceTree = "<group>";
+		};
 		A15F7EB827D88AD8002B4BCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,14 +356,6 @@
 				A1C20DED27D763C1007006DC /* JsonObject.json */,
 			);
 			path = JsonObject;
-			sourceTree = "<group>";
-		};
-		A1C20DE927D71E0C007006DC /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
-			);
-			path = Logic;
 			sourceTree = "<group>";
 		};
 		A1C20DEA27D71E30007006DC /* TableCells */ = {
@@ -503,6 +522,7 @@
 			files = (
 				35E7262527B3E0D5002B86DB /* Constants.swift in Sources */,
 				A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */,
+				A14ABA2727EC8A7600C65773 /* petSingleViewModel.swift in Sources */,
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
 				A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */,
 				A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */,
@@ -520,7 +540,7 @@
 				A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */,
 				A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */,
 				A11745BD27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld in Sources */,
-				A14ABA1D27EC3E8600C65773 /* PetViewModel.swift in Sources */,
+				A14ABA1D27EC3E8600C65773 /* PetAllViewModel.swift in Sources */,
 				35E7260627B3A442002B86DB /* SceneDelegate.swift in Sources */,
 				A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */,
 				A14ABA1527EC3CA300C65773 /* Repositable.swift in Sources */,

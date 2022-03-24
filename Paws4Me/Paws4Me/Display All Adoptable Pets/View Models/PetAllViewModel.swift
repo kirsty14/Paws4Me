@@ -19,6 +19,7 @@ class GetAllPetDataViewModel {
     // MARK: - Vars/Lets
     private var petRepository: Repositable?
     private weak var delegate: PetViewModelDelegate?
+    private lazy var singlePetViewModel = SinglePetViewModel()
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
     private var petCount: Int?
@@ -66,14 +67,10 @@ class GetAllPetDataViewModel {
     }
 
     func getIndexPetSelected(tableView: UITableView) -> Int {
-        var indexRow = 0
-        if !isSingleSearch || !isFilterSearch {
-            guard let rowIndex = tableView.indexPathForSelectedRow?.row else { return 0 }
-            indexRow = rowIndex
-        } else {
-            guard let indexPet = indexSinglePet else { return 0 }
-            indexRow = indexPet
-        }
+        let indexRow = singlePetViewModel.getSinglePetIndex(singleSearch: isSingleSearch,
+                                             filterSearch: isFilterSearch,
+                                             tableView: tableView,
+                                             indexPet: indexSinglePet)
         return indexRow
     }
 
@@ -93,17 +90,13 @@ class GetAllPetDataViewModel {
             guard let filteredPet = filteredPetObject else {
                 return
             }
-            setIndexForSpecificPetName(searchText: petSearchText, filteredPetObject: filteredPet )
+            indexSinglePet = singlePetViewModel.setIndexForSpecificPetName(searchText: petSearchText,
+                                                                           filteredPetObject: filteredPet )
 
             if filteredPetObject == nil {
                 filteredPetObject = adoptPetObject
             }
         }
-    }
-
-    func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) {
-        indexSinglePet =  filteredPetObject.page?.firstIndex(
-            where: { $0.name?.lowercased().starts(with: searchText) ??  false })
     }
 
     // MARK: - Search Pet by Category, Gender
