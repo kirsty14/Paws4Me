@@ -13,9 +13,6 @@ protocol Validation {
 
 class SignInViewModel: Validation {
 
-    // MARK: - Vars/Lets
-    private var isLoggedIn = false
-
     // MARK: - Functions
     func isValidCredentials(username: String, password: String) -> Bool {
         if username == "Admin" && password == "TestPass123" {
