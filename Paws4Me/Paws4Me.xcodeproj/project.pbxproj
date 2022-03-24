@@ -31,6 +31,7 @@
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
+		A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */; };
 		A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObject.json */; };
 		A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteTableViewCell.swift; path = Paws4Me/Controllers/TableCells/FavouriteTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		A1C20DED27D763C1007006DC /* JsonObject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObject.json; sourceTree = "<group>"; };
 		A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -261,6 +263,7 @@
 		A1C20DEA27D71E30007006DC /* TableCells */ = {
 			isa = PBXGroup;
 			children = (
+				A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */,
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 			);
 			path = TableCells;
@@ -422,6 +425,7 @@
 				35E7262527B3E0D5002B86DB /* Constants.swift in Sources */,
 				A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */,
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
+				A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */,
 				A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
 				35E7260827B3A442002B86DB /* AllPetDetailViewController.swift in Sources */,

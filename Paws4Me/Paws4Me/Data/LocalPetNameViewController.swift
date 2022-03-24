@@ -8,43 +8,62 @@
 import CoreData
 import UIKit
 
-class LocalPetViewController: UIViewController {
+class LocalPetViewController: UIViewController, UITableViewDelegate {
     // MARK: - IBOutlets
-    @IBOutlet weak var petNameTableView: UITableView!
+    @IBOutlet weak private var petNameTableView: UITableView!
+    private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Vars/Lets
-    var namePet = ""
-    var imagePet = ""
-    var pets: [NSManagedObject] = []
+    private var namePet = ""
+    private var imagePet = ""
+    private var pets: [Pet]? = []
 
     // MARK: - Life cycle
     override func viewDidLoad() {
       super.viewDidLoad()
+      petNameTableView.dataSource = self
+      petNameTableView.delegate = self
       title = "Saved Pets"
-        petNameTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+      fetchSavedPets()
+      savePets(name: namePet, image: imagePet)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-      super.viewWillAppear(animated)
+    func fetchSavedPets() {
+        do {
+            self.pets = try context?.fetch(Pet.fetchRequest())
+            DispatchQueue.main.async {
+                self.petNameTableView.reloadData()
+            }
 
-      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-        return
-      }
+        } catch _ as NSError {
+            displayAlert(alertTitle: "Unable to retreive all your saved pets",
+                         alertMessage: "There was a problem retrieving",
+                         alertActionTitle: "Try again" ,
+                         alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+        }
+    }
 
-      let managedContext = appDelegate.persistentContainer.viewContext
-      let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Pet")
+    func savePets(name: String, image: String) {
+        guard let petContext = self.context else { return }
+        let petObject = Pet(context: petContext)
+        petObject.petName = namePet
+        petObject.petImage = imagePet
 
       do {
-        pets = try managedContext.fetch(fetchRequest)
+          guard let petContext = self.context else { return }
+          try petContext.save()
+          DispatchQueue.main.async {
+              self.petNameTableView.reloadData()
+          }
       } catch _ as NSError {
-          displayAlert(alertTitle: "Unable to retreive all your saved pets",
-                             alertMessage: "There was a problem retrieving",
+          displayAlert(alertTitle: "Unable to save \(namePet)",
+                             alertMessage: "There was a problem saving",
                              alertActionTitle: "Try again" ,
-                       alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+                             alertDelegate: self,
+                             alertTriggered: .fatalLocalDatabaseAlert)
       }
 
-        save(name: namePet, image: imagePet)
-       petNameTableView.reloadData()
+        self.fetchSavedPets()
     }
 
     // MARK: - Functions
@@ -56,65 +75,70 @@ class LocalPetViewController: UIViewController {
     func setImagePet(image: String) {
         self.imagePet = image
     }
+}
+// MARK: - UITableViewDataSource
+   extension LocalPetViewController: UITableViewDataSource {
 
-    func save(name: String, image: String) {
-      guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-        return
-      }
+     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+         guard let countPet = pets?.count else { return 0 }
+         return countPet
+     }
 
-      let managedContext = appDelegate.persistentContainer.viewContext
-      let entity = NSEntityDescription.entity(forEntityName: "Pet", in: managedContext)!
-      let pet = NSManagedObject(entity: entity, insertInto: managedContext)
-        pet.setValue(name, forKeyPath: "petName")
-        pet.setValue(imagePet, forKeyPath: "petImage")
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       let pet = pets?[indexPath.row]
+         guard let cell = tableView.dequeueReusableCell(withIdentifier: "favouritePetCell",
+                                                        for: indexPath) as? FavouriteTableViewCell else {
+             return UITableViewCell()
+         }
+         let namePet = pet?.value(forKeyPath: "petName") as? String ?? ""
+         let imagePet = pet?.value(forKeyPath: "petImage") as? String ?? ""
+         cell.updateUI(namePet: namePet, imagePet: imagePet)
+         cell.setNeedsLayout()
+       return cell
+     }
+       func tableView(_ tableView: UITableView,
+                      trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+           let deleteAction = UIContextualAction(style: .normal, title: "Delete",
+                                           handler: { (_: UIContextualAction, _: UIView, success: (Bool) -> Void) in
+               DispatchQueue.main.async {
+                   self.showDeleteWarning(for: indexPath)
+               }
+               success(true)
+           })
 
-      do {
-        try managedContext.save()
-        pets.append(pet)
-      } catch _ as NSError {
-          displayAlert(alertTitle: "Unable to save \(namePet)",
-                             alertMessage: "There was a problem saving",
-                             alertActionTitle: "Try again" ,
-                       alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
-      }
-    }
-  }
+           deleteAction.image = UIImage(named: "delete")
+           deleteAction.backgroundColor = UIColor.myAppPurple
 
-  // MARK: - UITableViewDataSource
-  extension LocalPetViewController: UITableViewDataSource {
+           return UISwipeActionsConfiguration(actions: [deleteAction])
+       }
 
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return pets.count
-    }
+       func showDeleteWarning(for indexPath: IndexPath) {
+           guard let petToRemove = self.pets?[indexPath.row] else { return }
+           presentAlertDeleteWarning(title: "Delete Pet",
+                                     message: "Are you sure you want to delete this pet?",
+                                 options: "Cancel", "Delete") { (optionPressed) in
+               switch optionPressed {
+               case "Cancel":
+                    break
+               case "Delete":
+                   DispatchQueue.main.async {
+                       self.context?.delete(petToRemove)
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      let pet = pets[indexPath.row]
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-      cell.textLabel?.text = pet.value(forKeyPath: "petName") as? String
-        guard let imagePetLocal = (pet.value(forKeyPath: "petImage") as? String) else { return UITableViewCell() }
-        cell.imageView?.loadImageFromURL(imageURL: imagePetLocal)
-      return cell
-    }
-      func tableView(_ tableView: UITableView,
-                     commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-          guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-          }
-
-          let managedContext = appDelegate.persistentContainer.viewContext
-
-        if editingStyle == .delete {
-            managedContext.delete(pets[indexPath.row])
-          do {
-            try managedContext.save()
-            tableView.reloadData()
-          } catch _ as NSError {
-              displayAlert(alertTitle: "Unable to delete)",
-                                 alertMessage: "There was a problem deleting this pet",
-                                 alertActionTitle: "Try again" ,
-                           alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
-          }
-        }
-      }
-  }
+                       do {
+                           try self.context?.save()
+                       } catch {
+                           self.displayAlert(alertTitle: "Unable to save",
+                                              alertMessage: "There was a problem saving",
+                                              alertActionTitle: "Try again" ,
+                                              alertDelegate: self,
+                                              alertTriggered: .fatalLocalDatabaseAlert)
+                       }
+                       self.fetchSavedPets()
+                       self.petNameTableView.deleteRows(at: [indexPath], with: .fade)
+                   }
+               default:
+                   break
+               }
+           }
+       }
+   }

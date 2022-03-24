@@ -126,7 +126,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
            if let destination = segue.destination as? PetSingleDetailsViewController {
                let indexRow = getIndexPetSelected()
-               guard let pageItem = adoptPetObject else { return }
+               guard let pageItem = filteredPetObject else { return }
                destination.setSinglePetObject(petObject: pageItem)
                destination.setSelectedPetIndex(indexPet: indexRow)
 
@@ -208,15 +208,14 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
            let isGenderValid = selectedGender != ""
            let isPetTypeValid = animalType != ""
 
-           switch (isPetTypeValid, isGenderValid) {
-           case (isPetTypeValid, isGenderValid):
-               filterWithAgeTypeGender(type: petTypeLowercase, gender: selectedGender, petAge: petAge)
-           case (!isPetTypeValid, isGenderValid):
-               filterOnlyWithGender()
-           case (isPetTypeValid, !isGenderValid):
-               filterOnlyWithAgeAndType(type: petTypeLowercase, petAge: petAge)
-           case (_, _):
-               filteredPetObject = adoptPetObject
+           if isPetTypeValid && isGenderValid {
+              filterWithAgeTypeGender(type: petTypeLowercase, gender: selectedGender, petAge: petAge)
+           } else if isGenderValid {
+              filterOnlyWithGender()
+           } else if isPetTypeValid {
+             filterOnlyWithAgeAndType(type: petTypeLowercase, petAge: petAge)
+           } else {
+             filteredPetObject = adoptPetObject
            }
        }
 
