@@ -21,7 +21,7 @@ class SinglePetViewModel {
         return indexSinglePet
     }
 
-    func getSinglePetIndex(singleSearch: Bool, filterSearch: Bool, tableView: UITableView, indexPet: Int?) -> Int {
+    func singlePetIndex(singleSearch: Bool, filterSearch: Bool, tableView: UITableView, indexPet: Int?) -> Int {
         var indexRow = 0
         if !singleSearch || !filterSearch {
             guard let rowIndex = tableView.indexPathForSelectedRow?.row else { return 0 }
@@ -42,30 +42,30 @@ class SinglePetViewModel {
         singlePet = petObject
     }
 
-    // MARK: - Get single pet details
+    // MARK: - get single pet details
 
-    func getSinglePetName() -> String? {
+    func singlePetName() -> String? {
         guard let petName = singlePet?.page?[indexSinglePet].name else { return "" }
         return petName
     }
 
-    func getSinglePetAge () -> String? {
+    func singlePetAge () -> String? {
         guard let petAge = singlePet?.page?[indexSinglePet].age else { return "" }
         return petAge
     }
 
-    func getSinglePetBreed () -> String? {
+    func singlePetBreed () -> String? {
         guard let petBreed = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName
         else { return "" }
         return petBreed
     }
 
-    func getSinglePetGender () -> String? {
+    func singlePetGender () -> String? {
         guard let petGender = singlePet?.page?[indexSinglePet].sex else { return "" }
         return petGender
     }
 
-    func getSinglePetImage () -> String? {
+    func singlePetImage () -> String? {
         guard let petImage = singlePet?.page?[indexSinglePet].animalImage else { return "" }
         return petImage
     }

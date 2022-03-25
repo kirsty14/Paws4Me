@@ -48,10 +48,11 @@ class PetSingleDetailsViewController: UIViewController {
         singlePetViewModel.setSelectedPetIndex(indexPet: indexSinglePet)
         guard let singelPetObject = singlePet else { return }
         singlePetViewModel.setSinglePetObject(petObject: singelPetObject)
-        petNameLabel.text = singlePetViewModel.getSinglePetName()
-        petBreedNameLabel.text = singlePetViewModel.getSinglePetBreed()
-        petGenderLabel.text = singlePetViewModel.getSinglePetGender()
-        guard let imgPet = singlePetViewModel.getSinglePetImage() else { return }
+
+        petNameLabel.text = singlePetViewModel.singlePetName()
+        petBreedNameLabel.text = singlePetViewModel.singlePetBreed()
+        petGenderLabel.text = singlePetViewModel.singlePetGender()
+        guard let imgPet = singlePetViewModel.singlePetImage() else { return }
         petImageView.loadImageFromURL(imageURL: imgPet)
         view.addSubview(petImageView)
     }
@@ -72,8 +73,8 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            guard let petName = singlePetViewModel.getSinglePetName() else { return }
-            guard let petImage = singlePetViewModel.getSinglePetImage() else { return }
+            guard let petName = singlePetViewModel.singlePetName() else { return }
+            guard let petImage = singlePetViewModel.singlePetImage() else { return }
             destination.setNamePet(name: petName)
             destination.setImagePet(image: petImage)
         }

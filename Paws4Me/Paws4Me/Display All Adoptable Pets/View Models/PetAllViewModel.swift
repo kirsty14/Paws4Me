@@ -67,7 +67,7 @@ class GetAllPetDataViewModel {
     }
 
     func getIndexPetSelected(tableView: UITableView) -> Int {
-        let indexRow = singlePetViewModel.getSinglePetIndex(singleSearch: isSingleSearch,
+        let indexRow = singlePetViewModel.singlePetIndex(singleSearch: isSingleSearch,
                                              filterSearch: isFilterSearch,
                                              tableView: tableView,
                                              indexPet: indexSinglePet)
