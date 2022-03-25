@@ -14,7 +14,7 @@ class AllPetDetailViewController: UIViewController {
     @IBOutlet weak private var searchBar: UISearchBar!
 
     // MARK: - Vars/Lets
-    private lazy var petDataViewModel = GetAllPetDataViewModel(repository: GetPetDataRepository(),
+    private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
                                                                delegate: self)
     private var searchBarController = UISearchBar()
     private var animalType = ""
@@ -29,25 +29,25 @@ class AllPetDetailViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction private func catTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
     }
     @IBAction private func kittenTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
     }
     @IBAction private func dogTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
     }
     @IBAction private func puppyTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
@@ -60,7 +60,7 @@ class AllPetDetailViewController: UIViewController {
         self.title = "Adoptable Animals"
     }
 
-    private func getPetTypeFromButton(_ sender: UIButton) {
+    private func petTypeFromButton(_ sender: UIButton) {
         animalType = sender.titleLabel?.text ?? ""
     }
 
@@ -99,7 +99,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PetSingleDetailsViewController {
-            let indexRow = getIndexPetSelected(tableView: petTableView)
+            let indexRow = indexPetSelected(tableView: petTableView)
             guard let pageItem = petDataViewModel.objectFilteredPet() else { return }
             destination.setSinglePetObject(petObject: pageItem)
             destination.setSelectedPetIndex(indexPet: indexRow)
@@ -107,7 +107,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
         }
     }
 
-    func getIndexPetSelected(tableView: UITableView) -> Int {
+    func indexPetSelected(tableView: UITableView) -> Int {
         var indexRow = 0
         if !petDataViewModel.singleSearch() || !petDataViewModel.filterSearch() {
             guard let rowIndex = tableView.indexPathForSelectedRow?.row else { return 0 }

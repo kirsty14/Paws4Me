@@ -19,14 +19,14 @@ class SignInViewModel {
     private weak var delegate: SignInViewModelDelegate?
 
     init(delegate: SignInViewModelDelegate) {
-          self.delegate = delegate
-      }
+        self.delegate = delegate
+    }
 
     // MARK: - Functions
     func loginUser(username: String, password: String) {
         if username.isEmpty || password.isEmpty {
             delegate?.show(errorMessage: "Please fill in your username and password")
-               }
+        }
         let bLoggedIn = isValidCredentials(username: username, password: password)
 
         if bLoggedIn {

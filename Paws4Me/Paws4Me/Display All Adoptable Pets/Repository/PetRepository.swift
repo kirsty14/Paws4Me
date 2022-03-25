@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GetPetDataRepository {
+class PetDataRepository {
 
     typealias PetResult = (Result<AdoptPet, APIError>) -> Void
 

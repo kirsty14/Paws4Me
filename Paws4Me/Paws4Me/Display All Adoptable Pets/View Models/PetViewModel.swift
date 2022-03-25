@@ -13,10 +13,10 @@ protocol PetViewModelDelegate: AnyObject {
     func show(error: String)
 }
 
-class GetAllPetDataViewModel {
+class AllPetDataViewModel {
 
     // MARK: - Vars/Lets
-    private var petRepository: GetPetDataRepository?
+    private var petRepository: PetDataRepository?
     private weak var delegate: PetViewModelDelegate?
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
@@ -27,7 +27,7 @@ class GetAllPetDataViewModel {
     private var animalType = ""
 
     // MARK: - Constructor
-    init(repository: GetPetDataRepository,
+    init(repository: PetDataRepository,
          delegate: PetViewModelDelegate) {
         self.petRepository = repository
         self.delegate = delegate
@@ -113,7 +113,7 @@ class GetAllPetDataViewModel {
             guard let petObject = adoptPetObject else {
                 return
             }
-            let petAge = getAgeFromPetCategoryType(_: petCategoryType)
+            let petAge = ageFromPetCategoryType(_: petCategoryType)
             searchPet(petCategoryType: petCategoryType, gender: selectedGender, petAge: petAge)
             if filteredPetObject == nil {
                 filteredPetObject = petObject
@@ -121,7 +121,7 @@ class GetAllPetDataViewModel {
         }
     }
 
-    func getAgeFromPetCategoryType(_ petCategoryType: String) -> String {
+    func ageFromPetCategoryType(_ petCategoryType: String) -> String {
         var petAge = ""
         let petTypeSelected = SpeciesName(rawValue: petCategoryType)
 

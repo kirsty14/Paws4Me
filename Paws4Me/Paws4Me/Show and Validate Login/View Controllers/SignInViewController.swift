@@ -22,11 +22,7 @@ class SignInViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        signInButton.addCornerRadius()
-        registerButton.addCornerRadius()
-        registerButton.changeBorderLook()
-        usernameTextField.addUnderline()
-        passwordTextField.addUnderline()
+        setUpLogin()
     }
 
     // MARK: - IBActions
@@ -35,6 +31,14 @@ class SignInViewController: UIViewController {
         signInViewModel.loginUser(username: username, password: password)
     }
 
+    // MARK: - Functions
+    func setUpLogin() {
+        signInButton.addCornerRadius()
+        registerButton.addCornerRadius()
+        registerButton.changeBorderLook()
+        usernameTextField.addUnderline()
+        passwordTextField.addUnderline()
+    }
 }
 
 // MARK: - SignInViewModelDelegate Delegate
