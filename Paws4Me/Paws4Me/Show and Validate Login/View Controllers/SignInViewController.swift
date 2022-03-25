@@ -17,7 +17,7 @@ class SignInViewController: UIViewController {
     private var isLoggedIn = false
     private let bottomLine = CALayer()
     private let bottomLine2 = CALayer()
-    private lazy var signInViewModel = SignInViewModel()
+    private lazy var signInViewModel = SignInViewModel(delegate: self)
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -32,15 +32,7 @@ class SignInViewController: UIViewController {
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
         guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
-        isLoggedIn = signInViewModel.isValidCredentials(username: username, password: password)
-
-        if isLoggedIn {
-              successRouting()
-        } else if !isLoggedIn {
-           show(errorMessage: "Incorrect Username or Password")
-        } else if username.isEmpty || password.isEmpty {
-            show(errorMessage: "Please fill in your username and password")
-        }
+        signInViewModel.loginUser(username: username, password: password)
     }
 
 }
