@@ -36,6 +36,8 @@
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
 		A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */; };
+		A1B1747227EDE9A500541A4C /* SavedPetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1747127EDE9A500541A4C /* SavedPetRepository.swift */; };
+		A1B1747427EDEBBB00541A4C /* petLocaldatabaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B1747327EDEBBB00541A4C /* petLocaldatabaseViewModel.swift */; };
 		A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObject.json */; };
 		A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,8 @@
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteTableViewCell.swift; path = Paws4Me/Controllers/TableCells/FavouriteTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		A1B1747127EDE9A500541A4C /* SavedPetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPetRepository.swift; sourceTree = "<group>"; };
+		A1B1747327EDEBBB00541A4C /* petLocaldatabaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petLocaldatabaseViewModel.swift; sourceTree = "<group>"; };
 		A1C20DED27D763C1007006DC /* JsonObject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObject.json; sourceTree = "<group>"; };
 		A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -219,6 +223,8 @@
 			isa = PBXGroup;
 			children = (
 				A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */,
+				A1B1747127EDE9A500541A4C /* SavedPetRepository.swift */,
+				A1B1747327EDEBBB00541A4C /* petLocaldatabaseViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -505,6 +511,7 @@
 				A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
 				A14ABA1B27EC3DB500C65773 /* PetRepository.swift in Sources */,
+				A1B1747227EDE9A500541A4C /* SavedPetRepository.swift in Sources */,
 				A14ABA2227EC6A0100C65773 /* SignInViewModel.swift in Sources */,
 				35E7260827B3A442002B86DB /* AllPetDetailViewController.swift in Sources */,
 				A11745C427D9DCC2004C0BD9 /* LocalPetNameViewController.swift in Sources */,
@@ -512,6 +519,7 @@
 				A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */,
 				A11499E827DB1AC900626FC5 /* PetName+CoreDataClass.swift in Sources */,
 				35E7260427B3A442002B86DB /* AppDelegate.swift in Sources */,
+				A1B1747427EDEBBB00541A4C /* petLocaldatabaseViewModel.swift in Sources */,
 				35E7262827B3E2BE002B86DB /* AdoptionModel.swift in Sources */,
 				A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */,
 				A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */,

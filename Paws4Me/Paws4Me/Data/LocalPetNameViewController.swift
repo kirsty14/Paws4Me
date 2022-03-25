@@ -8,7 +8,8 @@
 import CoreData
 import UIKit
 
-class LocalPetViewController: UIViewController, UITableViewDelegate {
+class LocalPetViewController: UIViewController, UITableViewDelegate, PetLocalDatabaseViewModelDelegate {
+
     // MARK: - IBOutlets
     @IBOutlet weak private var petNameTableView: UITableView!
     private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
@@ -17,15 +18,23 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
     private var namePet = ""
     private var imagePet = ""
     private var pets: [Pet]? = []
+    private lazy var petLocalDatabaseViewModel = PetLocaldatabaseViewModel(repository: SavedPetDataRepository(),
+                                                               delegate: self)
 
     // MARK: - Life cycle
     override func viewDidLoad() {
       super.viewDidLoad()
-      petNameTableView.dataSource = self
-      petNameTableView.delegate = self
-      title = "Saved Pets"
-      fetchSavedPets()
+      setupTableView()
+      petLocalDatabaseViewModel.fetchPetDataResults()
+      // fetchSavedPets()
       savePets(name: namePet, image: imagePet)
+    }
+
+    // MARK: - Functions
+    func setupTableView() {
+        petNameTableView.dataSource = self
+        petNameTableView.delegate = self
+        title = "Saved Pets"
     }
 
     func fetchSavedPets() {
@@ -140,5 +149,16 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
                    break
                }
            }
+       }
+
+       func reloadView() {
+           petNameTableView.reloadData()
+       }
+
+       func show(errorTitle: String, errorMessage: String) {
+           displayAlert(alertTitle: errorTitle,
+                        alertMessage: errorMessage,
+                        alertActionTitle: "Try again" ,
+                        alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
        }
    }

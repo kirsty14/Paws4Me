@@ -13,6 +13,12 @@ enum APIError: String, Error {
     case parsingError
 }
 
+enum LocalDatabaseError: String, Error {
+    case receiveSavedPetsError
+    case savePets
+    case deletePets
+}
+
 enum HTTPMethod {
     case GET
     case POST
