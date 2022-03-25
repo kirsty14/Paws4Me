@@ -15,7 +15,7 @@ class AllPetDetailViewController: UIViewController {
 
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
-                                                               delegate: self)
+                                                            delegate: self)
     private var searchBarController = UISearchBar()
     private var animalType = ""
 
@@ -87,7 +87,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         cell.index = indexPath.row
-        cell.pet = petDataViewModel.objectFilteredPet()
+        cell.pet = petDataViewModel.objectFilteredPet
         cell.setNeedsLayout()
         cell.backgroundColor = UIColor.myAppTan
         return cell
@@ -100,7 +100,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PetSingleDetailsViewController {
             let indexRow = indexPetSelected(tableView: petTableView)
-            guard let pageItem = petDataViewModel.objectFilteredPet() else { return }
+            guard let pageItem = petDataViewModel.objectFilteredPet else { return }
             destination.setSinglePetObject(petObject: pageItem)
             destination.setSelectedPetIndex(indexPet: indexRow)
 
@@ -109,11 +109,11 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
 
     func indexPetSelected(tableView: UITableView) -> Int {
         var indexRow = 0
-        if !petDataViewModel.singleSearch() || !petDataViewModel.filterSearch() {
+        if !petDataViewModel.singleSearch || !petDataViewModel.filterSearch {
             guard let rowIndex = tableView.indexPathForSelectedRow?.row else { return 0 }
             indexRow = rowIndex
         } else {
-            guard let indexPet = petDataViewModel.singlePetIndex() else { return 0 }
+            guard let indexPet = petDataViewModel.singlePetIndex else { return 0 }
             indexRow = indexPet
         }
         return indexRow

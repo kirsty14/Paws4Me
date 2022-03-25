@@ -55,19 +55,19 @@ class AllPetDataViewModel {
         return filteredPetObject?.page?.count ?? 0
     }
 
-    func objectFilteredPet() -> AdoptPet? {
+    var objectFilteredPet: AdoptPet? {
         return filteredPetObject
     }
 
-    func singleSearch() -> Bool {
+    var singleSearch: Bool {
         return isSingleSearch
     }
 
-    func filterSearch() -> Bool {
+    var filterSearch: Bool {
         return isFilterSearch
     }
 
-    func singlePetIndex() -> Int? {
+    var singlePetIndex: Int? {
         return indexSinglePet
     }
 

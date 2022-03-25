@@ -27,13 +27,8 @@ class SignInViewModel {
         if username.isEmpty || password.isEmpty {
             delegate?.show(errorMessage: "Please fill in your username and password")
         }
-        let bLoggedIn = isValidCredentials(username: username, password: password)
-
-        if bLoggedIn {
-            delegate?.successRouting()
-        } else {
-            delegate?.show(errorMessage: "Incorrect Username or Password")
-        }
+        _ = isValidCredentials(username: username, password: password) ? delegate?.successRouting():
+                               delegate?.show(errorMessage: "Incorrect Username or Password")
     }
 
     func isValidCredentials(username: String, password: String) -> Bool {
