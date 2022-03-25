@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import UIKit
 
-// MARK: - ViewModel Delegate
+// MARK: - PetViewModel Delegate
 protocol PetViewModelDelegate: AnyObject {
     func reloadView()
     func show(error: String)
@@ -17,11 +16,10 @@ protocol PetViewModelDelegate: AnyObject {
 class GetAllPetDataViewModel {
 
     // MARK: - Vars/Lets
-    private var petRepository: Repositable?
+    private var petRepository: GetPetDataRepository?
     private weak var delegate: PetViewModelDelegate?
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
-    private var petCount: Int?
     private var isSingleSearch = false
     private var isFilterSearch = true
     private var indexSinglePet: Int?
@@ -29,7 +27,7 @@ class GetAllPetDataViewModel {
     private var animalType = ""
 
     // MARK: - Constructor
-    init(repository: Repositable,
+    init(repository: GetPetDataRepository,
          delegate: PetViewModelDelegate) {
         self.petRepository = repository
         self.delegate = delegate
@@ -53,51 +51,48 @@ class GetAllPetDataViewModel {
     }
 
     // MARK: - Tableview Functions
-    func getPetCount() -> Int {
-        if let pageCount = filteredPetObject?.page?.count {
-            return pageCount
-        } else {
-            return 0
-        }
+    var petCount: Int {
+        return filteredPetObject?.page?.count ?? 0
     }
 
-    func getFilteredPetObject() -> AdoptPet? {
+    func objectFilteredPet() -> AdoptPet? {
         return filteredPetObject
     }
 
-    func getIndexPetSelected(tableView: UITableView) -> Int {
-        var indexRow = 0
-        if !isSingleSearch || !isFilterSearch {
-            guard let rowIndex = tableView.indexPathForSelectedRow?.row else { return 0 }
-            indexRow = rowIndex
-        } else {
-            guard let indexPet = indexSinglePet else { return 0 }
-            indexRow = indexPet
-        }
-        return indexRow
+    func singleSearch() -> Bool {
+        return isSingleSearch
+    }
+
+    func filterSearch() -> Bool {
+        return isFilterSearch
+    }
+
+    func singlePetIndex() -> Int? {
+        return indexSinglePet
     }
 
     // MARK: - Search Pet by name
-    func searchSpecificPet(petSearchText: String) {
-        if petSearchText == "" {
+    func setPetSearchName(petSearchText: String?) {
+        guard let searchPetText = petSearchText?.lowercased()  else {
             filteredPetObject = adoptPetObject
-        } else {
-            isSingleSearch = true
-            guard let petObject = adoptPetObject else {
-                return
-            }
-            let petSearchText = petSearchText.lowercased()
-            filteredPetObject?.page = petObject.page?.filter { $0.name?.lowercased().starts(with: petSearchText)
-                ??  false}
+            return
+        }
 
-            guard let filteredPet = filteredPetObject else {
-                return
-            }
-            setIndexForSpecificPetName(searchText: petSearchText, filteredPetObject: filteredPet )
+        searchPetName(searchText: searchPetText)
+    }
 
-            if filteredPetObject == nil {
-                filteredPetObject = adoptPetObject
-            }
+    func searchPetName(searchText: String) {
+        isSingleSearch = true
+        guard let petObject = adoptPetObject else { return }
+
+        filteredPetObject?.page = petObject.page?.filter { $0.name?.lowercased().starts(with: searchText)
+            ??  false}
+
+        guard let filteredPet = filteredPetObject else { return }
+        setIndexForSpecificPetName(searchText: searchText, filteredPetObject: filteredPet)
+
+        if filteredPetObject == nil {
+            filteredPetObject = adoptPetObject
         }
     }
 

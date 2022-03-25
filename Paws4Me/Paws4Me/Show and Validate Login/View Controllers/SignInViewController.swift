@@ -31,21 +31,33 @@ class SignInViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
-        var errorMessage = ""
         guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
         isLoggedIn = signInViewModel.isValidCredentials(username: username, password: password)
 
         if isLoggedIn {
-            performSegue(withIdentifier: "signInViewController", sender: self)
+              successRouting()
         } else if !isLoggedIn {
-            errorMessage = "Incorrect Username or Password"
-            usernameTextField.addErrorBorderBoth()
-            passwordTextField.addErrorBorderBoth()
+           show(errorMessage: "Incorrect Username or Password")
+        } else if username.isEmpty || password.isEmpty {
+            show(errorMessage: "Please fill in your username and password")
         }
-        displayAlert(alertTitle: "Invalid credentials.",
+    }
+
+}
+
+// MARK: - SignInViewModelDelegate Delegate
+extension SignInViewController: SignInViewModelDelegate {
+
+    func successRouting() {
+        performSegue(withIdentifier: "signInViewController", sender: self)
+    }
+
+    func show(errorMessage: String) {
+        usernameTextField.addErrorBorderBoth()
+        passwordTextField.addErrorBorderBoth()
+        displayAlert(alertTitle: "Invalid Credentials",
                      alertMessage: errorMessage,
                      alertActionTitle: "Try again" ,
                      alertDelegate: self, alertTriggered: .errorAlert)
     }
-
 }

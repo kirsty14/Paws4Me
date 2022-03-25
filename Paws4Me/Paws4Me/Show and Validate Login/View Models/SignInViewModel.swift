@@ -7,18 +7,16 @@
 
 import Foundation
 
-protocol Validation {
-    func isValidCredentials(username: String, password: String) -> Bool
+// MARK: - SignInViewModel Delegate
+protocol SignInViewModelDelegate: AnyObject {
+    func successRouting()
+    func show(errorMessage: String)
 }
 
-class SignInViewModel: Validation {
+class SignInViewModel {
 
     // MARK: - Functions
     func isValidCredentials(username: String, password: String) -> Bool {
-        if username == "Admin" && password == "TestPass123" {
-            return true
-        } else {
-            return false
-        }
+        return username == "Admin" && password == "TestPass123"
     }
 }
