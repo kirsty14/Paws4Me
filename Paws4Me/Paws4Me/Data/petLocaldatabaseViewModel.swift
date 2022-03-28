@@ -27,12 +27,11 @@ class PetLocaldatabaseViewModel {
         self.delegate = delegate
     }
 
-    // MARK: - Functions Fetch Json Object
+    // MARK: - Functions Fetch local database Object
     func fetchPetDataResults() {
-        guard let petsSaved = pets else { return }
-        petLocalDatabaseRepository?.fetchSavedPets(savedPets: petsSaved) { [weak self] result in
-            DispatchQueue.main.async {
-                switch result {
+
+        petLocalDatabaseRepository?.fetchSavedPets { [weak self] savedPets in
+                switch savedPets {
                 case .success(let savedPetData):
                     self?.pets = savedPetData
                     self?.delegate?.reloadView()
@@ -40,7 +39,6 @@ class PetLocaldatabaseViewModel {
                     self?.delegate?.show(errorTitle: "Unable to retreive all your saved pets",
                                          errorMessage: "There was a problem retrieving")
                 }
-            }
         }
 }
 }

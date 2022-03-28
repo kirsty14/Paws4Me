@@ -26,7 +26,6 @@ class LocalPetViewController: UIViewController, UITableViewDelegate, PetLocalDat
       super.viewDidLoad()
       setupTableView()
       petLocalDatabaseViewModel.fetchPetDataResults()
-      // fetchSavedPets()
       savePets(name: namePet, image: imagePet)
     }
 
@@ -72,7 +71,7 @@ class LocalPetViewController: UIViewController, UITableViewDelegate, PetLocalDat
                              alertTriggered: .fatalLocalDatabaseAlert)
       }
 
-        self.fetchSavedPets()
+        petLocalDatabaseViewModel.fetchPetDataResults()
     }
 
     // MARK: - Functions

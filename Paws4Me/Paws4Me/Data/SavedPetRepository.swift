@@ -16,18 +16,13 @@ class SavedPetDataRepository {
 
     // MARK: - Fetch local database data
 
-    func fetchSavedPets(savedPets: [Pet], completionHandler: @escaping PetSavedResult) {
+    func fetchSavedPets(completionHandler: @escaping PetSavedResult) {
         do {
             self.pets = try context?.fetch(Pet.fetchRequest())
-            DispatchQueue.main.async {
                 guard let savedPets = self.pets else { return }
-                completionHandler(.success(savedPets))
-            }
-
-        } catch _ as NSError {
-            DispatchQueue.main.async {
-            completionHandler(.failure(.receiveSavedPetsError))
-            }
+                completionHandler(Result.success(savedPets))
+            } catch _ as NSError {
+            completionHandler(Result.failure(.receiveSavedPetsError))
         }
     }
 }
