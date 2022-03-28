@@ -127,7 +127,7 @@ extension AllPetDetailViewController: PetViewModelDelegate {
         petTableView.reloadData()
     }
 
-    func show(error: String) {
+    func showError(error: String) {
         displayAlert(alertTitle: "Something went worng",
                      alertMessage: "Could not retrieve the adoptable pets.",
                      alertActionTitle: "Try again" ,

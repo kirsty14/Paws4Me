@@ -10,7 +10,7 @@ import Foundation
 // MARK: - PetViewModel Delegate
 protocol PetViewModelDelegate: AnyObject {
     func reloadView()
-    func show(error: String)
+    func showError(error: String)
 }
 
 class AllPetDataViewModel {
@@ -44,7 +44,7 @@ class AllPetDataViewModel {
                     self?.filteredPetObject = petData
                     self?.delegate?.reloadView()
                 case .failure(let error):
-                    self?.delegate?.show(error: error.rawValue)
+                    self?.delegate?.showError(error: error.rawValue)
                 }
             }
         }
