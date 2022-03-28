@@ -7,16 +7,16 @@
 
 import UIKit
 
-class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
+class AllPetDetailViewController: UIViewController {
 
     // MARK: - IBOulets
     @IBOutlet weak private var petTableView: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
 
     // MARK: - Vars/Lets
-    private lazy var petDataViewModel = GetAllPetDataViewModel(repository: GetPetDataRepository(),
-                                                               delegate: self)
     private lazy var singlePetInViewModel = SinglePetViewModel()
+    private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
+                                                            delegate: self)
     private var searchBarController = UISearchBar()
     private var animalType = ""
 
@@ -30,25 +30,25 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
 
     // MARK: - IBActions
     @IBAction private func catTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
     }
     @IBAction private func kittenTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
     }
     @IBAction private func dogTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
     }
     @IBAction private func puppyTappedButton(_ sender: UIButton) {
-        getPetTypeFromButton(sender)
+        petTypeFromButton(sender)
         sender.changePetIconsColor()
         petDataViewModel.searchPetCategoryType(_: animalType)
         reloadView()
@@ -61,11 +61,11 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
         self.title = "Adoptable Animals"
     }
 
-    func getPetTypeFromButton(_ sender: UIButton) {
+    private func petTypeFromButton(_ sender: UIButton) {
         animalType = sender.titleLabel?.text ?? ""
     }
 
-    func setUpSearchbar() {
+    private func setUpSearchbar() {
         searchBarController = UISearchBar(frame: CGRect(x: 0, y: 0,
                                                         width: self.petTableView.bounds.width, height: 65))
         searchBarController.showsScopeBar = true
@@ -80,7 +80,7 @@ class AllPetDetailViewController: UIViewController, UISearchBarDelegate {
 extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        petDataViewModel.getPetCount()
+        petDataViewModel.petCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,7 +88,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
             return UITableViewCell()
         }
         cell.index = indexPath.row
-        cell.pet = petDataViewModel.getFilteredPetObject()
+        cell.pet = petDataViewModel.objectFilteredPet
         cell.setNeedsLayout()
         cell.backgroundColor = UIColor.myAppTan
         return cell
@@ -100,14 +100,43 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? PetSingleDetailsViewController {
-            let indexRow = petDataViewModel.getIndexPetSelected(tableView: petTableView)
-            guard let pageItem = petDataViewModel.getFilteredPetObject() else { return }
+            let indexRow = indexPetSelected(tableView: petTableView)
+            guard let pageItem = petDataViewModel.objectFilteredPet else { return }
             destination.setSinglePetObject(petObject: pageItem)
             destination.setSelectedPetIndex(indexPet: indexRow)
         }
 
     }
 
+    func indexPetSelected(tableView: UITableView) -> Int {
+        var indexRow = 0
+        if !petDataViewModel.singleSearch || !petDataViewModel.filterSearch {
+            guard let rowIndex = tableView.indexPathForSelectedRow?.row else { return 0 }
+            indexRow = rowIndex
+        } else {
+            guard let indexPet = petDataViewModel.singlePetIndex else { return 0 }
+            indexRow = indexPet
+        }
+        return indexRow
+    }
+}
+
+// MARK: - PetViewModel Delegate
+extension AllPetDetailViewController: PetViewModelDelegate {
+
+    func reloadView() {
+        petTableView.reloadData()
+    }
+
+    func showError(error: String) {
+        displayAlert(alertTitle: "Something went worng",
+                     alertMessage: "Could not retrieve the adoptable pets.",
+                     alertActionTitle: "Try again" ,
+                     alertDelegate: self, alertTriggered: .errorAlert)
+    }
+}
+
+extension AllPetDetailViewController: UISearchBarDelegate {
     // MARK: - Search
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         if selectedScope == 0 {
@@ -120,22 +149,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        petDataViewModel.searchSpecificPet(petSearchText: searchText)
+        petDataViewModel.setPetSearchName(petSearchText: searchText)
         reloadView()
-    }
-}
-
-// MARK: - ViewModel Delegate
-extension AllPetDetailViewController: PetViewModelDelegate {
-
-    func reloadView() {
-        petTableView.reloadData()
-    }
-
-    func show(error: String) {
-        displayAlert(alertTitle: "Something went worng",
-                     alertMessage: "Could not retrieve the adoptable pets.",
-                     alertActionTitle: "Try again" ,
-                     alertDelegate: self, alertTriggered: .errorAlert)
     }
 }

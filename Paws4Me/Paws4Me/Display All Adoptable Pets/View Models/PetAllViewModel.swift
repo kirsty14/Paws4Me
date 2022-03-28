@@ -6,23 +6,21 @@
 //
 
 import Foundation
-import UIKit
 
-// MARK: - ViewModel Delegate
+// MARK: - PetViewModel Delegate
 protocol PetViewModelDelegate: AnyObject {
     func reloadView()
-    func show(error: String)
+    func showError(error: String)
 }
 
-class GetAllPetDataViewModel {
+class AllPetDataViewModel {
 
     // MARK: - Vars/Lets
-    private var petRepository: Repositable?
+    private var petRepository: PetDataRepository?
     private weak var delegate: PetViewModelDelegate?
     private lazy var singlePetViewModel = SinglePetViewModel()
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
-    private var petCount: Int?
     private var isSingleSearch = false
     private var isFilterSearch = true
     private var indexSinglePet: Int?
@@ -30,7 +28,7 @@ class GetAllPetDataViewModel {
     private var animalType = ""
 
     // MARK: - Constructor
-    init(repository: Repositable,
+    init(repository: PetDataRepository,
          delegate: PetViewModelDelegate) {
         self.petRepository = repository
         self.delegate = delegate
@@ -47,56 +45,66 @@ class GetAllPetDataViewModel {
                     self?.filteredPetObject = petData
                     self?.delegate?.reloadView()
                 case .failure(let error):
-                    self?.delegate?.show(error: error.rawValue)
+                    self?.delegate?.showError(error: error.rawValue)
                 }
             }
         }
     }
 
     // MARK: - Tableview Functions
-    func getPetCount() -> Int {
-        if let pageCount = filteredPetObject?.page?.count {
-            return pageCount
-        } else {
-            return 0
-        }
+    var petCount: Int {
+        return filteredPetObject?.page?.count ?? 0
     }
 
-    func getFilteredPetObject() -> AdoptPet? {
+    var objectFilteredPet: AdoptPet? {
         return filteredPetObject
     }
 
-    func getIndexPetSelected(tableView: UITableView) -> Int {
-        let indexRow = singlePetViewModel.singlePetIndex(singleSearch: isSingleSearch,
-                                             filterSearch: isFilterSearch,
-                                             tableView: tableView,
-                                             indexPet: indexSinglePet)
-        return indexRow
+    var singleSearch: Bool {
+        return isSingleSearch
+    }
+
+    var filterSearch: Bool {
+        return isFilterSearch
+    }
+
+    var singlePetIndex: Int? {
+        return indexSinglePet
     }
 
     // MARK: - Search Pet by name
-    func searchSpecificPet(petSearchText: String) {
-        if petSearchText == "" {
+    func setPetSearchName(petSearchText: String?) {
+        guard let searchPetText = petSearchText?.lowercased()  else {
             filteredPetObject = adoptPetObject
-        } else {
-            isSingleSearch = true
-            guard let petObject = adoptPetObject else {
-                return
-            }
-            let petSearchText = petSearchText.lowercased()
-            filteredPetObject?.page = petObject.page?.filter { $0.name?.lowercased().starts(with: petSearchText)
-                ??  false}
+            return
+        }
 
             guard let filteredPet = filteredPetObject else {
                 return
             }
-            indexSinglePet = singlePetViewModel.setIndexForSpecificPetName(searchText: petSearchText,
+        indexSinglePet = singlePetViewModel.setIndexForSpecificPetName(searchText: petSearchText ?? "",
                                                                            filteredPetObject: filteredPet )
+        searchPetName(searchText: searchPetText)
+    }
 
-            if filteredPetObject == nil {
-                filteredPetObject = adoptPetObject
-            }
+    func searchPetName(searchText: String) {
+        isSingleSearch = true
+        guard let petObject = adoptPetObject else { return }
+
+        filteredPetObject?.page = petObject.page?.filter { $0.name?.lowercased().starts(with: searchText)
+            ??  false}
+
+        guard let filteredPet = filteredPetObject else { return }
+        setIndexForSpecificPetName(searchText: searchText, filteredPetObject: filteredPet)
+
+        if filteredPetObject == nil {
+            filteredPetObject = adoptPetObject
         }
+    }
+
+    func setIndexForSpecificPetName(searchText: String, filteredPetObject: AdoptPet) {
+        indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
+                                                                      ??  false })
     }
 
     // MARK: - Search Pet by Category, Gender
@@ -111,7 +119,7 @@ class GetAllPetDataViewModel {
             guard let petObject = adoptPetObject else {
                 return
             }
-            let petAge = getAgeFromPetCategoryType(_: petCategoryType)
+            let petAge = ageFromPetCategoryType(_: petCategoryType)
             searchPet(petCategoryType: petCategoryType, gender: selectedGender, petAge: petAge)
             if filteredPetObject == nil {
                 filteredPetObject = petObject
@@ -119,7 +127,7 @@ class GetAllPetDataViewModel {
         }
     }
 
-    func getAgeFromPetCategoryType(_ petCategoryType: String) -> String {
+    func ageFromPetCategoryType(_ petCategoryType: String) -> String {
         var petAge = ""
         let petTypeSelected = SpeciesName(rawValue: petCategoryType)
 
@@ -154,7 +162,7 @@ class GetAllPetDataViewModel {
     }
 
     // MARK: - Filter Search
-    func filterOnlyWithGender() {
+    private func filterOnlyWithGender() {
         guard let petObject = adoptPetObject else { return }
         filteredPetObject?.page = petObject.page?.filter {
             $0.sex?.lowercased() == selectedGender}
@@ -166,7 +174,7 @@ class GetAllPetDataViewModel {
         }
     }
 
-    func filterOnlyWithAgeAndType(type: String, petAge: String) {
+    private func filterOnlyWithAgeAndType(type: String, petAge: String) {
         guard let petObject = adoptPetObject else {
             return
         }
@@ -181,7 +189,7 @@ class GetAllPetDataViewModel {
         }
     }
 
-    func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
+    private func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
         guard let petObject = adoptPetObject else {
             return
         }

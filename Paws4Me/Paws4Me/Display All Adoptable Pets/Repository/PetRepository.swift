@@ -7,7 +7,9 @@
 
 import Foundation
 
-class GetPetDataRepository: Repositable {
+class PetDataRepository {
+
+    typealias PetResult = (Result<AdoptPet, APIError>) -> Void
 
     // MARK: - Fetch Json Object from API
     func fetchPetDataResults(method: HTTPMethod, endpoint: String, completionHandler: @escaping PetResult) {

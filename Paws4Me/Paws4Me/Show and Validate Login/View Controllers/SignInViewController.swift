@@ -17,35 +17,43 @@ class SignInViewController: UIViewController {
     private var isLoggedIn = false
     private let bottomLine = CALayer()
     private let bottomLine2 = CALayer()
-    private lazy var signInViewModel = SignInViewModel()
+    private lazy var signInViewModel = SignInViewModel(delegate: self)
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpLogin()
+    }
+
+    // MARK: - IBActions
+    @IBAction private func signInButtonTapped (_ sender: UIButton!) {
+        guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
+        signInViewModel.loginUser(username: username, password: password)
+    }
+
+    // MARK: - Functions
+    func setUpLogin() {
         signInButton.addCornerRadius()
         registerButton.addCornerRadius()
         registerButton.changeBorderLook()
         usernameTextField.addUnderline()
         passwordTextField.addUnderline()
     }
+}
 
-    // MARK: - IBActions
-    @IBAction private func signInButtonTapped (_ sender: UIButton!) {
-        var errorMessage = ""
-        guard let username = usernameTextField.text, let password = passwordTextField.text else { return }
-        isLoggedIn = signInViewModel.isValidCredentials(username: username, password: password)
+// MARK: - SignInViewModelDelegate Delegate
+extension SignInViewController: SignInViewModelDelegate {
 
-        if isLoggedIn {
-            performSegue(withIdentifier: "signInViewController", sender: self)
-        } else if !isLoggedIn {
-            errorMessage = "Incorrect Username or Password"
-            usernameTextField.addErrorBorderBoth()
-            passwordTextField.addErrorBorderBoth()
-        }
-        displayAlert(alertTitle: "Invalid credentials.",
+    func successRouting() {
+        performSegue(withIdentifier: "signInViewController", sender: self)
+    }
+
+    func showError(errorMessage: String) {
+        usernameTextField.addErrorBorderBoth()
+        passwordTextField.addErrorBorderBoth()
+        displayAlert(alertTitle: "Invalid Credentials",
                      alertMessage: errorMessage,
                      alertActionTitle: "Try again" ,
                      alertDelegate: self, alertTriggered: .errorAlert)
     }
-
 }
