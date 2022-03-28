@@ -10,7 +10,7 @@ import Foundation
 // MARK: - PetViewModel Delegate
 protocol PetViewModelDelegate: AnyObject {
     func reloadView()
-    func show(error: String)
+    func showError(error: String)
 }
 
 class AllPetDataViewModel {
@@ -45,7 +45,7 @@ class AllPetDataViewModel {
                     self?.filteredPetObject = petData
                     self?.delegate?.reloadView()
                 case .failure(let error):
-                    self?.delegate?.show(error: error.rawValue)
+                    self?.delegate?.showError(error: error.rawValue)
                 }
             }
         }
@@ -56,19 +56,19 @@ class AllPetDataViewModel {
         return filteredPetObject?.page?.count ?? 0
     }
 
-    func objectFilteredPet() -> AdoptPet? {
+    var objectFilteredPet: AdoptPet? {
         return filteredPetObject
     }
 
-    func singleSearch() -> Bool {
+    var singleSearch: Bool {
         return isSingleSearch
     }
 
-    func filterSearch() -> Bool {
+    var filterSearch: Bool {
         return isFilterSearch
     }
 
-    func singlePetIndex() -> Int? {
+    var singlePetIndex: Int? {
         return indexSinglePet
     }
 
@@ -97,9 +97,9 @@ class AllPetDataViewModel {
         }
     }
 
-    func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) {
-        indexSinglePet =  filteredPetObject.page?.firstIndex(
-            where: { $0.name?.lowercased().starts(with: searchText) ??  false })
+    func setIndexForSpecificPetName(searchText: String, filteredPetObject: AdoptPet) {
+        indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
+                                                                      ??  false })
     }
 
     // MARK: - Search Pet by Category, Gender
@@ -157,7 +157,7 @@ class AllPetDataViewModel {
     }
 
     // MARK: - Filter Search
-    func filterOnlyWithGender() {
+    private func filterOnlyWithGender() {
         guard let petObject = adoptPetObject else { return }
         filteredPetObject?.page = petObject.page?.filter {
             $0.sex?.lowercased() == selectedGender}
@@ -169,7 +169,7 @@ class AllPetDataViewModel {
         }
     }
 
-    func filterOnlyWithAgeAndType(type: String, petAge: String) {
+    private func filterOnlyWithAgeAndType(type: String, petAge: String) {
         guard let petObject = adoptPetObject else {
             return
         }
@@ -184,7 +184,7 @@ class AllPetDataViewModel {
         }
     }
 
-    func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
+    private func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
         guard let petObject = adoptPetObject else {
             return
         }
