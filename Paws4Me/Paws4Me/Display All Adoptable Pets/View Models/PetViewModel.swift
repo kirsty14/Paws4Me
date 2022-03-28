@@ -97,8 +97,8 @@ class AllPetDataViewModel {
     }
 
     func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) {
-        indexSinglePet =  filteredPetObject.page?.firstIndex(
-            where: { $0.name?.lowercased().starts(with: searchText) ??  false })
+        indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
+                                                                      ??  false })
     }
 
     // MARK: - Search Pet by Category, Gender
@@ -156,7 +156,7 @@ class AllPetDataViewModel {
     }
 
     // MARK: - Filter Search
-    func filterOnlyWithGender() {
+    private func filterOnlyWithGender() {
         guard let petObject = adoptPetObject else { return }
         filteredPetObject?.page = petObject.page?.filter {
             $0.sex?.lowercased() == selectedGender}
@@ -168,7 +168,7 @@ class AllPetDataViewModel {
         }
     }
 
-    func filterOnlyWithAgeAndType(type: String, petAge: String) {
+    private func filterOnlyWithAgeAndType(type: String, petAge: String) {
         guard let petObject = adoptPetObject else {
             return
         }
@@ -183,7 +183,7 @@ class AllPetDataViewModel {
         }
     }
 
-    func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
+    private func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
         guard let petObject = adoptPetObject else {
             return
         }
