@@ -43,21 +43,21 @@ class PetSingleDetailsViewController: UIViewController {
         self.singlePet = petObject
     }
 
-    func updateUI() {
+    private func updateUI() {
         setPlaceholderImage()
         singlePetViewModel.setSelectedPetIndex(indexPet: indexSinglePet)
         guard let singelPetObject = singlePet else { return }
         singlePetViewModel.setSinglePetObject(petObject: singelPetObject)
 
-        petNameLabel.text = singlePetViewModel.singlePetName()
-        petBreedNameLabel.text = singlePetViewModel.singlePetBreed()
-        petGenderLabel.text = singlePetViewModel.singlePetGender()
-        guard let imgPet = singlePetViewModel.singlePetImage() else { return }
+        petNameLabel.text = singlePetViewModel.singlePetName
+        petBreedNameLabel.text = singlePetViewModel.singlePetBreed
+        petGenderLabel.text = singlePetViewModel.singlePetGender
+        guard let imgPet = singlePetViewModel.singlePetImage else { return }
         petImageView.loadImageFromURL(imageURL: imgPet)
         view.addSubview(petImageView)
     }
 
-    func setPlaceholderImage() {
+    private func setPlaceholderImage() {
         guard let petType = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petSpecies else { return }
         let petTypeSelected = SpeciesName(rawValue: petType)
 
@@ -73,14 +73,14 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            guard let petName = singlePetViewModel.singlePetName() else { return }
-            guard let petImage = singlePetViewModel.singlePetImage() else { return }
+            guard let petName = singlePetViewModel.singlePetName else { return }
+            guard let petImage = singlePetViewModel.singlePetImage else { return }
             destination.setNamePet(name: petName)
             destination.setImagePet(image: petImage)
         }
     }
 
-    func isPetSaved(petName: String) {
+    private func isPetSaved(petName: String) {
         do {
             guard let pets = try viewContext?.fetch(Pet.fetchRequest()) else { return }
 

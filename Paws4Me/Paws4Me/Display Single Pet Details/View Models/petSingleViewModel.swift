@@ -33,7 +33,7 @@ class SinglePetViewModel {
         return indexRow
     }
 
-    // MARK: - Save single pet details
+    // MARK: - set single pet details
     func setSelectedPetIndex(indexPet: Int) {
         indexSinglePet = indexPet
     }
@@ -43,31 +43,28 @@ class SinglePetViewModel {
     }
 
     // MARK: - get single pet details
-
-    func singlePetName() -> String? {
+    var singlePetName: String? {
         guard let petName = singlePet?.page?[indexSinglePet].name else { return "" }
         return petName
     }
 
-    func singlePetAge () -> String? {
+    var singlePetAge: String? {
         guard let petAge = singlePet?.page?[indexSinglePet].age else { return "" }
         return petAge
     }
 
-    func singlePetBreed () -> String? {
-        guard let petBreed = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName
-        else { return "" }
+    var singlePetBreed: String? {
+        guard let petBreed = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName else { return "" }
         return petBreed
     }
 
-    func singlePetGender () -> String? {
+    var singlePetGender: String? {
         guard let petGender = singlePet?.page?[indexSinglePet].sex else { return "" }
         return petGender
     }
 
-    func singlePetImage () -> String? {
+    var singlePetImage: String? {
         guard let petImage = singlePet?.page?[indexSinglePet].animalImage else { return "" }
         return petImage
     }
-
 }
