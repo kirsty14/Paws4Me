@@ -14,9 +14,9 @@ enum APIError: String, Error {
 }
 
 enum LocalDatabaseError: String, Error {
-    case receiveSavedPetsError
-    case savePets
-    case deletePets
+    case retrievedPetsSavedError
+    case savePetsError
+    case deletePetsError
 }
 
 enum HTTPMethod {

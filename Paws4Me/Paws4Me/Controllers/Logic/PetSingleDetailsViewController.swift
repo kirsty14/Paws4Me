@@ -17,7 +17,6 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var saveSinglePetButton: UIButton!
 
     // MARK: - Vars/Lets
-
     private var singlePet: AdoptPet?
     private var indexSinglePet: Int = 0
     private var namePet = ""

@@ -15,7 +15,7 @@ class AllPetDetailViewController: UIViewController {
 
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
-                                                               delegate: self)
+                                                            delegate: self)
     private var searchBarController = UISearchBar()
     private var animalType = ""
 

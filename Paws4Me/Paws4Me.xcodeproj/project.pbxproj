@@ -156,6 +156,7 @@
 				35E7261A27B3A4B2002B86DB /* Resources */,
 				A15F7EB827D88AD8002B4BCE /* Extensions */,
 				35E7261927B3A49E002B86DB /* UserInterfaces */,
+				A193F3B027F1B1A600202351 /* Display And Save Pets */,
 				A14ABA2027EC633900C65773 /* Display All Adoptable Pets */,
 				A14ABA2327EC6D3A00C65773 /* Show and Validate Login */,
 				A14ABA1827EC3D4D00C65773 /* Service Layer */,
@@ -222,9 +223,6 @@
 		A11745BE27D9DC11004C0BD9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */,
-				A1B1747127EDE9A500541A4C /* SavedPetRepository.swift */,
-				A1B1747327EDEBBB00541A4C /* petLocaldatabaseViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -332,6 +330,40 @@
 				A1C20DED27D763C1007006DC /* JsonObject.json */,
 			);
 			path = JsonObject;
+			sourceTree = "<group>";
+		};
+		A193F3AD27F1B17700202351 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				A1B1747327EDEBBB00541A4C /* petLocaldatabaseViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		A193F3AE27F1B18500202351 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A193F3AF27F1B19400202351 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A1B1747127EDE9A500541A4C /* SavedPetRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A193F3B027F1B1A600202351 /* Display And Save Pets */ = {
+			isa = PBXGroup;
+			children = (
+				A193F3AE27F1B18500202351 /* View Controllers */,
+				A193F3AF27F1B19400202351 /* Repository */,
+				A193F3AD27F1B17700202351 /* View Models */,
+			);
+			path = "Display And Save Pets";
 			sourceTree = "<group>";
 		};
 		A1C20DE927D71E0C007006DC /* Logic */ = {
