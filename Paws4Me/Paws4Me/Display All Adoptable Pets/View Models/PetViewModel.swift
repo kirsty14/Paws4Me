@@ -96,7 +96,7 @@ class AllPetDataViewModel {
         }
     }
 
-    func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) {
+    func setIndexForSpecificPetName(searchText: String, filteredPetObject: AdoptPet) {
         indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
                                                                       ??  false })
     }
