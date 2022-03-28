@@ -10,7 +10,7 @@ import Foundation
 // MARK: - SignInViewModel Delegate
 protocol SignInViewModelDelegate: AnyObject {
     func successRouting()
-    func show(errorMessage: String)
+    func showError(errorMessage: String)
 }
 
 class SignInViewModel {
@@ -25,10 +25,10 @@ class SignInViewModel {
     // MARK: - Functions
     func loginUser(username: String, password: String) {
         if username.isEmpty || password.isEmpty {
-            delegate?.show(errorMessage: "Please fill in your username and password")
+            delegate?.showError(errorMessage: "Please fill in your username and password")
         }
             isValidCredentials(username: username, password: password) ? delegate?.successRouting() :
-            delegate?.show(errorMessage: "Incorrect Username or Password")
+            delegate?.showError(errorMessage: "Incorrect Username or Password")
     }
 
     private func isValidCredentials(username: String, password: String) -> Bool {

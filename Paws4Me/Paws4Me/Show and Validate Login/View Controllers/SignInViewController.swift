@@ -48,7 +48,7 @@ extension SignInViewController: SignInViewModelDelegate {
         performSegue(withIdentifier: "signInViewController", sender: self)
     }
 
-    func show(errorMessage: String) {
+    func showError(errorMessage: String) {
         usernameTextField.addErrorBorderBoth()
         passwordTextField.addErrorBorderBoth()
         displayAlert(alertTitle: "Invalid Credentials",
