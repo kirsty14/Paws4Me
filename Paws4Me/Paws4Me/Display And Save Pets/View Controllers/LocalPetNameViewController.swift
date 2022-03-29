@@ -35,7 +35,7 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
         petLocalDatabaseViewModel.setImagePet(image: petimage)
     }
 
-    func setupTableView() {
+    private func setupTableView() {
         petNameTableView.dataSource = self
         petNameTableView.delegate = self
         title = "Saved Pets"
@@ -76,7 +76,7 @@ extension LocalPetViewController: UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 
-    func showDeleteWarning(for indexPath: IndexPath) {
+    private func showDeleteWarning(for indexPath: IndexPath) {
         guard let petToRemove = petLocalDatabaseViewModel.savedPet(at: indexPath.row),
               let petDeleteName = petToRemove.petName else { return }
         presentAlertDeleteWarning(title: "Delete \(petDeleteName)",

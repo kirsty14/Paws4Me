@@ -31,7 +31,6 @@ class PetLocaldatabaseViewModel {
     }
 
     // MARK: - Functions
-
     func setNamePet(name: String) {
         namePet = name
     }
