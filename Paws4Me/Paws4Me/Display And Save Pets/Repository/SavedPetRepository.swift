@@ -38,8 +38,8 @@ class SavedPetDataRepository {
         petObject.petImage = imagePet
 
         do {
-            guard let petContext = self.context else { return }
-            guard let savedPets = self.pets else { return }
+            guard let petContext = self.context,
+                  let savedPets = self.pets else { return }
             try petContext.save()
             completionHandler(Result.success(savedPets))
         } catch _ as NSError {
