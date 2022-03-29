@@ -30,25 +30,25 @@ class AllPetDetailViewController: UIViewController {
     @IBAction private func catTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
     @IBAction private func kittenTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
     @IBAction private func dogTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
     @IBAction private func puppyTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
 
@@ -142,7 +142,7 @@ extension AllPetDetailViewController: UISearchBarDelegate {
         } else if selectedScope == 1 {
             petDataViewModel.setGender(gender: "female")
         }
-        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
 

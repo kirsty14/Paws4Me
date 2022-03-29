@@ -49,13 +49,11 @@ class AllPetDataViewModel {
         }
     }
 
-    // MARK: - Set pet type
     func setPetType(petType: String) {
         animalType = petType
     }
 
-    // MARK: - Get pet type
-    func petType() -> String {
+    var petType: String {
         return animalType
     }
 
@@ -90,13 +88,12 @@ class AllPetDataViewModel {
             guard let filteredPet = filteredPetObject else {
                 return
             }
-         setIndexForSpecificPetName(searchText: petSearchText ?? "", filteredPetObject: filteredPet )
+         setIndexForSpecificPetName(searchText: petSearchText ?? "", filteredPet: filteredPet )
          searchPetName(searchText: searchPetText)
     }
 
-    func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) {
-            indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
-                                                                          ??  false })
+    func setIndexForSpecificPetName (searchText: String, filteredPet: AdoptPet) {
+        indexSinglePet = filteredPet.page?.firstIndex(where: {$0.name?.lowercased().starts(with: searchText) ?? false })
     }
 
     func searchPetName(searchText: String) {
@@ -107,7 +104,7 @@ class AllPetDataViewModel {
             ??  false}
 
         guard let filteredPet = filteredPetObject else { return }
-        setIndexForSpecificPetName(searchText: searchText, filteredPetObject: filteredPet)
+        setIndexForSpecificPetName(searchText: searchText, filteredPet: filteredPet)
 
         if filteredPetObject == nil {
             filteredPetObject = adoptPetObject

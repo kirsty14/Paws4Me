@@ -14,14 +14,48 @@ class SinglePetViewModel {
     private var indexSinglePet: Int = 0
     private var singlePetRepository: SinglePetRepository?
 
+    var singlePetName: String {
+        return singlePet?.page?[indexSinglePet].name ?? ""
+    }
+
+    var singlePetAge: String {
+        return singlePet?.page?[indexSinglePet].age ?? ""
+
+    }
+
+    var singlePetBreed: String {
+       return singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName  ?? ""
+    }
+
+    var singlePetGender: String {
+        return singlePet?.page?[indexSinglePet].sex  ?? ""
+    }
+
+    var singlePetImage: String {
+        return singlePet?.page?[indexSinglePet].animalImage  ?? ""
+    }
+
+    var singlePetIndex: Int? {
+        return indexSinglePet
+    }
+
+    var singlePetObject: AdoptPet? {
+        return singlePet
+    }
+
     // MARK: - Constructor
     init(repository: SinglePetRepository) {
          self.singlePetRepository = repository
     }
 
-    // MARK: - set single pet details
+    // MARK: - Functions
     func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) -> Int? {
         return filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText) ??  false })
+    }
+
+    func isPetSaved(petName: String) -> Bool {
+        guard let isPetSaved = singlePetRepository?.isPetSaved(petName: petName) else { return false }
+         return isPetSaved
     }
 
     func setSelectedPetIndex(indexPet: Int) {
@@ -32,39 +66,4 @@ class SinglePetViewModel {
         singlePet = petObject
     }
 
-    // MARK: - get single pet details
-    var singlePetName: String? {
-        return singlePet?.page?[indexSinglePet].name ?? ""
-    }
-
-    var singlePetAge: String? {
-        return singlePet?.page?[indexSinglePet].age ?? ""
-
-    }
-
-    var singlePetBreed: String? {
-       return singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petBreedName  ?? ""
-    }
-
-    var singlePetGender: String? {
-        return singlePet?.page?[indexSinglePet].sex  ?? ""
-    }
-
-    var singlePetImage: String? {
-        return singlePet?.page?[indexSinglePet].animalImage  ?? ""
-    }
-
-    // MARK: - set single pet details
-    func isPetSaved(petName: String) -> Bool {
-        guard let isPetSaved = singlePetRepository?.isPetSaved(petName: petName) else { return false }
-         return isPetSaved
-    }
-
-    func singlePetIndex() -> Int? {
-        return indexSinglePet
-    }
-
-    func singlePetObject() -> AdoptPet? {
-        return singlePet
-    }
 }

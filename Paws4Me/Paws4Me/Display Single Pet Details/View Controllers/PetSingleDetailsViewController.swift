@@ -33,12 +33,13 @@ class PetSingleDetailsViewController: UIViewController {
         performSegue(withIdentifier: "LocalPetViewController", sender: self)
     }
 
-    // MARK: - Placeholder image Function
+    // MARK: - Fuctions
     private func setPlaceholderImage() {
-        guard let singlePetIndex = singlePetViewModel.singlePetIndex(),
-              let singlePetObject = singlePetViewModel.singlePetObject(),
-              let petType = singlePetObject.page?[singlePetIndex].animalSpeciesBreed?.petSpecies,
-              let petTypeSelected = SpeciesName(rawValue: petType) else { return }
+        guard let singlePetIndex = singlePetViewModel.singlePetIndex else { return }
+        let singlePetObject = singlePetViewModel.singlePetObject
+
+        guard let petType = singlePetObject?.page?[singlePetIndex].animalSpeciesBreed?.petSpecies else { return }
+        guard let petTypeSelected = SpeciesName(rawValue: petType) else { return }
 
         switch petTypeSelected {
         case .kitten, .cat:
@@ -50,20 +51,18 @@ class PetSingleDetailsViewController: UIViewController {
 
     // MARK: - UpdateUI function
     private func updateUI() {
-        guard let singlePetIndex = singlePetViewModel.singlePetIndex(),
-              let singlePetObject = singlePetViewModel.singlePetObject(),
-              let imgPet = singlePetViewModel.singlePetImage else { return }
+        guard let singlePetIndex = singlePetViewModel.singlePetIndex,
+              let singlePetObject = singlePetViewModel.singlePetObject else { return }
 
         singlePetViewModel.setSelectedPetIndex(indexPet: singlePetIndex)
         singlePetViewModel.setSinglePetObject(petObject: singlePetObject)
         petNameLabel.text = singlePetViewModel.singlePetName
         petBreedNameLabel.text = singlePetViewModel.singlePetBreed
         petGenderLabel.text = singlePetViewModel.singlePetGender
-        petImageView.loadImageFromURL(imageURL: imgPet)
+        petImageView.loadImageFromURL(imageURL: singlePetViewModel.singlePetImage)
         view.addSubview(petImageView)
     }
 
-    // MARK: - Pass single pet data to viewmodel function
     func setSinglePetData(petObject: AdoptPet?, petSingleIndex: Int?) {
         guard let singlePetObject = petObject,
               let singlePetIndex = petSingleIndex else { return }
@@ -74,20 +73,12 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            guard let petName = singlePetViewModel.singlePetName else { return }
-            guard let petImage = singlePetViewModel.singlePetImage else { return }
-            destination.setNamePet(name: petName)
-            destination.setImagePet(image: petImage)
+            destination.setNamePet(name: singlePetViewModel.singlePetName)
+            destination.setImagePet(image: singlePetViewModel.singlePetImage )
         }
     }
 
-    // MARK: - check if pet is already saved function
     private func isPetSaved() {
-        guard let petName = singlePetViewModel.singlePetName else { return }
-        let isPetSaved = singlePetViewModel.isPetSaved(petName: petName)
-
-        if isPetSaved {
-            saveSinglePetButton.isEnabled  = false
-        }
+        saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved(petName: singlePetViewModel.singlePetName)
     }
 }
