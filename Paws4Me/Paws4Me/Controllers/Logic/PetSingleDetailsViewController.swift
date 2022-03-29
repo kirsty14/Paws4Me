@@ -103,8 +103,7 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            destination.setNamePet(name: namePet)
-            destination.setImagePet(image: imgPet)
+            destination.setSavedPetData(name: namePet, image: imgPet)
         }
     }
 }

@@ -13,6 +13,7 @@ class SavedPetDataRepository {
     // MARK: - Vars/Lets
     typealias PetFetchSavedResult = (Result<[Pet], LocalDatabaseError>) -> Void
     typealias SavePetResults = (Result<[Pet], LocalDatabaseError>) -> Void
+    typealias DeletePetResults = (Result<[Pet], LocalDatabaseError>) -> Void
     private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     private var pets: [Pet]? = []
     private var namePet = ""
@@ -44,5 +45,18 @@ class SavedPetDataRepository {
         } catch _ as NSError {
             completionHandler(Result.failure(.savePetsError))
         }
+    }
+
+    // MARK: - Delete saved pet in local database
+    func deleteSavedPet(petToRemove: Pet, completionHandler: DeletePetResults ) {
+            self.context?.delete(petToRemove)
+            guard let savedPets = self.pets else { return }
+
+            do {
+                try self.context?.save()
+                completionHandler(Result.success(savedPets))
+            } catch {
+                completionHandler(Result.failure(.deletePetsError))
+            }
     }
 }

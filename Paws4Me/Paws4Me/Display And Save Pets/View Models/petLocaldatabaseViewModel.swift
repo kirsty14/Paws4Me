@@ -19,6 +19,9 @@ class PetLocaldatabaseViewModel {
     private var petLocalDatabaseRepository: SavedPetDataRepository?
     private weak var delegate: PetLocalDatabaseViewModelDelegate?
     private var pets: [Pet]? = []
+    private var namePet = ""
+    private var imagePet = ""
+    var isDeleteSucess = false
 
     // MARK: - Constructor
     init(repository: SavedPetDataRepository,
@@ -28,19 +31,41 @@ class PetLocaldatabaseViewModel {
     }
 
     // MARK: - Functions
+
+    func setNamePet(name: String) {
+        namePet = name
+    }
+
+    func setImagePet(image: String) {
+       imagePet = image
+    }
+
+    func nameSinglePet() -> String? {
+        return namePet
+    }
+
+    func imageSinglePet() -> String? {
+       return imagePet
+    }
+
+    // MARK: - Tableview data
     var petSavedCount: Int {
         return pets?.count ?? 0
+    }
+
+    var isPetSucessDeleted: Bool {
+        return isDeleteSucess
     }
 
     func savedPet(at index: Int) -> Pet? {
         pets?[index]
     }
 
-    func petName(pet: Pet?) -> String? {
+    func petNameSaved(pet: Pet?) -> String? {
         return pet?.value(forKeyPath: "petName") as? String ?? ""
     }
 
-    func petImage(pet: Pet?) -> String? {
+    func petImageSaved(pet: Pet?) -> String? {
         return pet?.value(forKeyPath: "petImage") as? String ?? ""
     }
 
@@ -75,6 +100,19 @@ class PetLocaldatabaseViewModel {
                                           action: .savePetsError)
             }
             fetchPetDataResults()
+        }
+    }
+
+    // MARK: - Function delete pet in local database
+    func deletePetLocaldatabase(petToRemove: Pet) {
+        petLocalDatabaseRepository?.deleteSavedPet(petToRemove: petToRemove) { [weak self] savedPets in
+            switch savedPets {
+            case .success:
+                    self?.fetchPetDataResults()
+                    self?.isDeleteSucess = true
+            case .failure:
+                self?.isDeleteSucess = false
+            }
         }
     }
 }

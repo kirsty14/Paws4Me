@@ -12,12 +12,8 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
 
     // MARK: - IBOutlets
     @IBOutlet weak private var petNameTableView: UITableView!
-    private let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
 
     // MARK: - Vars/Lets
-    private var namePet = ""
-    private var imagePet = ""
-    private var pets: [Pet]? = []
     private lazy var petLocalDatabaseViewModel = PetLocaldatabaseViewModel(repository: SavedPetDataRepository(),
                                                                            delegate: self)
 
@@ -26,22 +22,23 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         setupTableView()
         petLocalDatabaseViewModel.fetchPetDataResults()
-        petLocalDatabaseViewModel.savePetInLocalDatabase(name: namePet, image: imagePet)
+        guard let petName =  petLocalDatabaseViewModel.nameSinglePet(),
+              let petImage =  petLocalDatabaseViewModel.imageSinglePet() else { return }
+        petLocalDatabaseViewModel.savePetInLocalDatabase(name: petName, image: petImage)
     }
 
     // MARK: - Functions
+    func setSavedPetData(name: String?, image: String?) {
+        guard let petName = name,
+              let petimage = image else { return }
+        petLocalDatabaseViewModel.setNamePet(name: petName)
+        petLocalDatabaseViewModel.setImagePet(image: petimage)
+    }
+
     func setupTableView() {
         petNameTableView.dataSource = self
         petNameTableView.delegate = self
         title = "Saved Pets"
-    }
-
-    func setNamePet(name: String) {
-        self.namePet = name
-    }
-
-    func setImagePet(image: String) {
-        self.imagePet = image
     }
 }
 
@@ -58,8 +55,8 @@ extension LocalPetViewController: UITableViewDataSource {
                                                        for: indexPath) as? FavouriteTableViewCell
         else { return UITableViewCell() }
 
-        guard let namePet = petLocalDatabaseViewModel.petName(pet: pet) else { return UITableViewCell() }
-        guard let imagePet = petLocalDatabaseViewModel.petImage(pet: pet) else { return UITableViewCell() }
+        guard let namePet = petLocalDatabaseViewModel.petNameSaved(pet: pet) else { return UITableViewCell() }
+        guard let imagePet = petLocalDatabaseViewModel.petImageSaved(pet: pet) else { return UITableViewCell() }
         cell.updateUI(namePet: namePet, imagePet: imagePet)
         cell.setNeedsLayout()
         return cell
@@ -71,43 +68,40 @@ extension LocalPetViewController: UITableViewDataSource {
         let deleteAction = UIContextualAction(style: .normal,
                                               title: "Delete",
                                               handler: { (_: UIContextualAction, _: UIView, success: (Bool) -> Void) in
-            DispatchQueue.main.async {
-                self.showDeleteWarning(for: indexPath)
-            }
+            self.showDeleteWarning(for: indexPath)
             success(true)
         })
-        deleteAction.image = UIImage(named: "delete")
+
         deleteAction.backgroundColor = UIColor.myAppPurple
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 
     func showDeleteWarning(for indexPath: IndexPath) {
-        guard let petToRemove = petLocalDatabaseViewModel.savedPet(at: indexPath.row) else { return }
-        presentAlertDeleteWarning(title: "Delete Pet",
-                                  message: "Are you sure you want to delete this pet?",
-                                  options: "Cancel", "Delete") { (optionPressed) in
+        guard let petToRemove = petLocalDatabaseViewModel.savedPet(at: indexPath.row),
+              let petDeleteName = petToRemove.petName else { return }
+        presentAlertDeleteWarning(title: "Delete \(petDeleteName)",
+                                  message: "Are you sure you want to delete \(petDeleteName)",
+                                  options: "Cancel", "Delete") { [self] (optionPressed) in
             switch optionPressed {
             case "Cancel":
                 break
             case "Delete":
-                DispatchQueue.main.async {
-                    self.context?.delete(petToRemove)
+                petLocalDatabaseViewModel.deletePetLocaldatabase(petToRemove: petToRemove)
+                let isSucessDeleted = petLocalDatabaseViewModel.isPetSucessDeleted
 
-                    do {
-                        try self.context?.save()
-                    } catch {
-                        self.showError(errorTitle: "Unable to save",
-                                       errorMessage: "There was a problem saving", action: .savePetsError)
-                    }
-
-                    self.petLocalDatabaseViewModel.fetchPetDataResults()
+                if isSucessDeleted {
                     self.petNameTableView.deleteRows(at: [indexPath], with: .fade)
+                } else {
+                    showError(errorTitle: "Unable to delete \(petDeleteName)?",
+                                              errorMessage: "There was a problem deleting \(petDeleteName)",
+                                              action: .deletePetsError)
                 }
+
             default:
                 break
             }
-        }
     }
+}
 }
 
 // MARK: - PetLocalDatabaseViewModel functions
