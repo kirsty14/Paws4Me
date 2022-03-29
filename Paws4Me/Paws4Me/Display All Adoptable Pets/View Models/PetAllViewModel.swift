@@ -18,7 +18,6 @@ class AllPetDataViewModel {
     // MARK: - Vars/Lets
     private var petRepository: PetDataRepository?
     private weak var delegate: PetViewModelDelegate?
-    private lazy var singlePetViewModel = SinglePetViewModel()
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
     private var isSingleSearch = false
@@ -30,11 +29,10 @@ class AllPetDataViewModel {
     // MARK: - Constructor
     init(repository: PetDataRepository,
          delegate: PetViewModelDelegate) {
-        self.petRepository = repository
-        self.delegate = delegate
+         self.petRepository = repository
+         self.delegate = delegate
     }
 
-    // MARK: - Functions
     // MARK: - Functions Fetch Json Object
     func fetchPetDataResults() {
         petRepository?.fetchPetDataResults(method: .GET, endpoint: Constants.adoptURL) { [weak self] result in
@@ -49,6 +47,16 @@ class AllPetDataViewModel {
                 }
             }
         }
+    }
+
+    // MARK: - Set pet type
+    func setPetType(petType: String) {
+        animalType = petType
+    }
+
+    // MARK: - Get pet type
+    func petType() -> String {
+        return animalType
     }
 
     // MARK: - Tableview Functions
@@ -82,9 +90,13 @@ class AllPetDataViewModel {
             guard let filteredPet = filteredPetObject else {
                 return
             }
-        indexSinglePet = singlePetViewModel.setIndexForSpecificPetName(searchText: petSearchText ?? "",
-                                                                           filteredPetObject: filteredPet )
-        searchPetName(searchText: searchPetText)
+         setIndexForSpecificPetName(searchText: petSearchText ?? "", filteredPetObject: filteredPet )
+         searchPetName(searchText: searchPetText)
+    }
+
+    func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) {
+            indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
+                                                                          ??  false })
     }
 
     func searchPetName(searchText: String) {
@@ -100,11 +112,6 @@ class AllPetDataViewModel {
         if filteredPetObject == nil {
             filteredPetObject = adoptPetObject
         }
-    }
-
-    func setIndexForSpecificPetName(searchText: String, filteredPetObject: AdoptPet) {
-        indexSinglePet =  filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText)
-                                                                      ??  false })
     }
 
     // MARK: - Search Pet by Category, Gender

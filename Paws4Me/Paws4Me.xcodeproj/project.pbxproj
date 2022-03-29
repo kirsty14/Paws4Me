@@ -38,6 +38,7 @@
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
 		A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */; };
 		A1C20DEE27D763C1007006DC /* JsonObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A1C20DED27D763C1007006DC /* JsonObject.json */; };
+		A1EAF79527F2CE9E00BC77FA /* SinglePetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EAF79427F2CE9E00BC77FA /* SinglePetRepository.swift */; };
 		A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavouriteTableViewCell.swift; path = Paws4Me/Controllers/TableCells/FavouriteTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		A1C20DED27D763C1007006DC /* JsonObject.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = JsonObject.json; sourceTree = "<group>"; };
+		A1EAF79427F2CE9E00BC77FA /* SinglePetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePetRepository.swift; sourceTree = "<group>"; };
 		A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -331,6 +333,7 @@
 			children = (
 				A14ABA2827EC909900C65773 /* View Models */,
 				A14ABA2927EC90A800C65773 /* View Controllers */,
+				A1EAF79627F2CEA300BC77FA /* Repository */,
 			);
 			path = "Display Single Pet Details";
 			sourceTree = "<group>";
@@ -362,6 +365,14 @@
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 			);
 			path = TableCells;
+			sourceTree = "<group>";
+		};
+		A1EAF79627F2CEA300BC77FA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A1EAF79427F2CE9E00BC77FA /* SinglePetRepository.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,6 +533,7 @@
 				A14ABA2727EC8A7600C65773 /* petSingleViewModel.swift in Sources */,
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
 				A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */,
+				A1EAF79527F2CE9E00BC77FA /* SinglePetRepository.swift in Sources */,
 				A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
 				A14ABA1B27EC3DB500C65773 /* PetRepository.swift in Sources */,

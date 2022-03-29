@@ -14,11 +14,9 @@ class AllPetDetailViewController: UIViewController {
     @IBOutlet weak private var searchBar: UISearchBar!
 
     // MARK: - Vars/Lets
-    private lazy var singlePetInViewModel = SinglePetViewModel()
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
                                                             delegate: self)
     private var searchBarController = UISearchBar()
-    private var animalType = ""
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -32,25 +30,25 @@ class AllPetDetailViewController: UIViewController {
     @IBAction private func catTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: animalType)
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
         reloadView()
     }
     @IBAction private func kittenTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: animalType)
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
         reloadView()
     }
     @IBAction private func dogTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: animalType)
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
         reloadView()
     }
     @IBAction private func puppyTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.changePetIconsColor()
-        petDataViewModel.searchPetCategoryType(_: animalType)
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
         reloadView()
     }
 
@@ -62,7 +60,8 @@ class AllPetDetailViewController: UIViewController {
     }
 
     private func petTypeFromButton(_ sender: UIButton) {
-        animalType = sender.titleLabel?.text ?? ""
+        let animalType = sender.titleLabel?.text ?? ""
+        petDataViewModel.setPetType(petType: animalType)
     }
 
     private func setUpSearchbar() {
@@ -102,8 +101,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
         if let destination = segue.destination as? PetSingleDetailsViewController {
             let indexRow = indexPetSelected(tableView: petTableView)
             guard let pageItem = petDataViewModel.objectFilteredPet else { return }
-            destination.setSinglePetObject(petObject: pageItem)
-            destination.setSelectedPetIndex(indexPet: indexRow)
+            destination.setSinglePetData(petObject: pageItem, petSingleIndex: indexRow)
         }
 
     }
@@ -144,7 +142,7 @@ extension AllPetDetailViewController: UISearchBarDelegate {
         } else if selectedScope == 1 {
             petDataViewModel.setGender(gender: "female")
         }
-        petDataViewModel.searchPetCategoryType(_: animalType)
+        petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType())
         reloadView()
     }
 

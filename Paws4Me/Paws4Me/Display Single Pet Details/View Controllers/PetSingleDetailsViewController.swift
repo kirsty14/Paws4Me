@@ -18,15 +18,14 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var saveSinglePetButton: UIButton!
 
     // MARK: - Vars/Lets
-    private let viewContext = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
-    private lazy var singlePetViewModel = SinglePetViewModel()
-    private var singlePet: AdoptPet?
-    private var indexSinglePet: Int = 0
+    private lazy var singlePetViewModel = SinglePetViewModel(repository: SinglePetRepository())
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setPlaceholderImage()
         updateUI()
+        isPetSaved()
     }
 
     // MARK: - IBAction
@@ -34,41 +33,43 @@ class PetSingleDetailsViewController: UIViewController {
         performSegue(withIdentifier: "LocalPetViewController", sender: self)
     }
 
-    // MARK: - Functions
-    func setSelectedPetIndex(indexPet: Int) {
-        self.indexSinglePet = indexPet
-    }
-
-    func setSinglePetObject(petObject: AdoptPet) {
-        self.singlePet = petObject
-    }
-
-    private func updateUI() {
-        setPlaceholderImage()
-        singlePetViewModel.setSelectedPetIndex(indexPet: indexSinglePet)
-        guard let singelPetObject = singlePet else { return }
-        singlePetViewModel.setSinglePetObject(petObject: singelPetObject)
-
-        petNameLabel.text = singlePetViewModel.singlePetName
-        petBreedNameLabel.text = singlePetViewModel.singlePetBreed
-        petGenderLabel.text = singlePetViewModel.singlePetGender
-        guard let imgPet = singlePetViewModel.singlePetImage else { return }
-        petImageView.loadImageFromURL(imageURL: imgPet)
-        view.addSubview(petImageView)
-    }
-
+    // MARK: - Placeholder image Function
     private func setPlaceholderImage() {
-        guard let petType = singlePet?.page?[indexSinglePet].animalSpeciesBreed?.petSpecies else { return }
-        let petTypeSelected = SpeciesName(rawValue: petType)
+        guard let singlePetIndex = singlePetViewModel.singlePetIndex(),
+              let singlePetObject = singlePetViewModel.singlePetObject(),
+              let petType = singlePetObject.page?[singlePetIndex].animalSpeciesBreed?.petSpecies,
+              let petTypeSelected = SpeciesName(rawValue: petType) else { return }
 
         switch petTypeSelected {
         case .kitten, .cat:
             petImageView.image = UIImage(named: "placeholderCat.png")
         case .puppy, .dog:
             petImageView.image = UIImage(named: "placeholderDog.png")
-        case .none:
-            petImageView.image = UIImage(named: "placeholderAll.png")
         }
+    }
+
+    // MARK: - UpdateUI function
+    private func updateUI() {
+        guard let singlePetIndex = singlePetViewModel.singlePetIndex(),
+              let singlePetObject = singlePetViewModel.singlePetObject(),
+              let imgPet = singlePetViewModel.singlePetImage else { return }
+
+        singlePetViewModel.setSelectedPetIndex(indexPet: singlePetIndex)
+        singlePetViewModel.setSinglePetObject(petObject: singlePetObject)
+        petNameLabel.text = singlePetViewModel.singlePetName
+        petBreedNameLabel.text = singlePetViewModel.singlePetBreed
+        petGenderLabel.text = singlePetViewModel.singlePetGender
+        petImageView.loadImageFromURL(imageURL: imgPet)
+        view.addSubview(petImageView)
+    }
+
+    // MARK: - Pass single pet data to viewmodel function
+    func setSinglePetData(petObject: AdoptPet?, petSingleIndex: Int?) {
+        guard let singlePetObject = petObject,
+              let singlePetIndex = petSingleIndex else { return }
+
+        singlePetViewModel.setSinglePetObject(petObject: singlePetObject)
+        singlePetViewModel.setSelectedPetIndex(indexPet: singlePetIndex)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -80,19 +81,13 @@ class PetSingleDetailsViewController: UIViewController {
         }
     }
 
-    private func isPetSaved(petName: String) {
-        do {
-            guard let pets = try viewContext?.fetch(Pet.fetchRequest()) else { return }
+    // MARK: - check if pet is already saved function
+    private func isPetSaved() {
+        guard let petName = singlePetViewModel.singlePetName else { return }
+        let isPetSaved = singlePetViewModel.isPetSaved(petName: petName)
 
-            for savedPet in pets where savedPet.petName == petName {
-                saveSinglePetButton.isEnabled  = false
-                return
-            }
-        } catch {
-            displayAlert(alertTitle: "Unable to retreive all your saved pets",
-                         alertMessage: "There was a problem retrieving",
-                         alertActionTitle: "Try again" ,
-                         alertDelegate: self, alertTriggered: .fatalLocalDatabaseAlert)
+        if isPetSaved {
+            saveSinglePetButton.isEnabled  = false
         }
     }
 }
