@@ -5,7 +5,6 @@
 //  Created by Kirsty-Lee Walker on 2022/03/10.
 //
 
-import CoreData
 import UIKit
 
 class LocalPetViewController: UIViewController, UITableViewDelegate {
@@ -22,8 +21,8 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         setupTableView()
         petLocalDatabaseViewModel.fetchPetDataResults()
-        guard let petName =  petLocalDatabaseViewModel.nameSinglePet(),
-              let petImage =  petLocalDatabaseViewModel.imageSinglePet() else { return }
+        guard let petName =  petLocalDatabaseViewModel.nameSinglePet,
+              let petImage =  petLocalDatabaseViewModel.imageSinglePet else { return }
         petLocalDatabaseViewModel.savePetInLocalDatabase(name: petName, image: petImage)
     }
 
@@ -31,8 +30,8 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
     func setSavedPetData(name: String?, image: String?) {
         guard let petName = name,
               let petimage = image else { return }
-        petLocalDatabaseViewModel.setNamePet(name: petName)
-        petLocalDatabaseViewModel.setImagePet(image: petimage)
+        petLocalDatabaseViewModel.set(petName: petName)
+        petLocalDatabaseViewModel.set(imagePet: petimage)
     }
 
     private func setupTableView() {

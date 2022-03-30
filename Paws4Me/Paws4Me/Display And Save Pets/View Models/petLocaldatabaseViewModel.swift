@@ -23,6 +23,14 @@ class PetLocaldatabaseViewModel {
     private var imagePet = ""
     var isDeleteSucess = false
 
+    var nameSinglePet: String? {
+        return namePet
+    }
+
+    var imageSinglePet: String? {
+       return imagePet
+    }
+
     // MARK: - Constructor
     init(repository: SavedPetDataRepository,
          delegate: PetLocalDatabaseViewModelDelegate) {
@@ -31,20 +39,12 @@ class PetLocaldatabaseViewModel {
     }
 
     // MARK: - Functions
-    func setNamePet(name: String) {
-        namePet = name
+    func set(petName: String) {
+        namePet = petName
     }
 
-    func setImagePet(image: String) {
-       imagePet = image
-    }
-
-    func nameSinglePet() -> String? {
-        return namePet
-    }
-
-    func imageSinglePet() -> String? {
-       return imagePet
+    func set(imagePet: String) {
+        self.imagePet = imagePet
     }
 
     // MARK: - Tableview data
