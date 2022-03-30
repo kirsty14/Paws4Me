@@ -25,8 +25,11 @@ class PetSingleDetailsViewController: UIViewController {
         super.viewDidLoad()
         setPlaceholderImage()
         updateUI()
-        isPetSaved()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        isPetSaved()
+         }
 
     // MARK: - IBAction
     @IBAction func saveTappedButton(_ sender: Any) {
