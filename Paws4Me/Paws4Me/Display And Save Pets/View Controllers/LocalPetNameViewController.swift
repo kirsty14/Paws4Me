@@ -49,13 +49,13 @@ extension LocalPetViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let pet =  petLocalDatabaseViewModel.savedPet(at: indexPath.row)
+        guard let pet =  petLocalDatabaseViewModel.savedPet(at: indexPath.row) else { return UITableViewCell() }
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "favouritePetCell",
                                                        for: indexPath) as? FavouriteTableViewCell
         else { return UITableViewCell() }
 
-        guard let namePet = petLocalDatabaseViewModel.petNameSaved(pet: pet) else { return UITableViewCell() }
-        guard let imagePet = petLocalDatabaseViewModel.petImageSaved(pet: pet) else { return UITableViewCell() }
+        let namePet = petLocalDatabaseViewModel.petNameSaved(pet: pet)
+        let imagePet = petLocalDatabaseViewModel.petImageSaved(pet: pet)
         cell.updateUI(namePet: namePet, imagePet: imagePet)
         cell.setNeedsLayout()
         return cell
@@ -89,7 +89,7 @@ extension LocalPetViewController: UITableViewDataSource {
                 let isSucessDeleted = petLocalDatabaseViewModel.isPetSucessDeleted
 
                 if isSucessDeleted {
-                    self.petNameTableView.deleteRows(at: [indexPath], with: .fade)
+                    petLocalDatabaseViewModel.fetchPetDataResults()
                 } else {
                     showError(errorTitle: "Unable to delete \(petDeleteName)?",
                                               errorMessage: "There was a problem deleting \(petDeleteName)",

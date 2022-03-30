@@ -21,22 +21,26 @@ class SavedPetDataRepository {
 
     // MARK: - Fetch local database data
     func fetchSavedPets(completionHandler: @escaping PetFetchSavedResult) {
+        DispatchQueue.main.async {
         do {
-            self.pets = try context?.fetch(Pet.fetchRequest())
+            self.pets = try self.context?.fetch(Pet.fetchRequest())
             guard let savedPets = self.pets else { return }
             completionHandler(Result.success(savedPets))
         } catch _ as NSError {
             completionHandler(Result.failure(.retrievedPetsSavedError))
         }
+        }
     }
 
     // MARK: - Save pets in local database
-    func savePets(namePet: String, imagePet: String, completionHandler: SavePetResults ) {
+    func savePets(namePet: String, imagePet: String, completionHandler: @escaping SavePetResults) {
+
         guard let petContext = self.context else { return }
         let petObject = Pet(context: petContext)
         petObject.petName = namePet
         petObject.petImage = imagePet
 
+        DispatchQueue.main.async {
         do {
             guard let petContext = self.context,
                   let savedPets = self.pets else { return }
@@ -45,18 +49,21 @@ class SavedPetDataRepository {
         } catch _ as NSError {
             completionHandler(Result.failure(.savePetsError))
         }
+        }
     }
 
     // MARK: - Delete saved pet in local database
-    func deleteSavedPet(petToRemove: Pet, completionHandler: DeletePetResults ) {
-            self.context?.delete(petToRemove)
-            guard let savedPets = self.pets else { return }
+    func deleteSavedPet(petToRemove: Pet, completionHandler: @escaping DeletePetResults) {
+        self.context?.delete(petToRemove)
+        guard let savedPets = self.pets else { return }
 
-            do {
-                try self.context?.save()
-                completionHandler(Result.success(savedPets))
-            } catch {
-                completionHandler(Result.failure(.deletePetsError))
-            }
+        // DispatchQueue.main.async {
+        do {
+            try self.context?.save()
+            completionHandler(Result.success(savedPets))
+        } catch _ as NSError {
+            completionHandler(Result.failure(.deletePetsError))
+        }
+       // }
     }
 }

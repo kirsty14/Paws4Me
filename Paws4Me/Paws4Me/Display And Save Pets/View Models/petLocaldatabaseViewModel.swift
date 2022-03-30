@@ -60,12 +60,12 @@ class PetLocaldatabaseViewModel {
         pets?[index]
     }
 
-    func petNameSaved(pet: Pet?) -> String? {
-        return pet?.value(forKeyPath: "petName") as? String ?? ""
+    func petNameSaved(pet: Pet) -> String {
+        return pet.value(forKeyPath: "petName") as? String ?? ""
     }
 
-    func petImageSaved(pet: Pet?) -> String? {
-        return pet?.value(forKeyPath: "petImage") as? String ?? ""
+    func petImageSaved(pet: Pet) -> String {
+        return pet.value(forKeyPath: "petImage") as? String ?? ""
     }
 
     // MARK: - Functions Fetch local database Object
@@ -74,9 +74,7 @@ class PetLocaldatabaseViewModel {
             switch savedPets {
             case .success(let savedPetData):
                 self?.pets = savedPetData
-                DispatchQueue.main.async {
-                    self?.delegate?.reloadView()
-                }
+                self?.delegate?.reloadView()
             case .failure:
                 self?.delegate?.showError(errorTitle: "Unable to retreive all your saved pets",
                                           errorMessage: "There was a problem retrieving your pets",
@@ -90,15 +88,13 @@ class PetLocaldatabaseViewModel {
         petLocalDatabaseRepository?.savePets(namePet: name, imagePet: image ) { [weak self] savedPets in
             switch savedPets {
             case .success:
-                DispatchQueue.main.async {
-                    self?.delegate?.reloadView()
-                }
+                self?.delegate?.reloadView()
             case .failure:
                 self?.delegate?.showError(errorTitle: "Unable to save \(name)",
                                           errorMessage: "There was a problem savings",
                                           action: .savePetsError)
             }
-            fetchPetDataResults()
+            self?.fetchPetDataResults()
         }
     }
 
@@ -107,7 +103,7 @@ class PetLocaldatabaseViewModel {
         petLocalDatabaseRepository?.deleteSavedPet(petToRemove: petToRemove) { [weak self] savedPets in
             switch savedPets {
             case .success:
-                    self?.fetchPetDataResults()
+                    // self?.fetchPetDataResults()
                     self?.isDeleteSucess = true
             case .failure:
                 self?.isDeleteSucess = false
