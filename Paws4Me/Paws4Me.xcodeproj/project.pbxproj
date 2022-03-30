@@ -73,8 +73,8 @@
 		35E7261C27B3A769002B86DB /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		35E7262427B3E0D5002B86DB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		35E7262727B3E2BE002B86DB /* AdoptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionModel.swift; sourceTree = "<group>"; };
-		A11499E627DB1AC900626FC5 /* PetName+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PetName+CoreDataClass.swift"; path = "Paws4Me/Data/PetName+CoreDataClass.swift"; sourceTree = "<group>"; };
-		A11499E727DB1AC900626FC5 /* PetName+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "PetName+CoreDataProperties.swift"; path = "Paws4Me/Data/PetName+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A11499E627DB1AC900626FC5 /* PetName+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetName+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A11499E727DB1AC900626FC5 /* PetName+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PetName+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A11499EB27DB300800626FC5 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		A11745BC27D9DB2E004C0BD9 /* Paws4Me.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Paws4Me.xcdatamodel; sourceTree = "<group>"; };
 		A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPetNameViewController.swift; sourceTree = "<group>"; };
@@ -131,8 +131,6 @@
 		35E725F727B3A442002B86DB = {
 			isa = PBXGroup;
 			children = (
-				A11499E627DB1AC900626FC5 /* PetName+CoreDataClass.swift */,
-				A11499E727DB1AC900626FC5 /* PetName+CoreDataProperties.swift */,
 				A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */,
 				35E7260227B3A442002B86DB /* Paws4Me */,
 				A146FA4027C6786300DE4A0F /* Paws4MeTests */,
@@ -154,8 +152,7 @@
 		35E7260227B3A442002B86DB /* Paws4Me */ = {
 			isa = PBXGroup;
 			children = (
-				A11745BE27D9DC11004C0BD9 /* Data */,
-				A15F7EC327D8918A002B4BCE /* JsonObject */,
+				A11745BE27D9DC11004C0BD9 /* Data Classes */,
 				35E7261B27B3A4C5002B86DB /* Utilities */,
 				35E7261A27B3A4B2002B86DB /* Resources */,
 				A15F7EB827D88AD8002B4BCE /* Extensions */,
@@ -202,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				35E7260C27B3A444002B86DB /* Assets.xcassets */,
+				A1C20DED27D763C1007006DC /* JsonObject.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -224,11 +222,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		A11745BE27D9DC11004C0BD9 /* Data */ = {
+		A11745BE27D9DC11004C0BD9 /* Data Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A11499E627DB1AC900626FC5 /* PetName+CoreDataClass.swift */,
+				A11499E727DB1AC900626FC5 /* PetName+CoreDataProperties.swift */,
 			);
-			path = Data;
+			path = "Data Classes";
 			sourceTree = "<group>";
 		};
 		A13B57C627C8C0590089839D /* Paws4MeUITests */ = {
@@ -354,14 +354,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		A15F7EC327D8918A002B4BCE /* JsonObject */ = {
-			isa = PBXGroup;
-			children = (
-				A1C20DED27D763C1007006DC /* JsonObject.json */,
-			);
-			path = JsonObject;
-			sourceTree = "<group>";
-		};
 		A193F3AD27F1B17700202351 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,14 +386,6 @@
 				A193F3AD27F1B17700202351 /* View Models */,
 			);
 			path = "Display And Save Pets";
-			sourceTree = "<group>";
-		};
-		A1C20DE927D71E0C007006DC /* Logic */ = {
-			isa = PBXGroup;
-			children = (
-				A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */,
-			);
-			path = Logic;
 			sourceTree = "<group>";
 		};
 		A1C20DEA27D71E30007006DC /* TableCells */ = {
