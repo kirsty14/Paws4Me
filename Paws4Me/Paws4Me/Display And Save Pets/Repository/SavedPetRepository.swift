@@ -57,13 +57,11 @@ class SavedPetDataRepository {
         self.context?.delete(petToRemove)
         guard let savedPets = self.pets else { return }
 
-        // DispatchQueue.main.async {
         do {
             try self.context?.save()
             completionHandler(Result.success(savedPets))
         } catch _ as NSError {
             completionHandler(Result.failure(.deletePetsError))
         }
-       // }
     }
 }
