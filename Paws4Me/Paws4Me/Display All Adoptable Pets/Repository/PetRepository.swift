@@ -11,7 +11,7 @@ class PetDataRepository {
 
     typealias PetResult = (Result<AdoptPet, APIError>) -> Void
 
-    // MARK: - Fetch Json Object from API
+    // MARK: - Local database Function
     func fetchPetDataResults(method: HTTPMethod, endpoint: String, completionHandler: @escaping PetResult) {
         guard let request = URL(string: endpoint) else { return }
 

@@ -61,7 +61,7 @@ extension LocalPetViewController: UITableViewDataSource {
         return cell
     }
 
-    // MARK: - Delete saved pet
+    // MARK: - Delete
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let deleteAction = UIContextualAction(style: .normal,

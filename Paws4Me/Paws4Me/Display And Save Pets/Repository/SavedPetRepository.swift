@@ -19,7 +19,7 @@ class SavedPetDataRepository {
     private var namePet = ""
     private var imagePet = ""
 
-    // MARK: - Fetch local database data
+    // MARK: - Local database Fetch Function
     func fetchSavedPets(completionHandler: @escaping PetFetchSavedResult) {
         DispatchQueue.main.async {
         do {
@@ -32,7 +32,7 @@ class SavedPetDataRepository {
         }
     }
 
-    // MARK: - Save pets in local database
+    // MARK: - Local database Save Function
     func savePets(namePet: String, imagePet: String, completionHandler: @escaping SavePetResults) {
 
         guard let petContext = self.context else { return }
@@ -52,7 +52,7 @@ class SavedPetDataRepository {
         }
     }
 
-    // MARK: - Delete saved pet in local database
+    // MARK: - Local database Delete Functions
     func deleteSavedPet(petToRemove: Pet, completionHandler: @escaping DeletePetResults) {
         self.context?.delete(petToRemove)
         guard let savedPets = self.pets else { return }

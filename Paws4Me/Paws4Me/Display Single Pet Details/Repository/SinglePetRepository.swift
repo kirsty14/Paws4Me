@@ -12,7 +12,7 @@ class SinglePetRepository {
     // MARK: - Vars/Lets
     typealias FetchSavedPets = (Result<[Pet], LocalDatabaseError>) -> Void
 
-    // MARK: - Fetch local database data
+    // MARK: - Local database Function
      func isPetSaved(petName: String) -> Bool {
         var isPetSaved = false
         do {

@@ -29,7 +29,7 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         isPetSaved()
-         }
+    }
 
     // MARK: - IBAction
     @IBAction func saveTappedButton(_ sender: Any) {
@@ -82,6 +82,6 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     private func isPetSaved() {
-        saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved(petName: singlePetViewModel.singlePetName)
+        saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved()
     }
 }

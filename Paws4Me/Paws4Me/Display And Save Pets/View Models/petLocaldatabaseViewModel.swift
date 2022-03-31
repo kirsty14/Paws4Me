@@ -68,7 +68,7 @@ class PetLocaldatabaseViewModel {
         return pet.value(forKeyPath: "petImage") as? String ?? ""
     }
 
-    // MARK: - Functions Fetch local database Object
+    // MARK: - Local Database function fetch
     func fetchPetDataResults() {
         petLocalDatabaseRepository?.fetchSavedPets { [weak self] savedPets in
             switch savedPets {
@@ -83,7 +83,7 @@ class PetLocaldatabaseViewModel {
         }
     }
 
-    // MARK: - Function Save pet in local database
+    // MARK: - Local Database function save
     func savePetInLocalDatabase(name: String, image: String) {
         petLocalDatabaseRepository?.savePets(namePet: name, imagePet: image ) { [weak self] savedPets in
             switch savedPets {
@@ -98,12 +98,11 @@ class PetLocaldatabaseViewModel {
         }
     }
 
-    // MARK: - Function delete pet in local database
+    // MARK: - Local Database function delete
     func deletePetLocaldatabase(petToRemove: Pet) {
         petLocalDatabaseRepository?.deleteSavedPet(petToRemove: petToRemove) { [weak self] savedPets in
             switch savedPets {
             case .success:
-                    // self?.fetchPetDataResults()
                     self?.isDeleteSucess = true
             case .failure:
                 self?.isDeleteSucess = false

@@ -33,7 +33,7 @@ class AllPetDataViewModel {
          self.delegate = delegate
     }
 
-    // MARK: - Functions Fetch Json Object
+    // MARK: - Functions
     func fetchPetDataResults() {
 
         petRepository?.fetchPetDataResults(method: .GET, endpoint: Constants.adoptURL) { [weak self] result in
@@ -79,7 +79,7 @@ class AllPetDataViewModel {
         return indexSinglePet
     }
 
-    // MARK: - Search Pet by name
+    // MARK: - Search
     func setPetSearchName(petSearchText: String?) {
         guard let searchPetText = petSearchText?.lowercased()  else {
             filteredPetObject = adoptPetObject
