@@ -11,6 +11,7 @@ import Foundation
 protocol PetLocalDatabaseViewModelDelegate: AnyObject {
     func reloadView()
     func showError(errorTitle: String, errorMessage: String, action: LocalDatabaseError)
+    func isPetDeletedSuccessfully() -> Bool
 }
 
 class PetLocaldatabaseViewModel {
@@ -103,7 +104,8 @@ class PetLocaldatabaseViewModel {
         petLocalDatabaseRepository?.deleteSavedPet(petToRemove: petToRemove) { [weak self] savedPets in
             switch savedPets {
             case .success:
-                    self?.isDeleteSucess = true
+                self?.isDeleteSucess = true
+                _ = self?.delegate?.isPetDeletedSuccessfully()
             case .failure:
                 self?.isDeleteSucess = false
             }
