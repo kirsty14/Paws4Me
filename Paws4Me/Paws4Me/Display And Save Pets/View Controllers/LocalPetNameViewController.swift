@@ -86,7 +86,7 @@ extension LocalPetViewController: UITableViewDataSource {
                 break
             case "Delete":
                 petLocalDatabaseViewModel.deletePetLocaldatabase(petToRemove: petToRemove)
-                let isSucessDeleted = isPetDeletedSuccessfully()
+                let isSucessDeleted = petLocalDatabaseViewModel.isPetSucessDeleted
 
                 if isSucessDeleted {
                     petLocalDatabaseViewModel.fetchPetDataResults()
@@ -105,19 +105,20 @@ extension LocalPetViewController: UITableViewDataSource {
 
 // MARK: - PetLocalDatabaseViewModel functions
 extension LocalPetViewController: PetLocalDatabaseViewModelDelegate {
-    func reloadView() {
-    petNameTableView.reloadData()
+
+    func isPetDeletedSuccessfully(isDeleteSuccess: Bool) {
+        petLocalDatabaseViewModel.set(isPetDeleteSuccess: isDeleteSuccess)
     }
 
-    func isPetDeletedSuccessfully() -> Bool {
-        return petLocalDatabaseViewModel.isPetSucessDeleted
+    func reloadView() {
+        petNameTableView.reloadData()
     }
 
     func showError(errorTitle: String, errorMessage: String, action: LocalDatabaseError) {
-    displayAlert(alertTitle: errorTitle,
-                 alertMessage: errorMessage,
-                 alertActionTitle: "Try again" ,
-                 alertDelegate: self,
-                 alertTriggered: .fatalLocalDatabaseAlert)
-}
+        displayAlert(alertTitle: errorTitle,
+                     alertMessage: errorMessage,
+                     alertActionTitle: "Try again" ,
+                     alertDelegate: self,
+                     alertTriggered: .fatalLocalDatabaseAlert)
+    }
 }

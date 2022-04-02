@@ -11,7 +11,7 @@ import Foundation
 protocol PetLocalDatabaseViewModelDelegate: AnyObject {
     func reloadView()
     func showError(errorTitle: String, errorMessage: String, action: LocalDatabaseError)
-    func isPetDeletedSuccessfully() -> Bool
+    func isPetDeletedSuccessfully(isDeleteSuccess: Bool)
 }
 
 class PetLocaldatabaseViewModel {
@@ -22,7 +22,7 @@ class PetLocaldatabaseViewModel {
     private var pets: [Pet]? = []
     private var namePet = ""
     private var imagePet = ""
-    var isDeleteSucess = false
+    private var isDeleteSucess = false
 
     var nameSinglePet: String? {
         return namePet
@@ -46,6 +46,10 @@ class PetLocaldatabaseViewModel {
 
     func set(imagePet: String) {
         self.imagePet = imagePet
+    }
+
+    func set(isPetDeleteSuccess: Bool) {
+        isDeleteSucess = isPetDeleteSuccess
     }
 
     // MARK: - Tableview data
@@ -104,10 +108,9 @@ class PetLocaldatabaseViewModel {
         petLocalDatabaseRepository?.deleteSavedPet(petToRemove: petToRemove) { [weak self] savedPets in
             switch savedPets {
             case .success:
-                self?.isDeleteSucess = true
-                _ = self?.delegate?.isPetDeletedSuccessfully()
+                self?.delegate?.isPetDeletedSuccessfully(isDeleteSuccess: true)
             case .failure:
-                self?.isDeleteSucess = false
+                self?.delegate?.isPetDeletedSuccessfully(isDeleteSuccess: false)
             }
         }
     }
