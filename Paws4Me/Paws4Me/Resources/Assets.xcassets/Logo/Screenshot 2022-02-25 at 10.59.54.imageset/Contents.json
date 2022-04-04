@@ -2,16 +2,27 @@
   "images" : [
     {
       "filename" : "Screenshot 2022-02-25 at 10.59.54.png",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "Screenshot 2022-02-25 at 10.59.54-1.png",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Screenshot 2022-04-04 at 16.07.36.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

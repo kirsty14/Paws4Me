@@ -26,6 +26,7 @@ class PetSingleDetailsViewController: UIViewController {
         setPlaceholderImage()
         updateUI()
         isPetSaved()
+        saveSinglePetButton.titleLabel?.textColor = UIColor.black
     }
 
     // MARK: - IBAction
@@ -79,6 +80,13 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     private func isPetSaved() {
-        saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved(petName: singlePetViewModel.singlePetName)
+        let isEnabled =  !singlePetViewModel.isPetSaved(petName: singlePetViewModel.singlePetName)
+        saveSinglePetButton.isEnabled = isEnabled
+
+        if !isEnabled {
+            saveSinglePetButton.setTitleColor(UIColor.darkGray, for: .normal)
+        } else {
+            saveSinglePetButton.setTitleColor(UIColor.black, for: .normal)
+        }
     }
 }

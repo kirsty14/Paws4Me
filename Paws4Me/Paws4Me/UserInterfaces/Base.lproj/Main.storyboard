@@ -32,7 +32,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uq3-sI-hHS">
                                                 <rect key="frame" x="0.0" y="100" width="271" height="36"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" name="primaryTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -49,12 +49,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="246" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-nP-mIU" userLabel="lblUsername">
                                                                 <rect key="frame" x="0.0" y="0.0" width="271" height="26.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" name="primaryAppColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8L-o6-c62" userLabel="txtUsername">
                                                                 <rect key="frame" x="0.0" y="40.5" width="271" height="34"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="tintColor" name="primaryAppColor"/>
+                                                                <color key="textColor" name="primaryTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                                                             </textField>
@@ -65,13 +66,14 @@
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbB-0b-fsT" userLabel="lblPassword">
                                                                 <rect key="frame" x="0.0" y="0.0" width="271" height="26.5"/>
+                                                                <color key="tintColor" name="primaryAppColor"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" name="primaryAppColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOm-UU-3Hi" userLabel="txtPassword">
                                                                 <rect key="frame" x="0.0" y="40.5" width="271" height="34"/>
-                                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="textColor" name="primaryTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                                             </textField>
@@ -102,7 +104,7 @@
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled">
                                                                     <backgroundConfiguration key="background" strokeWidth="2">
-                                                                        <color key="backgroundColor" name="PrimaryPurple"/>
+                                                                        <color key="backgroundColor" name="primaryAppButton"/>
                                                                     </backgroundConfiguration>
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="Sign In">
@@ -153,7 +155,8 @@
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sfQ-w5-4uI"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" name="primaryPurple"/>
                         <constraints>
                             <constraint firstItem="t19-WQ-KEC" firstAttribute="centerY" secondItem="CTX-g3-ZfF" secondAttribute="centerY" id="DRm-cb-bwZ"/>
                             <constraint firstItem="t19-WQ-KEC" firstAttribute="centerX" secondItem="CTX-g3-ZfF" secondAttribute="centerX" id="KhY-co-2W4"/>
@@ -406,12 +409,13 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-ql-fsA">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-ql-fsA">
                                                 <rect key="frame" x="0.0" y="295.5" width="374" height="37"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cai-xG-XFL">
                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="37"/>
-                                                        <color key="backgroundColor" name="PrimaryPurple"/>
+                                                        <color key="backgroundColor" name="primaryAppButton"/>
+                                                        <color key="tintColor" name="primaryAppButton"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="Adopt" imagePadding="19">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
@@ -421,11 +425,9 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9c-03-Baa">
                                                         <rect key="frame" x="187" y="0.0" width="187" height="37"/>
                                                         <color key="backgroundColor" name="primaryTan"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" image="folder.circle" catalog="system" title="Save" imagePadding="19">
-                                                            <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
-                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        </buttonConfiguration>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="19" maxY="0.0"/>
+                                                        <state key="normal" title="Save" image="folder.circle" catalog="system"/>
                                                         <connections>
                                                             <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="IiR-C9-2rW"/>
                                                         </connections>
@@ -514,7 +516,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4n-dW-Lu6">
                                         <rect key="frame" x="0.0" y="485" width="374" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
-                                        <color key="textColor" systemColor="linkColor"/>
+                                        <color key="textColor" name="primaryAppColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-Ga-1gJ" userLabel="Footer">
@@ -533,7 +535,7 @@
                                                         <rect key="frame" x="0.0" y="100" width="176" height="100"/>
                                                         <color key="backgroundColor" name="PrimaryTan"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -551,7 +553,7 @@
                                                         <rect key="frame" x="0.0" y="100" width="176" height="100"/>
                                                         <color key="backgroundColor" name="PrimaryTan"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                        <nil key="textColor"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -711,11 +713,14 @@
         <namedColor name="PrimaryOrange">
             <color red="0.80400002002716064" green="0.42699998617172241" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="PrimaryPurple">
-            <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="PrimaryTan">
             <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primaryAppButton">
+            <color red="0.20392158630000001" green="0.098039209840000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primaryAppColor">
+            <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryOrange">
             <color red="0.80400002002716064" green="0.42699998617172241" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -725,6 +730,9 @@
         </namedColor>
         <namedColor name="primaryTan">
             <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primaryTextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

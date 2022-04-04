@@ -10,12 +10,12 @@ import UIKit
 
 extension UIColor {
     static var myAppPurple: UIColor {
-        return UIColor(named: "primaryPurple")!
+        return UIColor(named: "primaryAppColor")!
     }
     static var myAppError: UIColor {
-        return UIColor(named: "primaryError")!
+        return UIColor(named: "primaryErrorColor")!
     }
     static var myAppTan: UIColor {
-        return UIColor(named: "primaryTan")!
+        return UIColor(named: "secondaryAppColor")!
     }
 }
