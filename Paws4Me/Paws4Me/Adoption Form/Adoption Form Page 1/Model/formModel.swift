@@ -36,6 +36,7 @@ struct CellData {
     var isChecked: Bool?
     var itemTitle: String?
     var itemValue: String?
+    var itemPlaceholder: String?
     var itemName: String?
     var itemImage: Images?
     var itemCount: [CellType] = [.multiSelectValue, .booleanValue, .inputValue]

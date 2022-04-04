@@ -13,13 +13,13 @@ class FirstFormViewModel {
     private var formArray: [FormStructure] = [
         FormStructure(sectionIndex: 0, cellIndex: 0, data: CellData(cellStructure: .inputValue,
                                                                     itemTitle: "Cellphone:",
-                                                                    itemValue: "Enter Cellphone")),
+                                                                    itemPlaceholder: "Enter Cellphone")),
         FormStructure(sectionIndex: 0, cellIndex: 1, data: CellData(cellStructure: .inputValue,
                                                                     itemTitle: "Address:",
-                                                                    itemValue: "Enter Address")),
+                                                                    itemPlaceholder: "Enter Address")),
         FormStructure(sectionIndex: 0, cellIndex: 2, data: CellData(cellStructure: .inputValue,
                                                                     itemTitle: "Email:",
-                                                                    itemValue: "Enter Email")),
+                                                                    itemPlaceholder: "Enter Email")),
 
         FormStructure(sectionIndex: 1, cellIndex: 0, data: CellData(cellStructure: .booleanValue,
                                                                     isChecked: false,
@@ -41,5 +41,4 @@ class FirstFormViewModel {
     var arrayForm: [FormStructure] {
         return formArray
     }
-
 }

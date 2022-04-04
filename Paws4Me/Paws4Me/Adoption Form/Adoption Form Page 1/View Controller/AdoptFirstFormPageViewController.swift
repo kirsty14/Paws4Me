@@ -19,12 +19,41 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
 
     // : MARK: - Var/Lets
     private lazy var firstFormViewModel = FirstFormViewModel()
+    private var textFields = [UITextField]()
+    private var uiSwitches = [UISwitch]()
+    private var indexTextfield = 0
+    private var indexUISwitch = 0
 
     // : MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
         setUpProgress()
+    }
+
+    // : MARK: - IBAction
+    @IBAction func form2NextButton(_ sender: Any) {
+
+        var indexTextfield = 0
+
+        while textFields.count != indexTextfield {
+            if let textField = self.textFieldForTag( tag: indexTextfield ) {
+                guard let textfieldValue = textField.text else { return }
+                var cellData = firstFormViewModel.arrayForm.filter({$0.cellIndex == indexTextfield})
+                cellData[0].data?.itemValue = textfieldValue
+                print( cellData[0] )
+                indexTextfield += 1
+            }
+    }
+        var indexSwitch = 0
+        while uiSwitches.count != indexSwitch {
+            if let uiSwitch = self.uiSwitchForTag(tag: indexSwitch) {
+                var cellData = firstFormViewModel.arrayForm.filter({$0.cellIndex == indexSwitch})
+                cellData[0].data?.itemValue = uiSwitch.isOn.description
+                print( cellData[0] )
+                indexSwitch += 1
+            }
+    }
     }
 
     // : MARK: - Functions
@@ -38,6 +67,14 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
         progress3.addBorder()
         progress4.addBorder()
         setUpTableView()
+    }
+
+    private  func textFieldForTag( tag: Int ) -> UITextField? {
+        return self.textFields.filter({ $0.tag == tag }).first
+    }
+
+    private  func uiSwitchForTag( tag: Int ) -> UISwitch? {
+        return self.uiSwitches.filter({ $0.tag == tag }).first
     }
 
    private func setUpTableView() {
@@ -58,10 +95,8 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          firstFormViewModel.setSection(sectionNumber: section)
         switch section {
-        case 0:
-            return 3
-        case 1:
-            return 3
+        case 0, 1:
+            return firstFormViewModel.arrayForm.filter({$0.sectionIndex == section}).count
         default:
             return 1
         }
@@ -96,7 +131,7 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
         switch indexPath.section {
         case 0:
             guard let questionTitle = cellData[0].data?.itemTitle else { return UITableViewCell() }
-            guard let questionPlaceholder = cellData[0].data?.itemValue else { return UITableViewCell() }
+            guard let questionPlaceholder = cellData[0].data?.itemPlaceholder else { return UITableViewCell() }
             let cellTextbox = sectionContact(question: questionTitle,
                                              indexPath: indexPath,
                                              placeholder: questionPlaceholder)
@@ -134,11 +169,13 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
                                                                                      UISwitchTableViewCell.identifier,
                                                                                      for: indexPath)
         else { return UITableViewCell() }
-
         cellUISwitchGeneral.textLabel?.text = question
         let switchButtonGeneral = UISwitch()
         switchButtonGeneral.addTarget(self, action: #selector(didChangeSwitch(_ :)), for: .valueChanged)
+        switchButtonGeneral.tag = indexUISwitch
         cellUISwitchGeneral.accessoryView = switchButtonGeneral
+        self.uiSwitches.append( switchButtonGeneral )
+        indexUISwitch += 1
         return cellUISwitchGeneral
     }
 
@@ -150,6 +187,7 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
             print("off")
         }
     }
+
     // MARK: - UI Creation
     func createTextField(question: String) -> UITextField {
         let textField =  UITextField(frame: CGRect(x: 150, y: 10, width: 200, height: 40))
@@ -162,6 +200,9 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
         textField.clearButtonMode = UITextField.ViewMode.whileEditing
         textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         textField.delegate = self as? UITextFieldDelegate
+        textField.tag = indexTextfield
+        self.textFields.append( textField )
+        indexTextfield += 1
         return textField
     }
 
