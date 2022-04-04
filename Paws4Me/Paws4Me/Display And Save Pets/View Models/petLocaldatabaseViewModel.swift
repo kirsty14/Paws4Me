@@ -11,7 +11,7 @@ import Foundation
 protocol PetLocalDatabaseViewModelDelegate: AnyObject {
     func reloadView()
     func showError(errorTitle: String, errorMessage: String, action: LocalDatabaseError)
-    func isPetDeletedSuccessfully(isDeleteSuccess: Bool)
+    func refreshPet()
 }
 
 class PetLocaldatabaseViewModel {
@@ -105,12 +105,15 @@ class PetLocaldatabaseViewModel {
 
     // MARK: - Local Database function delete
     func deletePetLocaldatabase(petToRemove: Pet) {
+        guard let petDeleteName = petToRemove.petName else { return }
         petLocalDatabaseRepository?.deleteSavedPet(petToRemove: petToRemove) { [weak self] savedPets in
             switch savedPets {
             case .success:
-                self?.delegate?.isPetDeletedSuccessfully(isDeleteSuccess: true)
+                self?.delegate?.refreshPet()
             case .failure:
-                self?.delegate?.isPetDeletedSuccessfully(isDeleteSuccess: false)
+                self?.delegate?.showError(errorTitle: "Unable to delete \(petDeleteName)?",
+                                           errorMessage: "There was a problem deleting \(petDeleteName)",
+                                           action: .deletePetsError)
             }
         }
     }

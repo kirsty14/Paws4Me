@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LocalPetViewController: UIViewController, UITableViewDelegate {
+class LocalPetViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak private var petNameTableView: UITableView!
@@ -42,7 +42,7 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
 }
 
 // MARK: - UITableViewDataSource
-extension LocalPetViewController: UITableViewDataSource {
+extension LocalPetViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return petLocalDatabaseViewModel.petSavedCount
@@ -86,16 +86,6 @@ extension LocalPetViewController: UITableViewDataSource {
                 break
             case "Delete":
                 petLocalDatabaseViewModel.deletePetLocaldatabase(petToRemove: petToRemove)
-                let isSucessDeleted = petLocalDatabaseViewModel.isPetSucessDeleted
-
-                if isSucessDeleted {
-                    petLocalDatabaseViewModel.fetchPetDataResults()
-                } else {
-                    showError(errorTitle: "Unable to delete \(petDeleteName)?",
-                                              errorMessage: "There was a problem deleting \(petDeleteName)",
-                                              action: .deletePetsError)
-                }
-
             default:
                 break
             }
@@ -105,6 +95,10 @@ extension LocalPetViewController: UITableViewDataSource {
 
 // MARK: - PetLocalDatabaseViewModel functions
 extension LocalPetViewController: PetLocalDatabaseViewModelDelegate {
+
+    func refreshPet() {
+        petLocalDatabaseViewModel.fetchPetDataResults()
+    }
 
     func isPetDeletedSuccessfully(isDeleteSuccess: Bool) {
         petLocalDatabaseViewModel.set(isPetDeleteSuccess: isDeleteSuccess)
