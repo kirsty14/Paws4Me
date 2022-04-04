@@ -141,8 +141,6 @@
 		35E725F727B3A442002B86DB = {
 			isa = PBXGroup;
 			children = (
-				A1A6B23327F6FB750007D606 /* UISwitchTableViewCell.swift */,
-				A1A6B22F27F6FB0F0007D606 /* UITableViewSectionLabelExtension.swift */,
 				A11499E627DB1AC900626FC5 /* PetName+CoreDataClass.swift */,
 				A11499E727DB1AC900626FC5 /* PetName+CoreDataProperties.swift */,
 				A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */,
@@ -358,6 +356,7 @@
 		A15F7EB827D88AD8002B4BCE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A1A6B22F27F6FB0F0007D606 /* UITableViewSectionLabelExtension.swift */,
 				A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */,
 				A11499EB27DB300800626FC5 /* UIImageViewExtension.swift */,
 				A1EEC3D327E0B29E00E94FC2 /* UIAlertExtension.swift */,
@@ -424,6 +423,7 @@
 				A1AF240A27E4BC0F00F91317 /* FavouriteTableViewCell.swift */,
 				A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */,
 				A1A6B23127F6FB450007D606 /* TextBoxTableViewCell.swift */,
+				A1A6B23327F6FB750007D606 /* UISwitchTableViewCell.swift */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
