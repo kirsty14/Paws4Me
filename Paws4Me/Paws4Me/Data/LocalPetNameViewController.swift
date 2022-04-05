@@ -107,7 +107,7 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
            })
 
            deleteAction.image = UIImage(named: "delete")
-           deleteAction.backgroundColor = UIColor.myAppPurple
+           deleteAction.backgroundColor = UIColor.myAppDelete
 
            return UISwipeActionsConfiguration(actions: [deleteAction])
        }
@@ -116,7 +116,7 @@ class LocalPetViewController: UIViewController, UITableViewDelegate {
            guard let petToRemove = self.pets?[indexPath.row] else { return }
            presentAlertDeleteWarning(title: "Delete Pet",
                                      message: "Are you sure you want to delete this pet?",
-                                 options: "Cancel", "Delete") { (optionPressed) in
+                                     options: "Cancel", "Delete") { (optionPressed) in
                switch optionPressed {
                case "Cancel":
                     break

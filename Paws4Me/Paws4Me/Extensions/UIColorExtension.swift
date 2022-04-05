@@ -18,4 +18,8 @@ extension UIColor {
     static var myAppTan: UIColor {
         return UIColor(named: "secondaryAppColor")!
     }
+
+    static var myAppDelete: UIColor {
+        return UIColor(named: "primaryAppDelete")!
+    }
 }
