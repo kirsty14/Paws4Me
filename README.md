@@ -2,7 +2,10 @@
 
 ## :books: About
 * Paws4Me has been specifically designed for pet adoption centres that are struggling to find people to adopt their animals. This innovative IOS Application aims in ensuring that these animals find forever homes by bringing convenience, real time updates and efficiency to the paper based adoption process they currently follow.
-* Project status: working prototype
+* Project status: Working prototype
+
+## Build Badges
+[![Build Status](https://app.bitrise.io/app/343f326b972b1714/status.svg?token=GvxpluZuGUmASZhT3aWiZA&branch=develop)](https://app.bitrise.io/app/343f326b972b1714)
 
 ## :mag_right: Git Structure
 ### Branching Stratergy

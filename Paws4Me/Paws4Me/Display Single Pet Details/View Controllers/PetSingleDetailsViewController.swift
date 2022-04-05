@@ -25,6 +25,9 @@ class PetSingleDetailsViewController: UIViewController {
         super.viewDidLoad()
         setPlaceholderImage()
         updateUI()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
         isPetSaved()
         saveSinglePetButton.titleLabel?.textColor = UIColor.black
     }
@@ -74,13 +77,13 @@ class PetSingleDetailsViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? LocalPetViewController {
-            destination.setNamePet(name: singlePetViewModel.singlePetName)
-            destination.setImagePet(image: singlePetViewModel.singlePetImage )
+            destination.setSavedPetData(name: singlePetViewModel.singlePetName,
+                                        image: singlePetViewModel.singlePetImage)
         }
     }
 
     private func isPetSaved() {
-        let isEnabled =  !singlePetViewModel.isPetSaved(petName: singlePetViewModel.singlePetName)
+        let isEnabled =  !singlePetViewModel.isPetSaved()
         saveSinglePetButton.isEnabled = isEnabled
 
         if !isEnabled {

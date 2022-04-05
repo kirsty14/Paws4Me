@@ -14,10 +14,10 @@ extension UIButton {
     }
     func changeBorderLook() {
         self.layer.borderWidth = 1.0
-        self.layer.borderColor = UIColor.myAppPurple.cgColor
+        self.layer.borderColor = UIColor.primaryAppColor.cgColor
     }
     func changePetIconsColor() {
-        self.layer.borderColor = UIColor.myAppPurple.cgColor
+        self.layer.borderColor = UIColor.primaryAppColor.cgColor
         self.layer.borderWidth = 2
     }
 }

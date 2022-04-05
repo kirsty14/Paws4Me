@@ -89,7 +89,7 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
         cell.index = indexPath.row
         cell.pet = petDataViewModel.objectFilteredPet
         cell.setNeedsLayout()
-        cell.backgroundColor = UIColor.myAppTan
+        cell.backgroundColor = UIColor.secondaryAppColor
         return cell
     }
 

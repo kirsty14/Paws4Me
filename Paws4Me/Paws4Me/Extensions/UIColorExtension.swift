@@ -9,17 +9,17 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static var myAppPurple: UIColor {
+    static var primaryAppColor: UIColor {
         return UIColor(named: "primaryAppColor")!
     }
-    static var myAppError: UIColor {
+    static var primaryAppError: UIColor {
         return UIColor(named: "primaryErrorColor")!
     }
-    static var myAppTan: UIColor {
+    static var secondaryAppColor: UIColor {
         return UIColor(named: "secondaryAppColor")!
     }
 
-    static var myAppDelete: UIColor {
+    static var primaryAppDeleteColor: UIColor {
         return UIColor(named: "primaryAppDelete")!
     }
 }

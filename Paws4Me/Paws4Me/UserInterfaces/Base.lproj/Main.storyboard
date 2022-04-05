@@ -427,7 +427,9 @@
                                                         <color key="backgroundColor" name="primaryTan"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="19" maxY="0.0"/>
-                                                        <state key="normal" title="Save" image="folder.circle" catalog="system"/>
+                                                        <state key="normal" title="Save" image="folder.circle" catalog="system">
+                                                            <color key="titleColor" name="primaryBackground"/>
+                                                        </state>
                                                         <connections>
                                                             <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="IiR-C9-2rW"/>
                                                         </connections>
@@ -717,13 +719,16 @@
             <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryAppButton">
-            <color red="0.20392158630000001" green="0.098039209840000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryAppColor">
             <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="primaryBackground">
+            <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="primaryOrange">
-            <color red="0.80400002002716064" green="0.42699998617172241" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryPurple">
             <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
