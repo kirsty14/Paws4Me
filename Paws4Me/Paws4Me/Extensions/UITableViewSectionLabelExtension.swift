@@ -11,8 +11,7 @@ import UIKit
 extension UILabel {
 
     func styleSectionLabel() {
-    self.font = UIFont(name: "Verdana", size: 20)
-    self.backgroundColor = UIColor.systemGray5
-    self.textColor = UIColor.black
+      self.font = UIFont.setFont(size: 30)
+        self.backgroundColor = UIColor.myAppSection
     }
 }

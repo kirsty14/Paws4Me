@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class AdoptFirstFormPageViewController: UIViewController {
 
     // : MARK: - IBOutlet
     @IBOutlet weak private var adoptFirstFormTableView: UITableView?
@@ -16,6 +16,8 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak private var progress3: UIView!
     @IBOutlet weak private var progress2: UIView!
     @IBOutlet weak private var progress4: UIView!
+
+    @IBOutlet var collection: [UIView]!
 
     // : MARK: - Var/Lets
     private lazy var firstFormViewModel = FirstFormViewModel()
@@ -28,7 +30,11 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
-        setUpProgress()
+
+        for item in self.collection {
+            item.makeCircle()
+            item.addBorder()
+           }
     }
 
     // : MARK: - IBAction
@@ -41,7 +47,6 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
                 guard let textfieldValue = textField.text else { return }
                 var cellData = firstFormViewModel.arrayForm.filter({$0.cellIndex == indexTextfield})
                 cellData[0].data?.itemValue = textfieldValue
-                print( cellData[0] )
                 indexTextfield += 1
             }
     }
@@ -50,24 +55,12 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
             if let uiSwitch = self.uiSwitchForTag(tag: indexSwitch) {
                 var cellData = firstFormViewModel.arrayForm.filter({$0.cellIndex == indexSwitch})
                 cellData[0].data?.itemValue = uiSwitch.isOn.description
-                print( cellData[0] )
                 indexSwitch += 1
             }
     }
     }
 
     // : MARK: - Functions
-   private func setUpProgress() {
-        progress1.makeCircle()
-        progress2.makeCircle()
-        progress3.makeCircle()
-        progress4.makeCircle()
-        progress1.addBorder()
-        progress2.addBorder()
-        progress3.addBorder()
-        progress4.addBorder()
-        setUpTableView()
-    }
 
     private  func textFieldForTag( tag: Int ) -> UITextField? {
         return self.textFields.filter({ $0.tag == tag }).first
@@ -87,6 +80,27 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
         adoptFirstFormTableView?.reloadData()
     }
 
+    // MARK: - UI Creation
+    func createTextField(question: String) -> UITextField {
+        let textField =  UITextField(frame: CGRect(x: 150, y: 10, width: 200, height: 40))
+        textField.placeholder = question
+        textField.font = UIFont.systemFont(ofSize: 15)
+        textField.borderStyle = UITextField.BorderStyle.roundedRect
+        textField.autocorrectionType = UITextAutocorrectionType.no
+        textField.keyboardType = UIKeyboardType.default
+        textField.returnKeyType = UIReturnKeyType.done
+        textField.clearButtonMode = UITextField.ViewMode.whileEditing
+        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        textField.delegate = self as? UITextFieldDelegate
+        textField.tag = indexTextfield
+        self.textFields.append( textField )
+        indexTextfield += 1
+        return textField
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension AdoptFirstFormPageViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - TableView functions
      func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -171,7 +185,6 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
         else { return UITableViewCell() }
         cellUISwitchGeneral.textLabel?.text = question
         let switchButtonGeneral = UISwitch()
-        switchButtonGeneral.addTarget(self, action: #selector(didChangeSwitch(_ :)), for: .valueChanged)
         switchButtonGeneral.tag = indexUISwitch
         cellUISwitchGeneral.accessoryView = switchButtonGeneral
         self.uiSwitches.append( switchButtonGeneral )
@@ -179,40 +192,13 @@ class AdoptFirstFormPageViewController: UIViewController, UITableViewDelegate, U
         return cellUISwitchGeneral
     }
 
-    // MARK: - UISwitch event
-    @objc func didChangeSwitch(_ sender: UISwitch) {
-        if sender.isOn {
-            print("on")
-        } else {
-            print("off")
-        }
-    }
-
-    // MARK: - UI Creation
-    func createTextField(question: String) -> UITextField {
-        let textField =  UITextField(frame: CGRect(x: 150, y: 10, width: 200, height: 40))
-        textField.placeholder = question
-        textField.font = UIFont.systemFont(ofSize: 15)
-        textField.borderStyle = UITextField.BorderStyle.roundedRect
-        textField.autocorrectionType = UITextAutocorrectionType.no
-        textField.keyboardType = UIKeyboardType.default
-        textField.returnKeyType = UIReturnKeyType.done
-        textField.clearButtonMode = UITextField.ViewMode.whileEditing
-        textField.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
-        textField.delegate = self as? UITextFieldDelegate
-        textField.tag = indexTextfield
-        self.textFields.append( textField )
-        indexTextfield += 1
-        return textField
-    }
-
-     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        let headerLabel = UILabel(frame: CGRect(x: 0, y: 5, width:
-        tableView.bounds.size.width, height: 30))
-        headerLabel.styleSectionLabel()
-        headerLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
-        headerView.addSubview(headerLabel)
-        return headerView
-    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+       let headerView = UIView()
+       let headerLabel = UILabel(frame: CGRect(x: 0, y: 5, width:
+       tableView.bounds.size.width, height: 30))
+       headerLabel.styleSectionLabel()
+       headerLabel.text = self.tableView(tableView, titleForHeaderInSection: section)
+       headerView.addSubview(headerLabel)
+       return headerView
+   }
 }

@@ -20,7 +20,6 @@ class SinglePetViewModel {
 
     var singlePetAge: String {
         return singlePet?.page?[indexSinglePet].age ?? ""
-
     }
 
     var singlePetBreed: String {
@@ -53,8 +52,8 @@ class SinglePetViewModel {
         return filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText) ??  false })
     }
 
-    func isPetSaved(petName: String) -> Bool {
-        guard let isPetSaved = singlePetRepository?.isPetSaved(petName: petName) else { return false }
+    func isPetSaved() -> Bool {
+        guard let isPetSaved = singlePetRepository?.isPetSaved(petName: singlePetName) else { return false }
          return isPetSaved
     }
 

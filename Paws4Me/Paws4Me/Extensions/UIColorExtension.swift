@@ -12,10 +12,20 @@ extension UIColor {
     static var myAppPurple: UIColor {
         return UIColor(named: "primaryPurple")!
     }
+
     static var myAppError: UIColor {
         return UIColor(named: "primaryError")!
     }
+
     static var myAppTan: UIColor {
         return UIColor(named: "primaryTan")!
+    }
+
+    static var myAppOrange: UIColor {
+        return UIColor(named: "primaryOrange")!
+    }
+
+    static var myAppSection: UIColor {
+        return UIColor.systemGray
     }
 }

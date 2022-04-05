@@ -424,6 +424,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9c-03-Baa">
                                                         <rect key="frame" x="187" y="0.0" width="187" height="37"/>
                                                         <color key="backgroundColor" name="primaryTan"/>
+                                                        <color key="tintColor" name="primaryTan"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="folder.circle" catalog="system" title="Save" imagePadding="19">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
@@ -729,7 +730,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <color key="backgroundColor" name="primaryOrange"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSo-u0-uJA">
                                         <rect key="frame" x="55" y="0.0" width="50" height="50"/>
@@ -811,10 +812,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="adoptFirstFormTableView" destination="vTe-tQ-oQU" id="NzQ-ap-a8o"/>
-                        <outlet property="progress1" destination="mfQ-us-IHb" id="QKA-wk-07Q"/>
-                        <outlet property="progress2" destination="WGC-7N-ceg" id="dd4-XK-hqr"/>
-                        <outlet property="progress3" destination="SSo-u0-uJA" id="4nh-BF-S5Q"/>
-                        <outlet property="progress4" destination="mwA-ii-DcX" id="Jc6-Re-LZd"/>
+                        <outletCollection property="collection" destination="mfQ-us-IHb" collectionClass="NSMutableArray" id="jxt-kc-CBS"/>
+                        <outletCollection property="collection" destination="SSo-u0-uJA" collectionClass="NSMutableArray" id="leC-sh-BSr"/>
+                        <outletCollection property="collection" destination="WGC-7N-ceg" collectionClass="NSMutableArray" id="mYk-ub-Viv"/>
+                        <outletCollection property="collection" destination="mwA-ii-DcX" collectionClass="NSMutableArray" id="Oie-UI-pJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqc-aQ-4Oj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -823,7 +824,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IiR-C9-2rW"/>
+        <segue reference="hXA-UT-f4d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryPurple"/>
     <resources>
@@ -855,7 +856,7 @@
             <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryOrange">
-            <color red="0.80400002002716064" green="0.42699998617172241" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="primaryPurple">
             <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -871,9 +872,6 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
