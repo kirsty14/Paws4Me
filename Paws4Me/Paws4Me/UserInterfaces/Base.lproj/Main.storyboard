@@ -168,23 +168,23 @@
                         <outlet property="registerButton" destination="gUu-aN-Vo4" id="rSY-7z-iR9"/>
                         <outlet property="signInButton" destination="KuT-9E-35H" id="HIm-XY-DEa"/>
                         <outlet property="usernameTextField" destination="B8L-o6-c62" id="nMo-li-LEx"/>
-                        <segue destination="AEY-ao-6vI" kind="show" identifier="signInViewController" id="pK4-06-98J"/>
+                        <segue destination="dKQ-gg-JaL" kind="show" identifier="signInViewController" id="Pq6-oA-wIh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omb-iy-fNy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1138" y="-526"/>
+            <point key="canvasLocation" x="3141" y="-1418"/>
         </scene>
         <!--PetAllViewController-->
         <scene sceneID="2sl-Jh-sm1">
             <objects>
                 <viewController title="PetAllViewController" modalPresentationStyle="fullScreen" id="16Z-Yb-vqd" customClass="AllPetDetailViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h18-3r-gMs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xsw-eI-hug" userLabel="Parent">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <rect key="frame" x="20" y="56" width="374" height="757"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Cs-zT-Q9Z">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
@@ -251,13 +251,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="g1H-aL-Dax" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="252.5" width="374" height="472.5"/>
+                                        <rect key="frame" x="0.0" y="252.5" width="374" height="504.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-xa-Q0e" userLabel="Table">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="472.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="504.5"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="7zP-O0-CIF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="472.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="504.5"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <searchBar key="tableHeaderView" contentMode="redraw" text="Type Name of A Pet" id="cMg-Ze-QTI">
                                                             <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
@@ -322,9 +322,7 @@
                             <constraint firstItem="8lN-Bu-VKN" firstAttribute="top" secondItem="xsw-eI-hug" secondAttribute="top" id="tgF-MN-qEa"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Pets" image="pawprint" catalog="system" selectedImage="pawprint.fill" id="KBd-hl-5OH"/>
                     <navigationItem key="navigationItem" title="Adoptable Animals" id="Fzn-Yv-Wdb"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="petTableView" destination="7zP-O0-CIF" id="6he-ez-CiC"/>
                         <outlet property="searchBar" destination="cMg-Ze-QTI" id="Vo2-Ii-Kmz"/>
@@ -333,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzi-gh-BB8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4313" y="-526"/>
+            <point key="canvasLocation" x="4212" y="1067"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="JuU-6i-8Dx">
@@ -348,49 +346,24 @@
                         <color key="selectedImageTintColor" name="tertiaryAppColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="16Z-Yb-vqd" kind="relationship" relationship="viewControllers" id="4Q9-Ly-zfB"/>
-                        <segue destination="Ppi-Pd-HX2" kind="relationship" relationship="viewControllers" id="hXA-UT-f4d"/>
+                        <segue destination="n57-0E-9EK" kind="relationship" relationship="viewControllers" id="4Q9-Ly-zfB"/>
+                        <segue destination="fyl-IJ-Ie9" kind="relationship" relationship="viewControllers" id="hXA-UT-f4d"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3j-7n-9Fs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3140.579710144928" y="-526.33928571428567"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kgl-yo-9YP">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="AEY-ao-6vI" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="iRa-mc-izR"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="6lI-Jf-6GK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" name="primaryNaviagtionBarColor"/>
-                        <navigationBarAppearance key="standardAppearance">
-                            <textAttributes key="largeTitleTextAttributes">
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
-                            </textAttributes>
-                        </navigationBarAppearance>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="dKQ-gg-JaL" kind="relationship" relationship="rootViewController" id="sSs-1v-KaW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fF6-eX-bup" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2287" y="-526"/>
-        </scene>
         <!--Adopt Me!-->
         <scene sceneID="M4w-II-vVK">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="OsJ-hN-9BO" customClass="PetSingleDetailsViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sPp-fa-tGf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lv3-05-xrM" userLabel="Parent">
-                                <rect key="frame" x="20" y="108" width="374" height="705"/>
+                                <rect key="frame" x="20" y="76" width="374" height="737"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="TtG-51-NfH" userLabel="Header">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="302.5"/>
@@ -429,7 +402,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="19" maxY="0.0"/>
                                                         <state key="normal" title="Save" image="folder.circle" catalog="system"/>
                                                         <connections>
-                                                            <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="IiR-C9-2rW"/>
+                                                            <action selector="saveTappedButton:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="Uy4-ha-79z"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -448,20 +421,20 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="yUI-sA-vEg" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="344" width="374" height="99.5"/>
+                                        <rect key="frame" x="0.0" y="344" width="374" height="100.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="91e-xe-6zc" userLabel="pet1">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fWY-YF-lmT">
-                                                        <rect key="frame" x="0.0" y="0.5" width="21.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
                                                         <color key="tintColor" name="PrimaryOrange"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="21.5" id="ewO-dy-uIz"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Breed" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCJ-sW-IGz">
-                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21"/>
+                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -469,7 +442,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7CE-BI-Hb0" userLabel="pet2">
-                                                <rect key="frame" x="0.0" y="39" width="374" height="21.5"/>
+                                                <rect key="frame" x="0.0" y="39.5" width="374" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jp3-ZU-Ucn">
                                                         <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
@@ -487,17 +460,17 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8ky-Fs-oBt" userLabel="pet3">
-                                                <rect key="frame" x="0.0" y="78.5" width="374" height="21"/>
+                                                <rect key="frame" x="0.0" y="79" width="374" height="21.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="RJZ-TM-ihN">
-                                                        <rect key="frame" x="0.0" y="0.5" width="21.5" height="20"/>
+                                                        <rect key="frame" x="0.0" y="0.5" width="21.5" height="20.5"/>
                                                         <color key="tintColor" name="PrimaryOrange"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="21.5" id="Yvk-be-3sn"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Age" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JD1-08-bfr">
-                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21"/>
+                                                        <rect key="frame" x="31.5" y="0.0" width="342.5" height="21.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -507,20 +480,20 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcw-fL-jya" userLabel="Sep">
-                                        <rect key="frame" x="0.0" y="463.5" width="374" height="1.5"/>
+                                        <rect key="frame" x="0.0" y="464.5" width="374" height="1.5"/>
                                         <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1.5" id="QgE-tt-QlB"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="People also viewed these pets" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4n-dW-Lu6">
-                                        <rect key="frame" x="0.0" y="485" width="374" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="486" width="374" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="19"/>
                                         <color key="textColor" name="primaryAppColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-Ga-1gJ" userLabel="Footer">
-                                        <rect key="frame" x="0.0" y="505" width="374" height="200"/>
+                                        <rect key="frame" x="0.0" y="537" width="374" height="200"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AT4-dK-gBu" userLabel="pet1">
                                                 <rect key="frame" x="0.0" y="0.0" width="176" height="200"/>
@@ -579,28 +552,29 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="petAgeLabel" destination="JD1-08-bfr" id="tjG-pM-agB"/>
-                        <outlet property="petBreedNameLabel" destination="zCJ-sW-IGz" id="1cj-SC-xyD"/>
-                        <outlet property="petGenderLabel" destination="Xjw-7u-lVk" id="lam-Xf-cef"/>
-                        <outlet property="petImageView" destination="Pp9-cZ-ApB" id="8Dq-sa-KSZ"/>
-                        <outlet property="petNameLabel" destination="kdE-x3-FCP" id="vgY-sj-q3J"/>
-                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="3g5-5x-k9f"/>
+                        <outlet property="petAgeLabel" destination="JD1-08-bfr" id="Pzm-FP-wDZ"/>
+                        <outlet property="petBreedNameLabel" destination="zCJ-sW-IGz" id="ef7-xP-s80"/>
+                        <outlet property="petGenderLabel" destination="Xjw-7u-lVk" id="J4Z-oD-Fmm"/>
+                        <outlet property="petImageView" destination="Pp9-cZ-ApB" id="glJ-Gk-tjt"/>
+                        <outlet property="petNameLabel" destination="kdE-x3-FCP" id="cci-zy-79r"/>
+                        <outlet property="saveSinglePetButton" destination="o9c-03-Baa" id="MrD-NI-4uW"/>
+                        <segue destination="Ppi-Pd-HX2" kind="show" identifier="LocalPetViewController" id="qf6-25-Pe2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6su-Ci-0E5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4312" y="440"/>
+            <point key="canvasLocation" x="2955" y="1985"/>
         </scene>
         <!--PetAllViewController-->
         <scene sceneID="bu4-O1-IJk">
             <objects>
                 <viewController title="PetAllViewController" modalPresentationStyle="fullScreen" id="Ppi-Pd-HX2" customClass="LocalPetViewController" customModule="Paws4Me" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yWe-as-U6h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vDe-eN-xyJ" userLabel="Parent">
-                                <rect key="frame" x="20" y="88" width="374" height="725"/>
+                                <rect key="frame" x="20" y="56" width="374" height="757"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOT-3B-8gE">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="10"/>
@@ -610,13 +584,13 @@
                                         </constraints>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="q4i-vC-Llj" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="30" width="374" height="695"/>
+                                        <rect key="frame" x="0.0" y="30" width="374" height="727"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="cZh-Sc-57h" userLabel="Table">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="695"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="727"/>
                                                 <subviews>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="16v-ve-4ch">
-                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="695"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="727"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favouritePetCell" rowHeight="264" id="D2N-yc-6hw" customClass="FavouriteTableViewCell" customModule="Paws4Me" customModuleProvider="target">
@@ -654,8 +628,8 @@
                                                                 </tableViewCellContentView>
                                                                 <color key="tintColor" name="AccentColor"/>
                                                                 <connections>
-                                                                    <outlet property="favouitePetImageView" destination="GRw-IT-bNh" id="Lcn-YY-MqX"/>
-                                                                    <outlet property="favouritePetNameLabel" destination="eVr-eJ-y7y" id="o78-g6-8sr"/>
+                                                                    <outlet property="favouitePetImageView" destination="GRw-IT-bNh" id="OyA-Vr-Nhq"/>
+                                                                    <outlet property="favouritePetNameLabel" destination="eVr-eJ-y7y" id="Qo7-xu-DMS"/>
                                                                 </connections>
                                                             </tableViewCell>
                                                         </prototypes>
@@ -676,20 +650,57 @@
                             <constraint firstItem="30z-fM-bNj" firstAttribute="trailing" secondItem="vDe-eN-xyJ" secondAttribute="trailing" constant="20" id="geK-s9-hom"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favourites" image="star" catalog="system" selectedImage="star.fill" id="jX8-kC-vdf"/>
                     <navigationItem key="navigationItem" id="crc-6J-kuq"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="petNameTableView" destination="16v-ve-4ch" id="Pby-T2-MTK"/>
+                        <outlet property="petNameTableView" destination="16v-ve-4ch" id="3BA-5D-rrP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWr-aL-tJ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="440"/>
+            <point key="canvasLocation" x="1509" y="1067"/>
+        </scene>
+        <!--Favourites-->
+        <scene sceneID="YX5-6W-Ej2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="fyl-IJ-Ie9" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Favourites" image="star" catalog="system" selectedImage="star.fill" id="jX8-kC-vdf"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="BtM-Ab-cyB"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ms0-oU-sgj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ppi-Pd-HX2" kind="relationship" relationship="rootViewController" id="ODE-Ol-5Ig"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dW7-v3-sQz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510" y="309"/>
+        </scene>
+        <!--Pets-->
+        <scene sceneID="o3m-rJ-dqs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="n57-0E-9EK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pets" image="pawprint" catalog="system" selectedImage="pawprint.fill" id="KBd-hl-5OH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="reW-SK-QK3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="16Z-Yb-vqd" kind="relationship" relationship="rootViewController" id="5tS-Yp-VHb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ZM-87-LUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4212" y="309"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hXA-UT-f4d"/>
+        <segue reference="ODE-Ol-5Ig"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryTextColor"/>
     <resources>
@@ -721,9 +732,6 @@
         </namedColor>
         <namedColor name="primaryAppColor">
             <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
-        <namedColor name="primaryNaviagtionBarColor">
-            <color red="0.98039215800000001" green="0.87450981139999995" blue="0.77254903320000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="primaryOrange">
             <color red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

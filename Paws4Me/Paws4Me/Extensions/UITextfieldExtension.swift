@@ -24,7 +24,7 @@ func addErrorBorderBoth() {
     let border = CALayer()
     let width = CGFloat(1.0)
     border.borderColor =  UIColor.primaryAppError.cgColor
-    border.frame = CGRect(x: 0, y: self.frame.height * 0.95, width: self.frame.width, height: 2)
+    border.frame = CGRect(x: 0, y: self.frame.height * 0.8, width: self.frame.width, height: 2)
     border.borderWidth = width
     self.borderStyle = .none
     self.layer.addSublayer(border)
