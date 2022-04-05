@@ -26,6 +26,6 @@ extension UIColor {
     }
 
     static var myAppSection: UIColor {
-        return UIColor.systemGray
+        return UIColor.systemGray5
     }
 }

@@ -41,7 +41,6 @@ class AdoptFirstFormPageViewController: UIViewController {
     @IBAction func form2NextButton(_ sender: Any) {
 
         var indexTextfield = 0
-
         while textFields.count != indexTextfield {
             if let textField = self.textFieldForTag( tag: indexTextfield ) {
                 guard let textfieldValue = textField.text else { return }
@@ -50,6 +49,7 @@ class AdoptFirstFormPageViewController: UIViewController {
                 indexTextfield += 1
             }
     }
+
         var indexSwitch = 0
         while uiSwitches.count != indexSwitch {
             if let uiSwitch = self.uiSwitchForTag(tag: indexSwitch) {
