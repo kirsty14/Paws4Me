@@ -79,7 +79,7 @@
         <image name="launch" width="334" height="436"/>
         <image name="pawprint.fill" catalog="system" width="128" height="113"/>
         <namedColor name="primaryBackground">
-            <color red="0.20392158630000001" green="0.098039209840000002" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="secondaryAppColor">
             <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
