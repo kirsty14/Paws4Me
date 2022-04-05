@@ -10,5 +10,4 @@ import UIKit
 class UISwitchTableViewCell: UITableViewCell {
 
     static let identifier = "UISwitchCell"
-
 }

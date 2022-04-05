@@ -10,5 +10,4 @@ import UIKit
 class TextBoxTableViewCell: UITableViewCell {
 
     static let identifier = "textBoxCell"
-
 }
