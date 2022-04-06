@@ -31,7 +31,7 @@ class SignInViewModel {
             delegate?.showError(errorMessage: "Incorrect Username or Password")
     }
 
-    private func isValidCredentials(username: String, password: String) -> Bool {
+     func isValidCredentials(username: String, password: String) -> Bool {
         return username == "Admin" && password == "TestPass123"
     }
 }
