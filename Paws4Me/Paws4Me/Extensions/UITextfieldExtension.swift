@@ -30,4 +30,13 @@ func addErrorBorderBoth() {
     self.layer.addSublayer(border)
     self.layer.masksToBounds = true
 }
+
+func addFormErrorBorder() {
+    self.layer.borderColor = UIColor.myAppError.cgColor
+    self.layer.borderWidth = 1
+}
+
+    func clearFormErrorBorder() {
+        self.layer.borderColor = UIColor.clear.cgColor
+    }
 }

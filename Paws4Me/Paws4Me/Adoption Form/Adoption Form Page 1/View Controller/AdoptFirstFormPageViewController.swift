@@ -26,6 +26,7 @@ class AdoptFirstFormPageViewController: UIViewController {
     private var indexTextfield = 0
     private var indexUISwitch = 0
     private var sectionCount: Int = 0
+    private let sectionTitles = ["Contact", "General"]
 
     // : MARK: - Lifecycle
     override func viewDidLoad() {
@@ -45,6 +46,13 @@ class AdoptFirstFormPageViewController: UIViewController {
         while textFields.count != indexTextfield {
             if let textField = self.textFieldForTag( tag: indexTextfield ) {
                 guard let textfieldValue = textField.text else { return }
+
+                if isEmptyTextfield(valueTextfield: textfieldValue) {
+                    addValidationTextField(textField: textField)
+                } else {
+                    textField.clearFormErrorBorder()
+                }
+
                 var cellData = firstFormViewModel.arrayForm.filter({$0.cellIndex == indexTextfield})
                 cellData[0].data?.itemValue = textfieldValue
                 indexTextfield += 1
@@ -62,6 +70,14 @@ class AdoptFirstFormPageViewController: UIViewController {
     }
 
     // : MARK: - Functions
+    private func isEmptyTextfield(valueTextfield: String) -> Bool {
+        return valueTextfield.isEmpty
+    }
+
+    private func addValidationTextField(textField: UITextField) {
+        textField.addFormErrorBorder()
+    }
+
     private func textFieldForTag( tag: Int ) -> UITextField? {
         return self.textFields.filter({ $0.tag == tag }).first
     }
@@ -103,7 +119,7 @@ class AdoptFirstFormPageViewController: UIViewController {
 extension AdoptFirstFormPageViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - TableView functions
      func numberOfSections(in tableView: UITableView) -> Int {
-         return 2
+         return sectionTitles.count
     }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,9 +146,9 @@ extension AdoptFirstFormPageViewController: UITableViewDataSource, UITableViewDe
      func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case 0:
-            return "Contact"
+            return sectionTitles[0]
         case 1:
-            return "General"
+            return sectionTitles[1]
         default:
             return "Category Unknown"
         }
