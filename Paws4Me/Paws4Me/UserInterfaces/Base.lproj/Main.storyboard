@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -102,18 +103,12 @@
                                                                 </constraints>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="filled">
+                                                                <buttonConfiguration key="configuration" style="plain" title="Sign In">
                                                                     <backgroundConfiguration key="background" strokeWidth="2">
                                                                         <color key="backgroundColor" name="primaryAppButton"/>
                                                                     </backgroundConfiguration>
-                                                                    <attributedString key="attributedTitle">
-                                                                        <fragment content="Sign In">
-                                                                            <attributes>
-                                                                                <font key="NSFont" size="17" name="STSongti-TC-Bold"/>
-                                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                            </attributes>
-                                                                        </fragment>
-                                                                    </attributedString>
+                                                                    <fontDescription key="titleFontDescription" name="STSongti-TC-Bold" family="Songti TC" pointSize="17"/>
+                                                                    <color key="baseForegroundColor" name="secondaryAppButton"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="signInButtonTapped:" destination="AJP-Uc-Cxw" eventType="touchUpInside" id="R5B-zr-YN3"/>
@@ -132,14 +127,14 @@
                                                                     <attributedString key="attributedTitle">
                                                                         <fragment content="Register">
                                                                             <attributes>
-                                                                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <font key="NSFont" size="17" name="STSongti-TC-Bold"/>
                                                                                 <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                             </attributes>
                                                                         </fragment>
                                                                     </attributedString>
-                                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <color key="baseBackgroundColor" name="AccentColor"/>
+                                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                                                    <color key="baseBackgroundColor" name="secondaryAppButton"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="enterTapped:" destination="AJP-Uc-Cxw" eventType="touchUpInside" id="xuF-SL-lgK"/>
@@ -324,7 +319,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Adoptable Animals" id="Fzn-Yv-Wdb"/>
                     <connections>
+                        <outlet property="catIconButton" destination="LBK-fW-xpg" id="tiY-RK-LuY"/>
+                        <outlet property="dogIconButton" destination="yfy-1c-xAA" id="bdg-tF-Ie8"/>
+                        <outlet property="kittenIconButton" destination="IbI-Fo-DxO" id="CDF-rx-qYF"/>
                         <outlet property="petTableView" destination="7zP-O0-CIF" id="6he-ez-CiC"/>
+                        <outlet property="puppyIconButton" destination="2ho-Dp-Xxs" id="Thv-Ka-mtd"/>
                         <outlet property="searchBar" destination="cMg-Ze-QTI" id="Vo2-Ii-Kmz"/>
                         <segue destination="OsJ-hN-9BO" kind="show" identifier="PetSingleDetailsViewController" id="9Rd-H9-yU6"/>
                     </connections>
@@ -382,25 +381,34 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-ql-fsA">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CMD-ql-fsA">
                                                 <rect key="frame" x="0.0" y="265.5" width="374" height="37"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cai-xG-XFL">
-                                                        <rect key="frame" x="0.0" y="0.0" width="187" height="37"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="37"/>
                                                         <color key="backgroundColor" name="primaryAppButton"/>
                                                         <color key="tintColor" name="primaryAppButton"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="plus.circle" catalog="system" title="Adopt" imagePadding="19">
                                                             <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
-                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="baseForegroundColor" name="secondaryAppButton"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9c-03-Baa">
-                                                        <rect key="frame" x="187" y="0.0" width="187" height="37"/>
-                                                        <color key="backgroundColor" name="primaryTan"/>
+                                                        <rect key="frame" x="192" y="0.0" width="182" height="37"/>
+                                                        <color key="backgroundColor" name="secondaryAppColor"/>
                                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="19" maxY="0.0"/>
-                                                        <state key="normal" title="Save" image="folder.circle" catalog="system"/>
+                                                        <state key="normal" title="Save">
+                                                            <color key="titleColor" name="primaryTextColor"/>
+                                                            <imageReference key="image" image="folder.circle" catalog="system" renderingMode="hierarchical">
+                                                                <hierarchicalColors>
+                                                                    <color systemColor="labelColor"/>
+                                                                    <color systemColor="secondaryLabelColor"/>
+                                                                    <color systemColor="tertiaryLabelColor"/>
+                                                                </hierarchicalColors>
+                                                            </imageReference>
+                                                        </state>
                                                         <connections>
                                                             <action selector="saveTappedButton:" destination="OsJ-hN-9BO" eventType="touchUpInside" id="Uy4-ha-79z"/>
                                                         </connections>
@@ -408,7 +416,6 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" name="PrimaryOrange"/>
                                         <constraints>
                                             <constraint firstItem="Pp9-cZ-ApB" firstAttribute="height" secondItem="TtG-51-NfH" secondAttribute="height" multiplier="0.661654" id="V6w-sI-xDr"/>
                                         </constraints>
@@ -492,41 +499,41 @@
                                         <color key="textColor" name="primaryAppColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-Ga-1gJ" userLabel="Footer">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TbX-Ga-1gJ" userLabel="Footer">
                                         <rect key="frame" x="0.0" y="537" width="374" height="200"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AT4-dK-gBu" userLabel="pet1">
-                                                <rect key="frame" x="0.0" y="0.0" width="176" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="200"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="LNC-l3-26h">
-                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="VUp-gO-ZF3"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rex" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uhi-Tg-dr6">
-                                                        <rect key="frame" x="0.0" y="100" width="176" height="100"/>
-                                                        <color key="backgroundColor" name="PrimaryTan"/>
+                                                        <rect key="frame" x="0.0" y="100" width="182" height="100"/>
+                                                        <color key="backgroundColor" name="PrimaryOrange"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rHU-Po-Im5" userLabel="pet2">
-                                                <rect key="frame" x="198" y="0.0" width="176" height="200"/>
+                                                <rect key="frame" x="192" y="0.0" width="182" height="200"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="1PC-jC-yxH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="176" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="182" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="M1B-uP-l6d"/>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sparkle" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWV-B9-NY1">
-                                                        <rect key="frame" x="0.0" y="100" width="176" height="100"/>
-                                                        <color key="backgroundColor" name="PrimaryTan"/>
+                                                        <rect key="frame" x="0.0" y="100" width="182" height="100"/>
+                                                        <color key="backgroundColor" name="PrimaryOrange"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -552,6 +559,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="adoptPetButton" destination="Cai-xG-XFL" id="zYa-U3-bdq"/>
                         <outlet property="petAgeLabel" destination="JD1-08-bfr" id="Pzm-FP-wDZ"/>
                         <outlet property="petBreedNameLabel" destination="zCJ-sW-IGz" id="ef7-xP-s80"/>
                         <outlet property="petGenderLabel" destination="Xjw-7u-lVk" id="J4Z-oD-Fmm"/>
@@ -700,7 +708,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ODE-Ol-5Ig"/>
+        <segue reference="qf6-25-Pe2"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primaryTextColor"/>
     <resources>
@@ -724,9 +732,6 @@
         <namedColor name="PrimaryOrange">
             <color red="0.80400002002716064" green="0.42699998617172241" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="PrimaryTan">
-            <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="primaryAppButton">
             <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
@@ -739,20 +744,32 @@
         <namedColor name="primaryPurple">
             <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
-        <namedColor name="primaryTan">
-            <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-        </namedColor>
         <namedColor name="primaryTextColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryAppButton">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryAppColor">
+            <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="tertiaryAppColor">
             <color red="0.80400002002716064" green="0.42699998617172241" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

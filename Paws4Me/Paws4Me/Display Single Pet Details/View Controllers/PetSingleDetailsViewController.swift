@@ -16,6 +16,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petGenderLabel: UILabel!
     @IBOutlet weak private var petBreedNameLabel: UILabel!
     @IBOutlet weak private var saveSinglePetButton: UIButton!
+    @IBOutlet weak var adoptPetButton: UIButton!
 
     // MARK: - Vars/Lets
     private lazy var singlePetViewModel = SinglePetViewModel(repository: SinglePetRepository())
@@ -24,6 +25,7 @@ class PetSingleDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPlaceholderImage()
+        adoptPetButton.addCornerRadius()
         updateUI()
     }
 
@@ -87,9 +89,10 @@ class PetSingleDetailsViewController: UIViewController {
         saveSinglePetButton.isEnabled = isEnabled
 
         if !isEnabled {
-            saveSinglePetButton.setTitleColor(UIColor.darkGray, for: .normal)
+            saveSinglePetButton.isHidden = true
         } else {
-            saveSinglePetButton.setTitleColor(UIColor.black, for: .normal)
+            saveSinglePetButton.changeBorderLook()
+            saveSinglePetButton.addCornerRadius()
         }
     }
 }
