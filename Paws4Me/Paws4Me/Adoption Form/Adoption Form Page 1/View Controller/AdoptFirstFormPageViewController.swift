@@ -25,6 +25,7 @@ class AdoptFirstFormPageViewController: UIViewController {
     private var uiSwitches = [UISwitch]()
     private var indexTextfield = 0
     private var indexUISwitch = 0
+    private var sectionCount: Int = 0
 
     // : MARK: - Lifecycle
     override func viewDidLoad() {
@@ -61,12 +62,11 @@ class AdoptFirstFormPageViewController: UIViewController {
     }
 
     // : MARK: - Functions
-
-    private  func textFieldForTag( tag: Int ) -> UITextField? {
+    private func textFieldForTag( tag: Int ) -> UITextField? {
         return self.textFields.filter({ $0.tag == tag }).first
     }
 
-    private  func uiSwitchForTag( tag: Int ) -> UISwitch? {
+    private func uiSwitchForTag( tag: Int ) -> UISwitch? {
         return self.uiSwitches.filter({ $0.tag == tag }).first
     }
 
@@ -103,7 +103,7 @@ class AdoptFirstFormPageViewController: UIViewController {
 extension AdoptFirstFormPageViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - TableView functions
      func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+         return 2
     }
 
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
