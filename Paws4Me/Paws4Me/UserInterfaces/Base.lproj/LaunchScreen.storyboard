@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-NR-8QB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="wH3-YB-uS2" userLabel="Parent">
-                                <rect key="frame" x="40" y="29" width="334" height="838"/>
+                                <rect key="frame" x="-20" y="29" width="454" height="838"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrV-7j-yrk" userLabel="Header">
-                                        <rect key="frame" x="19.5" y="0.0" width="295" height="188"/>
+                                        <rect key="frame" x="79.5" y="0.0" width="295" height="188"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kJ0-Ck-Wer">
                                                 <rect key="frame" x="122.5" y="0.5" width="50" height="49"/>
@@ -49,10 +49,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-cq-idq" userLabel="Footer">
-                                        <rect key="frame" x="0.0" y="402" width="334" height="436"/>
+                                        <rect key="frame" x="0.0" y="475" width="454" height="363"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="XyR-WN-xtQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="436"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="454" height="363"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
