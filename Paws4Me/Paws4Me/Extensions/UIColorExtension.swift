@@ -19,7 +19,15 @@ extension UIColor {
         return UIColor(named: "secondaryAppColor")!
     }
 
+    static var tertiaryAppColor: UIColor {
+        return UIColor(named: "tertiaryAppColor")!
+    }
+
     static var primaryAppDeleteColor: UIColor {
         return UIColor(named: "primaryAppDelete")!
+    }
+
+    static var myAppSection: UIColor {
+        return UIColor.systemGray5
     }
 }

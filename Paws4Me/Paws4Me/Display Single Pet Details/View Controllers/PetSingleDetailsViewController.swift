@@ -43,6 +43,10 @@ class PetSingleDetailsViewController: UIViewController {
     @IBAction func saveTappedButton(_ sender: Any) {
         showSaveConfirmation()}
 
+    @IBAction func adoptPetTappedButton(_ sender: Any) {
+        performSegue(withIdentifier: "AdoptFirstFormPageViewController", sender: self)
+    }
+
     // MARK: - Fuctions
     private func setPlaceholderImage() {
         guard let singlePetIndex = singlePetViewModel.singlePetIndex else { return }
