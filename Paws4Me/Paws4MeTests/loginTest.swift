@@ -23,18 +23,23 @@ class LoginTest: XCTestCase {
     }
 
     func testFailingLoginUsername() {
-        let result = signInViewModel.isValidCredentials(username: "a", password: "TestPass123")
-        XCTAssertEqual(result, false)
+        XCTAssertFalse(signInViewModel.isValidCredentials(username: "a", password: "TestPass123"))
     }
 
     func testFailingLoginPassword() {
-        let result = signInViewModel.isValidCredentials(username: "Admin", password: "t")
-        XCTAssertEqual(result, false)
+            XCTAssertFalse(signInViewModel.isValidCredentials(username: "a", password: "TestPass123"))
     }
 
     func testFailingLoginEmpty() {
-        let result = signInViewModel.isValidCredentials(username: "", password: "")
-        XCTAssertEqual(result, false)
+                XCTAssertFalse(signInViewModel.isValidCredentials(username: "", password: ""))
+    }
+
+    func testLoginPass() {
+        signInViewModel.loginUser(username: "Admin", password: "TestPass123")
+    }
+
+    func testLoginFail() {
+        signInViewModel.loginUser(username: "a", password: "t")
     }
 }
 
