@@ -111,7 +111,7 @@ extension LocalPetViewController: PetLocalDatabaseViewModelDelegate {
     func showError(errorTitle: String, errorMessage: String, action: LocalDatabaseError) {
         displayAlert(alertTitle: errorTitle,
                      alertMessage: errorMessage,
-                     alertActionTitle: "Try again" ,
+                     alertActionTitle: "Try Again" ,
                      alertDelegate: self,
                      alertTriggered: .fatalLocalDatabaseAlert)
     }
