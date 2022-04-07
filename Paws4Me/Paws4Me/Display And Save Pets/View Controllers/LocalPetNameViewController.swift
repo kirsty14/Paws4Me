@@ -78,7 +78,7 @@ extension LocalPetViewController: UITableViewDataSource, UITableViewDelegate {
     private func showDeleteWarning(for indexPath: IndexPath) {
         guard let petToRemove = petLocalDatabaseViewModel.savedPet(at: indexPath.row),
               let petDeleteName = petToRemove.petName else { return }
-        presentAlertDeleteWarning(title: "Delete \(petDeleteName)",
+        presentAlertWarning(title: "Delete \(petDeleteName)",
                                   message: "Are you sure you want to delete \(petDeleteName)",
                                   options: "Cancel", "Delete") { [self] (optionPressed) in
             switch optionPressed {
