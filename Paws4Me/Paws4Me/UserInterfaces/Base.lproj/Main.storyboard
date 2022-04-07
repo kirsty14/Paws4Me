@@ -847,7 +847,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.forward.fill" catalog="system" title="Next" imagePadding="15">
-                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                    <color key="baseForegroundColor" name="primaryNavigationButtonColor"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="form2NextButton:" destination="vTd-3L-AYl" eventType="touchUpInside" id="Pin-rj-8N1"/>
@@ -865,7 +865,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqc-aQ-4Oj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5703" y="1927"/>
+            <point key="canvasLocation" x="5702.898550724638" y="1926.5625"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
@@ -900,6 +900,9 @@
         <namedColor name="primaryIconColor">
             <color red="0.80392158030000005" green="0.42745098469999998" blue="0.2470588088" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <namedColor name="primaryNavigationButtonColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primaryOrange">
             <color red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -929,9 +932,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
