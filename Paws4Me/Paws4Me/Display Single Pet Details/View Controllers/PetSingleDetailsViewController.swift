@@ -77,11 +77,9 @@ class PetSingleDetailsViewController: UIViewController {
 
         singlePetViewModel.setSelectedPetIndex(indexPet: singlePetIndex)
         singlePetViewModel.setSinglePetObject(petObject: singlePetObject)
-        // petNameLabel.text = singlePetViewModel.singlePetName
         petBreedNameLabel.text = singlePetViewModel.singlePetBreed
         petGenderLabel.text = singlePetViewModel.singlePetGender
         petImageView.loadImageFromURL(imageURL: singlePetViewModel.singlePetImage)
-        view.addSubview(petImageView)
     }
 
     func setSinglePetData(petObject: AdoptPet?, petSingleIndex: Int?) {
