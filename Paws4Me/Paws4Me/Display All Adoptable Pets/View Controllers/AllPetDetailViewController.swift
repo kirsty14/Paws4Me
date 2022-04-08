@@ -12,6 +12,10 @@ class AllPetDetailViewController: UIViewController {
     // MARK: - IBOulets
     @IBOutlet weak private var petTableView: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
+    @IBOutlet weak private var puppyIconButton: UIButton!
+    @IBOutlet weak private var dogIconButton: UIButton!
+    @IBOutlet weak private var kittenIconButton: UIButton!
+    @IBOutlet weak private var catIconButton: UIButton!
 
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
@@ -29,25 +33,29 @@ class AllPetDetailViewController: UIViewController {
     // MARK: - IBActions
     @IBAction private func catTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.changePetIconsColor()
+        sender.clearPetIconBorder(button1: dogIconButton, button2: kittenIconButton, button3: puppyIconButton)
+        sender.changePetIconsBorderColor()
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
     @IBAction private func kittenTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.changePetIconsColor()
+        sender.clearPetIconBorder(button1: dogIconButton, button2: catIconButton, button3: puppyIconButton)
+        sender.changePetIconsBorderColor()
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
     @IBAction private func dogTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.changePetIconsColor()
+        sender.clearPetIconBorder(button1: catIconButton, button2: kittenIconButton, button3: puppyIconButton)
+        sender.changePetIconsBorderColor()
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
     @IBAction private func puppyTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.changePetIconsColor()
+        sender.clearPetIconBorder(button1: dogIconButton, button2: kittenIconButton, button3: catIconButton)
+        sender.changePetIconsBorderColor()
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
@@ -89,7 +97,6 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
         cell.index = indexPath.row
         cell.pet = petDataViewModel.objectFilteredPet
         cell.setNeedsLayout()
-        cell.backgroundColor = UIColor.myAppTan
         return cell
     }
 

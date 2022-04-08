@@ -15,6 +15,6 @@ extension UIView {
 
     func addBorder() {
         self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.myAppOrange.cgColor
+        self.layer.borderColor = UIColor.tertiaryAppColor.cgColor
     }
 }
