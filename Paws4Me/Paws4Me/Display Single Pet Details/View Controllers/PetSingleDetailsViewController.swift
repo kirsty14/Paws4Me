@@ -39,16 +39,16 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        let isSaved = isPetSaved()
-        if isSaved {
+        if singlePetViewModel.isPetSaved() {
             saveSinglePetButton.setTitle("Saved", for: .normal)
-            saveSinglePetButton.isEnabled = !isSaved
+            saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved()
         }
     }
 
     // MARK: - IBAction
     @IBAction func saveTappedButton(_ sender: Any) {
-        showSaveConfirmation()}
+        showSaveConfirmation()
+    }
 
     @IBAction func adoptPetTappedButton(_ sender: Any) {
         performSegue(withIdentifier: "AdoptFirstFormPageViewController", sender: self)
@@ -99,7 +99,7 @@ class PetSingleDetailsViewController: UIViewController {
 
     private func showSaveConfirmation() {
         let petSaveName = singlePetViewModel.singlePetName
-        let isSavedPet = isPetSaved()
+        let isSavedPet = singlePetViewModel.isPetSaved()
         presentAlertWarning(title: "Save \(petSaveName)",
                                   message: "Are you sure you want to save \(petSaveName)",
                                   options: "No", "Yes") { [self] (optionPressed) in
@@ -115,8 +115,4 @@ class PetSingleDetailsViewController: UIViewController {
             }
     }
 }
-
-    private func isPetSaved() -> Bool {
-        return singlePetViewModel.isPetSaved()
-    }
 }

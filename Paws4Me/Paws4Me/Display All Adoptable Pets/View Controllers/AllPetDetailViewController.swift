@@ -12,10 +12,10 @@ class AllPetDetailViewController: UIViewController {
     // MARK: - IBOulets
     @IBOutlet weak private var petTableView: UITableView!
     @IBOutlet weak private var searchBar: UISearchBar!
-    @IBOutlet weak var puppyIconButton: UIButton!
-    @IBOutlet weak var dogIconButton: UIButton!
-    @IBOutlet weak var kittenIconButton: UIButton!
-    @IBOutlet weak var catIconButton: UIButton!
+    @IBOutlet weak private var puppyIconButton: UIButton!
+    @IBOutlet weak private var dogIconButton: UIButton!
+    @IBOutlet weak private var kittenIconButton: UIButton!
+    @IBOutlet weak private var catIconButton: UIButton!
 
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
