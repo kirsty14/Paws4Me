@@ -44,8 +44,13 @@ class LoginTest: XCTestCase {
 }
 
 class MockViewModelDelegate: SignInViewModelDelegate {
+    var isSuccesRouting = false
+    var isError = false
+
     func successRouting() {
+        isSuccesRouting = true
     }
     func showError(errorMessage error: String) {
+        isError = true
     }
 }
