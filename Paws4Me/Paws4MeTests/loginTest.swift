@@ -11,36 +11,49 @@ import XCTest
 class LoginTest: XCTestCase {
 
     private var signInViewModel: SignInViewModel!
-    private weak var mockViewModelDelegate: MockViewModelDelegate!
+    private var mockViewModelDelegate: MockViewModelDelegate!
 
     override func setUp() {
         super.setUp()
+        mockViewModelDelegate = MockViewModelDelegate()
         self.signInViewModel = SignInViewModel(delegate: MockViewModelDelegate())
     }
 
-    func testPassingLogin() {
-        XCTAssertTrue(signInViewModel.isValidCredentials(username: "Admin", password: "TestPass123"))
+    func testFailingLoginEmptyFail() {
+        signInViewModel.loginUser(username: "", password: "")
+        mockViewModelDelegate.showError(errorMessage: "Please fill in your username and password")
+        XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
+        XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testFailingLoginUsername() {
-        XCTAssertFalse(signInViewModel.isValidCredentials(username: "a", password: "TestPass123"))
+    func testFailingWrongUsernameFail() {
+        signInViewModel.loginUser(username: "a", password: "TestPass123")
+        mockViewModelDelegate.showError(errorMessage: "Login Error")
+        XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
+        XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testFailingLoginPassword() {
-            XCTAssertFalse(signInViewModel.isValidCredentials(username: "a", password: "TestPass123"))
+    func testFailingWrongPasswrdFail() {
+        signInViewModel.loginUser(username: "Admin", password: "t")
+        mockViewModelDelegate.showError(errorMessage: "Login Error")
+        XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
+        XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testFailingLoginEmpty() {
-                XCTAssertFalse(signInViewModel.isValidCredentials(username: "", password: ""))
-    }
-
-    func testLoginPass() {
-        signInViewModel.loginUser(username: "Admin", password: "TestPass123")
-    }
-
-    func testLoginFail() {
+    func testLoginWrongUsernamePasswordFail() {
         signInViewModel.loginUser(username: "a", password: "t")
+        mockViewModelDelegate.showError(errorMessage: "Login Error")
+        XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
+        XCTAssertTrue(mockViewModelDelegate.isError)
     }
+
+    func testLoginCorrectUsernamePasswordPass() {
+        signInViewModel.loginUser(username: "Admin", password: "TestPass123")
+        mockViewModelDelegate.successRouting()
+        XCTAssert(mockViewModelDelegate.isSuccesRouting)
+        XCTAssertFalse(mockViewModelDelegate.isError)
+    }
+
 }
 
 class MockViewModelDelegate: SignInViewModelDelegate {

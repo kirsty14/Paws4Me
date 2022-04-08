@@ -23,7 +23,7 @@ class SignInViewModel {
     }
 
     // MARK: - Functions
-    func loginUser(username: String, password: String) {
+     func loginUser(username: String, password: String) {
         if username.isEmpty || password.isEmpty {
             delegate?.showError(errorMessage: "Please fill in your username and password")
         }
@@ -31,7 +31,7 @@ class SignInViewModel {
             delegate?.showError(errorMessage: "Incorrect Username or Password")
     }
 
-     func isValidCredentials(username: String, password: String) -> Bool {
+    private func isValidCredentials(username: String, password: String) -> Bool {
         return username == "Admin" && password == "TestPass123"
     }
 }
