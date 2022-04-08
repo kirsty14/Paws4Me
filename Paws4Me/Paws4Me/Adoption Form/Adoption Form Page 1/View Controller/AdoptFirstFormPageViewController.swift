@@ -12,11 +12,6 @@ class AdoptFirstFormPageViewController: UIViewController {
 
     // : MARK: - IBOutlet
     @IBOutlet weak private var adoptFirstFormTableView: UITableView?
-    @IBOutlet weak private var progress1: UIView!
-    @IBOutlet weak private var progress3: UIView!
-    @IBOutlet weak private var progress2: UIView!
-    @IBOutlet weak private var progress4: UIView!
-
     @IBOutlet var collection: [UIView]!
 
     // : MARK: - Var/Lets

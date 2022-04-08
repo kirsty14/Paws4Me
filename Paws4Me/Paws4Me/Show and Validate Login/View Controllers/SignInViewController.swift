@@ -34,6 +34,7 @@ class SignInViewController: UIViewController {
     // MARK: - Functions
     func setUpLogin() {
         signInButton.addCornerRadius()
+        signInButton.changeBorderLook()
         registerButton.addCornerRadius()
         registerButton.changeBorderLook()
         usernameTextField.addUnderline()

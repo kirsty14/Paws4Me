@@ -16,6 +16,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petGenderLabel: UILabel!
     @IBOutlet weak private var petBreedNameLabel: UILabel!
     @IBOutlet weak private var saveSinglePetButton: UIButton!
+    @IBOutlet weak private var adoptPetButton: UIButton!
 
     // MARK: - Vars/Lets
     private lazy var singlePetViewModel = SinglePetViewModel(repository: SinglePetRepository())
@@ -24,16 +25,26 @@ class PetSingleDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPlaceholderImage()
+        adoptPetButton.addCornerRadius()
+        saveSinglePetButton.changeBorderLook()
+        saveSinglePetButton.addCornerRadius()
         updateUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        isPetSaved()
+        if singlePetViewModel.isPetSaved() {
+            saveSinglePetButton.setTitle("Saved", for: .normal)
+            saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved()
+        }
     }
 
     // MARK: - IBAction
     @IBAction func saveTappedButton(_ sender: Any) {
-        performSegue(withIdentifier: "LocalPetViewController", sender: self)
+        showSaveConfirmation()
+    }
+
+    @IBAction func adoptPetTappedButton(_ sender: Any) {
+        performSegue(withIdentifier: "AdoptFirstFormPageViewController", sender: self)
     }
 
     // MARK: - Fuctions
@@ -81,7 +92,22 @@ class PetSingleDetailsViewController: UIViewController {
         }
     }
 
-    private func isPetSaved() {
-        saveSinglePetButton.isEnabled = !singlePetViewModel.isPetSaved()
+    private func showSaveConfirmation() {
+        let petSaveName = singlePetViewModel.singlePetName
+        let isSavedPet = singlePetViewModel.isPetSaved()
+        presentAlertWarning(title: "Save \(petSaveName)",
+                                  message: "Are you sure you want to save \(petSaveName)",
+                                  options: "No", "Yes") { [self] (optionPressed) in
+            switch optionPressed {
+            case "No":
+                break
+            case "Yes":
+                saveSinglePetButton.isEnabled = !isSavedPet
+                saveSinglePetButton.setTitle("Saved", for: .normal)
+                performSegue(withIdentifier: "LocalPetViewController", sender: self)
+            default:
+                break
+            }
     }
+}
 }
