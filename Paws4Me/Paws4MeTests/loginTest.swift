@@ -14,7 +14,6 @@ class LoginTest: XCTestCase {
     private var mockViewModelDelegate: MockViewModelDelegate!
 
     override func setUp() {
-        super.setUp()
         mockViewModelDelegate = MockViewModelDelegate()
         self.signInViewModel = SignInViewModel(delegate: MockViewModelDelegate())
     }
