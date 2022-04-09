@@ -36,7 +36,6 @@ class AllPetDataViewModel {
     // MARK: - Functions
     func fetchPetDataResults() {
         petRepository?.fetchPetDataResults(method: .GET, endpoint: Constants.adoptURL) { [weak self] result in
-            DispatchQueue.main.async {
                 switch result {
                 case .success(let petData):
                     self?.adoptPetObject = petData
@@ -45,7 +44,6 @@ class AllPetDataViewModel {
                 case .failure(let error):
                     self?.delegate?.showError(error: error.rawValue)
                 }
-            }
         }
     }
 
@@ -80,16 +78,10 @@ class AllPetDataViewModel {
 
     // MARK: - Search
     func setPetSearchName(petSearchText: String?) {
-        guard let searchPetText = petSearchText?.lowercased()  else {
-            filteredPetObject = adoptPetObject
-            return
-        }
 
-            guard let filteredPet = filteredPetObject else {
-                return
-            }
-         setIndexForSpecificPetName(searchText: petSearchText ?? "", filteredPet: filteredPet )
-         searchPetName(searchText: searchPetText)
+        guard let filteredPet = filteredPetObject else { return }
+        setIndexForSpecificPetName(searchText: petSearchText?.lowercased() ?? "", filteredPet: filteredPet )
+        searchPetName(searchText: petSearchText?.lowercased() ?? "")
     }
 
     func setIndexForSpecificPetName (searchText: String, filteredPet: AdoptPet) {
@@ -98,13 +90,14 @@ class AllPetDataViewModel {
 
     func searchPetName(searchText: String) {
         isSingleSearch = true
-        guard let petObject = adoptPetObject else { return }
 
-        filteredPetObject?.page = petObject.page?.filter { $0.name?.lowercased().starts(with: searchText)
+        filteredPetObject?.page = adoptPetObject?.page?.filter { $0.name?.lowercased().starts(with: searchText)
             ??  false}
 
+        if filteredPetObject != nil {
         guard let filteredPet = filteredPetObject else { return }
         setIndexForSpecificPetName(searchText: searchText, filteredPet: filteredPet)
+        }
 
         if filteredPetObject == nil {
             filteredPetObject = adoptPetObject
@@ -120,13 +113,11 @@ class AllPetDataViewModel {
         if petCategoryType.isEmpty && selectedGender.isEmpty {
             filteredPetObject = adoptPetObject
         } else {
-            guard let petObject = adoptPetObject else {
-                return
-            }
+
             let petAge = ageFromPetCategoryType(_: petCategoryType)
             searchPet(petCategoryType: petCategoryType, gender: selectedGender, petAge: petAge)
             if filteredPetObject == nil {
-                filteredPetObject = petObject
+                filteredPetObject = adoptPetObject
             }
         }
     }
@@ -147,9 +138,7 @@ class AllPetDataViewModel {
     }
 
     func searchPet(petCategoryType: String, gender: String, petAge: String) {
-        guard adoptPetObject != nil else {
-            return
-        }
+
         let petTypeLowercase = petCategoryType.lowercased()
         let isGenderValid = selectedGender != ""
         let isPetTypeValid = petCategoryType != ""
@@ -167,8 +156,8 @@ class AllPetDataViewModel {
 
     // MARK: - Filter Search
     private func filterOnlyWithGender() {
-        guard let petObject = adoptPetObject else { return }
-        filteredPetObject?.page = petObject.page?.filter {
+
+        filteredPetObject?.page = adoptPetObject?.page?.filter {
             $0.sex?.lowercased() == selectedGender}
 
         if filteredPetObject == nil {
@@ -179,10 +168,7 @@ class AllPetDataViewModel {
     }
 
     private func filterOnlyWithAgeAndType(type: String, petAge: String) {
-        guard let petObject = adoptPetObject else {
-            return
-        }
-        filteredPetObject?.page = petObject.page?.filter {
+        filteredPetObject?.page = adoptPetObject?.page?.filter {
             $0.age?.lowercased() == petAge &&
             $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased()}
 
@@ -194,10 +180,7 @@ class AllPetDataViewModel {
     }
 
     private func filterWithAgeTypeGender(type: String, gender: String, petAge: String) {
-        guard let petObject = adoptPetObject else {
-            return
-        }
-        filteredPetObject?.page = petObject.page?.filter {
+        filteredPetObject?.page = adoptPetObject?.page?.filter {
             $0.age?.lowercased() == petAge &&
             $0.animalSpeciesBreed?.petSpecies?.lowercased()  == type.lowercased()
             && $0.sex?.lowercased() == gender}
