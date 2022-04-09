@@ -16,7 +16,7 @@ protocol PetViewModelDelegate: AnyObject {
 class AllPetDataViewModel {
 
     // MARK: - Vars/Lets
-    private var petRepository: PetDataRepository?
+    private var petRepository: SearchPetRepositoryType?
     private weak var delegate: PetViewModelDelegate?
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
@@ -27,7 +27,7 @@ class AllPetDataViewModel {
     private var animalType = ""
 
     // MARK: - Constructor
-    init(repository: PetDataRepository,
+    init(repository: SearchPetRepositoryType,
          delegate: PetViewModelDelegate) {
          self.petRepository = repository
          self.delegate = delegate
@@ -35,7 +35,6 @@ class AllPetDataViewModel {
 
     // MARK: - Functions
     func fetchPetDataResults() {
-
         petRepository?.fetchPetDataResults(method: .GET, endpoint: Constants.adoptURL) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {

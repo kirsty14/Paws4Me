@@ -7,10 +7,13 @@
 
 import Foundation
 
-class PetDataRepository {
+typealias PetResult = (Result<AdoptPet, APIError>) -> Void
 
-    typealias PetResult = (Result<AdoptPet, APIError>) -> Void
+protocol SearchPetRepositoryType: AnyObject {
+    func fetchPetDataResults(method: HTTPMethod, endpoint: String, completionHandler: @escaping PetResult)
+}
 
+class PetDataRepository: SearchPetRepositoryType {
     // MARK: - Local database Function
     func fetchPetDataResults(method: HTTPMethod, endpoint: String, completionHandler: @escaping PetResult) {
         guard let request = URL(string: endpoint) else { return }
