@@ -18,7 +18,7 @@ class AllPetDetailsTest: XCTestCase {
         mockPetDelegate = MockPetAllDelegate()
         mockPetRepository = MockPetDataRepository()
         petViewModel = AllPetDataViewModel(repository: mockPetRepository,
-                                              delegate: mockPetDelegate)
+                                           delegate: mockPetDelegate)
     }
 
     // MARK: - Tableview data
