@@ -19,7 +19,7 @@ class AllPetDetailsTest: XCTestCase {
         mockPetRepository = MockPetDataRepository()
         petViewModel = AllPetDataViewModel(repository: mockPetRepository,
                                               delegate: mockPetDelegate)
-    }
+}
 
     // MARK: - Tableview data
     func testAllPetDetailsCount_ReturnsIncorrectValue() {
