@@ -47,7 +47,6 @@ class LoginTest: XCTestCase {
         XCTAssert(mockViewModelDelegate.isSuccesRouting)
         XCTAssertFalse(mockViewModelDelegate.isError)
     }
-
 }
 
 class MockViewModelDelegate: SignInViewModelDelegate {
