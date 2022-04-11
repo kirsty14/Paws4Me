@@ -37,8 +37,10 @@ class SignInViewController: UIViewController {
         signInButton.changeBorderLook()
         registerButton.addCornerRadius()
         registerButton.changeBorderLook()
-        usernameTextField.addUnderline()
-        passwordTextField.addUnderline()
+        usernameTextField.setPadding()
+        passwordTextField.setPadding()
+        usernameTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
+        passwordTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
     }
 }
 
@@ -50,8 +52,8 @@ extension SignInViewController: SignInViewModelDelegate {
     }
 
     func showError(errorMessage: String) {
-        usernameTextField.addErrorBorderBoth()
-        passwordTextField.addErrorBorderBoth()
+        usernameTextField.setBottomBorder(borderColor: UIColor.primaryAppError)
+        passwordTextField.setBottomBorder(borderColor: UIColor.primaryAppError)
         displayAlert(alertTitle: "Invalid Credentials",
                      alertMessage: errorMessage,
                      alertActionTitle: "Try again" ,
