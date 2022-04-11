@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6jb-NR-8QB">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="wH3-YB-uS2" userLabel="Parent">
-                                <rect key="frame" x="40" y="29" width="334" height="838"/>
+                                <rect key="frame" x="-20" y="29" width="454" height="838"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrV-7j-yrk" userLabel="Header">
-                                        <rect key="frame" x="19.5" y="0.0" width="295" height="188"/>
+                                        <rect key="frame" x="79.5" y="0.0" width="295" height="188"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kJ0-Ck-Wer">
-                                                <rect key="frame" x="122.5" y="0.0" width="50" height="50"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprint.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kJ0-Ck-Wer">
+                                                <rect key="frame" x="122.5" y="0.5" width="50" height="49"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="3IA-7k-Ahr"/>
@@ -43,24 +44,24 @@
                                                 <rect key="frame" x="17.5" y="147" width="260" height="41"/>
                                                 <color key="tintColor" red="0.84705877299999999" green="0.74901962280000001" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <color key="textColor" red="0.9887509444" green="0.87407955599999998" blue="0.7732539437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" name="primarySloganColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="EHB-cq-idq" userLabel="Footer">
-                                        <rect key="frame" x="0.0" y="402" width="334" height="436"/>
+                                        <rect key="frame" x="0.0" y="475" width="454" height="363"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="XyR-WN-xtQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="334" height="436"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="454" height="363"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.20000001789999999" green="0.090196087960000004" blue="0.25490197539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="primaryBackground"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eam-GL-sBf"/>
-                        <color key="backgroundColor" red="0.20000001789999999" green="0.090196087960000004" blue="0.25490197539999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" name="primaryBackground"/>
                         <constraints>
                             <constraint firstItem="wH3-YB-uS2" firstAttribute="centerY" secondItem="Yhi-h2-z3W" secondAttribute="centerY" id="4cz-qJ-TXP"/>
                             <constraint firstItem="wH3-YB-uS2" firstAttribute="centerX" secondItem="Yhi-h2-z3W" secondAttribute="centerX" id="VDX-oF-x9q"/>
@@ -76,6 +77,12 @@
     </scenes>
     <resources>
         <image name="launch" width="334" height="436"/>
-        <image name="pawprint" catalog="system" width="128" height="116"/>
+        <image name="pawprint.fill" catalog="system" width="128" height="113"/>
+        <namedColor name="primaryBackground">
+            <color red="0.20399999618530273" green="0.097999997437000275" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="primarySloganColor">
+            <color red="0.98000001907348633" green="0.875" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

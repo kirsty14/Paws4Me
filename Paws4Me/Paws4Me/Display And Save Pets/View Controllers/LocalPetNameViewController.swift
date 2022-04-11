@@ -71,14 +71,14 @@ extension LocalPetViewController: UITableViewDataSource, UITableViewDelegate {
             success(true)
         })
 
-        deleteAction.backgroundColor = UIColor.myAppPurple
+        deleteAction.backgroundColor = UIColor.primaryAppDeleteColor
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 
     private func showDeleteWarning(for indexPath: IndexPath) {
         guard let petToRemove = petLocalDatabaseViewModel.savedPet(at: indexPath.row),
               let petDeleteName = petToRemove.petName else { return }
-        presentAlertDeleteWarning(title: "Delete \(petDeleteName)",
+        presentAlertWarning(title: "Delete \(petDeleteName)",
                                   message: "Are you sure you want to delete \(petDeleteName)",
                                   options: "Cancel", "Delete") { [self] (optionPressed) in
             switch optionPressed {
@@ -111,7 +111,7 @@ extension LocalPetViewController: PetLocalDatabaseViewModelDelegate {
     func showError(errorTitle: String, errorMessage: String, action: LocalDatabaseError) {
         displayAlert(alertTitle: errorTitle,
                      alertMessage: errorMessage,
-                     alertActionTitle: "Try again" ,
+                     alertActionTitle: "Try Again" ,
                      alertDelegate: self,
                      alertTriggered: .fatalLocalDatabaseAlert)
     }
