@@ -96,13 +96,13 @@ class AllPetDetailsTest: XCTestCase {
         XCTAssertNil(petViewModel.objectFilteredPet)
     }
 
-    func testFetchSearchResultsFailure() {
+    func testFetchSearch_ResultsFailure() {
         petViewModel.fetchPetDataResults()
         XCTAssertFalse(mockPetDelegate.reloadViewCalled)
         XCTAssert(mockPetDelegate.errorCalled)
     }
 
-    func testFetchSearchResultsSuccess() {
+    func testFetchSearch_ResultsSuccess() {
         mockPetRepository.shouldPass = true
         petViewModel.fetchPetDataResults()
         XCTAssert(mockPetDelegate.reloadViewCalled)
