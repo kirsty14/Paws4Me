@@ -9,6 +9,11 @@ import XCTest
 @testable import Paws4Me
 import CoreData
 
+struct SavedPetObject {
+    let ldbImagePet: String?
+    var ldbNamePet: String?
+}
+
 class SinglePetTest: XCTestCase {
 
     private var singlePetViewModel: SinglePetViewModel!
@@ -79,13 +84,16 @@ class SinglePetTest: XCTestCase {
         XCTAssertNil(singlePetViewModel.singlePetObject)
     }
 
-    // MARK: - Core Data
+    // MARK: - Save
     func testIsPetSaved_ReturnsTrue() {
+        mockSinglePetRepository.petSaved = true
+        mockSinglePetRepository.setPetSavedData()
         XCTAssertTrue(singlePetViewModel.isPetSaved())
     }
 
     func testIsPetSaved_ReturnsFalse() {
-        setMockData(shouldPass: true)
+        mockSinglePetRepository.petSaved = false
+        mockSinglePetRepository.setPetSavedData()
         XCTAssertFalse(singlePetViewModel.isPetSaved())
     }
 
@@ -107,5 +115,21 @@ class SinglePetTest: XCTestCase {
 }
 
 class MockSinglePetRepository: SinglePetRepository {
+    var shouldBeSaved = true
+    var arraySavedPets: [SavedPetObject] = []
+    var petSaved = false
 
+    func setPetSavedData() {
+        if petSaved {
+        arraySavedPets.append(SavedPetObject(ldbImagePet: "link", ldbNamePet: "Baba"))
+        }
+    }
+
+    override func isPetSaved(petName: String) -> Bool {
+
+        for savedPet in arraySavedPets where savedPet.ldbNamePet == "Baba" {
+            petSaved = true
+        }
+        return petSaved
+    }
 }
