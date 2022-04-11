@@ -84,7 +84,7 @@ class SinglePetTest: XCTestCase {
         XCTAssertNil(singlePetViewModel.singlePetObject)
     }
 
-    // MARK: - Save
+    // MARK: - Save pet
     func testIsPetSaved_ReturnsTrue() {
         mockSinglePetRepository.petSaved = true
         mockSinglePetRepository.setPetSavedData()
