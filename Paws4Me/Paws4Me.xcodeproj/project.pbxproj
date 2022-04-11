@@ -21,6 +21,7 @@
 		A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11499EB27DB300800626FC5 /* UIImageViewExtension.swift */; };
 		A11745BD27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */; };
 		A11745C427D9DCC2004C0BD9 /* LocalPetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */; };
+		A11F53A82803F75B00370C61 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F53A72803F75B00370C61 /* UIViewExtension.swift */; };
 		A13B57C827C8C0590089839D /* Paws4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C727C8C0590089839D /* Paws4MeUITests.swift */; };
 		A13B57CA27C8C0590089839D /* Paws4MeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */; };
 		A146FA4227C6786300DE4A0F /* Paws4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */; };
@@ -86,6 +87,7 @@
 		A11499EB27DB300800626FC5 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		A11745BC27D9DB2E004C0BD9 /* Paws4Me.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Paws4Me.xcdatamodel; sourceTree = "<group>"; };
 		A11745C327D9DCC2004C0BD9 /* LocalPetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPetNameViewController.swift; sourceTree = "<group>"; };
+		A11F53A72803F75B00370C61 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A13B57C527C8C0590089839D /* Paws4MeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Paws4MeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13B57C727C8C0590089839D /* Paws4MeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITests.swift; sourceTree = "<group>"; };
 		A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -370,6 +372,7 @@
 				A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */,
 				A1A6B22D27F6FAE60007D606 /* UICircleViewExtension.swift */,
 				A1AF134327FC1DDB00319D66 /* UIFontExtension.swift */,
+				A11F53A72803F75B00370C61 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				A1EEC3D427E0B29E00E94FC2 /* UIAlertExtension.swift in Sources */,
 				A11499E927DB1AC900626FC5 /* PetName+CoreDataProperties.swift in Sources */,
 				A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */,
+				A11F53A82803F75B00370C61 /* UIViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

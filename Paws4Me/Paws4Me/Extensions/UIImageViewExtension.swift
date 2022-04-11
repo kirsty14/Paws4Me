@@ -21,4 +21,8 @@ extension UIImageView {
             }
         }
     }
+
+    func setImageCornerRadius(radius: Int) {
+        self.layer.cornerRadius = 50
+    }
 }

@@ -16,9 +16,9 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petBreedNameLabel: UILabel!
     @IBOutlet weak private var saveSinglePetButton: UIButton!
     @IBOutlet weak private var adoptPetButton: UIButton!
-    @IBOutlet weak var petBreedView: UIView!
-    @IBOutlet weak var petSexView: UIView!
-    @IBOutlet weak var petAgeView: UIView!
+    @IBOutlet weak private var petBreedView: UIView!
+    @IBOutlet weak private var petSexView: UIView!
+    @IBOutlet weak private var petAgeView: UIView!
 
     // MARK: - Vars/Lets
     private lazy var singlePetViewModel = SinglePetViewModel(repository: SinglePetRepository())
@@ -28,13 +28,13 @@ class PetSingleDetailsViewController: UIViewController {
         super.viewDidLoad()
         setPlaceholderImage()
         self.title = singlePetViewModel.singlePetName
-        petImageView.layer.cornerRadius = 50
+        petImageView.setImageCornerRadius(radius: 50)
         petBreedView.addBorder()
-        petBreedView.layer.cornerRadius = 20
+        petBreedView.setViewsRadius(radius: 20)
         petSexView.addBorder()
-        petSexView.layer.cornerRadius = 20
+        petSexView.setViewsRadius(radius: 20)
         petAgeView.addBorder()
-        petAgeView.layer.cornerRadius = 20
+        petAgeView.setViewsRadius(radius: 20)
         updateUI()
     }
 
