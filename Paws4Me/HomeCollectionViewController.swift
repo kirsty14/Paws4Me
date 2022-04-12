@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class HomeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    let homeImages: [String] = ["dogCV", "catCV", "dog3CV"]
+    let homeImages: [String] = ["AllPetImage", "FavouritesImage", "AdoptionProgressImage"]
     let homeTitle: [String] = ["All pets", "Favourites", "Adoption Progress"]
     let viewControllerIdentifiers: [String] = ["AllPetDetailViewController", "LocalPetViewController",
                                                "applicationForm"]
