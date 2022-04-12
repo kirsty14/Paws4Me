@@ -24,12 +24,12 @@
 		A11F53A82803F75B00370C61 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F53A72803F75B00370C61 /* UIViewExtension.swift */; };
 		A13B57C827C8C0590089839D /* Paws4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C727C8C0590089839D /* Paws4MeUITests.swift */; };
 		A13B57CA27C8C0590089839D /* Paws4MeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */; };
-		A146FA4227C6786300DE4A0F /* Paws4MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */; };
 		A14ABA1727EC3D3300C65773 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1627EC3D3300C65773 /* ServiceErrors.swift */; };
 		A14ABA1B27EC3DB500C65773 /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1A27EC3DB500C65773 /* PetRepository.swift */; };
 		A14ABA1D27EC3E8600C65773 /* PetAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */; };
 		A14ABA2227EC6A0100C65773 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */; };
 		A14ABA2727EC8A7600C65773 /* petSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */; };
+		A15BB30E2802F5F200D0BCDB /* SinglePetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */; };
 		A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */; };
 		A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */; };
 		A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */; };
@@ -92,12 +92,12 @@
 		A13B57C727C8C0590089839D /* Paws4MeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITests.swift; sourceTree = "<group>"; };
 		A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A146FA3F27C6786300DE4A0F /* Paws4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Paws4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeTests.swift; sourceTree = "<group>"; };
 		A14ABA1627EC3D3300C65773 /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		A14ABA1A27EC3DB500C65773 /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
 		A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAllViewModel.swift; sourceTree = "<group>"; };
 		A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petSingleViewModel.swift; sourceTree = "<group>"; };
+		A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePetTest.swift; sourceTree = "<group>"; };
 		A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheleterCenterModel.swift; sourceTree = "<group>"; };
 		A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 		A146FA4027C6786300DE4A0F /* Paws4MeTests */ = {
 			isa = PBXGroup;
 			children = (
-				A146FA4127C6786300DE4A0F /* Paws4MeTests.swift */,
+				A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */,
 			);
 			path = Paws4MeTests;
 			sourceTree = "<group>";
@@ -678,7 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A146FA4227C6786300DE4A0F /* Paws4MeTests.swift in Sources */,
+				A15BB30E2802F5F200D0BCDB /* SinglePetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
