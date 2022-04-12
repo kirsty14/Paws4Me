@@ -9,19 +9,18 @@ import Foundation
 import UIKit
 
 class HomeCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    let homeImages: [String] = ["AllPetImage", "FavouritesImage", "AdoptionProgressImage"]
-    let homeTitle: [String] = ["All pets", "Favourites", "Adoption Progress"]
+
+    // MARK: - Var/Lets
     let viewControllerIdentifiers: [String] = ["AllPetDetailViewController", "LocalPetViewController",
                                                "applicationForm"]
-    let homeViewColors = [UIColor(named: "AllPetColor"), UIColor(named: "favouritesPetColor"),
-                          UIColor(named: "adoptPetColor")]
-
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    // MARK: - Collectionview
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return homeImages.count
+        return viewControllerIdentifiers.count
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -35,11 +34,7 @@ class HomeCollectionViewController: UIViewController, UICollectionViewDataSource
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
                                                             for: indexPath) as? HomeCollectionViewCell
         else { return UICollectionViewCell() }
-
-        cell.homeImage.image = UIImage(named: homeImages[indexPath.row])
-        cell.homeLabel.text = homeTitle[indexPath.row]
-        cell.cellView.backgroundColor = homeViewColors[indexPath.row]
-        cell.cellView.layer.cornerRadius = 30
+        cell.setCellItems(index: indexPath.row)
         return cell
     }
 }

@@ -8,7 +8,23 @@
 import UIKit
 
 class HomeCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var cellView: UIView!
-    @IBOutlet weak var homeImage: UIImageView!
-    @IBOutlet weak var homeLabel: UILabel!
+
+    // MARK: - IBOutlet
+    @IBOutlet weak private  var cellView: UIView!
+    @IBOutlet weak private var homeImage: UIImageView!
+    @IBOutlet weak private var homeLabel: UILabel!
+
+    // MARK: - Var/Lets
+    let homeImages: [String] = ["AllPetImage", "FavouritesImage", "AdoptionProgressImage"]
+    let homeTitle: [String] = ["All pets", "Favourites", "Adoption Progress"]
+    let homeViewColors = [UIColor(named: "AllPetColor"), UIColor(named: "favouritesPetColor"),
+                          UIColor(named: "adoptPetColor")]
+
+    // MARK: - Function
+    func setCellItems(index: Int) {
+        homeImage.image = UIImage(named: homeImages[index])
+        homeLabel.text = homeTitle[index]
+        cellView.backgroundColor = homeViewColors[index]
+        cellView.layer.cornerRadius = 30
+    }
 }
