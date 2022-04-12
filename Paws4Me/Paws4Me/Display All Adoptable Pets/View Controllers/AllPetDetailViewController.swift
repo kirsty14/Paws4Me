@@ -21,7 +21,7 @@ class AllPetDetailViewController: UIViewController {
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
                                                             delegate: self)
     private var searchBarController = UISearchBar()
-    fileprivate var petIconButtonArray: [UIButton] = []
+    private var petIconButtonArray: [UIButton] = []
 
     // MARK: - Life cycle
     override func viewDidLoad() {
