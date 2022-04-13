@@ -47,6 +47,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        guard let username = usernameTextField.text, let password = passwordTextField.text else { return false }
+        signInViewModel.loginUser(username: username, password: password)
         return true
     }
 }
