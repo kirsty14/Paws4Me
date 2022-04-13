@@ -30,6 +30,7 @@ class AllPetDetailViewController: UIViewController {
         setupTableView()
         petDataViewModel.fetchPetDataResults()
         setUpSearchbar()
+        self.searchBar.delegate = self
     }
 
     // MARK: - IBActions
@@ -172,4 +173,8 @@ extension AllPetDetailViewController: UISearchBarDelegate {
         petDataViewModel.setPetSearchName(petSearchText: searchText)
         reloadView()
     }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+      }
 }

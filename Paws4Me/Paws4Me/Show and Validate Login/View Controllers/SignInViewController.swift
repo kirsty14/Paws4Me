@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var usernameTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
@@ -22,6 +22,8 @@ class SignInViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
         setUpLogin()
     }
 
@@ -41,6 +43,11 @@ class SignInViewController: UIViewController {
         passwordTextField.setPadding()
         usernameTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
         passwordTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
