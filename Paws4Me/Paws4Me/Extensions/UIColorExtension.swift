@@ -30,4 +30,16 @@ extension UIColor {
     static var myAppSection: UIColor {
         return UIColor.systemGray5
     }
+
+    static var myAppHome1: UIColor {
+        return UIColor(named: "AllPetColor")!
+    }
+
+    static var myAppHome2: UIColor {
+        return UIColor(named: "favouritesPetColor")!
+    }
+
+    static var myAppHome3: UIColor {
+        return UIColor(named: "adoptPetColor")!
+    }
 }

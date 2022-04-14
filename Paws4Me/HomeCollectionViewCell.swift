@@ -14,16 +14,15 @@ class HomeCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak private var homeImage: UIImageView!
     @IBOutlet weak private var homeLabel: UILabel!
 
-    // MARK: - Var/Lets
-    let homeImages: [String] = ["AllPetImage", "FavouritesImage", "AdoptionProgressImage"]
-    let homeTitle: [String] = ["All pets", "Favourites", "Adoption Progress"]
+    // MARK: - Vars/Lets
+    private lazy var homeViewModel = HomeViewModel()
     let homeViewColors = [UIColor(named: "AllPetColor"), UIColor(named: "favouritesPetColor"),
                           UIColor(named: "adoptPetColor")]
 
     // MARK: - Function
     func setCellItems(index: Int) {
-        homeImage.image = UIImage(named: homeImages[index])
-        homeLabel.text = homeTitle[index]
+        homeImage.image = UIImage(named: homeViewModel.homePageImages(index: index))
+        homeLabel.text = homeViewModel.homePageTitle(index: index)
         cellView.backgroundColor = homeViewColors[index]
         cellView.layer.cornerRadius = 30
     }

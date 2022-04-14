@@ -28,6 +28,8 @@
 		A14ABA1D27EC3E8600C65773 /* PetAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */; };
 		A14ABA2227EC6A0100C65773 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */; };
 		A14ABA2727EC8A7600C65773 /* petSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */; };
+		A14F3A532807EDC400351B01 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14F3A522807EDC400351B01 /* HomeViewModel.swift */; };
+		A14F3A552807F66100351B01 /* HomePageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14F3A542807F66100351B01 /* HomePageTest.swift */; };
 		A15BB30E2802F5F200D0BCDB /* SinglePetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */; };
 		A15F7EB427D88A46002B4BCE /* SheleterCenterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */; };
 		A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */; };
@@ -97,6 +99,8 @@
 		A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAllViewModel.swift; sourceTree = "<group>"; };
 		A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		A14ABA2627EC8A7600C65773 /* petSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petSingleViewModel.swift; sourceTree = "<group>"; };
+		A14F3A522807EDC400351B01 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		A14F3A542807F66100351B01 /* HomePageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTest.swift; sourceTree = "<group>"; };
 		A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePetTest.swift; sourceTree = "<group>"; };
 		A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheleterCenterModel.swift; sourceTree = "<group>"; };
 		A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 		35E725F727B3A442002B86DB = {
 			isa = PBXGroup;
 			children = (
+				A14F3A522807EDC400351B01 /* HomeViewModel.swift */,
 				A1DB334A2805728300864316 /* HomeCollectionViewCell.swift */,
 				A1DB334C280572D400864316 /* HomeCollectionViewController.swift */,
 				A11745BB27D9DB2E004C0BD9 /* Paws4Me.xcdatamodeld */,
@@ -267,6 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */,
+				A14F3A542807F66100351B01 /* HomePageTest.swift */,
 			);
 			path = Paws4MeTests;
 			sourceTree = "<group>";
@@ -633,6 +639,7 @@
 				A14ABA2727EC8A7600C65773 /* petSingleViewModel.swift in Sources */,
 				35E7261D27B3A769002B86DB /* URLSession+Extension.swift in Sources */,
 				A1AF240B27E4BC0F00F91317 /* FavouriteTableViewCell.swift in Sources */,
+				A14F3A532807EDC400351B01 /* HomeViewModel.swift in Sources */,
 				A1DB334D280572D400864316 /* HomeCollectionViewController.swift in Sources */,
 				A1A6B23027F6FB0F0007D606 /* UITableViewSectionLabelExtension.swift in Sources */,
 				A1A6B23227F6FB450007D606 /* TextBoxTableViewCell.swift in Sources */,
@@ -683,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A15BB30E2802F5F200D0BCDB /* SinglePetTest.swift in Sources */,
+				A14F3A552807F66100351B01 /* HomePageTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
