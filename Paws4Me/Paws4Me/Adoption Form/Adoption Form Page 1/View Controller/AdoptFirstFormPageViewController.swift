@@ -31,7 +31,7 @@ class AdoptFirstFormPageViewController: UIViewController {
         for item in self.collection {
             item.makeCircle()
             item.addBorder()
-           }
+        }
     }
 
     // : MARK: - IBAction

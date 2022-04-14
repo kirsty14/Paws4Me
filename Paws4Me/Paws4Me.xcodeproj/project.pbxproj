@@ -24,6 +24,7 @@
 		A11F53A82803F75B00370C61 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11F53A72803F75B00370C61 /* UIViewExtension.swift */; };
 		A13B57C827C8C0590089839D /* Paws4MeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C727C8C0590089839D /* Paws4MeUITests.swift */; };
 		A13B57CA27C8C0590089839D /* Paws4MeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */; };
+		A146FA4227C6786300DE4A0F /* loginTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A146FA4127C6786300DE4A0F /* loginTest.swift */; };
 		A14ABA1727EC3D3300C65773 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1627EC3D3300C65773 /* ServiceErrors.swift */; };
 		A14ABA1B27EC3DB500C65773 /* PetRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1A27EC3DB500C65773 /* PetRepository.swift */; };
 		A14ABA1D27EC3E8600C65773 /* PetAllViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */; };
@@ -92,6 +93,7 @@
 		A13B57C727C8C0590089839D /* Paws4MeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITests.swift; sourceTree = "<group>"; };
 		A13B57C927C8C0590089839D /* Paws4MeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paws4MeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A146FA3F27C6786300DE4A0F /* Paws4MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Paws4MeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A146FA4127C6786300DE4A0F /* loginTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginTest.swift; sourceTree = "<group>"; };
 		A14ABA1627EC3D3300C65773 /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		A14ABA1A27EC3DB500C65773 /* PetRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetRepository.swift; sourceTree = "<group>"; };
 		A14ABA1C27EC3E8600C65773 /* PetAllViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetAllViewModel.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 		A146FA4027C6786300DE4A0F /* Paws4MeTests */ = {
 			isa = PBXGroup;
 			children = (
+				A146FA4127C6786300DE4A0F /* loginTest.swift */,
 				A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */,
 			);
 			path = Paws4MeTests;
@@ -678,6 +681,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A146FA4227C6786300DE4A0F /* loginTest.swift in Sources */,
 				A15BB30E2802F5F200D0BCDB /* SinglePetTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

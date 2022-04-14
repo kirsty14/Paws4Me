@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="t19-WQ-KEC" userLabel="Parent">
-                                <rect key="frame" x="71.5" y="241.5" width="271" height="413"/>
+                                <rect key="frame" x="71.5" y="243" width="271" height="410.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="xfs-mx-3lh" userLabel="Logo">
                                         <rect key="frame" x="0.0" y="0.0" width="271" height="136"/>
@@ -38,13 +38,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ieo-F8-dfr" userLabel="Body">
-                                        <rect key="frame" x="0.0" y="186" width="271" height="227"/>
+                                        <rect key="frame" x="0.0" y="186" width="271" height="224.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="241-q1-Sp0" userLabel="UserDetailsStack">
-                                                <rect key="frame" x="0.0" y="0.0" width="271" height="164"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="161.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-qa-GNl" userLabel="Username">
-                                                        <rect key="frame" x="0.0" y="0.0" width="271" height="74.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="271" height="89"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="246" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Username:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7d-nP-mIU" userLabel="lblUsername">
                                                                 <rect key="frame" x="0.0" y="0.0" width="271" height="26.5"/>
@@ -52,17 +52,32 @@
                                                                 <color key="textColor" name="primaryAppColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8L-o6-c62" userLabel="txtUsername">
-                                                                <rect key="frame" x="0.0" y="40.5" width="271" height="34"/>
-                                                                <color key="tintColor" name="primaryAppColor"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B8L-o6-c62" userLabel="txtUsername">
+                                                                <rect key="frame" x="0.0" y="40.5" width="271" height="18.5"/>
+                                                                <color key="backgroundColor" name="secondaryAppButton"/>
+                                                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" name="primaryTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                                                             </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x6P-8x-zTh">
+                                                                <rect key="frame" x="0.0" y="73" width="271" height="1"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="zcm-dR-aIh"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="reh-qP-HXS">
+                                                                <rect key="frame" x="0.0" y="88" width="271" height="1"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="5cg-V1-ykd"/>
+                                                                </constraints>
+                                                            </view>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="ATQ-Ha-GG0" userLabel="Password">
-                                                        <rect key="frame" x="0.0" y="89.5" width="271" height="74.5"/>
+                                                        <rect key="frame" x="0.0" y="104" width="271" height="57.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbB-0b-fsT" userLabel="lblPassword">
                                                                 <rect key="frame" x="0.0" y="0.0" width="271" height="26.5"/>
@@ -71,8 +86,10 @@
                                                                 <color key="textColor" name="primaryAppColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOm-UU-3Hi" userLabel="txtPassword">
-                                                                <rect key="frame" x="0.0" y="40.5" width="271" height="34"/>
+                                                            <textField opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOm-UU-3Hi" userLabel="txtPassword">
+                                                                <rect key="frame" x="0.0" y="40.5" width="271" height="17"/>
+                                                                <color key="backgroundColor" name="secondaryAppButton"/>
+                                                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <color key="textColor" name="primaryTextColor"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -82,14 +99,14 @@
                                                 </subviews>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3W-JH-oFq">
-                                                <rect key="frame" x="0.0" y="176" width="271" height="5"/>
+                                                <rect key="frame" x="0.0" y="173.5" width="271" height="5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="5" id="wMn-fS-3OM"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="bOF-ea-3EK" userLabel="Footer">
-                                                <rect key="frame" x="0.0" y="193" width="271" height="34"/>
+                                                <rect key="frame" x="0.0" y="190.5" width="271" height="34"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="TWC-h2-t6H" userLabel="Buttons">
                                                         <rect key="frame" x="0.0" y="0.0" width="271" height="34"/>
@@ -914,7 +931,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Xdh-l2-M45"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" name="primaryTextColor"/>
+    <color key="tintColor" systemColor="labelColor"/>
     <resources>
         <image name="Image" width="107" height="71"/>
         <image name="Image-1" width="101" height="76"/>
