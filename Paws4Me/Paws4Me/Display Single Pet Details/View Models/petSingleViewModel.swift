@@ -48,9 +48,6 @@ class SinglePetViewModel {
     }
 
     // MARK: - Functions
-    func setIndexForSpecificPetName (searchText: String, filteredPetObject: AdoptPet) -> Int? {
-        return filteredPetObject.page?.firstIndex(where: { $0.name?.lowercased().starts(with: searchText) ??  false })
-    }
 
     func isPetSaved() -> Bool {
         guard let isPetSaved = singlePetRepository?.isPetSaved(petName: singlePetName) else { return false }
