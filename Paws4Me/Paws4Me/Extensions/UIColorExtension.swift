@@ -27,6 +27,10 @@ extension UIColor {
         return UIColor(named: "primaryAppDelete")!
     }
 
+    static var primaryTitleColor: UIColor {
+        return UIColor(named: "primaryTitleColor")!
+    }
+
     static var myAppSection: UIColor {
         return UIColor.systemGray5
     }
