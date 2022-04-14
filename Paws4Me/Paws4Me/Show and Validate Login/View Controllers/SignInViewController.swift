@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBOulets
     @IBOutlet weak private var usernameTextField: UITextField!
     @IBOutlet weak private var passwordTextField: UITextField!
@@ -22,6 +22,8 @@ class SignInViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameTextField.delegate = self
+        passwordTextField.delegate = self
         setUpLogin()
     }
 
@@ -37,8 +39,17 @@ class SignInViewController: UIViewController {
         signInButton.changeBorderLook()
         registerButton.addCornerRadius()
         registerButton.changeBorderLook()
-        usernameTextField.addUnderline()
-        passwordTextField.addUnderline()
+        usernameTextField.setPadding()
+        passwordTextField.setPadding()
+        usernameTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
+        passwordTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        guard let username = usernameTextField.text, let password = passwordTextField.text else { return false }
+        signInViewModel.loginUser(username: username, password: password)
+        return true
     }
 }
 
@@ -50,8 +61,8 @@ extension SignInViewController: SignInViewModelDelegate {
     }
 
     func showError(errorMessage: String) {
-        usernameTextField.addErrorBorderBoth()
-        passwordTextField.addErrorBorderBoth()
+        usernameTextField.setBottomBorder(borderColor: UIColor.primaryAppError)
+        passwordTextField.setBottomBorder(borderColor: UIColor.primaryAppError)
         displayAlert(alertTitle: "Invalid Credentials",
                      alertMessage: errorMessage,
                      alertActionTitle: "Try again" ,

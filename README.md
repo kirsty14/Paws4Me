@@ -4,7 +4,7 @@
 * Paws4Me has been specifically designed for pet adoption centres that are struggling to find people to adopt their animals. This innovative IOS Application aims in ensuring that these animals find forever homes by bringing convenience, real time updates and efficiency to the paper based adoption process they currently follow.
 * Project status: Working prototype
 
-## Build Badges
+## :bar_chart: Code Quality
 [![Build Status](https://app.bitrise.io/app/343f326b972b1714/status.svg?token=GvxpluZuGUmASZhT3aWiZA&branch=develop)](https://app.bitrise.io/app/343f326b972b1714)
 
 ## :mag_right: Git Structure
@@ -18,7 +18,7 @@ master ( buid )
 
 ### :camera_flash: Screenshots
 
-#### Login
+#### Login Light Mode
 <table>
   <tr>
 <td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/155467881-97257790-bc21-42a1-91f0-ae279c393ce6.png" alt="1" width=200px height=500px ></td>  
@@ -27,7 +27,7 @@ master ( buid )
 </tr>
 </table>
 
-#### View, Search and Save Pets
+#### View, Search and Save Pets Light Mode
 <table>
 <tr>
  <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/159017915-fe546a33-1113-40e9-ba8e-674e68a08b55.png" width=200px height=500px ></td> 
@@ -35,11 +35,30 @@ master ( buid )
 <td><img alt=:FavouritePet" src="https://user-images.githubusercontent.com/98941706/159018273-cbaf6a0a-ff49-4a74-b1dc-665851cc2193.png" height=500px width=200px></td>
 </tr>  
 </table>
+  
+#### Login Dark Mode
+<table>
+  <tr>
+<td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/161908906-1d54cec9-c092-43ea-b145-c05f66f1064d.png" width=200px height=500px ></td>  
+<td><img alt="SignIn" src="https://user-images.githubusercontent.com/98941706/161908917-0924221b-d512-4aaa-b8b4-778c9a4e1d2f.png" width=200px height= 500px></td>  
+<td><img alt="SignIn validation"  src="https://user-images.githubusercontent.com/98941706/161908919-41454ef5-2658-464e-b171-aae8063f4b1e.png"  width= 200px height = 500px ></td>
+</tr>
+</table>
 
+#### View, Search and Save Pets Dark Mode
+<table>
+<tr>
+ <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/161909062-1dc87118-3d4d-49ac-9bb3-d59a84f7cc89.png" width=200px height=500px ></td> 
+<td><img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/161909068-d8c74713-d844-4113-babe-e12be544b108.png" height=500px width = 200px></td> 
+<td><img alt=:"SavedPet" src="https://user-images.githubusercontent.com/98941706/161909497-031bc3a6-6643-44cb-9f58-546f55da9d31.png" height=500px width=200px></td>
+</tr>  
+</table>
 
 ### :white_check_mark: Core Features
 * Display all the pets availble for adoption
 * Ability to click a single pet and view their details
+* Ability to save and delete a specific pet
+* Ability to fill out an Adoption Form
 
 ## :hammer_and_wrench: Technology Stack
 
@@ -56,26 +75,10 @@ master ( buid )
 ![AGPL License](https://img.shields.io/badge/Sketch-FFB387?style=for-the-badge&logo=sketch&logoColor=black)
 
 ### Testing Tools
--add here
+* Xcode Unit Tests
 
 ### :x: Limitations
 * No implementation of SwiftUI
-
-## :bar_chart: Code Quality
-
--badges and actions go here
-
-## :page_facing_up: Documentation:
-
-### User Manual
-<ul>
-  <li> :open_book: -add here</li>
-</ul>
-
-### Coding Standards
-<ul>
-  <li> :pencil: -add here</li>
-</ul>
 
 ### :card_index_dividers: Version Control Tools
 ![AGPL License](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)

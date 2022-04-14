@@ -21,41 +21,47 @@ class AllPetDetailViewController: UIViewController {
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
                                                             delegate: self)
     private var searchBarController = UISearchBar()
+    private var petIconButtonArray: [UIButton] = []
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        petIconButtonArray = [puppyIconButton, dogIconButton, kittenIconButton, catIconButton]
         setupTableView()
         petDataViewModel.fetchPetDataResults()
         setUpSearchbar()
+        self.searchBar.delegate = self
     }
 
     // MARK: - IBActions
     @IBAction private func catTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.clearPetIconBorder(button1: dogIconButton, button2: kittenIconButton, button3: puppyIconButton)
-        sender.changePetIconsBorderColor()
+        sender.tag = 1
+        petIconTappedEvent(tag: 1)
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
+
     @IBAction private func kittenTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.clearPetIconBorder(button1: dogIconButton, button2: catIconButton, button3: puppyIconButton)
-        sender.changePetIconsBorderColor()
+        sender.tag = 2
+        petIconTappedEvent(tag: 2)
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
+
     @IBAction private func dogTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.clearPetIconBorder(button1: catIconButton, button2: kittenIconButton, button3: puppyIconButton)
-        sender.changePetIconsBorderColor()
+        sender.tag = 3
+        petIconTappedEvent(tag: 3)
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
+
     @IBAction private func puppyTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
-        sender.clearPetIconBorder(button1: dogIconButton, button2: kittenIconButton, button3: catIconButton)
-        sender.changePetIconsBorderColor()
+        sender.tag = 4
+        petIconTappedEvent(tag: 4)
         petDataViewModel.searchPetCategoryType(_: petDataViewModel.petType)
         reloadView()
     }
@@ -65,6 +71,16 @@ class AllPetDetailViewController: UIViewController {
         petTableView.delegate = self
         petTableView.dataSource = self
         self.title = "Adoptable Animals"
+    }
+
+    private func petIconTappedEvent(tag: Int) {
+        for item in self.petIconButtonArray {
+            if item.tag != tag {
+                item.clearPetIconBorder()
+            } else {
+                item.changePetIconsBorderColor()
+            }
+        }
     }
 
     private func petTypeFromButton(_ sender: UIButton) {
@@ -157,4 +173,8 @@ extension AllPetDetailViewController: UISearchBarDelegate {
         petDataViewModel.setPetSearchName(petSearchText: searchText)
         reloadView()
     }
+
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+      }
 }
