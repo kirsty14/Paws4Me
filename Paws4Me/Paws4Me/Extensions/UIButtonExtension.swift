@@ -21,9 +21,7 @@ extension UIButton {
         self.layer.borderWidth = 2
     }
 
-    func clearPetIconBorder(button1: UIButton, button2: UIButton, button3: UIButton) {
-        button1.layer.borderColor = UIColor.clear.cgColor
-        button2.layer.borderColor = UIColor.clear.cgColor
-        button3.layer.borderColor = UIColor.clear.cgColor
+    func clearPetIconBorder() {
+        self.layer.borderColor = UIColor.clear.cgColor
     }
 }

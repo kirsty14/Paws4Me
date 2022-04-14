@@ -35,7 +35,6 @@ class AllPetDataViewModel {
 
     // MARK: - Functions
     func fetchPetDataResults() {
-
         petRepository?.fetchPetDataResults(method: .GET, endpoint: Constants.adoptURL) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
