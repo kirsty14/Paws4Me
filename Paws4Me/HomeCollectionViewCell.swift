@@ -16,8 +16,8 @@ class HomeCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Vars/Lets
     private lazy var homeViewModel = HomeViewModel()
-    let homeViewColors = [UIColor(named: "AllPetColor"), UIColor(named: "favouritesPetColor"),
-                          UIColor(named: "adoptPetColor")]
+    let homeViewColors = [UIColor.myAppHome1, UIColor.myAppHome2,
+                          UIColor.myAppHome3]
 
     // MARK: - Function
     func setCellItems(index: Int) {
