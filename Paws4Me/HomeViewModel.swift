@@ -24,11 +24,11 @@ class HomeViewModel {
         return homeTitle[index]
     }
 
-    func homeViewControllerId(index: Int) -> String {
+    func homeControllerId(index: Int) -> String {
         return viewControllerIdentifiers[index]
     }
 
-    func homeItemCount() -> Int {
+    var homeItemCount: Int {
         return viewControllerIdentifiers.count
     }
 }

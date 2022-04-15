@@ -18,12 +18,12 @@ class HomePageTest: XCTestCase {
 
     func testCountHomeImage_ReturnEqual() {
         let homeViewControllerArray = setUpHomeViewController()
-        XCTAssertEqual(homeViewControllerArray.count, homeViewModel.homeItemCount())
+        XCTAssertEqual(homeViewControllerArray.count, homeViewModel.homeItemCount)
     }
 
     func testCountHomeImage_ReturnNotEqual() {
         _ = setUpHomeViewController()
-        XCTAssertNotEqual(homeViewModel.homeItemCount(), 4)
+        XCTAssertNotEqual(homeViewModel.homeItemCount, 4)
     }
 
     func testHomeImageAtIndex_ReturnsEqual() {
@@ -48,12 +48,12 @@ class HomePageTest: XCTestCase {
 
     func testHomeViewControllerAtIndex_ReturnsEqual() {
         _ = setUpHomeViewController()
-        XCTAssertEqual(homeViewModel.homeViewControllerId(index: 0), "AllPetDetailViewController")
+        XCTAssertEqual(homeViewModel.homeControllerId(index: 0), "AllPetDetailViewController")
     }
 
     func testHomeViewControllerAtIndex_ReturnsNotEqual() {
         _ = setUpHomeViewController()
-        XCTAssertNotEqual(homeViewModel.homeViewControllerId(index: 0), "LocalPetViewController")
+        XCTAssertNotEqual(homeViewModel.homeControllerId(index: 0), "LocalPetViewController")
     }
 
 }
