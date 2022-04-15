@@ -35,6 +35,7 @@
 		A15F7EB727D88AD3002B4BCE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */; };
 		A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */; };
 		A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */; };
+		A163E17328014D2C00528D3A /* allPetDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A163E17228014D2C00528D3A /* allPetDetailsTest.swift */; };
 		A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */; };
 		A1821E2A27CA2B26009F93A5 /* animalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */; };
 		A1821E2C27CA5005009F93A5 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1821E2B27CA5005009F93A5 /* SignInViewController.swift */; };
@@ -104,6 +105,7 @@
 		A15F7EB627D88AD3002B4BCE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtension.swift; sourceTree = "<group>"; };
+		A163E17228014D2C00528D3A /* allPetDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allPetDetailsTest.swift; sourceTree = "<group>"; };
 		A178A36027C3CD8D00A6E340 /* PetSingleDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetSingleDetailsViewController.swift; sourceTree = "<group>"; };
 		A1821E2927CA2B26009F93A5 /* animalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animalTableViewCell.swift; sourceTree = "<group>"; };
 		A1821E2B27CA5005009F93A5 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		A146FA4027C6786300DE4A0F /* Paws4MeTests */ = {
 			isa = PBXGroup;
 			children = (
+				A163E17228014D2C00528D3A /* allPetDetailsTest.swift */,
 				A146FA4127C6786300DE4A0F /* loginTest.swift */,
 				A15BB30D2802F5F200D0BCDB /* SinglePetTest.swift */,
 			);
@@ -681,6 +684,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A163E17328014D2C00528D3A /* allPetDetailsTest.swift in Sources */,
 				A146FA4227C6786300DE4A0F /* loginTest.swift in Sources */,
 				A15BB30E2802F5F200D0BCDB /* SinglePetTest.swift in Sources */,
 			);
