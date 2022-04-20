@@ -302,7 +302,7 @@ class MockPetAllDelegate: PetViewModelDelegate {
         reloadViewCalled = true
     }
 
-    func showError(error: String) {
+    func showError(error: String, message: String) {
         errorCalled = true
     }
 }
