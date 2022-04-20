@@ -13,25 +13,42 @@ class SignUpViewController: UIViewController {
 
     // MARK: - IBOulets
     @IBOutlet weak private var registerButton: UIButton!
-    @IBOutlet weak var nameTextfield: UITextField!
-    @IBOutlet weak var surnameTextfield: UITextField!
-    @IBOutlet weak var emailTextfield: UITextField!
-    @IBOutlet weak var passwordTextfield: UITextField!
-    @IBOutlet weak var cellphoneTextfield: UITextField!
-    @IBOutlet weak var addressTextfield: UITextField!
+    @IBOutlet weak private var clearAllButton: UIButton!
+    @IBOutlet weak private var nameTextfield: UITextField!
+    @IBOutlet weak private var surnameTextfield: UITextField!
+    @IBOutlet weak private var emailTextfield: UITextField!
+    @IBOutlet weak private var passwordTextfield: UITextField!
+    @IBOutlet weak private var cellphoneTextfield: UITextField!
+    @IBOutlet weak private var addressTextfield: UITextField!
 
     // MARK: - Var/Lets
     private lazy var signUpViewModel = SignUpViewModel(delegate: self, signUpRepository: SignUpRepository())
 
-    // MARK: - Life cycler
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpClearButton()
     }
 
-    @IBAction func registerButtonTapped(_ sender: UIButton) {
+    // MARK: - IBAction
+    @IBAction private func registerButtonTapped(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text {
            signUpViewModel.signUpUser(email: email, password: password)
         }
+    }
+    @IBAction private func clearButtonTapped(_ sender: Any) {
+        nameTextfield.text = ""
+        surnameTextfield.text = ""
+        emailTextfield.text = ""
+        passwordTextfield.text = ""
+        cellphoneTextfield.text = ""
+        addressTextfield.text = ""
+    }
+
+    // MARK: - Functions
+    func setUpClearButton() {
+        clearAllButton.addCornerRadius()
+        clearAllButton.changeBorderLook()
     }
 }
 

@@ -1041,7 +1041,7 @@
                                                                 </constraints>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="Register">
+                                                                <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="Register" imagePadding="5">
                                                                     <backgroundConfiguration key="background" strokeWidth="2">
                                                                         <color key="backgroundColor" name="primaryAppButton"/>
                                                                     </backgroundConfiguration>
@@ -1055,10 +1055,13 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-np-aXR">
                                                                 <rect key="frame" x="149" y="0.0" width="144" height="40"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="clear.fill" catalog="system" title="Clear" imagePadding="19">
+                                                                <buttonConfiguration key="configuration" style="plain" image="clear.fill" catalog="system" title="Clear" imagePadding="5">
                                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
                                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="clearButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="Ws3-Mo-vee"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -1092,6 +1095,7 @@
                     <connections>
                         <outlet property="addressTextfield" destination="7xM-Tn-87w" id="cDc-S7-fFU"/>
                         <outlet property="cellphoneTextfield" destination="1Yo-xW-foE" id="dsW-jA-ACG"/>
+                        <outlet property="clearAllButton" destination="mAZ-np-aXR" id="B9S-aB-YLM"/>
                         <outlet property="emailTextfield" destination="ATR-Au-q0X" id="mRQ-Yp-CQv"/>
                         <outlet property="nameTextfield" destination="lN0-il-Zg9" id="Mqz-pv-Mts"/>
                         <outlet property="passwordTextfield" destination="hQX-hM-KTM" id="N6Y-z1-hoh"/>
@@ -1107,7 +1111,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Xdh-l2-M45"/>
-        <segue reference="Pq6-oA-wIh"/>
+        <segue reference="Htv-xn-lJl"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="labelColor"/>
     <resources>

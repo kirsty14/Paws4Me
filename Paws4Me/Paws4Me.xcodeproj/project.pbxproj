@@ -372,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				A14ABA2527EC6D6700C65773 /* View Controllers */,
+				A1724D83280FD62E00380AB7 /* Repositroy */,
 				A14ABA2427EC6D5100C65773 /* View Models */,
 			);
 			path = "Sign In User";
@@ -381,7 +382,6 @@
 			isa = PBXGroup;
 			children = (
 				A14ABA2127EC6A0100C65773 /* SignInViewModel.swift */,
-				A1724D83280FD62E00380AB7 /* Repositroy */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
