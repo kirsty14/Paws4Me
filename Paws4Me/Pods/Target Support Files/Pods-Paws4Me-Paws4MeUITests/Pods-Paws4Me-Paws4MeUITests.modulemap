@@ -1,6 +1,0 @@
-framework module Pods_Paws4Me_Paws4MeUITests {
-  umbrella header "Pods-Paws4Me-Paws4MeUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}
