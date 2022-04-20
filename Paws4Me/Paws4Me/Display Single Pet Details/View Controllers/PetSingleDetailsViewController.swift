@@ -11,12 +11,14 @@ class PetSingleDetailsViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet weak private var petImageView: UIImageView!
-    @IBOutlet weak private var petNameLabel: UILabel!
     @IBOutlet weak private var petAgeLabel: UILabel!
     @IBOutlet weak private var petGenderLabel: UILabel!
     @IBOutlet weak private var petBreedNameLabel: UILabel!
     @IBOutlet weak private var saveSinglePetButton: UIButton!
     @IBOutlet weak private var adoptPetButton: UIButton!
+    @IBOutlet weak private var petBreedView: UIView!
+    @IBOutlet weak private var petSexView: UIView!
+    @IBOutlet weak private var petAgeView: UIView!
 
     // MARK: - Vars/Lets
     private lazy var singlePetViewModel = SinglePetViewModel(repository: SinglePetRepository())
@@ -25,9 +27,14 @@ class PetSingleDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setPlaceholderImage()
-        adoptPetButton.addCornerRadius()
-        saveSinglePetButton.changeBorderLook()
-        saveSinglePetButton.addCornerRadius()
+        self.title = singlePetViewModel.singlePetName
+        petImageView.setImageCornerRadius(radius: 50)
+        petBreedView.addBorder()
+        petBreedView.setViewsRadius(radius: 20)
+        petSexView.addBorder()
+        petSexView.setViewsRadius(radius: 20)
+        petAgeView.addBorder()
+        petAgeView.setViewsRadius(radius: 20)
         updateUI()
     }
 
@@ -70,11 +77,9 @@ class PetSingleDetailsViewController: UIViewController {
 
         singlePetViewModel.setSelectedPetIndex(indexPet: singlePetIndex)
         singlePetViewModel.setSinglePetObject(petObject: singlePetObject)
-        petNameLabel.text = singlePetViewModel.singlePetName
         petBreedNameLabel.text = singlePetViewModel.singlePetBreed
         petGenderLabel.text = singlePetViewModel.singlePetGender
         petImageView.loadImageFromURL(imageURL: singlePetViewModel.singlePetImage)
-        view.addSubview(petImageView)
     }
 
     func setSinglePetData(petObject: AdoptPet?, petSingleIndex: Int?) {
