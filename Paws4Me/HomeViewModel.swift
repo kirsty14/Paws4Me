@@ -13,7 +13,7 @@ class HomeViewModel {
     private let homeImages: [String] = ["AllPetImage", "FavouritesImage", "AdoptionProgressImage"]
     private let homeTitle: [String] = ["All pets", "Favourites", "Adoption Progress"]
     private let viewControllerIdentifiers: [String] = ["AllPetDetailViewController", "LocalPetViewController",
-                                                       "applicationForm"]
+                                                       "ProgressViewController"]
 
     // MARK: - Functions
     func homePageImages(index: Int) -> String {
