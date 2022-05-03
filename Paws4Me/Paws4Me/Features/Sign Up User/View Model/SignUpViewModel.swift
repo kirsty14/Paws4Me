@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Firebase
 
 // MARK: - SignInViewModel Delegate
 protocol SignUpViewModelDelegate: AnyObject {
@@ -19,6 +18,8 @@ class SignUpViewModel {
     // MARK: - Vars/Lets
     private weak var delegate: SignUpViewModelDelegate?
     private var signUpRepository: SignUpRepository?
+    private var userEmail: String = ""
+    private var userPassword: String = ""
 
     init(delegate: SignUpViewModelDelegate, signUpRepository: SignUpRepository ) {
         self.delegate = delegate
@@ -26,10 +27,21 @@ class SignUpViewModel {
     }
 
     // MARK: - Functions
+    var email: String {
+        return userEmail
+    }
+
+    var password: String {
+        return userPassword
+    }
+
     func signUpUser(email: String, password: String) {
         if email.isEmpty || password.isEmpty {
             delegate?.showError(errorMessage: "Please fill in your email and password")
         }
+
+        userEmail = email
+        userPassword = password
 
         signUpRepository?.signUpUser(email: email, password: password) { [weak self] result in
             switch result {

@@ -27,6 +27,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         setUpLogin()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        if signInViewModel.email != "" && signInViewModel.password != "" {
+            emailTextField.text = signInViewModel.email
+            passwordTextField.text = signInViewModel.password
+        }
+    }
+
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
@@ -49,6 +56,10 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.setBottomBorder(borderColor: UIColor.primaryAppColor)
     }
 
+    func setUserCredentials(email: String, password: String) {
+        signInViewModel.set(userEmail: email, userPassword: password)
+    }
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         guard let email = emailTextField.text, let password = passwordTextField.text else { return false }
@@ -63,7 +74,7 @@ extension SignInViewController: SignInViewModelDelegate {
     func successRouting() {
         passwordTextField.text = ""
         emailTextField.text = ""
-        performSegue(withIdentifier: "signInViewController", sender: self)
+        performSegue(withIdentifier: "petAllViewController", sender: self)
     }
 
     func showError(errorMessage: String) {

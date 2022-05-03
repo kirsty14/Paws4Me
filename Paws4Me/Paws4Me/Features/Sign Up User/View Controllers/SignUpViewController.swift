@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import Firebase
 
 class SignUpViewController: UIViewController {
 
@@ -54,7 +53,13 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: SignUpViewModelDelegate {
     func successRouting() {
-        self.performSegue(withIdentifier: "AllPetDetailViewController", sender: self)
+        self.performSegue(withIdentifier: "signinViewController", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? SignInViewController {
+            destination.setUserCredentials(email: signUpViewModel.email, password: signUpViewModel.password)
+        }
     }
 
     func showError(errorMessage: String) {

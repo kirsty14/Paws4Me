@@ -19,7 +19,7 @@ class SignUpRepository {
                 } else {
                     completionHandler(Result.success(true))
                 }
-        }
+            }
         }
     }
 }

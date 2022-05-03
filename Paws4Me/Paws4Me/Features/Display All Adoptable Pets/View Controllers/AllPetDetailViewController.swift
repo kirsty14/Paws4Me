@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Firebase
 
 class AllPetDetailViewController: UIViewController {
 
@@ -20,6 +19,7 @@ class AllPetDetailViewController: UIViewController {
 
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
+                                                            repositorySignOut: SingOutRepository(),
                                                             delegate: self)
     private var searchBarController = UISearchBar()
     private var petIconButtonArray: [UIButton] = []
@@ -36,12 +36,7 @@ class AllPetDetailViewController: UIViewController {
 
     // MARK: - IBActions
     @IBAction private func logOutTappedButton(_ sender: UIButton) {
-        do {
-            try Auth.auth().signOut()
-            self.dismiss(animated: true, completion: nil)
-        } catch {
-            showError(error: "Sign out error", message: "We could not sign you out")
-        }
+        petDataViewModel.logoutUser()
     }
 
     @IBAction private func catTappedButton(_ sender: UIButton) {
@@ -136,7 +131,6 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
             guard let pageItem = petDataViewModel.objectFilteredPet else { return }
             destination.setSinglePetData(petObject: pageItem, petSingleIndex: indexRow)
         }
-
     }
 
     func indexPetSelected(tableView: UITableView) -> Int {
@@ -157,6 +151,10 @@ extension AllPetDetailViewController: PetViewModelDelegate {
 
     func reloadView() {
         petTableView.reloadData()
+    }
+
+    func performSegue() {
+        self.dismiss(animated: true, completion: nil)
     }
 
     func showError(error: String, message: String) {

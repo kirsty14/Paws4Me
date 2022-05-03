@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Firebase
 
 // MARK: - SignInViewModel Delegate
 protocol SignInViewModelDelegate: AnyObject {
@@ -19,6 +18,8 @@ class SignInViewModel {
     // MARK: - Vars/Lets
     private weak var delegate: SignInViewModelDelegate?
     private var signInRepository: SignInRepository?
+    private var emailUser: String = ""
+    private var passwordUser: String = ""
 
     init(delegate: SignInViewModelDelegate, signInRepository: SignInRepository ) {
         self.delegate = delegate
@@ -26,12 +27,40 @@ class SignInViewModel {
     }
 
     // MARK: - Functions
+    var email: String {
+        return emailUser
+    }
+
+    var password: String {
+        return passwordUser
+    }
+
+    func set(userEmail: String, userPassword: String) {
+        emailUser = userEmail
+        passwordUser = userPassword
+    }
+
     func loginUser(email: String, password: String) {
-        if email.isEmpty || password.isEmpty {
+        var userCurrentEmail = ""
+        var userCurrentPassword = ""
+
+        if emailUser == "" && passwordUser == "" {
+            userCurrentEmail = emailUser
+            userCurrentPassword = passwordUser
+        } else {
+            userCurrentEmail = email
+            userCurrentPassword = password
+        }
+
+        if userCurrentEmail.isEmpty || userCurrentPassword.isEmpty {
             delegate?.showError(errorMessage: "Please fill in your email and password")
         }
 
-        signInRepository?.signInUser(email: email, password: password) { [weak self] result in
+        if userCurrentPassword.count != 6 {
+            delegate?.showError(errorMessage: "Please enter a password that is 6 characters long")
+        }
+
+        signInRepository?.signInUser(email: userCurrentEmail, password: userCurrentPassword) { [weak self] result in
             switch result {
             case .success:
                 self?.delegate?.successRouting()

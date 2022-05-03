@@ -11,12 +11,14 @@ import Foundation
 protocol PetViewModelDelegate: AnyObject {
     func reloadView()
     func showError(error: String, message: String)
+    func performSegue()
 }
 
 class AllPetDataViewModel {
 
     // MARK: - Vars/Lets
     private var petRepository: SearchPetRepositoryType?
+    private var signOutRepository: SignOutRepositroyType?
     private weak var delegate: PetViewModelDelegate?
     private var filteredPetObject: AdoptPet?
     private var adoptPetObject: AdoptPet?
@@ -27,9 +29,10 @@ class AllPetDataViewModel {
     private var animalType = ""
 
     // MARK: - Constructor
-    init(repository: SearchPetRepositoryType,
+    init(repository: SearchPetRepositoryType, repositorySignOut: SignOutRepositroyType,
          delegate: PetViewModelDelegate) {
          self.petRepository = repository
+        self.signOutRepository = repositorySignOut
          self.delegate = delegate
     }
 
@@ -43,6 +46,17 @@ class AllPetDataViewModel {
                     self?.delegate?.reloadView()
                 case .failure(let error):
                     self?.delegate?.showError(error: error.rawValue, message: "Could not retrieve the adoptable pets.")
+                }
+        }
+    }
+
+    func logoutUser() {
+        signOutRepository?.logUserOut { [weak self] result in
+                switch result {
+                case .success:
+                    self?.delegate?.performSegue()
+                case .failure(let error):
+                    self?.delegate?.showError(error: error.rawValue, message: "Could not log you out.")
                 }
         }
     }
