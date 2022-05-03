@@ -282,7 +282,6 @@
 		35E7262627B3E24A002B86DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				35E7262727B3E2BE002B86DB /* AdoptionModel.swift */,
 				A15F7EB327D88A46002B4BCE /* SheleterCenterModel.swift */,
 			);
 			path = Models;
@@ -367,6 +366,7 @@
 		A14ABA1F27EC631100C65773 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				35E7262727B3E2BE002B86DB /* AdoptionModel.swift */,
 				35E7260727B3A442002B86DB /* AllPetDetailViewController.swift */,
 			);
 			path = "View Controllers";
