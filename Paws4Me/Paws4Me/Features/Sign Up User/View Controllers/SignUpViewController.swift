@@ -31,8 +31,23 @@ class SignUpViewController: UIViewController {
 
     // MARK: - IBAction
     @IBAction private func registerButtonTapped(_ sender: UIButton) {
-        if let email = emailTextfield.text, let password = passwordTextfield.text {
-           signUpViewModel.signUpUser(email: email, password: password)
+        var bValidCredentials = false
+        guard let name = nameTextfield.text,
+              let surname = surnameTextfield.text,
+              let cellphone = cellphoneTextfield.text,
+              let address = addressTextfield.text else { return }
+
+        bValidCredentials = signUpViewModel.isCredentialsEmpty(name: name,
+                                                               surname: surname,
+                                                               phone: cellphone,
+                                                               address: address)
+
+        if bValidCredentials {
+
+            if let email = emailTextfield.text, let password = passwordTextfield.text {
+               signUpViewModel.signUpUser(email: email,
+                                          password: password)
+            }
         }
     }
     @IBAction private func clearButtonTapped(_ sender: Any) {

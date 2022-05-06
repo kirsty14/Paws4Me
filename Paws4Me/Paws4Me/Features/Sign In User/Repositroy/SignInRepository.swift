@@ -13,7 +13,7 @@ typealias SignInResult = (Result<Bool, APIError>) -> Void
 class SignInRepository {
     func signInUser(email: String, password: String, completionHandler: @escaping SignInResult) {
         DispatchQueue.main.async {
-        Auth.auth().signIn(withEmail: email, password: password) { (_, error) in
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
             if error != nil {
                 completionHandler(.failure(.serverError))
             } else {

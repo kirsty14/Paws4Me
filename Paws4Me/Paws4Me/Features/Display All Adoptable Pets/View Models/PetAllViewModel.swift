@@ -10,7 +10,7 @@ import Foundation
 // MARK: - PetViewModel Delegate
 protocol PetViewModelDelegate: AnyObject {
     func reloadView()
-    func showError(error: String, message: String)
+    func showError(title: String, description: String)
     func performSegue()
 }
 
@@ -29,7 +29,8 @@ class AllPetDataViewModel {
     private var animalType = ""
 
     // MARK: - Constructor
-    init(repository: SearchPetRepositoryType, repositorySignOut: SignOutRepositroyType,
+    init(repository: SearchPetRepositoryType,
+         repositorySignOut: SignOutRepositroyType,
          delegate: PetViewModelDelegate) {
          self.petRepository = repository
         self.signOutRepository = repositorySignOut
@@ -45,7 +46,8 @@ class AllPetDataViewModel {
                     self?.filteredPetObject = petData
                     self?.delegate?.reloadView()
                 case .failure(let error):
-                    self?.delegate?.showError(error: error.rawValue, message: "Could not retrieve the adoptable pets.")
+                    self?.delegate?.showError(title: error.rawValue,
+                                              description: "Could not retrieve the adoptable pets.")
                 }
         }
     }
@@ -56,7 +58,8 @@ class AllPetDataViewModel {
                 case .success:
                     self?.delegate?.performSegue()
                 case .failure(let error):
-                    self?.delegate?.showError(error: error.rawValue, message: "Could not log you out.")
+                    self?.delegate?.showError(title: error.rawValue,
+                                              description: "Could not log you out.")
                 }
         }
     }

@@ -157,7 +157,7 @@ extension AllPetDetailViewController: PetViewModelDelegate {
         self.dismiss(animated: true, completion: nil)
     }
 
-    func showError(error: String, message: String) {
+    func showError(title error: String, description message: String) {
         displayAlert(alertTitle: "Something went worng",
                      alertMessage: message,
                      alertActionTitle: "Try again" ,
