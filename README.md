@@ -20,37 +20,54 @@ master ( buid )
 
 #### Login Light Mode
 <table>
-  <tr>
-<td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/155467881-97257790-bc21-42a1-91f0-ae279c393ce6.png" alt="1" width=200px height=500px ></td>  
-<td><img alt="SignIn" src="https://user-images.githubusercontent.com/98941706/159017716-2e5ddf43-ea45-464e-85c4-bb1870a015cf.png" width=200px height= 500px></td>  
-<td><img alt="SignIn validation"  src="https://user-images.githubusercontent.com/98941706/159017761-59479bb7-45b9-449c-a35b-1142c0522f31.png"  width= 200px height = 500px ></td>
+<tr>
+<td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/167070464-2b449f36-fee8-42d1-b9cd-a7390e60578c.png" alt="1" width=200px height=500px ></td>  
+<td><img alt="SignIn" src="https://user-images.githubusercontent.com/98941706/167070470-10c4417e-ec0d-45a7-9f08-c9ca97b5aa76.png" width=200px height= 500px></td>  
+<td><img alt="SignIn validation" src="https://user-images.githubusercontent.com/98941706/167070472-7585fcca-8ce0-4a08-9261-ab6ddc2354d4.png"  width= 200px height = 500px ></td>
 </tr>
 </table>
 
-#### View, Search and Save Pets Light Mode
+#### Home, View, Search and Save Pets Light Mode
 <table>
 <tr>
- <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/159017915-fe546a33-1113-40e9-ba8e-674e68a08b55.png" width=200px height=500px ></td> 
-<td><img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/159018021-6eaf9d80-8ccc-444d-885d-864069fb6c6f.png" height=500px width = 200px></td> 
-<td><img alt=:FavouritePet" src="https://user-images.githubusercontent.com/98941706/159018273-cbaf6a0a-ff49-4a74-b1dc-665851cc2193.png" height=500px width=200px></td>
+ <td><img alt="singlePets" src="https://user-images.githubusercontent.com/98941706/167070474-a005d9cf-a72c-4c7f-82ba-4c6742b9f8e7.png" width=200px height=500px ></td> 
+<td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/167070475-b743d692-8997-4ee5-84ac-565e1445b257.png" width=200px height=500px ></td> 
+<td><img src="https://user-images.githubusercontent.com/98941706/167071111-a0682f6a-c61c-4f5a-b061-e505b67c4b09.png" alt = "single pet screen light mode" height=500px width = 200px></td> 
+<td><img alt="FavouritePet" src="https://user-images.githubusercontent.com/98941706/167071235-1c790624-f677-46f1-a5fc-102c2245b683.png" height=500px width=200px></td>
+</tr>  
+</table>
+
+#### Adoption Form
+<table>
+<tr>
+<td><img alt="adoptionFormLight" src="https://user-images.githubusercontent.com/98941706/167072031-d6fb1b64-d218-4df8-b0a6-c821f3e1cba8.png" width=200px height=500px ></td>  
 </tr>  
 </table>
   
 #### Login Dark Mode
 <table>
-  <tr>
+<tr>
 <td><img alt="LaunchScreen" alt="Launchscreen" src="https://user-images.githubusercontent.com/98941706/161908906-1d54cec9-c092-43ea-b145-c05f66f1064d.png" width=200px height=500px ></td>  
 <td><img alt="SignIn" src="https://user-images.githubusercontent.com/98941706/161908917-0924221b-d512-4aaa-b8b4-778c9a4e1d2f.png" width=200px height= 500px></td>  
 <td><img alt="SignIn validation"  src="https://user-images.githubusercontent.com/98941706/161908919-41454ef5-2658-464e-b171-aae8063f4b1e.png"  width= 200px height = 500px ></td>
 </tr>
 </table>
 
-#### View, Search and Save Pets Dark Mode
+#### Home, View, Search and Save Pets Dark Mode
 <table>
 <tr>
- <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/161909062-1dc87118-3d4d-49ac-9bb3-d59a84f7cc89.png" width=200px height=500px ></td> 
-<td><img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/161909068-d8c74713-d844-4113-babe-e12be544b108.png" height=500px width = 200px></td> 
-<td><img alt=:"SavedPet" src="https://user-images.githubusercontent.com/98941706/161909497-031bc3a6-6643-44cb-9f58-546f55da9d31.png" height=500px width=200px></td>
+<td><img alt="homeScreenDark" src="https://user-images.githubusercontent.com/98941706/167071891-aa6d3afe-3881-45ee-a5f4-b1ba7bdf8482.png" width=200px height=500px ></td> 
+ <td><img alt="listAllAnimals" src="https://user-images.githubusercontent.com/98941706/167071445-ebf77953-6df2-4af8-9b76-b2c553e879c8.png" width=200px height=500px ></td> 
+<td><img alt="SinglePet" src="https://user-images.githubusercontent.com/98941706/167071446-d93867df-47da-49ca-81e4-177ef12154d3.png" height=500px width = 200px></td> 
+<td><img alt=:"SavedPet" src="https://user-images.githubusercontent.com/98941706/167071444-519b560d-c3ec-4af1-b3d6-e2f9b5071719.png" height=500px width=200px></td>
+</tr>  
+</table>
+
+
+#### Adoption Form
+<table>
+<tr>
+<td><img alt="adoptionFormDarkt" src="https://user-images.githubusercontent.com/98941706/167072038-f62093ba-ba5e-41f1-b798-429b06c3436d.png" width=200px height=500px ></td>
 </tr>  
 </table>
 
