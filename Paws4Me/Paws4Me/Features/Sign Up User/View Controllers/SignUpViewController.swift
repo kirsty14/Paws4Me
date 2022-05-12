@@ -11,8 +11,9 @@ import UIKit
 class SignUpViewController: UIViewController {
 
     // MARK: - IBOulets
-    @IBOutlet weak private var registerButton: UIButton!
-    @IBOutlet weak private var clearAllButton: UIButton!
+
+    @IBOutlet weak var clearAllButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak private var nameTextfield: UITextField!
     @IBOutlet weak private var surnameTextfield: UITextField!
     @IBOutlet weak private var emailTextfield: UITextField!
@@ -26,23 +27,22 @@ class SignUpViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpClearButton()
     }
 
     // MARK: - IBAction
     @IBAction private func registerButtonTapped(_ sender: UIButton) {
-        var bValidCredentials = false
+        var isValidDetailsCredentials = false
         guard let name = nameTextfield.text,
               let surname = surnameTextfield.text,
               let cellphone = cellphoneTextfield.text,
               let address = addressTextfield.text else { return }
 
-        bValidCredentials = signUpViewModel.isCredentialsEmpty(name: name,
-                                                               surname: surname,
-                                                               phone: cellphone,
-                                                               address: address)
+        isValidDetailsCredentials = signUpViewModel.isUserDetailsNotEmpty(name: name,
+                                                                          surname: surname,
+                                                                          phone: cellphone,
+                                                                          address: address)
 
-        if bValidCredentials {
+        if isValidDetailsCredentials {
 
             if let email = emailTextfield.text, let password = passwordTextfield.text {
                signUpViewModel.signUpUser(email: email,
@@ -50,6 +50,7 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+
     @IBAction private func clearButtonTapped(_ sender: Any) {
         nameTextfield.text = ""
         surnameTextfield.text = ""
@@ -57,12 +58,6 @@ class SignUpViewController: UIViewController {
         passwordTextfield.text = ""
         cellphoneTextfield.text = ""
         addressTextfield.text = ""
-    }
-
-    // MARK: - Functions
-    func setUpClearButton() {
-        clearAllButton.addCornerRadius()
-        clearAllButton.changeBorderLook()
     }
 }
 

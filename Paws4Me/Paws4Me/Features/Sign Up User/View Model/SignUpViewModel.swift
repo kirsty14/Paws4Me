@@ -35,35 +35,35 @@ class SignUpViewModel {
         return userPassword
     }
 
-    func isCredentialsEmpty(name: String, surname: String, phone: String, address: String) -> Bool {
-        var bNotEmpty = false
+    func isUserDetailsNotEmpty(name: String, surname: String, phone: String, address: String) -> Bool {
+        var isUserDetailsNotEmpty = false
         if name.isEmpty || surname.isEmpty || phone.isEmpty || address.isEmpty {
             delegate?.showError(errorMessage: "Please fill in all your details")
         } else {
-            bNotEmpty = true
+            isUserDetailsNotEmpty = true
         }
-        return bNotEmpty
+        return isUserDetailsNotEmpty
     }
 
     func isUserCredentialsEmpty() -> Bool {
-        var bNotEmpty = false
+        var isUserPasswordEmailEmpty = false
         if email.isEmpty || password.isEmpty {
             delegate?.showError(errorMessage: "Please fill in your email and password")
         } else {
-            bNotEmpty = true
+            isUserPasswordEmailEmpty = true
         }
-        return bNotEmpty
+        return isUserPasswordEmailEmpty
     }
 
     func signUpUser(email: String, password: String) {
-        let bCredentialsValid = isUserCredentialsEmpty()
+        userEmail = email
+        userPassword = password
 
-        if !bCredentialsValid {
+        let isUserCredentialsEmpty = isUserCredentialsEmpty()
+
+        if !isUserCredentialsEmpty {
             return
         } else {
-            userEmail = email
-            userPassword = password
-
             signUpRepository?.signUpUser(email: email, password: password) { [weak self] result in
                 switch result {
                 case .success:

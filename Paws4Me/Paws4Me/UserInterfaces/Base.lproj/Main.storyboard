@@ -1315,7 +1315,7 @@
                                                                     <color key="baseForegroundColor" name="secondaryAppButton"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <action selector="registerButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="1ab-7x-0r9"/>
+                                                                    <action selector="registerButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="YXk-nU-t8P"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-np-aXR">
@@ -1326,7 +1326,7 @@
                                                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <action selector="clearButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="Ws3-Mo-vee"/>
+                                                                    <action selector="clearButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="TDb-Ke-i12"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1361,11 +1361,11 @@
                     <connections>
                         <outlet property="addressTextfield" destination="7xM-Tn-87w" id="cDc-S7-fFU"/>
                         <outlet property="cellphoneTextfield" destination="1Yo-xW-foE" id="dsW-jA-ACG"/>
-                        <outlet property="clearAllButton" destination="mAZ-np-aXR" id="B9S-aB-YLM"/>
+                        <outlet property="clearAllButton" destination="mAZ-np-aXR" id="mEV-ic-Ozf"/>
                         <outlet property="emailTextfield" destination="ATR-Au-q0X" id="mRQ-Yp-CQv"/>
                         <outlet property="nameTextfield" destination="lN0-il-Zg9" id="Mqz-pv-Mts"/>
                         <outlet property="passwordTextfield" destination="hQX-hM-KTM" id="N6Y-z1-hoh"/>
-                        <outlet property="registerButton" destination="CJb-4a-bcH" id="RYh-5P-bR9"/>
+                        <outlet property="registerButton" destination="CJb-4a-bcH" id="ss5-Zx-Dhq"/>
                         <outlet property="surnameTextfield" destination="xou-AZ-EfS" id="VAq-IR-2WU"/>
                         <segue destination="AJP-Uc-Cxw" kind="show" identifier="signinViewController" id="d42-nm-p3z"/>
                     </connections>

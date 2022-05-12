@@ -53,35 +53,35 @@ class SignInViewModel {
     }
 
     func isCredentialsEmpty(email: String, password: String) -> Bool {
-        var bNotEmpty = false
+        var isUserPasswordEmailEmpty = false
 
         if userCurrentEmail.isEmpty || userCurrentPassword.isEmpty {
             delegate?.showError(errorMessage: "Please fill in your email and password")
         } else {
-            bNotEmpty = true
+            isUserPasswordEmailEmpty = true
         }
-        return bNotEmpty
+        return isUserPasswordEmailEmpty
     }
 
     func isPasswordLongEnough(email: String, password: String) -> Bool {
-        var bValidPasword = false
+        var isUserPasswordValid = false
 
         if userCurrentPassword.count != 6 {
             delegate?.showError(errorMessage: "Please enter a password that is 6 characters long")
         } else {
-            bValidPasword = true
+            isUserPasswordValid = true
         }
-        return bValidPasword
+        return isUserPasswordValid
     }
 
     func loginUser(email: String, password: String) {
         setUserCredentials(email: email, password: password)
-        let bCredentialsValid = isCredentialsEmpty(email: email,
+        let isUserCredentialsValid = isCredentialsEmpty(email: email,
                                                    password: password)
-        let bValidPassword = isPasswordLongEnough(email: email,
+        let isUsersPasswordValid = isPasswordLongEnough(email: email,
                                                   password: password)
 
-        if !bCredentialsValid || !bValidPassword {
+        if !isUserCredentialsValid || !isUsersPasswordValid {
             return
         } else {
             signInRepository?.signInUser(email: userCurrentEmail,
