@@ -13,7 +13,7 @@ protocol SignUpViewModelDelegate: AnyObject {
     func showError(errorMessage: String)
 }
 
-class SignUpViewModel {
+class SignUpViewModel: ValidationManager {
 
     // MARK: - Vars/Lets
     private weak var delegate: SignUpViewModelDelegate?
@@ -35,14 +35,31 @@ class SignUpViewModel {
         return userPassword
     }
 
-    func isUserDetailsNotEmpty(name: String, surname: String, phone: String, address: String) -> Bool {
-        var isUserDetailsNotEmpty = false
+    func isUserDetailsValid(name: String, surname: String, phone: String, address: String) -> Bool {
+        var isUserDetailsValid = false
         if name.isEmpty || surname.isEmpty || phone.isEmpty || address.isEmpty {
             delegate?.showError(errorMessage: "Please fill in all your details")
         } else {
-            isUserDetailsNotEmpty = true
+            isUserDetailsValid = validateUserDetails(name: name, surname: surname, phone: phone, address: address)
         }
-        return isUserDetailsNotEmpty
+        return isUserDetailsValid
+    }
+
+    func validateUserDetails(name: String, surname: String, phone: String, address: String) -> Bool {
+        var validUserDetails = false
+
+        let isNameValid = isValidName(name: name)
+        let isSurnameValid = isValidSurname(surname: surname)
+        let isUserAddressValid = isValidAddress(address: address)
+        let isUserPhoneNumberValid = isValidPhoneNumber(phoneNumber: phone)
+
+        if isNameValid && isSurnameValid && isUserAddressValid && isUserPhoneNumberValid {
+            validUserDetails = true
+        } else {
+            delegate?.showError(errorMessage: "Your details are invalid, Try Again")
+        }
+
+        return validUserDetails
     }
 
     func isUserCredentialsEmpty() -> Bool {
@@ -60,11 +77,13 @@ class SignUpViewModel {
         userPassword = password
 
         let isUserCredentialsEmpty = isUserCredentialsEmpty()
+        let isUserEmailValid = isValidEmailAddress(emailAddress: userEmail)
+        let isUserPasswordValid = isValidPassword(password: userPassword)
 
-        if !isUserCredentialsEmpty {
+        if !isUserCredentialsEmpty && isUserEmailValid && isUserPasswordValid {
             return
         } else {
-            signUpRepository?.signUpUser(email: email, password: password) { [weak self] result in
+           signUpRepository?.signUpUser(email: email, password: password) { [weak self] result in
                 switch result {
                 case .success:
                     self?.delegate?.successRouting()

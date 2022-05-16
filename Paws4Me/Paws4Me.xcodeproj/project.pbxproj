@@ -40,6 +40,7 @@
 		A15F7EBA27D88B15002B4BCE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */; };
 		A15F7EBC27D88B9A002B4BCE /* UITextfieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */; };
 		A163E17328014D2C00528D3A /* allPetDetailsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A163E17228014D2C00528D3A /* allPetDetailsTest.swift */; };
+		A16F12872832721000BE4E2C /* ValidationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F12862832721000BE4E2C /* ValidationManager.swift */; };
 		A1724D82280FD62B00380AB7 /* SignInRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1724D81280FD62B00380AB7 /* SignInRepository.swift */; };
 		A1724D87280FD92400380AB7 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1724D86280FD92400380AB7 /* SignUpRepository.swift */; };
 		A1724D89280FDA8700380AB7 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1724D88280FDA8700380AB7 /* SignUpViewModel.swift */; };
@@ -130,6 +131,7 @@
 		A15F7EB927D88B15002B4BCE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		A15F7EBB27D88B9A002B4BCE /* UITextfieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextfieldExtension.swift; sourceTree = "<group>"; };
 		A163E17228014D2C00528D3A /* allPetDetailsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = allPetDetailsTest.swift; sourceTree = "<group>"; };
+		A16F12862832721000BE4E2C /* ValidationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationManager.swift; sourceTree = "<group>"; };
 		A1724D81280FD62B00380AB7 /* SignInRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRepository.swift; sourceTree = "<group>"; };
 		A1724D86280FD92400380AB7 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
 		A1724D88280FDA8700380AB7 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 			children = (
 				A11499E627DB1AC900626FC5 /* PetName+CoreDataClass.swift */,
 				A11499E727DB1AC900626FC5 /* PetName+CoreDataProperties.swift */,
+				A16F12862832721000BE4E2C /* ValidationManager.swift */,
 			);
 			path = "Data Classes";
 			sourceTree = "<group>";
@@ -878,6 +881,7 @@
 				A1EAF79527F2CE9E00BC77FA /* SinglePetRepository.swift in Sources */,
 				A11499EC27DB300800626FC5 /* UIImageViewExtension.swift in Sources */,
 				A178A36127C3CD8D00A6E340 /* PetSingleDetailsViewController.swift in Sources */,
+				A16F12872832721000BE4E2C /* ValidationManager.swift in Sources */,
 				A1AF134427FC1DDB00319D66 /* UIFontExtension.swift in Sources */,
 				A14ABA1B27EC3DB500C65773 /* PetRepository.swift in Sources */,
 				A1A6B23427F6FB750007D606 /* UISwitchTableViewCell.swift in Sources */,
