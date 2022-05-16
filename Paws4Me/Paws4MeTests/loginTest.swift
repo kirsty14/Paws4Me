@@ -8,42 +8,49 @@
 import XCTest
 @testable import Paws4Me
 
+struct SavedUserObject {
+    let email: String?
+    var password: String?
+}
+
 class LoginTest: XCTestCase {
 
     private var signInViewModel: SignInViewModel!
     private var mockViewModelDelegate: MockViewModelDelegate!
+    private var mockSignInRepository: MockSignInRepository!
 
     override func setUp() {
         mockViewModelDelegate = MockViewModelDelegate()
-        self.signInViewModel = SignInViewModel(delegate: mockViewModelDelegate)
+        mockSignInRepository = MockSignInRepository()
+        self.signInViewModel = SignInViewModel(delegate: mockViewModelDelegate, signInRepository: mockSignInRepository)
     }
 
     func testFailingLoginEmptyFail() {
-        signInViewModel.loginUser(username: "", password: "")
+        signInViewModel.loginUser(email: "", password: "")
         XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
         XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testFailingWrongUsernameFail() {
-        signInViewModel.loginUser(username: "a", password: "TestPass123")
+    func testFailingWrongEmailFail() {
+        signInViewModel.loginUser(email: "g@gmail.com", password: "123456")
         XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
         XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testFailingWrongPasswrdFail() {
-        signInViewModel.loginUser(username: "Admin", password: "t")
+    func testFailingWrongPasswordFail() {
+        signInViewModel.loginUser(email: "k@gmail.com", password: "t")
         XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
         XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testLoginWrongUsernamePasswordFail() {
-        signInViewModel.loginUser(username: "a", password: "t")
+    func testLoginWrongEmailPasswordFail() {
+        signInViewModel.loginUser(email: "g@gmail.com", password: "t")
         XCTAssertFalse(mockViewModelDelegate.isSuccesRouting)
         XCTAssertTrue(mockViewModelDelegate.isError)
     }
 
-    func testLoginCorrectUsernamePasswordPass() {
-        signInViewModel.loginUser(username: "Admin", password: "TestPass123")
+    func testLoginCorrectEmailPasswordPass() {
+        signInViewModel.loginUser(email: "k@gmail.com", password: "123456")
         XCTAssert(mockViewModelDelegate.isSuccesRouting)
         XCTAssertFalse(mockViewModelDelegate.isError)
     }
@@ -58,5 +65,15 @@ class MockViewModelDelegate: SignInViewModelDelegate {
     }
     func showError(errorMessage error: String) {
         isError = true
+    }
+}
+
+class MockSignInRepository: SignInRepository {
+    override func signInUser(email: String, password: String, completionHandler: @escaping SignInResult) {
+        if email == "k@gmail.com" && password == "123456" {
+            completionHandler(.success(true))
+        } else {
+            completionHandler(.failure(.serverError))
+        }
     }
 }
