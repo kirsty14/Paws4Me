@@ -27,6 +27,8 @@ class SignUpViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        clearAllButton.addCornerRadius()
+        clearAllButton.changeBorderLook()
     }
 
     // MARK: - IBAction
@@ -70,6 +72,15 @@ extension SignUpViewController: SignUpViewModelDelegate {
         if let destination = segue.destination as? SignInViewController {
             destination.setUserCredentials(email: signUpViewModel.email, password: signUpViewModel.password)
         }
+    }
+
+    func addUserData() {
+        guard let name = nameTextfield.text,
+              let surname = surnameTextfield.text,
+              let cellphone = cellphoneTextfield.text,
+              let address = addressTextfield.text else { return }
+
+        signUpViewModel.addUserToFirebase(name: name, surname: surname, cellphone: cellphone, address: address)
     }
 
     func showError(errorMessage: String) {
