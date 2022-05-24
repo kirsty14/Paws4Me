@@ -64,7 +64,7 @@ class SignInViewModel: ValidationManager {
     }
 
     func isUserEmailValid(email: String) -> Bool {
-        return isValidEmailAddress(emailAddress: email)
+        return isValidEmail(email: email)
     }
 
     func isPasswordLongEnough(email: String, password: String) -> Bool {

@@ -77,7 +77,7 @@ class SignUpViewModel: ValidationManager {
         userPassword = password
 
         let isUserCredentialsEmpty = isUserCredentialsEmpty()
-        let isUserEmailValid = isValidEmailAddress(emailAddress: userEmail)
+        let isUserEmailValid = isValidEmail(email: userEmail)
         let isUserPasswordValid = isValidPassword(password: userPassword)
 
         if !isUserCredentialsEmpty && isUserEmailValid && isUserPasswordValid {
