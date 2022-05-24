@@ -19,6 +19,7 @@ class AllPetDetailViewController: UIViewController {
 
     // MARK: - Vars/Lets
     private lazy var petDataViewModel = AllPetDataViewModel(repository: PetDataRepository(),
+                                                            repositorySignOut: SingOutRepository(),
                                                             delegate: self)
     private var searchBarController = UISearchBar()
     private var petIconButtonArray: [UIButton] = []
@@ -34,6 +35,10 @@ class AllPetDetailViewController: UIViewController {
     }
 
     // MARK: - IBActions
+    @IBAction private func logOutTappedButton(_ sender: UIButton) {
+        petDataViewModel.logoutUser()
+    }
+
     @IBAction private func catTappedButton(_ sender: UIButton) {
         petTypeFromButton(sender)
         sender.tag = 1
@@ -126,7 +131,6 @@ extension AllPetDetailViewController: UITableViewDelegate, UITableViewDataSource
             guard let pageItem = petDataViewModel.objectFilteredPet else { return }
             destination.setSinglePetData(petObject: pageItem, petSingleIndex: indexRow)
         }
-
     }
 
     func indexPetSelected(tableView: UITableView) -> Int {
@@ -149,9 +153,13 @@ extension AllPetDetailViewController: PetViewModelDelegate {
         petTableView.reloadData()
     }
 
-    func showError(error: String) {
+    func performSegue() {
+        self.dismiss(animated: true, completion: nil)
+    }
+
+    func showError(title error: String, description message: String) {
         displayAlert(alertTitle: "Something went worng",
-                     alertMessage: "Could not retrieve the adoptable pets.",
+                     alertMessage: message,
                      alertActionTitle: "Try again" ,
                      alertDelegate: self, alertTriggered: .errorAlert)
     }

@@ -101,11 +101,11 @@ class SinglePetTest: XCTestCase {
         var singlePetData: AdoptPet
         if shouldPass {
         singlePetData =  AdoptPet(count: 1, page: [Page(age: "Adult", center: Center(city: "JHB", id: 1,
-                                      lat: 12.89, lon: 13.67, name: "Center JHB", services: "none",
-                                      state: "SA", zipcode: "2456"), color: "Ginger", desc: "Pretty cat",
-                                      petId: 1, name: "Baba", animalImage: "link", sex: "Female",
-                                      animalSpeciesBreed: SpeciesBreed(petBreedName: "Tabby", speciesID: 1,
-                                                         petSpecies: "Cat", petYouthName: "Kitten"))])
+                                  lat: 12.89, lon: 13.67, name: "Center JHB", services: "none",
+                                  state: "SA", zipcode: "2456"), color: "Ginger", desc: "Pretty cat",
+                                  petId: 1, name: "Baba", animalImage: "link", sex: "Female",
+                                  animalSpeciesBreed: SpeciesBreed(petBreedName: "Tabby", speciesID: 1,
+                                  petSpecies: "Cat", petYouthName: "Kitten"))])
             singlePetViewModel.setSinglePetObject(petObject: singlePetData)
             singlePetViewModel.setSelectedPetIndex(indexPet: 0)
         } else {
