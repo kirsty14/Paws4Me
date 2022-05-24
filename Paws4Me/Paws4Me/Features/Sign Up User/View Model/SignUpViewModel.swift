@@ -10,6 +10,7 @@ import Foundation
 // MARK: - SignInViewModel Delegate
 protocol SignUpViewModelDelegate: AnyObject {
     func successRouting()
+    func addUserData()
     func showError(errorMessage: String)
 }
 
@@ -21,12 +22,6 @@ class SignUpViewModel {
     private var userEmail: String = ""
     private var userPassword: String = ""
 
-    init(delegate: SignUpViewModelDelegate, signUpRepository: SignUpRepository ) {
-        self.delegate = delegate
-        self.signUpRepository = signUpRepository
-    }
-
-    // MARK: - Functions
     var email: String {
         return userEmail
     }
@@ -35,7 +30,18 @@ class SignUpViewModel {
         return userPassword
     }
 
-    func isUserDetailsNotEmpty(name: String, surname: String, phone: String, address: String) -> Bool {
+    init(delegate: SignUpViewModelDelegate,
+         signUpRepository: SignUpRepository) {
+        self.delegate = delegate
+        self.signUpRepository = signUpRepository
+    }
+
+    // MARK: - Functions
+
+    func isUserDetailsNotEmpty(name: String,
+                               surname: String,
+                               phone: String,
+                               address: String) -> Bool {
         var isUserDetailsNotEmpty = false
         if name.isEmpty || surname.isEmpty || phone.isEmpty || address.isEmpty {
             delegate?.showError(errorMessage: "Please fill in all your details")
@@ -55,6 +61,23 @@ class SignUpViewModel {
         return isUserPasswordEmailEmpty
     }
 
+    func addUserToFirebase(name: String,
+                           surname: String,
+                           cellphone: String,
+                           address: String) {
+        signUpRepository?.addUserToFirebase(name: name,
+                                            surname: surname,
+                                            cellphone: cellphone,
+                                            address: address) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.successRouting()
+            case .failure:
+                self?.delegate?.showError(errorMessage: "Unable to save your details")
+            }
+        }
+    }
+
     func signUpUser(email: String, password: String) {
         userEmail = email
         userPassword = password
@@ -64,10 +87,11 @@ class SignUpViewModel {
         if !isUserCredentialsEmpty {
             return
         } else {
-            signUpRepository?.signUpUser(email: email, password: password) { [weak self] result in
+            signUpRepository?.signUpUser(email: email,
+                                         password: password) { [weak self] result in
                 switch result {
                 case .success:
-                    self?.delegate?.successRouting()
+                    self?.delegate?.addUserData()
                 case .failure:
                     self?.delegate?.showError(errorMessage: "Unable to Sign you Up")
                 }

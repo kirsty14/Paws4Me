@@ -23,7 +23,8 @@ class SignInViewModel {
     private var userCurrentEmail = ""
     private var userCurrentPassword = ""
 
-    init(delegate: SignInViewModelDelegate, signInRepository: SignInRepository ) {
+    init(delegate: SignInViewModelDelegate,
+         signInRepository: SignInRepository ) {
         self.delegate = delegate
         self.signInRepository = signInRepository
     }
@@ -37,12 +38,15 @@ class SignInViewModel {
         return passwordUser
     }
 
-    func set(userEmail: String, userPassword: String) {
+    func set(userEmail: String,
+             userPassword: String) {
         emailUser = userEmail
         passwordUser = userPassword
     }
 
-    func setUserCredentials(email: String, password: String) {
+    func setUserCredentials(email: String,
+                            password: String) {
+
         if emailUser != "" && passwordUser != "" {
             userCurrentEmail = emailUser
             userCurrentPassword = passwordUser
@@ -52,7 +56,8 @@ class SignInViewModel {
         }
     }
 
-    func isCredentialsEmpty(email: String, password: String) -> Bool {
+    func isCredentialsEmpty(email: String,
+                            password: String) -> Bool {
         var isUserPasswordEmailEmpty = false
 
         if userCurrentEmail.isEmpty || userCurrentPassword.isEmpty {
@@ -63,7 +68,9 @@ class SignInViewModel {
         return isUserPasswordEmailEmpty
     }
 
-    func isPasswordLongEnough(email: String, password: String) -> Bool {
+    func isPasswordLongEnough(email: String,
+                              password: String) -> Bool {
+
         var isUserPasswordValid = false
 
         if userCurrentPassword.count != 6 {
@@ -74,12 +81,15 @@ class SignInViewModel {
         return isUserPasswordValid
     }
 
-    func loginUser(email: String, password: String) {
-        setUserCredentials(email: email, password: password)
+    func loginUser(email: String,
+                   password: String) {
+        setUserCredentials(email: email,
+                           password: password)
+
         let isUserCredentialsValid = isCredentialsEmpty(email: email,
-                                                   password: password)
+                                                        password: password)
         let isUsersPasswordValid = isPasswordLongEnough(email: email,
-                                                  password: password)
+                                                        password: password)
 
         if !isUserCredentialsValid || !isUsersPasswordValid {
             return

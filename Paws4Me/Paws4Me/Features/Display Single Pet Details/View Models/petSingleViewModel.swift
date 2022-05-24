@@ -7,12 +7,19 @@
 
 import Foundation
 
+// MARK: - SignInViewModel Delegate
+protocol SinglePetViewModelDelegate: AnyObject {
+    func successRouting()
+    func showError(errorMessage: String)
+}
+
 class SinglePetViewModel {
 
     // MARK: - Vars/Lets
     private var singlePet: AdoptPet?
     private var indexSinglePet: Int = 0
     private var singlePetRepository: SinglePetRepository?
+    private weak var delegate: SinglePetViewModelDelegate?
 
     var singlePetName: String {
         return singlePet?.page?[indexSinglePet].name ?? ""
@@ -43,8 +50,9 @@ class SinglePetViewModel {
     }
 
     // MARK: - Constructor
-    init(repository: SinglePetRepository) {
-         self.singlePetRepository = repository
+    init(delegate: SinglePetViewModelDelegate, repository: SinglePetRepository) {
+        self.delegate = delegate
+        self.singlePetRepository = repository
     }
 
     // MARK: - Functions
@@ -62,4 +70,18 @@ class SinglePetViewModel {
         singlePet = petObject
     }
 
+    func addPetToFirebase() {
+        singlePetRepository?.addPetToFirebase(name: singlePetName,
+                                            age: singlePetAge,
+                                            breed: singlePetBreed,
+                                            gender: singlePetGender,
+                                            image: singlePetImage) { [weak self] result in
+            switch result {
+            case .success:
+                self?.delegate?.successRouting()
+            case .failure:
+                self?.delegate?.showError(errorMessage: "Unable to save pet details")
+            }
+    }
+    }
 }

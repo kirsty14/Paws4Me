@@ -17,7 +17,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     private var isLoggedIn = false
     private let bottomLine = CALayer()
     private let bottomLine2 = CALayer()
-    private lazy var signInViewModel = SignInViewModel(delegate: self, signInRepository: SignInRepository())
+    private lazy var signInViewModel = SignInViewModel(delegate: self,
+                                                       signInRepository: SignInRepository())
 
     // MARK: - Life cycle
     override func viewDidLoad() {
@@ -37,11 +38,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBActions
     @IBAction private func signInButtonTapped (_ sender: UIButton!) {
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        signInViewModel.loginUser(email: email, password: password)
+        signInViewModel.loginUser(email: email,
+                                  password: password)
     }
 
     @IBAction private func signUpButtonTapped(_ sender: UIButton!) {
-        performSegue(withIdentifier: "signUpViewController", sender: self)
+        performSegue(withIdentifier: "signUpViewController",
+                     sender: self)
     }
 
     // MARK: - Functions
@@ -57,13 +60,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
 
     func setUserCredentials(email: String, password: String) {
-        signInViewModel.set(userEmail: email, userPassword: password)
+        signInViewModel.set(userEmail: email,
+                            userPassword: password)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         guard let email = emailTextField.text, let password = passwordTextField.text else { return false }
-        signInViewModel.loginUser(email: email, password: password)
+        signInViewModel.loginUser(email: email,
+                                  password: password)
         return true
     }
 }
@@ -74,7 +79,8 @@ extension SignInViewController: SignInViewModelDelegate {
     func successRouting() {
         passwordTextField.text = ""
         emailTextField.text = ""
-        performSegue(withIdentifier: "petAllViewController", sender: self)
+        performSegue(withIdentifier: "petAllViewController",
+                     sender: self)
     }
 
     func showError(errorMessage: String) {
@@ -83,6 +89,7 @@ extension SignInViewController: SignInViewModelDelegate {
         displayAlert(alertTitle: "Invalid Credentials",
                      alertMessage: errorMessage,
                      alertActionTitle: "Try again" ,
-                     alertDelegate: self, alertTriggered: .errorAlert)
+                     alertDelegate: self,
+                     alertTriggered: .errorAlert)
     }
 }
