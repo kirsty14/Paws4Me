@@ -13,7 +13,9 @@ typealias SaveUserResult = (Result<Bool, FirebaseError>) -> Void
 
 class SignUpRepository {
 
-    func signUpUser(email: String, password: String, completionHandler: @escaping SignUpResult) {
+    func signUpUser(email: String,
+                    password: String,
+                    completionHandler: @escaping SignUpResult) {
         DispatchQueue.main.async {
             Auth.auth().createUser(withEmail: email, password: password) { _, error in
                 if error != nil {
@@ -25,12 +27,14 @@ class SignUpRepository {
         }
     }
 
-    func addUserToFirebase(name: String, surname: String, cellphone: String, address: String,
+    func addUserToFirebase(name: String,
+                           surname: String,
+                           cellphone: String,
+                           address: String,
                            completionHandler: @escaping SaveUserResult) {
         DispatchQueue.main.async {
             if let userId = Auth.auth().currentUser?.uid {
-
-            Constants.firestoreDatabase.collection(FStoreUser.userCollectionName).document(userId).setData( [
+                Constants.firestoreDatabase.collection(FStoreUser.userCollectionName).document(userId).setData( [
                     FStoreUser.name: name,
                     FStoreUser.surname: surname,
                     FStoreUser.cellphone: cellphone,

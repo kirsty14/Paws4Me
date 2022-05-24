@@ -30,14 +30,18 @@ class SignUpViewModel {
         return userPassword
     }
 
-    init(delegate: SignUpViewModelDelegate, signUpRepository: SignUpRepository) {
+    init(delegate: SignUpViewModelDelegate,
+         signUpRepository: SignUpRepository) {
         self.delegate = delegate
         self.signUpRepository = signUpRepository
     }
 
     // MARK: - Functions
 
-    func isUserDetailsNotEmpty(name: String, surname: String, phone: String, address: String) -> Bool {
+    func isUserDetailsNotEmpty(name: String,
+                               surname: String,
+                               phone: String,
+                               address: String) -> Bool {
         var isUserDetailsNotEmpty = false
         if name.isEmpty || surname.isEmpty || phone.isEmpty || address.isEmpty {
             delegate?.showError(errorMessage: "Please fill in all your details")
@@ -57,7 +61,10 @@ class SignUpViewModel {
         return isUserPasswordEmailEmpty
     }
 
-    func addUserToFirebase(name: String, surname: String, cellphone: String, address: String) {
+    func addUserToFirebase(name: String,
+                           surname: String,
+                           cellphone: String,
+                           address: String) {
         signUpRepository?.addUserToFirebase(name: name,
                                             surname: surname,
                                             cellphone: cellphone,
@@ -68,7 +75,7 @@ class SignUpViewModel {
             case .failure:
                 self?.delegate?.showError(errorMessage: "Unable to save your details")
             }
-    }
+        }
     }
 
     func signUpUser(email: String, password: String) {
@@ -80,7 +87,8 @@ class SignUpViewModel {
         if !isUserCredentialsEmpty {
             return
         } else {
-            signUpRepository?.signUpUser(email: email, password: password) { [weak self] result in
+            signUpRepository?.signUpUser(email: email,
+                                         password: password) { [weak self] result in
                 switch result {
                 case .success:
                     self?.delegate?.addUserData()
