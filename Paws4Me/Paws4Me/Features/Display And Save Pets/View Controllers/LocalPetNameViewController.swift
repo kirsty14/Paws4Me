@@ -23,7 +23,9 @@ class LocalPetViewController: UIViewController {
         petLocalDatabaseViewModel.fetchPetDataResults()
         guard let petName =  petLocalDatabaseViewModel.nameSinglePet,
               let petImage =  petLocalDatabaseViewModel.imageSinglePet else { return }
+        if petName != "" && petImage != "" {
         petLocalDatabaseViewModel.savePetInLocalDatabase(name: petName, image: petImage)
+        }
     }
 
     // MARK: - Functions
