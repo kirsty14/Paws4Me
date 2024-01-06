@@ -22,11 +22,14 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak private var addressTextfield: UITextField!
 
     // MARK: - Var/Lets
-    private lazy var signUpViewModel = SignUpViewModel(delegate: self, signUpRepository: SignUpRepository())
+    private lazy var signUpViewModel = SignUpViewModel(delegate: self,
+                                                       signUpRepository: SignUpRepository())
 
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        clearAllButton.addCornerRadius()
+        clearAllButton.changeBorderLook()
     }
 
     // MARK: - IBAction
@@ -45,8 +48,8 @@ class SignUpViewController: UIViewController {
         if isValidDetailsCredentials {
 
             if let email = emailTextfield.text, let password = passwordTextfield.text {
-               signUpViewModel.signUpUser(email: email,
-                                          password: password)
+                signUpViewModel.signUpUser(email: email,
+                                           password: password)
             }
         }
     }
@@ -68,14 +71,28 @@ extension SignUpViewController: SignUpViewModelDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? SignInViewController {
-            destination.setUserCredentials(email: signUpViewModel.email, password: signUpViewModel.password)
+            destination.setUserCredentials(email: signUpViewModel.email,
+                                           password: signUpViewModel.password)
         }
+    }
+
+    func addUserData() {
+        guard let name = nameTextfield.text,
+              let surname = surnameTextfield.text,
+              let cellphone = cellphoneTextfield.text,
+              let address = addressTextfield.text else { return }
+
+        signUpViewModel.addUserToFirebase(name: name,
+                                          surname: surname,
+                                          cellphone: cellphone,
+                                          address: address)
     }
 
     func showError(errorMessage: String) {
         displayAlert(alertTitle: "Sign Up Error",
                      alertMessage: errorMessage,
                      alertActionTitle: "Try again" ,
-                     alertDelegate: self, alertTriggered: .errorAlert)
+                     alertDelegate: self,
+                     alertTriggered: .errorAlert)
     }
 }
