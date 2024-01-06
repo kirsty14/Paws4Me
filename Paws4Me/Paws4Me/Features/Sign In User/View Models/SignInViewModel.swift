@@ -23,7 +23,8 @@ class SignInViewModel: ValidationManager {
     private var userCurrentEmail = ""
     private var userCurrentPassword = ""
 
-    init(delegate: SignInViewModelDelegate, signInRepository: SignInRepository ) {
+    init(delegate: SignInViewModelDelegate,
+         signInRepository: SignInRepository ) {
         self.delegate = delegate
         self.signInRepository = signInRepository
     }
@@ -37,12 +38,15 @@ class SignInViewModel: ValidationManager {
         return passwordUser
     }
 
-    func set(userEmail: String, userPassword: String) {
+    func set(userEmail: String,
+             userPassword: String) {
         emailUser = userEmail
         passwordUser = userPassword
     }
 
-    func setUserCredentials(email: String, password: String) {
+    func setUserCredentials(email: String,
+                            password: String) {
+
         if emailUser != "" && passwordUser != "" {
             userCurrentEmail = emailUser
             userCurrentPassword = passwordUser
@@ -67,7 +71,9 @@ class SignInViewModel: ValidationManager {
         return isValidEmail(email: email)
     }
 
-    func isPasswordLongEnough(email: String, password: String) -> Bool {
+    func isPasswordLongEnough(email: String,
+                              password: String) -> Bool {
+
         var isUserPasswordValid = false
 
         if !isValidPassword(password: userCurrentPassword) {
@@ -82,8 +88,9 @@ class SignInViewModel: ValidationManager {
         setUserCredentials(email: email, password: password)
         let isUserCredentialsValid = isCredentialsValid(email: email,
                                                    password: password)
+      
         let isUsersPasswordValid = isPasswordLongEnough(email: email,
-                                                  password: password)
+                                                        password: password)
 
         if !isUserCredentialsValid || !isUsersPasswordValid {
             self.delegate?.showError(errorMessage: "Incorrect email or Password")

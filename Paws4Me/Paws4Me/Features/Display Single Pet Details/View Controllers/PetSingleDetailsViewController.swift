@@ -21,7 +21,7 @@ class PetSingleDetailsViewController: UIViewController {
     @IBOutlet weak private var petAgeView: UIView!
 
     // MARK: - Vars/Lets
-    private lazy var singlePetViewModel = SinglePetViewModel(repository: SinglePetRepository())
+    private lazy var singlePetViewModel = SinglePetViewModel(delegate: self, repository: SinglePetRepository())
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -51,7 +51,7 @@ class PetSingleDetailsViewController: UIViewController {
     }
 
     @IBAction func adoptPetTappedButton(_ sender: Any) {
-        performSegue(withIdentifier: "AdoptFirstFormPageViewController", sender: self)
+        singlePetViewModel.addPetToFirebase()
     }
 
     // MARK: - Fuctions
@@ -90,13 +90,6 @@ class PetSingleDetailsViewController: UIViewController {
         singlePetViewModel.setSelectedPetIndex(indexPet: singlePetIndex)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? LocalPetViewController {
-            destination.setSavedPetData(name: singlePetViewModel.singlePetName,
-                                        image: singlePetViewModel.singlePetImage)
-        }
-    }
-
     private func showSaveConfirmation() {
         let petSaveName = singlePetViewModel.singlePetName
         let isSavedPet = singlePetViewModel.isPetSaved()
@@ -115,4 +108,28 @@ class PetSingleDetailsViewController: UIViewController {
             }
     }
 }
+}
+
+extension PetSingleDetailsViewController: SinglePetViewModelDelegate {
+    func successRouting() {
+        performSegue(withIdentifier: "AdoptFirstFormPageViewController", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        guard let singlePetIndex = singlePetViewModel.singlePetIndex,
+              let singlePetObject = singlePetViewModel.singlePetObject else { return }
+
+        if let destination = segue.destination as? LocalPetViewController {
+            destination.setSavedPetData(singlePet: singlePetObject,
+                                        singlePetIndex: singlePetIndex)
+        }
+    }
+
+    func showError(errorMessage: String) {
+        displayAlert(alertTitle: "Saving Error",
+                     alertMessage: errorMessage,
+                     alertActionTitle: "Try again" ,
+                     alertDelegate: self, alertTriggered: .errorAlert)
+    }
 }

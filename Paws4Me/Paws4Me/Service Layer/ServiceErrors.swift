@@ -19,6 +19,11 @@ enum LocalDatabaseError: String, Error {
     case deletePetsError
 }
 
+enum FirebaseError: String, Error {
+    case savingError
+    case retrievalError
+}
+
 enum HTTPMethod {
     case GET
     case POST

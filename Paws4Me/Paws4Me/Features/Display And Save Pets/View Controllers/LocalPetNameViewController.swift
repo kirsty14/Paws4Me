@@ -29,11 +29,12 @@ class LocalPetViewController: UIViewController {
     }
 
     // MARK: - Functions
-    func setSavedPetData(name: String?, image: String?) {
-        guard let petName = name,
-              let petimage = image else { return }
+    func setSavedPetData(singlePet: AdoptPet, singlePetIndex: Int) {
+        guard let petName = singlePet.page?[singlePetIndex].name,
+              let petImage = singlePet.page?[singlePetIndex].animalImage else { return }
+
         petLocalDatabaseViewModel.set(petName: petName)
-        petLocalDatabaseViewModel.set(imagePet: petimage)
+        petLocalDatabaseViewModel.set(imagePet: petImage)
     }
 
     private func setupTableView() {
