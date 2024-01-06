@@ -13,7 +13,7 @@ protocol SignInViewModelDelegate: AnyObject {
     func showError(errorMessage: String)
 }
 
-class SignInViewModel {
+class SignInViewModel: ValidationManager {
 
     // MARK: - Vars/Lets
     private weak var delegate: SignInViewModelDelegate?
@@ -56,16 +56,19 @@ class SignInViewModel {
         }
     }
 
-    func isCredentialsEmpty(email: String,
-                            password: String) -> Bool {
-        var isUserPasswordEmailEmpty = false
+    func isCredentialsValid(email: String, password: String) -> Bool {
+        var isUserCredentialsValid = false
 
         if userCurrentEmail.isEmpty || userCurrentPassword.isEmpty {
             delegate?.showError(errorMessage: "Please fill in your email and password")
         } else {
-            isUserPasswordEmailEmpty = true
+            isUserCredentialsValid = isUserEmailValid(email: email)
         }
-        return isUserPasswordEmailEmpty
+        return isUserCredentialsValid
+    }
+
+    func isUserEmailValid(email: String) -> Bool {
+        return isValidEmail(email: email)
     }
 
     func isPasswordLongEnough(email: String,
@@ -73,25 +76,24 @@ class SignInViewModel {
 
         var isUserPasswordValid = false
 
-        if userCurrentPassword.count != 6 {
-            delegate?.showError(errorMessage: "Please enter a password that is 6 characters long")
+        if !isValidPassword(password: userCurrentPassword) {
+            isUserPasswordValid = false
         } else {
             isUserPasswordValid = true
         }
         return isUserPasswordValid
     }
 
-    func loginUser(email: String,
-                   password: String) {
-        setUserCredentials(email: email,
-                           password: password)
-
-        let isUserCredentialsValid = isCredentialsEmpty(email: email,
-                                                        password: password)
+    func loginUser(email: String, password: String) {
+        setUserCredentials(email: email, password: password)
+        let isUserCredentialsValid = isCredentialsValid(email: email,
+                                                   password: password)
+      
         let isUsersPasswordValid = isPasswordLongEnough(email: email,
                                                         password: password)
 
         if !isUserCredentialsValid || !isUsersPasswordValid {
+            self.delegate?.showError(errorMessage: "Incorrect email or Password")
             return
         } else {
             signInRepository?.signInUser(email: userCurrentEmail,

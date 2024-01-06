@@ -12,7 +12,7 @@ class SignUpViewController: UIViewController {
 
     // MARK: - IBOulets
 
-    @IBOutlet weak var clearAllButton: UIButton!
+    @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak private var nameTextfield: UITextField!
     @IBOutlet weak private var surnameTextfield: UITextField!
@@ -28,8 +28,9 @@ class SignUpViewController: UIViewController {
     // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        clearAllButton.addCornerRadius()
-        clearAllButton.changeBorderLook()
+        signInButton.changeBorderLook()
+        signInButton.addCornerRadius()
+        registerButton.addCornerRadius()
     }
 
     // MARK: - IBAction
@@ -38,29 +39,23 @@ class SignUpViewController: UIViewController {
         guard let name = nameTextfield.text,
               let surname = surnameTextfield.text,
               let cellphone = cellphoneTextfield.text,
+              let email = emailTextfield.text,
+              let password = passwordTextfield.text,
               let address = addressTextfield.text else { return }
 
-        isValidDetailsCredentials = signUpViewModel.isUserDetailsNotEmpty(name: name,
-                                                                          surname: surname,
-                                                                          phone: cellphone,
-                                                                          address: address)
+        isValidDetailsCredentials = signUpViewModel.isUserDetailsValid(name: name,
+                                                                       surname: surname,
+                                                                       phone: cellphone,
+                                                                       address: address)
 
         if isValidDetailsCredentials {
-
-            if let email = emailTextfield.text, let password = passwordTextfield.text {
-                signUpViewModel.signUpUser(email: email,
-                                           password: password)
-            }
+            signUpViewModel.signUpUser(email: email,
+                                       password: password)
         }
     }
 
-    @IBAction private func clearButtonTapped(_ sender: Any) {
-        nameTextfield.text = ""
-        surnameTextfield.text = ""
-        emailTextfield.text = ""
-        passwordTextfield.text = ""
-        cellphoneTextfield.text = ""
-        addressTextfield.text = ""
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        self.performSegue(withIdentifier: "signinViewController", sender: self)
     }
 }
 

@@ -1257,7 +1257,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ATR-Au-q0X">
                                                         <rect key="frame" x="0.0" y="300" width="293" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Qk-Bg-L7r">
                                                         <rect key="frame" x="0.0" y="350" width="293" height="40"/>
@@ -1290,7 +1290,7 @@
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cellphone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Yo-xW-foE">
                                                         <rect key="frame" x="0.0" y="600" width="293" height="40"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                                     </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PiZ-Ut-R2f">
                                                         <rect key="frame" x="0.0" y="650" width="293" height="40"/>
@@ -1307,7 +1307,7 @@
                                                                 </constraints>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="Register" imagePadding="5">
+                                                                <buttonConfiguration key="configuration" style="plain" image="person.fill.badge.plus" catalog="system" title="Register" imagePadding="5">
                                                                     <backgroundConfiguration key="background" strokeWidth="2">
                                                                         <color key="backgroundColor" name="primaryAppButton"/>
                                                                     </backgroundConfiguration>
@@ -1321,12 +1321,12 @@
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mAZ-np-aXR">
                                                                 <rect key="frame" x="149" y="0.0" width="144" height="40"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="clear.fill" catalog="system" title="Clear" imagePadding="5">
+                                                                <buttonConfiguration key="configuration" style="plain" image="person.fill" catalog="system" title="sign In" imagePadding="5">
                                                                     <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="19"/>
-                                                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="baseForegroundColor" systemColor="labelColor"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <action selector="clearButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="TDb-Ke-i12"/>
+                                                                    <action selector="signInButtonTapped:" destination="fij-eQ-i6n" eventType="touchUpInside" id="ihN-lh-V0G"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -1361,11 +1361,11 @@
                     <connections>
                         <outlet property="addressTextfield" destination="7xM-Tn-87w" id="cDc-S7-fFU"/>
                         <outlet property="cellphoneTextfield" destination="1Yo-xW-foE" id="dsW-jA-ACG"/>
-                        <outlet property="clearAllButton" destination="mAZ-np-aXR" id="mEV-ic-Ozf"/>
                         <outlet property="emailTextfield" destination="ATR-Au-q0X" id="mRQ-Yp-CQv"/>
                         <outlet property="nameTextfield" destination="lN0-il-Zg9" id="Mqz-pv-Mts"/>
                         <outlet property="passwordTextfield" destination="hQX-hM-KTM" id="N6Y-z1-hoh"/>
                         <outlet property="registerButton" destination="CJb-4a-bcH" id="ss5-Zx-Dhq"/>
+                        <outlet property="signInButton" destination="mAZ-np-aXR" id="fEf-Xj-vSf"/>
                         <outlet property="surnameTextfield" destination="xou-AZ-EfS" id="VAq-IR-2WU"/>
                         <segue destination="AJP-Uc-Cxw" kind="show" identifier="signinViewController" id="d42-nm-p3z"/>
                     </connections>
@@ -1406,7 +1406,6 @@
         <image name="arrowshape.turn.up.forward.fill" catalog="system" width="128" height="106"/>
         <image name="cat" width="62" height="75"/>
         <image name="circle.hexagonpath.fill" catalog="system" width="128" height="112"/>
-        <image name="clear.fill" catalog="system" width="128" height="114"/>
         <image name="dog" width="64" height="64"/>
         <image name="folder.fill" catalog="system" width="128" height="97"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
@@ -1416,6 +1415,7 @@
         <image name="pawprint.fill" catalog="system" width="128" height="113"/>
         <image name="persianCat" width="800" height="533"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
         <image name="pet2" width="736" height="904"/>
         <image name="puppy" width="61" height="70"/>
         <image name="star" catalog="system" width="128" height="116"/>
